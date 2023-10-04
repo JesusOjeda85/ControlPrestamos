@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Nomina.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ControlDescuentos.Login" %>
 
 <!DOCTYPE html>
 
@@ -18,7 +18,7 @@
      <script type="text/javascript" src="jqueryesy/jquery.min.js"></script>
 	<script type="text/javascript" src="jqueryesy/jquery.easyui.min.js"></script>
      
-    <script src="Scripts/Login.js?0.1"></script>
+    <script src="Scripts/Login.js?0.0"></script>
 
 </head>
  <body>

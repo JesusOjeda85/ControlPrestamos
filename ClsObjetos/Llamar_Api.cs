@@ -15,7 +15,7 @@ namespace ClsObjetos
         //url publicada local 
         //public static string host = $"http://10.10.213.73/api/";
 
-        public static string host = $"http://localhost:5202/api/";
+        public static string host = $"http://localhost:5155/api/";
 
 
         //public static string host = $"https://localhost:44375/api/";

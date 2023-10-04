@@ -22,20 +22,7 @@ namespace ClsObjetos
             }).ToList();
         }
 
-        public static List<ObjMenu> GetMenuTree(List<ObjMenu> list, int? propietario)
-        {
-            return list.Where(x => x.Propietario == propietario).Select(x => new ObjMenu()
-            {
-                Id = x.Id,
-                Nombre = x.Nombre,
-                Url = x.Url,
-                UrlImagen = x.UrlImagen,
-                NombreTab = x.NombreTab,
-                Propietario = x.Propietario,
-                Visible = x.Visible,
-                List = GetMenuTree(list, x.Id)
-            }).ToList();
-        }
+      
         public static List<ObjTree> GetModuloTree(List<ObjTree> list, int? IdPadre)
         {
             return list.Where(x => x.IdPadre == IdPadre).Select(x => new ObjTree()

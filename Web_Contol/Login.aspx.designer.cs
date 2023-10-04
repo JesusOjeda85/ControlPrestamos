@@ -7,9 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Nomina {
-    
-    
-    public partial class Login {
+namespace ControlDescuentos
+{
+
+
+    public partial class Login
+    {
     }
 }

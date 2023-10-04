@@ -43,12 +43,9 @@
   <ItemGroup>
     <Compile Include="Funsiones.cs" />
     <Compile Include="Llamar_Api.cs" />
-    <Compile Include="ObjCaptura.cs" />
-    <Compile Include="ObjCatalogo.cs" />
     <Compile Include="ObjComboBox.cs" />
     <Compile Include="ObjLista.cs" />
     <Compile Include="ObjMensaje.cs" />
-    <Compile Include="ObjMenu.cs" />
     <Compile Include="ObjPaginacion.cs" />
     <Compile Include="ObjTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClsObjetos\ClsObjetos.csproj" />
+    <ProjectReference Include="..\WebApi.BaseDatos\WebApi.BaseDatos.csproj" />
+    <ProjectReference Include="..\WebApi.Dto\WebApi.Dto.csproj" />
+    <ProjectReference Include="..\WebApi.Entidades\WebApi.Entidades.csproj" />
+  </ItemGroup>
+
+</Project>

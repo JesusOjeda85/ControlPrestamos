@@ -404,6 +404,23 @@ fmov.icon-blank{
 .icon-DisReportes{
 	background:url('icons/disreportes.png') no-repeat center center;
 }
+.icon-Diseñador32 {
+	background: url('icons/diseñador.png') no-repeat center center;
+}
+.icon-Consulta32 {
+	background: url('icons/consulta.png') no-repeat center center;
+}
+.icon-Reportes32 {
+	background: url('icons/reportes32.png') no-repeat center center;
+}
+.icon-Captura32 {
+	background: url('icons/captura32.png') no-repeat center center;
+}
+.icon-Usuario32 {
+	background: url('icons/usuario32.png') no-repeat center center;
+}
+
+
 
 .icon-Salir32{
 	background:url('icons/salir32.png') no-repeat center center;

@@ -42,7 +42,7 @@ function Entrar() {
     
     $.ajax({
         type: "POST",
-        url: 'Login.aspx/Iniciar_Seccion',
+        url: 'Login.aspx/Iniciar_Sesion',
         data: JSON.stringify(data),
         dataType: "json",
         contentType: "application/json; charset=utf-8",

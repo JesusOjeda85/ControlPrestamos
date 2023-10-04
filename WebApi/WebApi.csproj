@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebApi.Dto\WebApi.Dto.csproj" />
+    <ProjectReference Include="..\WebApi.Entidades\WebApi.Entidades.csproj" />
+    <ProjectReference Include="..\WebApi.Mapeo\WebApi.Mapeo.csproj" />
+    <ProjectReference Include="..\WebApi.Repositorio\WebApi.Repositorio.csproj" />
+  </ItemGroup>
+
+</Project>

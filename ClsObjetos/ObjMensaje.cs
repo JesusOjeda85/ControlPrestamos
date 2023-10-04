@@ -12,7 +12,6 @@ namespace ClsObjetos
             public int Error { get; set; }
             public string Mensaje { get; set; }
             public object Data { get; set; }
-
             public string Datos { get; set; }
 
             public ObjMensaje()

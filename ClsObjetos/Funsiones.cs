@@ -16,6 +16,7 @@ namespace ClsObjetos
                 text = x.text,
                 target = x.target,
                 clave = x.clave,
+                checkbox=x.checkbox,
                 IdPadre = x.IdPadre,
                 state = x.state,
                 children = GetObjTree(list, x.Id)

@@ -17,6 +17,7 @@ namespace ClsObjetos
         public string state { get; set; }
         public string url { get; set; }
         public Boolean visible { get; set; }
+        public Boolean checkbox { get; set; }
         public int? IdPadre { get; set; }
         public List<ObjTree> children { get; set; }
     }

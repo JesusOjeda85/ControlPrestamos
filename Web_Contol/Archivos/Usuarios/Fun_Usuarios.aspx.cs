@@ -56,5 +56,31 @@ namespace ControlDescuentos.Archivos.Usuarios
             return result;
         }
 
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] LISTAR_PERFILES()
+        {
+            string[] result = { "", "", "" };
+            string respuesta = Llamar_Api.GetItem("Permisos/Listar_Perfiles");
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] LISTAR_MENUS()
+        {
+            string[] result = { "", "", "" };
+            string respuesta = Llamar_Api.GetItem("Permisos/Listar_Menus");
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
     }
 }

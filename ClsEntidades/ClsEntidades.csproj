@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatosPermisos.cs" />
     <Compile Include="DatosUsuario.cs" />
     <Compile Include="FiltroIdUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

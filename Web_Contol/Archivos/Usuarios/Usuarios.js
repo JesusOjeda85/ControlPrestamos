@@ -36,6 +36,10 @@ $(document).ready(function () {
     $('#btnGuardar').bind('click', function () { GUARDAR('#btnGuardar'); });
 
     $('#btnPermisos').bind('click', function () { CARGAR_PERMISOS('#btnPermisos'); });
+    $('#btnGpermisos').bind('click', function () { GUARDAR_PERMISOS('#btnGpermisos'); });
+
+    FILTRAR_TREE_TXT('#txtfilperfil', '#lstperfil');
+    FILTRAR_TREE_TXT('#txtfilmenu', '#lstmenu');
 });
 
 function DESHABILITAR() {
@@ -229,13 +233,126 @@ function GUARDAR(btnobj) {
     }
 }
 
+
+function LISTAR_PERFILES() {
+    $.ajax({
+        type: "POST",
+        url: 'Fun_Usuarios.aspx/LISTAR_PERFILES',
+        dataType: "json",
+        async: true,
+        cache: false,
+        contentType: "application/json; charset=utf-8",
+        beforeSend: function () {
+            $('#loading').show();
+        },
+        success: function (data) {            
+            var obj = jQuery.parseJSON(data.d[2]);
+           
+            $('#lstperfil').tree({
+                data: obj,
+                checkbox: function (node) {
+                    if (node.checkbox == true) {
+                        return true;
+                    }
+                }
+            });
+        },
+        error: function (err) {
+            $('#loading').hide(100);
+            $.messager.alert('Error', er.statusText, 'error');
+        },
+        complete: function () { $('#loading').hide(100); }
+    });
+}
+function LISTAR_MENUS() {
+    $.ajax({
+        type: "POST",
+        url: 'Fun_Usuarios.aspx/LISTAR_MENUS',
+        dataType: "json",
+        async: true,
+        cache: false,
+        contentType: "application/json; charset=utf-8",
+        beforeSend: function () {
+            $('#loading').show();
+        },
+        success: function (data) {
+            var obj = jQuery.parseJSON(data.d[2]);
+            $('#lstmenu').tree({
+                data: obj
+            });
+        },
+        error: function (err) {
+            $('#loading').hide(100);
+            $.messager.alert('Error', er.statusText, 'error');
+        },
+        complete: function () { $('#loading').hide(100); }
+    });
+}
+
 function CARGAR_PERMISOS(btnobj) {
     if ($(btnobj).linkbutton('options').disabled) { return false; }
     else {
 
-
+        LISTAR_PERFILES();
+        LISTAR_MENUS();
 
         $('#loading').hide(100);
-        windows_porcentaje("#winroll", 90, 60, false, false, false, "Permisos");
+        //windows_porcentaje("#win", 90, 60, false, false, false, "Permisos");  
+        windows("#win","90%","550px",false,"Permisos");
+    }
+}
+
+function getchkConceptos(objtre) {
+    var nodes = $(objtre).tree('getChecked', ['checked', 'indeterminate']);
+    var ss = [];
+    for (var i = 0; i < nodes.length; i++) {
+        ss.push(nodes[i].id);
+    }
+    return ss.join(',');
+}
+
+function getchkMenus(objtre) {
+    var nodes = $(objtre).tree('getChecked', ['checked', 'indeterminate']);
+    var ss = [];
+    for (var i = 0; i < nodes.length; i++) {
+        ss.push(nodes[i].id);
+    }
+    return ss.join(',');
+}
+
+/*GUARDAR PERMISOS*/
+function GUARDAR_PERMISOS(btnobj) {
+    if ($(btnobj).linkbutton('options').disabled) { return false; }
+    else {
+        var data = {
+            objpermisos: {
+                id: idusuario,
+                fkconceptos: getchkConceptos('#lstperfil'),
+                fkmenus: getchkMenus('#lstmenu'),              
+            }
+        }
+        $.ajax({
+            type: "POST",
+            url: "Fun_Usuarios.aspx/GUARDAR_PERMISOS",
+            data: JSON.stringify(data),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            beforeSend: function () {
+                $('#loading').show();
+            },
+            success: function (data) {
+                if (data.d[0] == "0") {
+                    $.messager.alert('Información', data.d[1], 'info');                   
+                }
+                else { $.messager.alert('Error', data.d[1], 'error'); }
+            },
+            error: function (er) {
+                $('#loading').hide();
+                $.messager.alert('Error', er.statusText, 'error');
+            },
+            complete: function () {
+                $('#loading').hide(100);
+            }
+        });
     }
 }

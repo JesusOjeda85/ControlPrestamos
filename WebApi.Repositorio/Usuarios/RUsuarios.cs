@@ -50,7 +50,7 @@ namespace WebApi.Repositorio.Usuarios
             ObjMensaje msg = new();
             try
             {
-                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Sesion_Listar_Usuarios " + obj.Id);
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Sesion_Listar_Usuarios " + obj.Idusuario);
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     List<Dictionary<string, object>> Tbljson = MetodosBD.convertirDatatableEnJsonString(ds.Tables[0]);
@@ -71,7 +71,7 @@ namespace WebApi.Repositorio.Usuarios
         public static ObjMensaje Guardar_Usuario(DatosUsuario Obj)
         {
             ObjMensaje msg = new();
-            DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Sesion_Guardar_Usuarios " + Obj.Id + ",'" + Obj.Usuario + "','" + Obj.Contraseña + "','" + Obj.APPaterno.ToUpper() + "','" + Obj.APMaterno.ToUpper() + "','" + Obj.Nombres.ToUpper() + "'," + Obj.Administrador + "," + Obj.Estatus);
+            DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Sesion_Guardar_Usuarios " + Obj.Idusuario + ",'" + Obj.Usuario + "','" + Obj.Contraseña + "','" + Obj.APPaterno.ToUpper() + "','" + Obj.APMaterno.ToUpper() + "','" + Obj.Nombres.ToUpper() + "'," + Obj.Administrador + "," + Obj.Estatus);
             if (ds.Tables.Count > 0)
             {
                 msg.Error = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());

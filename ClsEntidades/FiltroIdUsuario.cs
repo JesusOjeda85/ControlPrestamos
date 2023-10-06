@@ -8,6 +8,6 @@ namespace ClsEntidades
 {
     public class FiltroIdUsuario
     {
-        public int Id { get; set; }
+        public int Idusuario { get; set; }
     }
 }

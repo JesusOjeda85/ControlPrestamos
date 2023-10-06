@@ -19,11 +19,11 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Usuarios.js?v0.2"></script>
+    <script src="Usuarios.js?v0.0"></script>
 </head>
 <body>
   <div class="w-screen h-screen" align="Center">
-      <div class="easyui-panel mb-3" style="padding:3px; width:100%">                                                 
+      <div class="easyui-panel mb-3" style="padding:2px; width:100%">                                                 
             <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'limpiar',disabled:true" id="btnLimpiar" >Limpiar</a>        
             <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'icon-add'"  id="btnNuevo">Nuevo</a>
             <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'icon-save',disabled:true" id="btnGuardar" >Guardar</a>                                                        

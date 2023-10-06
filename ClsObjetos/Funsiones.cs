@@ -14,7 +14,7 @@ namespace ClsObjetos
             {
                 Id = x.Id,
                 text = x.text,
-                target = x.target,
+                nombre = x.nombre,
                 clave = x.clave,
                 checkbox=x.checkbox,
                 IdPadre = x.IdPadre,

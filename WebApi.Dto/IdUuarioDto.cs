@@ -8,6 +8,6 @@ namespace WebApi.Dto
 {
     public class IdUuarioDto
     {
-        public int Id { get; set; }
+        public int Idusuario { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace WebApi.Entidades
 {
     public class DatosUsuario
     {
-        public int Id { get; set; }
+        public int Idusuario { get; set; }
         public string Usuario { get; set; }
         public string Contraseña { get; set; }
         public string ContraseñaNueva { get; set; }

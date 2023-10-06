@@ -18,7 +18,7 @@ namespace WebApi.Repositorio.RSesion
                 DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Sesion_Iniciar_Sesion '" + obj.Usuario + "','" + obj.Contraseña + "'");
                 if (ds.Tables[0].Rows[0][0].ToString() == "0")
                 {
-                    sesion.Id = Convert.ToInt16(ds.Tables[1].Rows[0]["Id"].ToString());
+                    sesion.Idusuario = Convert.ToInt16(ds.Tables[1].Rows[0]["Id"].ToString());
                     sesion.Usuario = ds.Tables[1].Rows[0]["Usuario"].ToString();
                     sesion.Nombres = ds.Tables[1].Rows[0]["Nombre"].ToString();                 
                   
@@ -38,7 +38,7 @@ namespace WebApi.Repositorio.RSesion
         public static ObjMensaje Cambiar_Contraseña(DatosUsuario Obj)
         {
             ObjMensaje msg = new ObjMensaje();
-            DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Sesion_Modificar_Sesion '" + Obj.Id + "', '" + Obj.Contraseña + "', '" + Obj.ContraseñaNueva + "'");
+            DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Sesion_Modificar_Sesion '" + Obj.Idusuario + "', '" + Obj.Contraseña + "', '" + Obj.ContraseñaNueva + "'");
             if (ds.Tables.Count > 0)
             {
                 msg.Error = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());

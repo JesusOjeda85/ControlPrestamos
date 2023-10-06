@@ -198,8 +198,9 @@
     <Content Include="jqueryEsy\plugins\jquery.tagbox.js" />
     <Content Include="jqueryEsy\plugins\jquery.timepicker.js" />
     <Content Include="jqueryEsy\themes\icons\captura32.png" />
-    <Content Include="jqueryEsy\themes\icons\consulta.png" />
-    <Content Include="jqueryEsy\themes\icons\diseñador.png" />
+    <Content Include="jqueryEsy\themes\icons\catalogos32.png" />
+    <Content Include="jqueryEsy\themes\icons\consulta32.png" />
+    <Content Include="jqueryEsy\themes\icons\diseñador32.png" />
     <Content Include="jqueryEsy\themes\icons\movesp.png" />
     <Content Include="jqueryEsy\themes\icons\penalim.png" />
     <Content Include="jqueryEsy\themes\icons\personaliza.jpg" />
@@ -207,6 +208,7 @@
     <Content Include="jqueryEsy\themes\icons\reportes32.png" />
     <Content Include="jqueryEsy\themes\icons\tooltip.png" />
     <Content Include="jqueryEsy\themes\icons\usuario32.png" />
+    <Content Include="jqueryEsy\themes\icons\usuariospermisos32.png" />
     <Content Include="jqueryEsy\themes\material-blue\accordion.css" />
     <Content Include="jqueryEsy\themes\material-blue\calendar.css" />
     <Content Include="jqueryEsy\themes\material-blue\checkbox.css" />
@@ -1658,7 +1660,7 @@
     <Content Include="jqueryEsy\themes\gray\tree.css" />
     <Content Include="jqueryEsy\themes\gray\validatebox.css" />
     <Content Include="jqueryEsy\themes\gray\window.css" />
-    <Content Include="jqueryEsy\themes\icon.css" />
+    <Content Include="jqueryEsy\themes\icons.css" />
     <Content Include="jqueryEsy\themes\icons\Accesos.png" />
     <Content Include="jqueryEsy\themes\icons\actualizar.png" />
     <Content Include="jqueryEsy\themes\icons\add-imagen.png" />

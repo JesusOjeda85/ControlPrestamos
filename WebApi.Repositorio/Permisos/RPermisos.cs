@@ -12,7 +12,7 @@ namespace WebApi.Repositorio.Permisos
             ObjMensaje msg = new();
             try
             {
-                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Permisos_Listar_Permisos_Asignados " + obj.Id);
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Permisos_Listar_Permisos_Asignados " + obj.Idusuario);
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     List<Dictionary<string, object>> Tbljson = MetodosBD.convertirDatatableEnJsonString(ds.Tables[0]);
@@ -29,7 +29,7 @@ namespace WebApi.Repositorio.Permisos
             }
             return msg;
         }
-       
+
         public static ObjMensaje Listar_Perfiles()
         {
             ObjMensaje msg = new();
@@ -45,7 +45,7 @@ namespace WebApi.Repositorio.Permisos
                         TreeObj = new ObjTree();
                         TreeObj.Id = Convert.ToInt16(ds.Tables[0].Rows[i]["Id"].ToString());
                         TreeObj.text = ds.Tables[0].Rows[i]["Descripcion"].ToString();
-                        TreeObj.target = ds.Tables[0].Rows[i]["Concepto"].ToString();
+                        TreeObj.nombre = ds.Tables[0].Rows[i]["idreg"].ToString();
                         TreeObj.checkbox = Convert.ToBoolean(ds.Tables[0].Rows[i]["Marcar"].ToString());
                         TreeObj.IdPadre = ds.Tables[0].Rows[i]["IdPadre"] != DBNull.Value ? Convert.ToInt32(ds.Tables[0].Rows[i]["IdPadre"].ToString()) : (int?)null;
                         LstObj.Add(TreeObj);
@@ -71,7 +71,7 @@ namespace WebApi.Repositorio.Permisos
             }
             return msg;
         }
-      
+
         public static ObjMensaje Listar_Menus()
         {
             ObjMensaje msg = new();
@@ -107,6 +107,37 @@ namespace WebApi.Repositorio.Permisos
                 msg.Error = 1;
                 msg.Mensaje = ex.Message.ToString();
             }
+            return msg;
+        }
+
+        public static ObjMensaje Guardar_Permisos(DatosPermisos Obj)
+        {
+            ObjMensaje msg = new();
+            DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Permisos_Guardar " + Obj.Idusuario + ",'" + Obj.fkconceptos + "','" + Obj.fkmenus + "'");
+            if (ds.Tables.Count > 0)
+            {
+                msg.Error = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());
+                msg.Mensaje = ds.Tables[0].Rows[0][1].ToString();
+                msg.Data = null;
+                msg.Datos = "";
+            }
+            ds.Dispose();
+            return msg;
+        }
+
+        public static ObjMensaje Cargar_Permisos(DatosUsuario Obj)
+        {
+            ObjMensaje msg = new();
+            DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Permisos_Listar_Permisos " + Obj.Idusuario);
+            if (ds.Tables.Count > 0)
+            {
+                List<string> tbls = MetodosBD.ListaTablasJson(ds);
+                msg.Error = 0;
+                msg.Mensaje = "";
+                msg.Data = tbls;
+                msg.Datos = "";
+            }
+            ds.Dispose();
             return msg;
         }
     }

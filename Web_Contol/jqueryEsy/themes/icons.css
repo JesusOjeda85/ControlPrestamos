@@ -333,6 +333,8 @@ fmov.icon-blank{
 	background:url('icons/cat.png') no-repeat center center;
 }
 
+
+
 .icon-impbarras36{
 	background:url('icons/impbarras36.png') no-repeat center center;
 }
@@ -399,31 +401,6 @@ fmov.icon-blank{
 
 .icon-recibirfolios{
 	background:url('icons/recibircodigo.png') no-repeat center center;
-}
-
-.icon-DisReportes{
-	background:url('icons/disreportes.png') no-repeat center center;
-}
-.icon-Diseñador32 {
-	background: url('icons/diseñador.png') no-repeat center center;
-}
-.icon-Consulta32 {
-	background: url('icons/consulta.png') no-repeat center center;
-}
-.icon-Reportes32 {
-	background: url('icons/reportes32.png') no-repeat center center;
-}
-.icon-Captura32 {
-	background: url('icons/captura32.png') no-repeat center center;
-}
-.icon-Usuario32 {
-	background: url('icons/usuario32.png') no-repeat center center;
-}
-
-
-
-.icon-Salir32{
-	background:url('icons/salir32.png') no-repeat center center;
 }
 
 .icon-rotar{
@@ -733,6 +710,39 @@ fmov.icon-blank{
 
 .icon-proyeccion{
 	background:url('icons/proyeccion.png') no-repeat center center;
+}
+
+.icon-DisReportes {
+	background: url('icons/disreportes.png') no-repeat center center;
+}
+
+
+.Dis32 {
+	background: url('icons/diseñador32.png') no-repeat center center;
+}
+
+.Con32 {
+	background: url('icons/consulta32.png') no-repeat center center;
+}
+
+.Rep32 {
+	background: url('icons/reportes32.png') no-repeat center center;
+}
+
+.Cap32 {
+	background: url('icons/captura32.png') no-repeat center center;
+}
+
+.Usu32 {
+	background: url('icons/usuario32.png') no-repeat center center;
+}
+
+.Sal32 {
+	background: url('icons/inicio2.png') no-repeat center center;
+}
+
+.Cat32 {
+	background: url('icons/catalogos32.png') no-repeat center center;
 }
 
 

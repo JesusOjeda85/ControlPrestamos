@@ -20,8 +20,52 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
 </head>
 <body>   
-     <div class="w-screen h-screen">
-
+     <div class="w-screen h-screen flex flex-col " >
+          <div class="easyui-panel mb-3" style="padding:2px; width:100%">                                                 
+            <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'limpiar',disabled:true" id="btnLimpiar" >Limpiar</a>        
+            <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'icon-add'"  id="btnNuevo">Nuevo</a>
+            <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'icon-save',disabled:true" id="btnGuardar" >Guardar</a>                                                        
+         </div>          
+                <div class="flex flex-col self-center px-2 sm:px-6 md:px-4 lg:px-2 py-2 rounded-md w-full max-w-md border-2 border-blue-200 ">   
+                    <div class="flex flex-col mb-1 w-32 border-2 border-red-200">
+                        <label class="text-left text-lg text-red-900">Empleado</label>                    
+                        <input class="easyui-textbox" style="width:100%; text-align:center"  id="txtempleado"  data-options="required:true"/>                   
+                    </div>
+                    <div class="flex flax-row">
+                        <div class="flex flex-col mb-1 w-64 border-2 border-red-200">
+                            <label class="text-left text-lg text-red-900">Paterno</label>                    
+                            <input class="easyui-textbox" style="width:100%" id="txtpaterno"  data-options="required:true"/>                   
+                        </div>
+                        <div class="flex flex-col mb-1 w-64 border-2 border-red-200">
+                            <label class="text-left text-lg text-red-900">Materno</label>                    
+                            <input class="easyui-textbox" style="width:100%" id="txtmaterno"  data-options="required:true"/>                   
+                        </div>                   
+                    </div>
+                    <div class="flex flex-col mb-1  border-2 border-red-200">
+                        <label class="text-left text-lg text-red-900">Nombres</label>                    
+                        <input class="easyui-textbox" style="width:100%" id="txtnombres"  data-options="required:true"/>                   
+                    </div>
+                    <div class="flex flax-row">
+                        <div class="flex flex-col mb-1 w-64 border-2 border-red-200">
+                            <label class="text-left text-lg text-red-900">Rfc</label>                    
+                            <input class="easyui-textbox" style="width:100%" id="txtrfc"  data-options="required:true"/>                   
+                        </div>
+                        <div class="flex flex-col mb-1 w-64 border-2 border-red-200">
+                            <label class="text-left text-lg text-red-900">Curp</label>                    
+                            <input class="easyui-textbox" style="width:100%" id="txtcurp"  data-options="required:true"/>                   
+                        </div>                   
+                    </div>  
+                     <div class="flex flax-row">
+                     <div class="flex flex-col mb-1 w-64 border-2 border-red-200">
+                            <label class="text-left text-lg text-red-900">Categoría</label> 
+                             <input class="easyui-textbox" style="width:100%; text-align:center"  id="txtcvecategoria"  data-options="required:true"/>                              
+                        </div>                    
+                      <div class="flex flex-row border-2 border-red-200">                                
+                            <a id="btnBcategoria" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">Buscar</a>
+                            <a id="btnLcategoria" href="#" class="easyui-linkbutton" data-options="iconCls:'limpiar',plain:true">Limpiar</a>
+                        </div> 
+                     </div>
+                </div>       
      </div>
      <div class="modal" style="display: none;" id="loading">
             <div class="w-screen h-screen justify-center items-center">

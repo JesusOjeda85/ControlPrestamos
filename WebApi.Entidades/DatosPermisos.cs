@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClsEntidades
+namespace WebApi.Entidades
 {
     public class DatosPermisos
     {
-        public int Idusuario { get; set; }
-        public string fkconceptos { get; set; }
-        public string fkmenus { get; set; }
+        public int Idusuario {  get; set; }
+        public string fkconceptos {  get; set; }
+        public string fkmenus {  get; set; }
     }
 }

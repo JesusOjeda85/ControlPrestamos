@@ -13,8 +13,8 @@
      <script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>
      <script type="text/javascript" src="../../scripts/demos.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="../../jqueryesy/themes/metro-red/easyui.css"/>
-	<link rel="stylesheet" type="text/css" href="../../jqueryesy/themes/icon.css"/>	
+    <link rel="stylesheet" type="text/css" href="../../jqueryesy/themes/metro-red/easyui.css"/>	
+    <link href="../../jqueryEsy/themes/icons.css" rel="stylesheet" />
 
      <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
      <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
@@ -31,11 +31,12 @@
              </div>
          </div>
          <div class="easyui-panel rounded" style="width:100%;  padding:2px;">            
-            <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'icon-Salir32'" style="width:80px;"  id="btnInicio">Cerrar</a>    
-             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'icon-Captura32'" style="width:80px;"  id="btnCaptura">Captura</a>    
-             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'icon-Consulta32'" style="width:80px;"  id="btnConsultas">Consultas</a>    
-             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'icon-Reportes32'" style="width:80px;"  id="btnReportes">Reportes</a>    
-             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'icon-Usuario32'" style="width:80px;"  id="btnUsuarios">Usuarios</a>    
+             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Sal32'" style="width:80px;"  id="btnInicio">Cerrar</a>    
+             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Cap32'" style="width:80px;"  id="btnCaptura">Captura</a>    
+             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Con32'" style="width:80px;"  id="btnConsultas">Consultas</a>    
+             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Rep32'" style="width:80px;"  id="btnReportes">Reportes</a>    
+             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Cat32'" style="width:80px;"  id="btnCatalogos">Catálogos</a>    
+             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Usu32'" style="width:80px;"  id="btnUsuarios">Usuarios</a>    
          </div>
          <div class="h-full border-2 border-red-200 bg-orange-50 rounded">
               <div id="tt" class="easyui-tabs" style="width: 100%;  height:100%; display:none;"></div>  

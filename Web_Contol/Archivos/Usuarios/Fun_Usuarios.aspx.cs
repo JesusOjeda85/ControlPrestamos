@@ -82,5 +82,32 @@ namespace ControlDescuentos.Archivos.Usuarios
             return result;
         }
 
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] GUARDAR_PERMISOS(DatosPermisos objpermisos)
+        {
+            string[] result = { "", "" };
+            string jsonobj = JsonConvert.SerializeObject(objpermisos);
+            string respuesta = Llamar_Api.PostItem("Permisos/Guardar_Permisos", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] CARGAR_PERMISOS(FiltroIdUsuario objusuario)
+        {
+            string[] result = { "", "", "" };
+            string jsonobj = JsonConvert.SerializeObject(objusuario);
+            string respuesta = Llamar_Api.PostItem("Permisos/Cargar_Permisos", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
     }
 }

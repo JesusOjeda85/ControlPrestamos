@@ -11,7 +11,7 @@ namespace WebApi.Dto
     {
         [Required(ErrorMessage = "Id del Usuario es Requerido")]
         [Display(Name = "Id Usuario")]
-        public int Id { get; set; }
+        public int Idusuario { get; set; }
         [Required(ErrorMessage = "La Contraseña es Requerida")]
         [Display(Name = "Contraseña")]
         public string Contraseña { get; set; }

@@ -14,7 +14,7 @@
     <script src="Scripts/demos.js"></script>
 
      <link href="jqueryEsy/themes/icon.css" rel="stylesheet" />
-     <link href="jqueryEsy/themes/pepper-grinder/easyui.css" rel="stylesheet" />   
+     <link href="jqueryEsy/themes/metro-red/easyui.css" rel="stylesheet" />   
      <script type="text/javascript" src="jqueryesy/jquery.min.js"></script>
 	<script type="text/javascript" src="jqueryesy/jquery.easyui.min.js"></script>
      

@@ -18,7 +18,7 @@ namespace WebApi.Repositorio.Captura
             ObjMensaje msg = new();
             try
             {
-                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Catalogos_Listar_Plazos " + obj.idusuario);
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Catalogos_Listar_Plazos " + obj.IdUsuario);
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     List<Dictionary<string, object>> Tbljson = MetodosBD.convertirDatatableEnJsonString(ds.Tables[0]);
@@ -33,6 +33,20 @@ namespace WebApi.Repositorio.Captura
                 msg.Error = 1;
                 msg.Mensaje = ex.Message.ToString();
             }
+            return msg;
+        }
+        public static ObjMensaje Guardar_Captura(DatosCaptura Obj)
+        {
+            ObjMensaje msg = new();
+            DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Captura_Guardar " + Obj.IdUsuario + "," + Obj.FkOrganismo + "," + Obj.Empleado + ",'" + Obj.FechaSolicitud + "','" + Obj.Rfc.ToUpper() + "','" + Obj.Curp.ToUpper() + "','" + Obj.ApPaterno + "','" + Obj.ApMaterno+"'");
+            if (ds.Tables.Count > 0)
+            {
+                msg.Error = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());
+                msg.Mensaje = ds.Tables[0].Rows[0][1].ToString();
+                msg.Data = null;
+                msg.Datos = "";
+            }
+            ds.Dispose();
             return msg;
         }
     }

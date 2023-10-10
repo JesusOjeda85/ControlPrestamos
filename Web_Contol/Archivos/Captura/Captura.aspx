@@ -53,42 +53,42 @@
                         <label class="text-left text-lg text-red-900">Nombres</label>                    
                         <input class="easyui-textbox" style="width:100%" id="txtnombres"  data-options="readonly:true"/>                   
                     </div>
-                    <div class="flex flax-row space-x-2">
-                        <div class="flex flex-col mb-1 w-1/2">
+                    <div class="flex flax-col space-x-2">
+                        <div class="flex flex-col mb-1 w-1/2 border-red-200">
                             <label class="text-left text-lg text-red-900">Rfc</label>                    
                             <input class="easyui-textbox" style="width:100%" id="txtrfc"  data-options="readonly:true"/>                   
                         </div>
-                        <div class="flex flex-col mb-1 w-1/2">
+                        <div class="flex flex-col mb-1 w-1/2 border-red-200">
                             <label class="text-left text-lg text-red-900">Curp</label>                    
                             <input class="easyui-textbox" style="width:100%" id="txtcurp"  data-options="readonly:true"/>                   
                         </div>                   
                     </div> 
                     <div class="flex flex-row mb-1 space-x-2">
-                      <div class="flex flex-col mb-1 w-1/4 ">
+                      <div class="flex flex-col mb-1 w-1/3 ">
                          <label class="text-left text-lg text-red-900">Categoría</label>   
                          <input class="easyui-textbox" style="width:100%; text-align:center"  id="txtcvecat"  data-options="readonly:true"/>
                       </div>
-                      <div class="flex flex-col mb-1 w-3/4 ">
+                      <div class="flex flex-col mb-1 w-2/3 ">
                           <label class="text-left text-lg text-red-900">Descripcion</label>   
                           <input class="easyui-textbox" style="width:100%; text-align:left"  id="txtdescat"  data-options="readonly:true"/>
                       </div>
                     </div>
                      <div class="flex flex-row mb-1 space-x-2">
-                          <div class="flex flex-col mb-1 w-1/4 ">
+                          <div class="flex flex-col mb-1 w-1/3 ">
                             <label class="text-left text-lg text-red-900">Adscripción</label>   
                             <input class="easyui-textbox" style="width:100%; text-align:center"  id="txtcveads"  data-options="readonly:true"/>
                          </div>
-                        <div class="flex flex-col mb-1 w-3/4 ">
+                        <div class="flex flex-col mb-1 w-2/3 ">
                             <label class="text-left text-lg text-red-900">Descripcion</label>   
                             <input class="easyui-textbox" style="width:100%; text-align:left"  id="txtdesads"  data-options="readonly:true"/>
                         </div>
                     </div>                    
                      <div class="flex flex-row mb-1 space-x-2">
-                        <div class="flex flex-col mb-1 w-1/4 ">
+                        <div class="flex flex-col mb-1 w-1/3 ">
                             <label class="text-left text-lg text-red-900">Pagaduría</label>   
                             <input class="easyui-textbox" style="width:100%; text-align:center"  id="txtcvepag"  data-options="readonly:true"/>
                         </div>
-                        <div class="flex flex-col mb-1 w-3/4 ">
+                        <div class="flex flex-col mb-1 w-2/3 ">
                             <label class="text-left text-lg text-red-900">Descripcion</label>   
                             <input class="easyui-textbox" style="width:100%; text-align:left"  id="txtdespag"  data-options="readonly:true"/>
                         </div>
@@ -106,11 +106,11 @@
                     <div class="flex flax-row space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-red-900">Tipo Pago</label>                    
-                            <input class="easyui-combobox" style="width:100%; text-align:center"  id="cbotipopago" precision="2" data-options="required:true"/>                   
+                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cbotipopago" precision="2" data-options="required:true"/>                   
                         </div>
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-red-900">Banco</label>                    
-                            <input class="easyui-combobox" style="width:100%; text-align:center"  id="cbobanco" precision="2" data-options="required:true"/>                   
+                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cbobanco" precision="2" data-options="required:true"/>                   
                         </div>
                     </div>   
                     <div class="flex flax-row space-x-2">

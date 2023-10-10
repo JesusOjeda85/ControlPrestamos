@@ -36,10 +36,51 @@ namespace ControlDescuentos.Archivos.Captura
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod]
+        public static string[] LISTAR_BANCOS()
+        {
+            string[] result = { "", "", "" };           
+            string respuesta = Llamar_Api.GetItem("Captura/Listar_Bancos");
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] LISTAR_TIPOPAGO()
+        {
+            string[] result = { "", "", "" };
+            string respuesta = Llamar_Api.GetItem("Captura/Listar_TipoPago");
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] BUSCAR_EMPLEADOS(BuscarEmpleado obj)
+        {
+            string[] result = { "", "", "" };
+            string jsonobj = JsonConvert.SerializeObject(obj);
+            string respuesta = Llamar_Api.PostItem("Captura/Buscar_Empleado", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
         public static string[] GUARDAR_CAPTURA(DatosCaptura obDatos)
         {
-            string[] result = { "", "", "" };          
-            string respuesta = Llamar_Api.PostItem("Captura/Guardar_Captura", obDatos);
+            string[] result = { "", "", "" };
+            string jsonobj = JsonConvert.SerializeObject(obDatos);
+            string respuesta = Llamar_Api.PostItem("Captura/Guardar_Captura", jsonobj);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
             result[0] = msg.Error.ToString();
             result[1] = msg.Mensaje;

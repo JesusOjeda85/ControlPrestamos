@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClsObjetos
+namespace ClsEntidades
 {
-   public class ObjPaginacion
+    public class BuscarEmpleado
     {
         public int Desde { get; set; }
-
         public int Hasta { get; set; }
-     
-        public string Busqueda { get; set; }        
+        public int IdUsuario { get; set; }
+        public int FkOrganismo { get; set; }
+        public string Busqueda { get; set; }
     }
 }

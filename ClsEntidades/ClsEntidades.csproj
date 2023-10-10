@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscarEmpleado.cs" />
     <Compile Include="DatosCaptura.cs" />
     <Compile Include="DatosPermisos.cs" />
     <Compile Include="DatosUsuario.cs" />

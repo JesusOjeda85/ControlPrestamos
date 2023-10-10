@@ -72,7 +72,7 @@ namespace WebApi.BaseDatos
             Conexion conexionDePrueba = new();
             using (SqlConnection oConexion = new SqlConnection(con.CadenaSql()))
             {
-                Adaptador = new System.Data.SqlClient.SqlDataAdapter(proc, con.CadenaSql());
+                Adaptador = new SqlDataAdapter(proc, con.CadenaSql());
                 Adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
                 foreach (SqlParameter par in parametros)
                 {

@@ -8,6 +8,6 @@ namespace ClsEntidades
 {
     public class FiltroIdOrganismo
     {
-        public int Idorganismo {get;set;}
+        public int FkOrganismo { get;set;}
     }
 }

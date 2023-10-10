@@ -148,6 +148,7 @@
     <Content Include="Archivos\Captura\Captura.aspx" />
     <Content Include="Archivos\Captura\Captura.js" />
     <Content Include="Archivos\Captura\Fun_Captura.aspx" />
+    <Content Include="Archivos\Captura\Listar_Empleados.aspx" />
     <Content Include="Archivos\Menu\Menu.aspx" />
     <Content Include="Archivos\Menu\Menu.js" />
     <Content Include="Archivos\Usuarios\Fun_Usuarios.aspx" />
@@ -2210,6 +2211,13 @@
     </Compile>
     <Compile Include="Archivos\Captura\Fun_Captura.aspx.designer.cs">
       <DependentUpon>Fun_Captura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Listar_Empleados.aspx.cs">
+      <DependentUpon>Listar_Empleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Listar_Empleados.aspx.designer.cs">
+      <DependentUpon>Listar_Empleados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Menu\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>

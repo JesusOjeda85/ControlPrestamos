@@ -9,24 +9,24 @@ namespace ClsEntidades
 {
     public class DatosCaptura
     {
-        public int idusuario { get; set; }
-        public int fkorganismo { get; set; }
+        public int IdUsuario { get; set; }
+        public int FkOrganismo { get; set; }
         public int Empleado { get; set; }
-        public string fechasolicitud { get; set; }
-        public string rfc { get; set; }
-        public string curp { get; set; }
-        public string appaterno { get; set; }
-        public string apmaterno { get; set; }
-        public string nombres { get; set; }
-        public string nombrecompleto { get; set; }
-        public string cvepagaduria { get; set; }
-        public string despagaduria { get; set; }
-        public string cvecategoria { get; set; }
-        public string descategoria { get; set; }
-        public string cveadscripcion { get; set; }
-        public string desadscripcion { get; set; }
-        public Int64 importecredito { get; set; }
-        public int fkplazo { get; set; }
+        public string FechaSolicitud { get; set; }
+        public string Rfc { get; set; }
+        public string Curp { get; set; }
+        public string ApPaterno { get; set; }
+        public string ApMaterno { get; set; }
+        public string Nombres { get; set; }
+        public string NombreCompleto { get; set; }
+        public string CvePagaduria { get; set; }
+        public string DesPagaduria { get; set; }
+        public string CveCategoria { get; set; }
+        public string DesCategoria { get; set; }
+        public string CveAdscripcion { get; set; }
+        public string DesAdscripcion { get; set; }
+        public Int64 ImporteCredito { get; set; }
+        public int FkPlazo { get; set; }
 
     }
 }

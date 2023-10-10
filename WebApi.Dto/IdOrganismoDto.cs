@@ -8,6 +8,6 @@ namespace WebApi.Dto
 {
     public class IdOrganismoDto
     {
-        public int idorganismo { get; set; }
+        public int FkOrganismo { get; set; }
     }
 }

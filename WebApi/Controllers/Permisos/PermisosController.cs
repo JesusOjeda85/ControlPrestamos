@@ -20,14 +20,14 @@ namespace WebApi.Controllers.Permisos
         }
 
 
-        [HttpPost]
-        [Route("Listar_Permisos_Asignados")]
-        public IActionResult Listar_Permisos_Asignados(IdUuarioDto objDto)
-        {
-            var obj = mapper.Map<DatosUsuario>(objDto);
-            ObjMensaje msg = RPermisos.Listar_Permisos_Asignados(obj);
-            return StatusCode(StatusCodes.Status200OK, msg);
-        }
+        //[HttpPost]
+        //[Route("Listar_Permisos_Asignados")]
+        //public IActionResult Listar_Permisos_Asignados(IdUuarioDto objDto)
+        //{
+        //    var obj = mapper.Map<DatosUsuario>(objDto);
+        //    ObjMensaje msg = RPermisos.Listar_Permisos_Asignados(obj);
+        //    return StatusCode(StatusCodes.Status200OK, msg);
+        //}
         [HttpGet]
         [Route("Listar_Perfiles")]
         public IActionResult Listar_Perfiles()

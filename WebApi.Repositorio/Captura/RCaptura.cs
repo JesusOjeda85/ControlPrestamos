@@ -185,8 +185,7 @@ namespace WebApi.Repositorio.Captura
                 new SqlParameter("@Curp", SqlDbType.VarChar, 20) { Value = Obj.Curp },
                 new SqlParameter("@ApMaterno", SqlDbType.VarChar, 20) { Value = Obj.ApMaterno },
                 new SqlParameter("@ApPaterno", SqlDbType.VarChar, 20) { Value = Obj.ApPaterno },
-                new SqlParameter("@Nombres", SqlDbType.VarChar, 20) { Value = Obj.Nombres },
-                new SqlParameter("@NombreCompleto", SqlDbType.VarChar, 20) { Value = Obj.NombreCompleto },
+                new SqlParameter("@Nombres", SqlDbType.VarChar, 20) { Value = Obj.Nombres },               
                 new SqlParameter("@CvePagaduria", SqlDbType.VarChar, 20) { Value = Obj.CvePagaduria },
                 new SqlParameter("@DesPagaduria", SqlDbType.VarChar, 300) { Value = Obj.DesPagaduria },
                 new SqlParameter("@CveCategoria", SqlDbType.VarChar, 20) { Value = Obj.CveCategoria },
@@ -195,6 +194,9 @@ namespace WebApi.Repositorio.Captura
                 new SqlParameter("@DesAdscripcion", SqlDbType.VarChar, 300) { Value = Obj.DesAdscripcion },
                 new SqlParameter("@ImporteCredito", SqlDbType.Float) { Value = Obj.ImporteCredito },
                 new SqlParameter("@FkPlazo", SqlDbType.Int, 20) { Value = Obj.FkPlazo },
+                new SqlParameter("@FkTipoPago", SqlDbType.Int) { Value = Obj.FkTipoPago },
+                new SqlParameter("@FkBanco", SqlDbType.Int) { Value = Obj.FkBanco },
+                new SqlParameter("@Cuenta", SqlDbType.Int, 20) { Value = Obj.Cuenta },
              };
 
 

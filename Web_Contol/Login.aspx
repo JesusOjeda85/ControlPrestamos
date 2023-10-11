@@ -18,7 +18,7 @@
      <script type="text/javascript" src="jqueryesy/jquery.min.js"></script>
 	<script type="text/javascript" src="jqueryesy/jquery.easyui.min.js"></script>
      
-    <script src="Scripts/Login.js?0.0"></script>
+    <script src="Scripts/Login.js?0.1"></script>
 
 </head>
  <body>

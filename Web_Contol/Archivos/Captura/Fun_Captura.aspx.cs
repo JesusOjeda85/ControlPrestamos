@@ -76,10 +76,10 @@ namespace ControlDescuentos.Archivos.Captura
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod]
-        public static string[] GUARDAR_CAPTURA(DatosCaptura obDatos)
+        public static string[] GUARDAR_CAPTURA(DatosCaptura Obj)
         {
             string[] result = { "", "", "" };
-            string jsonobj = JsonConvert.SerializeObject(obDatos);
+            string jsonobj = JsonConvert.SerializeObject(Obj);
             string respuesta = Llamar_Api.PostItem("Captura/Guardar_Captura", jsonobj);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
             result[0] = msg.Error.ToString();

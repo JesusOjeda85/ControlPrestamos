@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace ControlDescuentos.Archivos.Captura
 {
-    public partial class Captura : System.Web.UI.Page
+    public partial class Conceptos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

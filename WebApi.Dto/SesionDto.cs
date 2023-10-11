@@ -10,6 +10,7 @@ namespace WebApi.Dto
     {
         public int Idusuario { get; set; }
         public string Usuario { get; set; }
-        public string Nombres { get; set; }
+        public string Nombre { get; set; }
+        public bool Administrador { get; set; }
     }
 }

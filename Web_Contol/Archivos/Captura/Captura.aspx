@@ -20,19 +20,20 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Captura.js?v0.1"></script>
+    <script src="Captura.js?v0.3"></script>
 </head>
 <body>   
-     <div class="w-screen h-screen flex flex-col bg-yellow-50 " align="Center">
-          <div class="easyui-panel mb-3" style="padding:2px; width:100%">                                                 
-            <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'limpiar',disabled:true" id="btnLimpiar" >Limpiar</a>        
-            <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'icon-add'"  id="btnNuevo">Nuevo</a>
-            <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'icon-save',disabled:true" id="btnGuardar" >Guardar</a>                                                        
+     <div class="w-screen h-screen flex flex-col bg-yellow-50 " align="Center">      
+        <div class="w-screen h-screen " id="dcaptura" >
+          <div class="easyui-panel mb-3" style="padding:2px; width:100%">  
+            <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'anterior'" id="btnRegresar">Regresar</a> 
+            <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'limpiar',disabled:false" id="btnLimpiar" >Limpiar</a>                  
+            <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'icon-save',disabled:false" id="btnGuardar" >Guardar</a>                                                        
          </div>        
-          <div class="flex flex-col self-center px-2 sm:px-6 md:px-4 lg:px-2 py-2 rounded-md border-2 border-blue-200 ">                     
-                    <div class="flex flex-col mb-1">
+          <div class="flex flex-col self-center px-2 py-2 w-8/12  rounded-md ">                     
+                    <div class="flex flex-col mb-1 ">
                         <label class="text-left text-lg text-red-900">Empleado</label>   
-                        <div class="flex flex-row w-full">  
+                        <div class="flex flex-row ">  
                            <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtempleado"  data-options="required:true"/>                                              
                             <div class="flex flex-row w-full px-4 space-x-2 ">        
                                 <a id="btnBuscar" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:false">Buscar</a>            
@@ -43,11 +44,11 @@
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-red-900">Paterno</label>                    
                             <input class="easyui-textbox" style="width:100%" id="txtpaterno"  data-options="readonly:true"/>                   
+                        </div>                       
+                         <div class="flex flex-col mb-1 w-1/2 ">
+                            <label class="text-left text-lg text-red-900">Materno</label>                                                 
+                            <input class="easyui-textbox" style="width:100%; text-align:left"  id="txtmaterno" data-options="readonly:true"/>                                               
                         </div>
-                        <div class="flex flex-col mb-1 w-1/2">
-                            <label class="text-left text-lg text-red-900">Materno</label>                    
-                            <input class="easyui-textbox" style="width:100%" id="txtmaterno"  data-options="readonly:true"/>                   
-                        </div>                   
                     </div>
                     <div class="flex flex-col mb-1 ">
                         <label class="text-left text-lg text-red-900">Nombres</label>                    
@@ -124,13 +125,16 @@
                          </div>
                     </div>                                  
                    
-           </div>                 
-     </div>
+           </div>            
+        </div>
+    </div>
      <div class="easyui-dialog flex flex-col items-center space-y-2" id="win" title="Permisos" closed="true" style="padding:2px;">
-         <div class="flex flex-row space-x-2 justify-center items-center">
-             <asp:Label ID="Label11"  CssClass="LetraChicaNegrita" runat="server" Text="Valor a Buscar:"></asp:Label>
-             <input type="text" value="" class="easyui-textbox" id="txtvalor" style="width:250px"/>
-             <a id="btnBempleado" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">Buscar</a>
+         <div class="flex flex-row space-x-2 w-full justify-center items-center ">           
+             <asp:Label ID="Label11"  CssClass="LetraChicaNegrita" runat="server" Text="Valor a Buscar:"></asp:Label>            
+             <div class="w-2/5">
+               <input type="text" value="" class="easyui-textbox" id="txtvalor" style="width:100%"/>
+             </div>             
+             <a id="btnBempleado" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">Buscar</a>            
          </div>          
          <table class="easyui-datagrid " id="dgempleados" style="width:100%; height:100%;"> 
             <thead>

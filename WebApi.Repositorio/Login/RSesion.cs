@@ -18,10 +18,11 @@ namespace WebApi.Repositorio.RSesion
                 DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Sesion_Iniciar_Sesion '" + obj.Usuario + "','" + obj.Contraseña + "'");
                 if (ds.Tables[0].Rows[0][0].ToString() == "0")
                 {
-                    sesion.Idusuario = Convert.ToInt16(ds.Tables[1].Rows[0]["Id"].ToString());
-                    sesion.Usuario = ds.Tables[1].Rows[0]["Usuario"].ToString();
-                    sesion.Nombres = ds.Tables[1].Rows[0]["Nombre"].ToString();                 
-                  
+                    sesion.Idusuario = Convert.ToInt16(ds.Tables[1].Rows[0][0].ToString());
+                    sesion.Usuario = ds.Tables[1].Rows[0][1].ToString();
+                    sesion.Nombre = ds.Tables[1].Rows[0][2].ToString();
+                    //string Tbljson = MetodosBD.TablasToJson(ds);
+                    //ClsMensaje.Datos = Tbljson;
                     ClsMensaje.Data = sesion;
                 }
                 ClsMensaje.Error = Convert.ToInt32(ds.Tables[0].Rows[0]["Error"].ToString());

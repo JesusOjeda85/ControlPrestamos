@@ -7,28 +7,28 @@ namespace WebApi.Repositorio.Permisos
 {
     public class RPermisos
     {
-        public static ObjMensaje Listar_Permisos_Asignados(DatosUsuario obj)
-        {
-            ObjMensaje msg = new();
-            try
-            {
-                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Permisos_Listar_Permisos_Asignados " + obj.Idusuario);
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    List<Dictionary<string, object>> Tbljson = MetodosBD.convertirDatatableEnJsonString(ds.Tables[0]);
-                    msg.Error = 0;
-                    msg.Mensaje = "";
-                    msg.Data = Tbljson;
-                }
-                ds.Dispose();
-            }
-            catch (Exception ex)
-            {
-                msg.Error = 1;
-                msg.Mensaje = ex.Message.ToString();
-            }
-            return msg;
-        }
+        //public static ObjMensaje Listar_Permisos_Asignados(DatosUsuario obj)
+        //{
+        //    ObjMensaje msg = new();
+        //    try
+        //    {
+        //        DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Permisos_Listar_Permisos_Asignados " + obj.Idusuario);
+        //        if (ds.Tables[0].Rows.Count > 0)
+        //        {
+        //            List<Dictionary<string, object>> Tbljson = MetodosBD.convertirDatatableEnJsonString(ds.Tables[0]);
+        //            msg.Error = 0;
+        //            msg.Mensaje = "";
+        //            msg.Data = Tbljson;
+        //        }
+        //        ds.Dispose();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        msg.Error = 1;
+        //        msg.Mensaje = ex.Message.ToString();
+        //    }
+        //    return msg;
+        //}
 
         public static ObjMensaje Listar_Perfiles()
         {

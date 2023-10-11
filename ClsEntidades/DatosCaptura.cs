@@ -17,8 +17,7 @@ namespace ClsEntidades
         public string Curp { get; set; }
         public string ApPaterno { get; set; }
         public string ApMaterno { get; set; }
-        public string Nombres { get; set; }
-        public string NombreCompleto { get; set; }
+        public string Nombres { get; set; }       
         public string CvePagaduria { get; set; }
         public string DesPagaduria { get; set; }
         public string CveCategoria { get; set; }
@@ -27,6 +26,9 @@ namespace ClsEntidades
         public string DesAdscripcion { get; set; }
         public Int64 ImporteCredito { get; set; }
         public int FkPlazo { get; set; }
+        public int FkTipoPago { get; set; }
+        public int FkBanco { get; set; }
+        public Int64 Cuenta { get; set; }
 
     }
 }

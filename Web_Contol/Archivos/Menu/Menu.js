@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(function () {   
     $('#tt').tabs({
         tabPosition: "top",
         plain: true,
@@ -26,13 +26,53 @@
 
     $('#btnInicio').bind('click', function () { Cerrar(); });
 
-    $('#btnCaptura').bind('click', function () { AgregarTabPadre('#tpcaptura', 'Captura', '../Captura/captura.aspx'); });
+    $('#btnCaptura').bind('click', function () { AgregarTabPadre('#tpcaptura', 'Captura', '../Captura/Conceptos.aspx'); });
     $('#btnConsultas').bind('click', function () { AgregarTabPadre('#tpconsulta', 'Consultas', '../Consulta/Consulta.aspx'); });
     $('#btnReportes').bind('click', function () { AgregarTabPadre('#tpreportes', 'Reportes', '../Reportes/Reportes.aspx'); });
     $('#btnUsuarios').bind('click', function () { AgregarTabPadre('#tpusuarios', 'Usuarios', '../Usuarios/Usuario.aspx'); });
 
 
 });
+$(window).load(function () {
+    CARGAR_PERMISOS();
+});
+function CARGAR_PERMISOS() {
+    $.ajax({
+        type: "POST",
+        url: 'Fun_Menus.aspx/CARGAR_PERMISOS',
+        dataType: "json",
+        async: true,
+        cache: false,
+        contentType: "application/json; charset=utf-8",
+        beforeSend: function () {
+            $('#loading').show();
+        },
+        success: function (data) {
+            var obj = jQuery.parseJSON(data.d[2]);   
+            //var tblperfiles = jQuery.parseJSON(obj[0]);  
+            var tblpermisosmenu = jQuery.parseJSON(obj[1]);
+            var tblmenu = jQuery.parseJSON(obj[2]);
+
+            for (var m = 0; m < tblmenu.length; m++) {
+                $('#' + tblmenu[m].Nombre).hide();
+            }
+
+            if (tblpermisosmenu.length > 0) {               
+                for (var p = 0; p < tblpermisosmenu.length; p++) {
+                    for (var m = 0; m < tblmenu.length; m++) {
+                        if (tblmenu[m].Id == tblpermisosmenu[p].fkMenu)
+                        { $('#' + tblpermisosmenu[p].Nombre).show(); break; }                       
+                    }
+                }
+            }           
+        },
+        error: function (err) {
+            $('#loading').hide(100);
+            $.messager.alert('Error', er.statusText, 'error');
+        },
+        complete: function () { $('#loading').hide(100); }
+    });
+}
 
 function Cerrar() {
     $.messager.confirm('Confirmación', 'Seguro de salir del sistema', function (r) {

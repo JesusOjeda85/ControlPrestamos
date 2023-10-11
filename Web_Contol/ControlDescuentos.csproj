@@ -147,8 +147,11 @@
   <ItemGroup>
     <Content Include="Archivos\Captura\Captura.aspx" />
     <Content Include="Archivos\Captura\Captura.js" />
+    <Content Include="Archivos\Captura\Conceptos.aspx" />
+    <Content Include="Archivos\Captura\Conceptos.js" />
     <Content Include="Archivos\Captura\Fun_Captura.aspx" />
     <Content Include="Archivos\Captura\Listar_Empleados.aspx" />
+    <Content Include="Archivos\Menu\Fun_Menus.aspx" />
     <Content Include="Archivos\Menu\Menu.aspx" />
     <Content Include="Archivos\Menu\Menu.js" />
     <Content Include="Archivos\Usuarios\Fun_Usuarios.aspx" />
@@ -2205,6 +2208,13 @@
     <Compile Include="Archivos\Captura\Captura.aspx.designer.cs">
       <DependentUpon>Captura.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Archivos\Captura\Conceptos.aspx.cs">
+      <DependentUpon>Conceptos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Conceptos.aspx.designer.cs">
+      <DependentUpon>Conceptos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Archivos\Captura\Fun_Captura.aspx.cs">
       <DependentUpon>Fun_Captura.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2218,6 +2228,13 @@
     </Compile>
     <Compile Include="Archivos\Captura\Listar_Empleados.aspx.designer.cs">
       <DependentUpon>Listar_Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Menu\Fun_Menus.aspx.cs">
+      <DependentUpon>Fun_Menus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Menu\Fun_Menus.aspx.designer.cs">
+      <DependentUpon>Fun_Menus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Menu\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>

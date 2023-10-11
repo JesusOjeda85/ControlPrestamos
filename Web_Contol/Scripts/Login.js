@@ -31,6 +31,28 @@ $(document).ready(function () {
    
 });
 
+function IR_PAGINA(url, parametros) {
+    var strpagina = "";
+    if (parametros != "") { strpagina = url + "?" + parametros; } else { strpagina = url; }
+    $.ajax({
+        url: url + "/GetResponse",
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        beforeSend: function () {
+            $('#loading').show();
+        },
+        success: function (data) {
+            if (data.d == true) {
+                window.location = strpagina;
+            }
+        },
+        error: function (a, b, c) {
+            $('#loading').hide(100);
+            $.messager.alert('Error', c, 'error');
+        }
+    });
+}
 
 function Entrar() {
     var data = {
@@ -54,7 +76,7 @@ function Entrar() {
                 $.messager.alert('Error', data.d[1], 'error');
             }
             else {
-                IR_PAGINA('Archivos/MenuInicial/Menu.aspx', '');               
+                IR_PAGINA('../Archivos/Menu/Menu.aspx', '');               
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {

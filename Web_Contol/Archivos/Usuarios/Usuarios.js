@@ -289,6 +289,65 @@ function LISTAR_MENUS() {
     });
 }
 
+/*CARGAR PERMISOS*/
+function CARGAR_PERMISOS_ASIGNADOS() {
+    var data = {
+        objusuario: {
+            Idusuario: idusuario,
+        }
+    }
+    $.ajax({
+        type: "POST",
+        url: 'Fun_Usuarios.aspx/CARGAR_PERMISOS',
+        data: JSON.stringify(data),
+        dataType: "json",
+        async: true,
+        cache: false,
+        contentType: "application/json; charset=utf-8",
+        beforeSend: function () {
+            $('#loading').show();
+        },
+        success: function (data) {
+            var obj = jQuery.parseJSON(data.d[2]);
+
+            var tblconceptos = jQuery.parseJSON(obj[0]);
+            if (tblconceptos.length > 0) {
+                var tri = $('#lstperfil').tree('getRoots');
+                for (var h = 0; h < tri.length; h++) {
+                    var tree = $('#lstperfil').tree('getChildren', tri[h].target);
+                    for (var i = 0; i < tree.length; i++) {
+                        for (var j = 0; j < tblconceptos.length; j++) {
+                            if (tblconceptos[j].fkConcepto == tree[i].nombre) {
+                                $('#lstperfil').tree('check', tree[i].target)
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            var tblmenus = jQuery.parseJSON(obj[1]);
+            if (tblmenus.length > 0) {
+                var tri = $('#lstmenu').tree('getRoots');
+                for (var h = 0; h < tri.length; h++) {
+                    for (var j = 0; j < tblmenus.length; j++) {
+                        if (tblmenus[j].fkMenu == tri[h].id) {
+                            $('#lstmenu').tree('check', tri[h].target)
+                        }
+                    }
+                }
+            }
+
+        },
+        error: function (err) {
+            $('#loading').hide(100);
+            $.messager.alert('Error', er.statusText, 'error');
+        },
+        complete: function () { $('#loading').hide(100); }
+    });
+}
+
+
 function CARGAR_PERMISOS(btnobj) {
     if ($(btnobj).linkbutton('options').disabled) { return false; }
     else {
@@ -359,60 +418,3 @@ function GUARDAR_PERMISOS(btnobj) {
     }
 }
 
-/*CARGAR PERMISOS*/
-function CARGAR_PERMISOS_ASIGNADOS() {
-    var data = {
-        objusuario: {
-            Idusuario: idusuario,           
-        }
-    }
-    $.ajax({
-        type: "POST",
-        url: 'Fun_Usuarios.aspx/CARGAR_PERMISOS',
-        data: JSON.stringify(data),
-        dataType: "json",
-        async: true,
-        cache: false,
-        contentType: "application/json; charset=utf-8",
-        beforeSend: function () {
-            $('#loading').show();
-        },
-        success: function (data) {
-            var obj = jQuery.parseJSON(data.d[2]);
-
-                var tblconceptos = jQuery.parseJSON(obj[0]);
-                if (tblconceptos.length > 0) { 
-                    var tri = $('#lstperfil').tree('getRoots');
-                    for (var h = 0; h < tri.length; h++) {
-                        var tree = $('#lstperfil').tree('getChildren', tri[h].target);
-                        for (var i = 0; i < tree.length; i++) {
-                            for (var j = 0; j < tblconceptos.length; j++) {
-                                if (tblconceptos[j].fkConcepto == tree[i].nombre) {
-                                    $('#lstperfil').tree('check', tree[i].target)
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                var tblmenus = jQuery.parseJSON(obj[1]);
-                if (tblmenus.length > 0) {
-                    var tri = $('#lstmenu').tree('getRoots');
-                    for (var h = 0; h < tri.length; h++) {
-                        for (var j = 0; j < tblmenus.length; j++) {
-                            if (tblmenus[j].fkMenu == tri[h].id) {
-                                $('#lstmenu').tree('check', tri[h].target)
-                            }
-                        }
-                    }
-                }
-           
-        },
-        error: function (err) {
-            $('#loading').hide(100);
-            $.messager.alert('Error', er.statusText, 'error');
-        },
-        complete: function () { $('#loading').hide(100); }
-    });
-}

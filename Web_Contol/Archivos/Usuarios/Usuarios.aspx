@@ -98,10 +98,11 @@
           </div>
      </div>
   </div>
- <div class="w-screen h-screen  justify-center items-center modal" style="display: none;" id="loading">
-        <div class="w-screen h-screen justify-center items-center">
-            <img alt="" src="../../Imagenes/ajax-loader.gif" />
-        </div>
- </div>
+<div class="modal w-screen h-screen items-center" style="display: none;" id="loading" align="center">
+           <div class="center w-screen h-screen items-center"  align="center" >
+              <img alt="" src="../../Imagenes/ajax-loader.gif" />
+           </div> 
+         </div> 
+
 </body>
 </html>

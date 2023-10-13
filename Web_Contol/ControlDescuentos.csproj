@@ -205,8 +205,10 @@
     <Content Include="jqueryEsy\plugins\jquery.tagbox.js" />
     <Content Include="jqueryEsy\plugins\jquery.timepicker.js" />
     <Content Include="jqueryEsy\themes\icons\captura32.png" />
+    <Content Include="jqueryEsy\themes\icons\carga_rojo.png" />
     <Content Include="jqueryEsy\themes\icons\catalogos32.png" />
     <Content Include="jqueryEsy\themes\icons\consulta32.png" />
+    <Content Include="jqueryEsy\themes\icons\descarga_rojo.png" />
     <Content Include="jqueryEsy\themes\icons\diseñador32.png" />
     <Content Include="jqueryEsy\themes\icons\movesp.png" />
     <Content Include="jqueryEsy\themes\icons\penalim.png" />

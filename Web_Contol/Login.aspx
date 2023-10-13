@@ -42,23 +42,22 @@
                     </div>
                 </div>--%>
                 <div class="py-24 mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
-                    <h2 class="text-center text-3xl text-red-700 font-display font-semibold lg:text-left xl:text-3xl
+                    <h2 class="text-center text-3xl text-red-700 font-display lg:text-left xl:text-3xl
                     xl:text-bold">Control de Prestamos</h2>
-                    <div class="mt-12">
-                      
+                    <div class="mt-12">                      
                             <div>
-                                <div class="text-sm font-bold text-red-900 tracking-wide">Usuario</div>
-                                <input id="txtusu" class="w-full text-lg py-2 border-b border-red-800 focus:outline-none focus:border-red-500" type="text" placeholder="Usuario"/>
+                                <div class="text-2xl font-black text-red-900 ">Usuario</div>
+                                <input id="txtusu" class="w-full text-1xl font-black py-2 border-b border-red-800 focus:outline-none focus:border-red-500" type="text" placeholder="Usuario"/>
                             </div>
                             <div class="mt-8">
                                 <div class="flex justify-between items-center">
-                                    <div class="text-sm font-bold text-red-900 tracking-wide">Contraseña</div>                                
+                                    <div class="text-2xl font-black text-red-900 ">Contraseña</div>                                
                                 </div>
-                                <input id="txtpas" class="w-full text-lg py-2 border-b border-red-800 focus:outline-none focus:border-red-500" type="password" placeholder="Contraseña"/>
+                                <input id="txtpas" class="w-full text-1xl font-black py-2 border-b border-red-800 focus:outline-none focus:border-red-500" type="password" placeholder="Contraseña"/>
                             </div>
                             <div class="mt-10">
                                 <button id='btnentrar' class="bg-red-600 text-2xl text-white p-4 w-full rounded-full tracking-wide
-                                font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-red-500
+                                font-black  focus:outline-none focus:shadow-outline hover:bg-red-500
                                 shadow-lg">
                                     Entrar
                                 </button>
@@ -71,10 +70,10 @@
                 <img src="Imagenes/prestamos2.jpg" class="w-full h-full"/>              
             </div>
         </div>
-      <div class="w-screen h-screen  justify-center items-center modal" style="display: none;" id="loading">
-        <div class="w-screen h-screen justify-center items-center">
-            <img alt="" src="../../Imagenes/ajax-loader.gif" />
-        </div>
- </div>
+     <div class="modal w-screen h-screen items-center" style="display: none;" id="loading" align="center">
+           <div class="center w-screen h-screen items-center"  align="center" >
+              <img alt="" src="../../Imagenes/ajax-loader.gif" />
+           </div> 
+         </div> 
     </body>
 </html>

@@ -745,6 +745,14 @@ fmov.icon-blank{
 	background: url('icons/catalogos32.png') no-repeat center center;
 }
 
+.carga32 {
+	background: url('icons/carga_rojo.png') no-repeat center center;
+}
+.descarga32 {
+	background: url('icons/descarga_rojo.png') no-repeat center center;
+}
+
+
 
 
 

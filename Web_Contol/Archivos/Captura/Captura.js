@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     $('#btnLimpiar').bind('click', function () { LIMPIAR_CAPTURA(); });
 });
-});
+
 $(window).load(function () {  
     LISTAR_PLAZOS();
     LISTAR_BANCOS();
@@ -149,7 +149,8 @@ function LIMPIAR_CAPTURA() {
     $('#cboplazos').combobox('setValue', 'x');
     $('#cbotipopago').combobox('setValue','x');
     $('#cbobanco').combobox('setValue', 'x');
-    $('#txtcuenta').numberbox('setValue','');
+    $('#txtcuenta').numberbox('setValue', '');
+    $('#txtvalor').textbox('setValue', '');
 }
 
 function CARGAR_EMPLEADOS(btnobj,filtro) {

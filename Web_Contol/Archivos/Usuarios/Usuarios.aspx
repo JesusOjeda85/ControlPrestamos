@@ -12,7 +12,7 @@
  <link href="../../tailwinds/static/dist/tailwind.css" rel="stylesheet" />
  <script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>
  <script type="text/javascript" src="../../scripts/demos.js"></script>
-
+    <link href="../../Styles/loader.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="../../jqueryesy/themes/metro-red/easyui.css"/>
 <link rel="stylesheet" type="text/css" href="../../jqueryesy/themes/icon.css"/>	
 
@@ -98,7 +98,7 @@
           </div>
      </div>
   </div>
- <div class="modal w-screen h-screen" style="display: none;" id="loading">
+ <div class="w-screen h-screen  justify-center items-center modal" style="display: none;" id="loading">
         <div class="w-screen h-screen justify-center items-center">
             <img alt="" src="../../Imagenes/ajax-loader.gif" />
         </div>

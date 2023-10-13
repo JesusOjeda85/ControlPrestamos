@@ -10,6 +10,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>    
  <link href="../../tailwinds/static/dist/tailwind.css" rel="stylesheet" />
     <link href="../../Styles/tema.css" rel="stylesheet" />
+    <link href="../../Styles/loader.css" rel="stylesheet" />
  <script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>
  <script type="text/javascript" src="../../scripts/demos.js"></script>
 
@@ -32,10 +33,9 @@
      </div>
  </div>
     </div> 
-     <div class="modal" style="display: none;" id="loading">
+ <div class="w-screen h-screen  justify-center items-center modal" style="display: none;" id="loading">
         <div class="w-screen h-screen justify-center items-center">
             <img alt="" src="../../Imagenes/ajax-loader.gif" />
-         </div>       
-   </div>
-</body>
+        </div>
+ </div></body>
 </html>

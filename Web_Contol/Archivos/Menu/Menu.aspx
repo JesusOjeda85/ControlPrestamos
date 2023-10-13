@@ -12,7 +12,7 @@
      <link href="../../tailwinds/static/dist/tailwind.css" rel="stylesheet" />
      <script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>
      <script type="text/javascript" src="../../scripts/demos.js"></script>
-    
+    <link href="../../Styles/Login.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../../jqueryesy/themes/metro-red/easyui.css"/>	
     <link href="../../jqueryEsy/themes/icons.css" rel="stylesheet" />
 
@@ -41,6 +41,11 @@
          <div class="h-full w-full border-2 border-red-200 bg-orange-50 rounded item-center" style="padding:2px; overflow:hidden">
               <div id="tt" class="easyui-tabs" style="width: 100%;  height:100%; display:none;"></div>  
          </div>            
-     </div>    
+     </div>   
+     <div class="w-screen h-screen  justify-center items-center modal" style="display: none;" id="loading">
+        <div class="w-screen h-screen justify-center items-center">
+            <img alt="" src="../../Imagenes/ajax-loader.gif" />
+        </div>
+ </div>
 </body>
 </html>

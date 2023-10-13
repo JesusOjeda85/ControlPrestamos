@@ -11,6 +11,8 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>    
  <link href="../../tailwinds/static/dist/tailwind.css" rel="stylesheet" />
     <link href="../../Styles/tema.css" rel="stylesheet" />
+    <link href="../../Styles/loader.css" rel="stylesheet" />
+
  <script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>
  <script type="text/javascript" src="../../scripts/demos.js"></script>
 
@@ -20,7 +22,7 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Captura.js?v0.2"></script>
+    <script src="Captura.js?v0.1"></script>
 </head>
 <body>   
      <div class="bg-neutral-100 w-screen h-screen flex flex-col bg-yellow-50 " align="Center">             
@@ -154,7 +156,7 @@
             </thead>
         </table>   
      </div>
-     <div class="modal" style="display: none;" id="loading">
+     <div class="w-screen h-screen  justify-center items-center modal" style="display: none;" id="loading">
             <div class="w-screen h-screen justify-center items-center">
                 <img alt="" src="../../Imagenes/ajax-loader.gif" />
             </div>

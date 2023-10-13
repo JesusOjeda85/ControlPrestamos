@@ -19,54 +19,15 @@ $(document).ready(function () {
     $('#btnGuardar').bind('click', function () { GUARDAR_CAPTURA('#btnGuardar'); });
 
     $('#btnRegresar').bind('click', function () { IR_PAGINA('Conceptos.aspx', ''); });
+
+    $('#btnLimpiar').bind('click', function () { LIMPIAR_CAPTURA(); });
+});
 });
 $(window).load(function () {  
-     LISTAR_PLAZOS();
+    LISTAR_PLAZOS();
     LISTAR_BANCOS();
-    LISTAR_TIPOPAGO();
-   // CARGAR_PERMISOS();
+    LISTAR_TIPOPAGO();   
 });
-function CARGAR_PERMISOS() {
-    $.ajax({
-        type: "POST",
-        url: 'Fun_Menus.aspx/CARGAR_PERMISOS',
-        dataType: "json",
-        async: true,
-        cache: false,
-        contentType: "application/json; charset=utf-8",
-        beforeSend: function () {
-            $('#loading').show();
-        },
-        success: function (data) {
-            var obj = jQuery.parseJSON(data.d[2]);
-            //var tblperfiles = jQuery.parseJSON(obj[0]);
-            var tblpermisosmenu = jQuery.parseJSON(obj[1]);
-            var tblmenu = jQuery.parseJSON(obj[2]);
-           
-            if (data.d[4].Administrador != True)
-            { 
-            for (var m = 0; m < tblmenu.length; m++) {
-                $('#' + tblmenu[m].Nombre).hide();
-            }
-
-            if (tblpermisosmenu.length > 0) {
-                for (var p = 0; p < tblpermisosmenu.length; p++) {
-                    for (var m = 0; m < tblmenu.length; m++) {
-                        if (tblmenu[m].Id == tblpermisosmenu[p].fkMenu) { $('#' + tblpermisosmenu[p].Nombre).show(); break; }
-                    }
-                }
-            }
-            }
-        },
-        error: function (err) {
-            $('#loading').hide(100);
-            $.messager.alert('Error', er.statusText, 'error');
-        },
-        complete: function () { $('#loading').hide(100); }
-    });
-}
-
-
 function LISTAR_PLAZOS() {
     var data = {
         objorganismo: {
@@ -170,6 +131,26 @@ function LISTAR_TIPOPAGO() {
     });
 }
 
+function LIMPIAR_CAPTURA() {
+    $('#txtempleado').textbox('setValue', '');
+    $('#txtfechasolicitud').datebox('setValue', '');
+    $('#txtrfc').textbox('setValue', '');
+    $('#txtcurp').textbox('setValue', '');
+    $('#txtpaterno').textbox('setValue', '');
+    $('#txtmaterno').textbox('setValue', '');
+    $('#txtnombres').textbox('setValue', '');
+    $('#txtcvecat').textbox('setValue', '');
+    $('#txtdescat').textbox('setValue', '');
+    $('#txtcveads').textbox('setValue', '');
+    $('#txtdesads').textbox('setValue', '');
+    $('#txtcvepag').textbox('setValue', '');
+    $('#txtdespag').textbox('setValue', '');
+    $('#txtimporte').numberbox('setValue','');
+    $('#cboplazos').combobox('setValue', 'x');
+    $('#cbotipopago').combobox('setValue','x');
+    $('#cbobanco').combobox('setValue', 'x');
+    $('#txtcuenta').numberbox('setValue','');
+}
 
 function CARGAR_EMPLEADOS(btnobj,filtro) {
     if ($(btnobj).linkbutton('options').disabled) { return false; }
@@ -250,6 +231,8 @@ function GUARDAR_CAPTURA(btnobj) {
                         type: "POST",
                         url: "Fun_Captura.aspx/GUARDAR_CAPTURA",
                         data: JSON.stringify(data),
+                        async: true,
+                        cache: false,
                         dataType: "json",
                         contentType: "application/json; charset=utf-8",
                         beforeSend: function () {

@@ -15,6 +15,7 @@
 
      <link href="jqueryEsy/themes/icon.css" rel="stylesheet" />
      <link href="jqueryEsy/themes/metro-red/easyui.css" rel="stylesheet" />   
+    <link href="Styles/loader.css" rel="stylesheet" />
      <script type="text/javascript" src="jqueryesy/jquery.min.js"></script>
 	<script type="text/javascript" src="jqueryesy/jquery.easyui.min.js"></script>      
     <script src="Scripts/Login.js?0.1"></script>
@@ -70,5 +71,10 @@
                 <img src="Imagenes/prestamos2.jpg" class="w-full h-full"/>              
             </div>
         </div>
+      <div class="w-screen h-screen  justify-center items-center modal" style="display: none;" id="loading">
+        <div class="w-screen h-screen justify-center items-center">
+            <img alt="" src="../../Imagenes/ajax-loader.gif" />
+        </div>
+ </div>
     </body>
 </html>

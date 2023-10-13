@@ -1,4 +1,6 @@
 ﻿using ClsObjetos;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using WebApi.BaseDatos;
 using WebApi.Entidades;

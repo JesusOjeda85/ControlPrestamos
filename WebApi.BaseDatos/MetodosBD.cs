@@ -73,10 +73,20 @@ namespace WebApi.BaseDatos
             using (SqlConnection oConexion = new SqlConnection(con.CadenaSql()))
             {
                 Adaptador = new SqlDataAdapter(proc, con.CadenaSql());
+                Adaptador.SelectCommand.CommandTimeout = 600;
                 Adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                foreach (SqlParameter par in parametros)
+                
+                if (parametros != null)
                 {
-                    Adaptador.SelectCommand.Parameters.Add(par);
+                    Adaptador.SelectCommand.Parameters.AddRange(parametros.ToArray());
+
+                    //int i = 0;
+                    //foreach (SqlParameter par in parametros)
+                    //{                       
+                    //    // Acá hay que tener cuidado con el orden y la cantidad de parámetros.
+                    //    par.Value = parametros.ElementAt(i);
+                    //    i++;
+                    //}
                 }
                 try
                 {
@@ -93,6 +103,7 @@ namespace WebApi.BaseDatos
                 }
             }
         }
+
 
         public static string DataTableToJsonObj(DataTable dt)
         {

@@ -12,12 +12,12 @@ namespace ControlDescuentos.Archivos.Captura
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
 
-            //if (objusuario == null)
-            //{
-            //    Response.Redirect("../../Login.aspx");
-            //}
+            if (objusuario == null)
+            {
+                Response.Redirect("../../Login.aspx");
+            }
         }
         [System.Web.Services.WebMethod]
         public static bool GetResponse()

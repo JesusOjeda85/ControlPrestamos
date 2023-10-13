@@ -188,8 +188,9 @@
     <Content Include="Imagenes\botones\menu.png" />
     <Content Include="Imagenes\botones\usuario.png" />
     <Content Include="Imagenes\escudo.png" />
-    <Content Include="Imagenes\LETRAGRAMA.png" />
-    <Content Include="Imagenes\wave.png" />
+    <Content Include="Imagenes\LETRAGRAMA1.png" />
+    <Content Include="Imagenes\prestamos.png" />
+    <Content Include="Imagenes\prestamos2.jpg" />
     <Content Include="jqueryEsy\plugins\datagrid-export.js" />
     <Content Include="jqueryEsy\plugins\datagrid-groupview.js" />
     <Content Include="jqueryEsy\plugins\jquery.checkbox.js" />
@@ -1184,9 +1185,6 @@
     <Content Include="Imagenes\botones\usuario1.png" />
     <Content Include="Imagenes\botones\usuario2.png" />
     <Content Include="Imagenes\botones\vistoBueno.png" />
-    <Content Include="Imagenes\FONDO1.jpg" />
-    <Content Include="Imagenes\LOGO1.png" />
-    <Content Include="Imagenes\LOGO2.png" />
     <Content Include="Imagenes\logos\LOGO1.png" />
     <Content Include="Imagenes\logos\LOGO2.png" />
     <Content Include="Imagenes\MenuMetro\afectacion.png" />

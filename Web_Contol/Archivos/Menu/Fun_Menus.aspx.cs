@@ -22,7 +22,7 @@ namespace ControlDescuentos.Archivos.Menu
         [ScriptMethod]
         public static string[] CARGAR_PERMISOS()
         {
-            string[] result = { "", "", "" };
+            string[] result = { "", "", "","","" };
             SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
             string jsonobj = JsonConvert.SerializeObject(objusuario);
             string respuesta = Llamar_Api.PostItem("Permisos/Cargar_Permisos", jsonobj);
@@ -30,6 +30,8 @@ namespace ControlDescuentos.Archivos.Menu
             result[0] = msg.Error.ToString();
             result[1] = msg.Mensaje;
             result[2] = JsonConvert.SerializeObject(msg.Data);
+            result[3] = objusuario.Nombre.ToString();
+            result[4] = objusuario.Administrador.ToString();
             return result;
         }
     }

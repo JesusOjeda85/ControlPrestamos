@@ -24,7 +24,7 @@ $(window).load(function () {
      LISTAR_PLAZOS();
     LISTAR_BANCOS();
     LISTAR_TIPOPAGO();
-    CARGAR_PERMISOS();
+   // CARGAR_PERMISOS();
 });
 function CARGAR_PERMISOS() {
     $.ajax({
@@ -39,21 +39,24 @@ function CARGAR_PERMISOS() {
         },
         success: function (data) {
             var obj = jQuery.parseJSON(data.d[2]);
-            var tblperfiles = jQuery.parseJSON(obj[0]);  
-            //var tblpermisosmenu = jQuery.parseJSON(obj[1]);
-            //var tblmenu = jQuery.parseJSON(obj[2]);
+            //var tblperfiles = jQuery.parseJSON(obj[0]);
+            var tblpermisosmenu = jQuery.parseJSON(obj[1]);
+            var tblmenu = jQuery.parseJSON(obj[2]);
+           
+            if (data.d[4].Administrador != True)
+            { 
+            for (var m = 0; m < tblmenu.length; m++) {
+                $('#' + tblmenu[m].Nombre).hide();
+            }
 
-            //for (var m = 0; m < tblmenu.length; m++) {
-            //    $('#' + tblmenu[m].Nombre).hide();
-            //}
-
-            //if (tblpermisosmenu.length > 0) {
-            //    for (var p = 0; p < tblpermisosmenu.length; p++) {
-            //        for (var m = 0; m < tblmenu.length; m++) {
-            //            if (tblmenu[m].Id == tblpermisosmenu[p].fkMenu) { $('#' + tblpermisosmenu[p].Nombre).show(); break; }
-            //        }
-            //    }
-            //}
+            if (tblpermisosmenu.length > 0) {
+                for (var p = 0; p < tblpermisosmenu.length; p++) {
+                    for (var m = 0; m < tblmenu.length; m++) {
+                        if (tblmenu[m].Id == tblpermisosmenu[p].fkMenu) { $('#' + tblpermisosmenu[p].Nombre).show(); break; }
+                    }
+                }
+            }
+            }
         },
         error: function (err) {
             $('#loading').hide(100);
@@ -221,11 +224,10 @@ function GUARDAR_CAPTURA(btnobj) {
                 if ($('#cbobanco').combobox('getValue') == "x") { $.messager.alert('Error', "Falta Seleccionar el Banco", 'error'); }
                 else {
                     var data = {
-                        Obj: {
-                            IdUsuario: IdUsuario,
-                            FkOrganismo: FkOrganismo,
+                        Obj: {                           
+                            FkOrganismo: fkorg,
                             Empleado: $('#txtempleado').textbox('getValue'),
-                            FechaSolicitud: $('#txtempleado').datebox('getValue'),
+                            FechaSolicitud: $('#txtfechasolicitud').datebox('getValue'),
                             Rfc: $('#txtrfc').textbox('getValue'),
                             Curp: $('#txtcurp').textbox('getValue'),
                             ApPaterno: $('#txtpaterno').textbox('getValue'),
@@ -246,7 +248,7 @@ function GUARDAR_CAPTURA(btnobj) {
                     }
                     $.ajax({
                         type: "POST",
-                        url: "Fun_Usuarios.aspx/GUARDAR_CAPTURA",
+                        url: "Fun_Captura.aspx/GUARDAR_CAPTURA",
                         data: JSON.stringify(data),
                         dataType: "json",
                         contentType: "application/json; charset=utf-8",
@@ -261,7 +263,7 @@ function GUARDAR_CAPTURA(btnobj) {
                         },
                         error: function (er) {
                             $('#loading').hide();
-                            $.messager.alert('Error', er.statusText, 'error');
+                            $.messager.alert('Error', er.responseJSON.Message, 'error');
                         },
                         complete: function () {
                             $('#loading').hide(100);

@@ -1,5 +1,24 @@
 ﻿var idusuario = 0;
 $(document).ready(function () {
+    $.extend($.fn.tree.methods, {
+        removeAll: function (jq) {
+            return jq.each(function () {
+                var roots = $(this).tree('getRoots');
+                for (var i = roots.length - 1; i >= 0; i--) {
+                    $(this).tree('remove', roots[i].target);
+                }
+            })
+        },
+        unselect: function (jq, target) {
+            return jq.each(function () {
+                var opts = $(this).tree('options');
+                $(target).removeClass('tree-node-selected');
+                if (opts.onUnselect) {
+                    opts.onUnselect.call(this, $(this).tree('getNode', target));
+                }
+            });
+        }
+    })
     DESHABILITAR();
     LISTAR_USUARIOS();
 
@@ -256,6 +275,7 @@ function LISTAR_PERFILES() {
                     }
                 }
             });
+            CARGAR_PERMISOS_ASIGNADOS('#lstperfil', 'C');
         },
         error: function (err) {
             $('#loading').hide(100);
@@ -277,9 +297,10 @@ function LISTAR_MENUS() {
         },
         success: function (data) {
             var obj = jQuery.parseJSON(data.d[2]);
-            $('#lstmenu').tree({
+            $('#lstmenus').tree({
                 data: obj
             });
+            CARGAR_PERMISOS_ASIGNADOS('#lstmenus', 'M');
         },
         error: function (err) {
             $('#loading').hide(100);
@@ -290,7 +311,7 @@ function LISTAR_MENUS() {
 }
 
 /*CARGAR PERMISOS*/
-function CARGAR_PERMISOS_ASIGNADOS() {
+function CARGAR_PERMISOS_ASIGNADOS(objtree,modulo) {
     var data = {
         objusuario: {
             Idusuario: idusuario,
@@ -309,30 +330,31 @@ function CARGAR_PERMISOS_ASIGNADOS() {
         },
         success: function (data) {
             var obj = jQuery.parseJSON(data.d[2]);
-
-            var tblconceptos = jQuery.parseJSON(obj[0]);
-            if (tblconceptos.length > 0) {
-                var tri = $('#lstperfil').tree('getRoots');
-                for (var h = 0; h < tri.length; h++) {
-                    var tree = $('#lstperfil').tree('getChildren', tri[h].target);
-                    for (var i = 0; i < tree.length; i++) {
-                        for (var j = 0; j < tblconceptos.length; j++) {
-                            if (tblconceptos[j].fkConcepto == tree[i].nombre) {
-                                $('#lstperfil').tree('check', tree[i].target)
-                                break;
+                      
+            var tri = $(objtree).tree('getRoots');           
+            if (modulo == 'C') {
+                var tblconceptos = jQuery.parseJSON(obj[0]);
+                if (tblconceptos.length > 0) {
+                    for (var h = 0; h < tri.length; h++) {
+                        var tree = $(objtree).tree('getChildren', tri[h].target);
+                        for (var i = 0; i < tree.length; i++) {
+                            for (var j = 0; j < tblconceptos.length; j++) {
+                                if (tblconceptos[j].fkConcepto == tree[i].nombre) {
+                                    $(objtree).tree('check', tree[i].target)                                    
+                                }
                             }
                         }
                     }
                 }
             }
-
-            var tblmenus = jQuery.parseJSON(obj[1]);
-            if (tblmenus.length > 0) {
-                var tri = $('#lstmenu').tree('getRoots');
-                for (var h = 0; h < tri.length; h++) {
-                    for (var j = 0; j < tblmenus.length; j++) {
-                        if (tblmenus[j].fkMenu == tri[h].id) {
-                            $('#lstmenu').tree('check', tri[h].target)
+            if (modulo == 'M') {
+                var tblmenus = jQuery.parseJSON(obj[1]);
+                if (tblmenus.length > 0) {
+                    for (var h = 0; h < tri.length; h++) {
+                        for (var j = 0; j < tblmenus.length; j++) {
+                            if (tblmenus[j].fkMenu == tri[h].id) {
+                                $(objtree).tree('check', tri[h].target)
+                            }
                         }
                     }
                 }
@@ -352,11 +374,9 @@ function CARGAR_PERMISOS(btnobj) {
     if ($(btnobj).linkbutton('options').disabled) { return false; }
     else {
 
-        LISTAR_PERFILES();
+        LISTAR_PERFILES();      
         LISTAR_MENUS();
-
-        CARGAR_PERMISOS_ASIGNADOS();
-
+               
         $('#loading').hide(100);
         //windows_porcentaje("#win", 90, 60, false, false, false, "Permisos");  
         windows("#win","90%","550px",false,"Permisos");

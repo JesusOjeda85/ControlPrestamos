@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 
 using ClsObjetos;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Dto;
 using WebApi.Entidades;

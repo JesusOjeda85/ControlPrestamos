@@ -79,6 +79,8 @@ namespace ControlDescuentos.Archivos.Captura
         public static string[] GUARDAR_CAPTURA(DatosCaptura Obj)
         {
             string[] result = { "", "", "" };
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            Obj.IdUsuario = objusuario.Idusuario;
             string jsonobj = JsonConvert.SerializeObject(Obj);
             string respuesta = Llamar_Api.PostItem("Captura/Guardar_Captura", jsonobj);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);

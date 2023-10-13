@@ -20,11 +20,10 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Captura.js?v0.3"></script>
+    <script src="Captura.js?v0.2"></script>
 </head>
 <body>   
-     <div class="w-screen h-screen flex flex-col bg-yellow-50 " align="Center">      
-        <div class="w-screen h-screen " id="dcaptura" >
+     <div class="bg-neutral-100 w-screen h-screen flex flex-col bg-yellow-50 " align="Center">             
           <div class="easyui-panel mb-3" style="padding:2px; width:100%">  
             <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'anterior'" id="btnRegresar">Regresar</a> 
             <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'limpiar',disabled:false" id="btnLimpiar" >Limpiar</a>                  
@@ -107,27 +106,26 @@
                     <div class="flex flax-row space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-red-900">Tipo Pago</label>                    
-                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cbotipopago" precision="2" data-options="required:true"/>                   
+                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cbotipopago"  data-options="required:true"/>                   
                         </div>
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-red-900">Banco</label>                    
-                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cbobanco" precision="2" data-options="required:true"/>                   
+                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cbobanco" data-options="required:true"/>                   
                         </div>
                     </div>   
                     <div class="flex flax-row space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-red-900">Importe Solicidado</label>                    
-                            <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtimporte" precision="2" data-options="required:true"/>                   
+                            <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtimporte" precision="0" data-options="required:true"/>                   
                         </div>
                          <div class="flex flex-col mb-1 w-1/2 ">
                              <label class="text-left text-lg text-red-900">Cuenta Bancaria</label>                    
-                             <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtcuenta" precision="2" data-options="required:true"/>                   
+                             <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtcuenta"  data-options="required:true"/>                   
                          </div>
                     </div>                                  
                    
            </div>            
-        </div>
-    </div>
+        </div>   
      <div class="easyui-dialog flex flex-col items-center space-y-2" id="win" title="Permisos" closed="true" style="padding:2px;">
          <div class="flex flex-row space-x-2 w-full justify-center items-center ">           
              <asp:Label ID="Label11"  CssClass="LetraChicaNegrita" runat="server" Text="Valor a Buscar:"></asp:Label>            

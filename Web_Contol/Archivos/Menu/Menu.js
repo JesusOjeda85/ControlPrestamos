@@ -29,7 +29,7 @@
     $('#btnCaptura').bind('click', function () { AgregarTabPadre('#tpcaptura', 'Captura', '../Captura/Conceptos.aspx'); });
     $('#btnConsultas').bind('click', function () { AgregarTabPadre('#tpconsulta', 'Consultas', '../Consulta/Consulta.aspx'); });
     $('#btnReportes').bind('click', function () { AgregarTabPadre('#tpreportes', 'Reportes', '../Reportes/Reportes.aspx'); });
-    $('#btnUsuarios').bind('click', function () { AgregarTabPadre('#tpusuarios', 'Usuarios', '../Usuarios/Usuario.aspx'); });
+    $('#btnUsuarios').bind('click', function () { AgregarTabPadre('#tpusuarios', 'Usuarios', '../Usuarios/Usuarios.aspx'); });
 
 
 });
@@ -53,18 +53,20 @@ function CARGAR_PERMISOS() {
             var tblpermisosmenu = jQuery.parseJSON(obj[1]);
             var tblmenu = jQuery.parseJSON(obj[2]);
 
-            for (var m = 0; m < tblmenu.length; m++) {
-                $('#' + tblmenu[m].Nombre).hide();
-            }
+            if (data.d[4] == "False") {
+                for (var m = 0; m < tblmenu.length; m++) {
+                    $('#' + tblmenu[m].Nombre).hide();
+                }
 
-            if (tblpermisosmenu.length > 0) {               
-                for (var p = 0; p < tblpermisosmenu.length; p++) {
-                    for (var m = 0; m < tblmenu.length; m++) {
-                        if (tblmenu[m].Id == tblpermisosmenu[p].fkMenu)
-                        { $('#' + tblpermisosmenu[p].Nombre).show(); break; }                       
+                if (tblpermisosmenu.length > 0) {
+                    for (var p = 0; p < tblpermisosmenu.length; p++) {
+                        for (var m = 0; m < tblmenu.length; m++) {
+                            if (tblmenu[m].Id == tblpermisosmenu[p].fkMenu) { $('#' + tblpermisosmenu[p].Nombre).show(); break; }
+                        }
                     }
                 }
-            }           
+            }
+            document.getElementById('lblusuario').innerHTML = data.d[3];
         },
         error: function (err) {
             $('#loading').hide(100);

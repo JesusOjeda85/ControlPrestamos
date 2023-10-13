@@ -28,7 +28,7 @@ namespace ClsEntidades
         public int FkPlazo { get; set; }
         public int FkTipoPago { get; set; }
         public int FkBanco { get; set; }
-        public Int64 Cuenta { get; set; }
+        public string Cuenta { get; set; }
 
     }
 }

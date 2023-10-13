@@ -22,7 +22,7 @@
     <script src="Conceptos.js"></script>
 </head>
 <body>
-    <div class="w-screen h-screen flex flex-col bg-yellow-50 " align="Center">
+    <div class="bg-neutral-100 w-screen h-screen flex flex-col bg-yellow-50 " align="Center">
       <div class="flex flex-col self-center px-2 py-2 w-8/12  rounded-md ">    
         <div class="flex flex-col items-center overflow-hidden h-full" style="padding:2px;">
            <input class="easyui-textbox" style="width:100%" id="txtfconcepto" data-options="prompt:'Buscar Concepto'"/>

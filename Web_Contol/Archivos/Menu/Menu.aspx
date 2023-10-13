@@ -18,16 +18,16 @@
 
      <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
      <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
-    <script src="Menu.js?v0.1"></script>
+    <script src="Menu.js?v0.3"></script>
 </head>
 <body>    
-     <div class="w-screen h-screen flex flex-col">
+     <div class="bg-neutral-100 w-screen h-screen flex flex-col" style="overflow:hidden">
          <div class="h-12 border-2 bg-red-800 rounded flex flex-row">
-             <div class="w-1/2">
-                  <asp:Image ID="Image2" runat="server" Height="100%" ImageUrl="~/IMAGENES/LETRAGRAMA.png" Width="300px" />
+             <div class="w-1/2"  style="padding:4px;">               
+                 <asp:Label id="Label1" class="text-2xl font-mono font-semibold text-white"  runat="server" Text="Control de Prestamos"></asp:Label>  
              </div>
              <div class="w-1/2" align="right" style="padding:4px;">                 
-                <asp:Label id="lblusuario" class="text-lg font-semibold text-white"  runat="server" Text=""></asp:Label>                
+                <asp:Label id="lblusuario" class="text-2xl font-mono font-semibold text-white"  runat="server" Text=""></asp:Label>                
              </div>
          </div>
          <div class="easyui-panel rounded" style="width:100%;  padding:2px;">            
@@ -38,7 +38,7 @@
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Cat32'" style="width:80px;"  id="btnCatalogos">Catálogos</a>    
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Usu32'" style="width:80px;"  id="btnUsuarios">Usuarios</a>    
          </div>
-         <div class="h-full border-2 border-red-200 bg-orange-50 rounded">
+         <div class="h-full w-full border-2 border-red-200 bg-orange-50 rounded item-center" style="padding:2px; overflow:hidden">
               <div id="tt" class="easyui-tabs" style="width: 100%;  height:100%; display:none;"></div>  
          </div>            
      </div>    

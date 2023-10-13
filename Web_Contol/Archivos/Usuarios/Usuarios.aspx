@@ -19,7 +19,7 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Usuarios.js?v0.0"></script>
+    <script src="Usuarios.js?v0.2"></script>
 </head>
 <body>
   <div class="w-screen h-screen" align="Center">
@@ -92,7 +92,7 @@
               <div class="flex flex-col items-center overflow-hidden h-full" style="padding:2px;">
                   <input class="easyui-textbox" style="width:100%" id="txtfilmenu" data-options="prompt:'Buscar Menu'"/>
                   <div class="text-left" style="width:100%;  height:96%; padding:2px; overflow:auto;" >
-                        <ul class="easyui-tree" id="lstmenu" style="width:100%; height:100%;" data-options="animate:true,lines:false,checkbox:true"></ul>                        
+                        <ul class="easyui-tree" id="lstmenus" style="width:100%; height:100%;" data-options="animate:true,lines:false,checkbox:true"></ul>                        
                   </div>
               </div>
           </div>

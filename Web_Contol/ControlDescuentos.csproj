@@ -151,6 +151,10 @@
     <Content Include="Archivos\Captura\Conceptos.js" />
     <Content Include="Archivos\Captura\Fun_Captura.aspx" />
     <Content Include="Archivos\Captura\Listar_Empleados.aspx" />
+    <Content Include="Archivos\CargayDescarga\CargarArchivos.aspx" />
+    <Content Include="Archivos\CargayDescarga\CargarArchivos.js" />
+    <Content Include="Archivos\CargayDescarga\Lista_Perfiles.js" />
+    <Content Include="Archivos\CargayDescarga\Lista_Perfiles.aspx" />
     <Content Include="Archivos\Menu\Fun_Menus.aspx" />
     <Content Include="Archivos\Menu\Menu.aspx" />
     <Content Include="Archivos\Menu\Menu.js" />
@@ -205,18 +209,29 @@
     <Content Include="jqueryEsy\plugins\jquery.tagbox.js" />
     <Content Include="jqueryEsy\plugins\jquery.timepicker.js" />
     <Content Include="jqueryEsy\themes\icons\captura32.png" />
-    <Content Include="jqueryEsy\themes\icons\carga_rojo.png" />
     <Content Include="jqueryEsy\themes\icons\catalogos32.png" />
     <Content Include="jqueryEsy\themes\icons\consulta32.png" />
-    <Content Include="jqueryEsy\themes\icons\descarga_rojo.png" />
     <Content Include="jqueryEsy\themes\icons\diseñador32.png" />
     <Content Include="jqueryEsy\themes\icons\movesp.png" />
     <Content Include="jqueryEsy\themes\icons\penalim.png" />
     <Content Include="jqueryEsy\themes\icons\personaliza.jpg" />
     <Content Include="jqueryEsy\themes\icons\personalizar.png" />
     <Content Include="jqueryEsy\themes\icons\reportes32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\Accesos32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\captura32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\carga32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\catalogos32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\cerrar32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\configuracion2.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\consulta32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\descarga32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\inicio32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\menu32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\operacion32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\recepcion32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\reportes32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\usuario32.png" />
     <Content Include="jqueryEsy\themes\icons\tooltip.png" />
-    <Content Include="jqueryEsy\themes\icons\usuario32.png" />
     <Content Include="jqueryEsy\themes\icons\usuariospermisos32.png" />
     <Content Include="jqueryEsy\themes\material-blue\accordion.css" />
     <Content Include="jqueryEsy\themes\material-blue\calendar.css" />
@@ -994,6 +1009,14 @@
     <Content Include="Scripts\js-Imagenes\lightgallery.js" />
     <Content Include="Scripts\js-Imagenes\lightgallery.min.js" />
     <Content Include="Scripts\js-Imagenes\picturefill.min.js" />
+    <Content Include="Scripts\sheetjs\shim.js" />
+    <Content Include="Scripts\sheetjs\xlsx.flow.js" />
+    <Content Include="Scripts\sheetjs\xlsx.full.min.js" />
+    <Content Include="Scripts\sheetjs\xlsx.js" />
+    <Content Include="Scripts\sheetjs\xlsx.mini.flow.js" />
+    <Content Include="Scripts\sheetjs\xlsx.mini.js" />
+    <Content Include="Scripts\sheetjs\xlsxworker.flow.js" />
+    <Content Include="Scripts\sheetjs\xlsxworker.js" />
     <Content Include="Styles\ConsultaDatos_Estilo.css" />
     <Content Include="Styles\css-Imagenes\lg-fb-comment-box.css" />
     <Content Include="Styles\css-Imagenes\lg-fb-comment-box.min.css" />
@@ -1667,7 +1690,6 @@
     <Content Include="jqueryEsy\themes\gray\validatebox.css" />
     <Content Include="jqueryEsy\themes\gray\window.css" />
     <Content Include="jqueryEsy\themes\icons.css" />
-    <Content Include="jqueryEsy\themes\icons\Accesos.png" />
     <Content Include="jqueryEsy\themes\icons\actualizar.png" />
     <Content Include="jqueryEsy\themes\icons\add-imagen.png" />
     <Content Include="jqueryEsy\themes\icons\add.png" />
@@ -1710,15 +1732,12 @@
     <Content Include="jqueryEsy\themes\icons\cancelar.png" />
     <Content Include="jqueryEsy\themes\icons\cap.png" />
     <Content Include="jqueryEsy\themes\icons\captura.png" />
-    <Content Include="jqueryEsy\themes\icons\captura2.png" />
     <Content Include="jqueryEsy\themes\icons\cargar.png" />
     <Content Include="jqueryEsy\themes\icons\cargar1.png" />
     <Content Include="jqueryEsy\themes\icons\cargar2.png" />
     <Content Include="jqueryEsy\themes\icons\CargarExcel.png" />
     <Content Include="jqueryEsy\themes\icons\cat.png" />
-    <Content Include="jqueryEsy\themes\icons\catalogos2.png" />
     <Content Include="jqueryEsy\themes\icons\cerrar-sesion.png" />
-    <Content Include="jqueryEsy\themes\icons\cerrar.png" />
     <Content Include="jqueryEsy\themes\icons\cerrar2.png" />
     <Content Include="jqueryEsy\themes\icons\Cifras.png" />
     <Content Include="jqueryEsy\themes\icons\claDocumentos.gif" />
@@ -1730,7 +1749,6 @@
     <Content Include="jqueryEsy\themes\icons\Completa.png" />
     <Content Include="jqueryEsy\themes\icons\conf.png" />
     <Content Include="jqueryEsy\themes\icons\configuracion.png" />
-    <Content Include="jqueryEsy\themes\icons\configuracion2.png" />
     <Content Include="jqueryEsy\themes\icons\contrato.png" />
     <Content Include="jqueryEsy\themes\icons\copiar2.png" />
     <Content Include="jqueryEsy\themes\icons\costo.png" />
@@ -1785,7 +1803,6 @@
     <Content Include="jqueryEsy\themes\icons\IncLab.png" />
     <Content Include="jqueryEsy\themes\icons\ini.png" />
     <Content Include="jqueryEsy\themes\icons\inicio.png" />
-    <Content Include="jqueryEsy\themes\icons\inicio2.png" />
     <Content Include="jqueryEsy\themes\icons\Inicio20.png" />
     <Content Include="jqueryEsy\themes\icons\Inicio32.png" />
     <Content Include="jqueryEsy\themes\icons\Interinos.png" />
@@ -1807,7 +1824,6 @@
     <Content Include="jqueryEsy\themes\icons\Marcar.png" />
     <Content Include="jqueryEsy\themes\icons\mdoc.png" />
     <Content Include="jqueryEsy\themes\icons\Mdocumento.png" />
-    <Content Include="jqueryEsy\themes\icons\menu.png" />
     <Content Include="jqueryEsy\themes\icons\mini-cat.png" />
     <Content Include="jqueryEsy\themes\icons\mini-export_text.png" />
     <Content Include="jqueryEsy\themes\icons\MiniBajarExcel.png" />
@@ -1831,7 +1847,6 @@
     <Content Include="jqueryEsy\themes\icons\ok.png" />
     <Content Include="jqueryEsy\themes\icons\opciones.png" />
     <Content Include="jqueryEsy\themes\icons\ope.png" />
-    <Content Include="jqueryEsy\themes\icons\operacion.png" />
     <Content Include="jqueryEsy\themes\icons\ordenacion.png" />
     <Content Include="jqueryEsy\themes\icons\pagos.png" />
     <Content Include="jqueryEsy\themes\icons\Parcial.png" />
@@ -1845,7 +1860,6 @@
     <Content Include="jqueryEsy\themes\icons\print.png" />
     <Content Include="jqueryEsy\themes\icons\proyeccion.png" />
     <Content Include="jqueryEsy\themes\icons\rastrear.jpg" />
-    <Content Include="jqueryEsy\themes\icons\recepcion.png" />
     <Content Include="jqueryEsy\themes\icons\Rechazados.png" />
     <Content Include="jqueryEsy\themes\icons\rechazar2.png" />
     <Content Include="jqueryEsy\themes\icons\recibircodigo.png" />
@@ -2228,6 +2242,20 @@
     </Compile>
     <Compile Include="Archivos\Captura\Listar_Empleados.aspx.designer.cs">
       <DependentUpon>Listar_Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\CargarArchivos.aspx.cs">
+      <DependentUpon>CargarArchivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\CargarArchivos.aspx.designer.cs">
+      <DependentUpon>CargarArchivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\Lista_Perfiles.aspx.cs">
+      <DependentUpon>Lista_Perfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\Lista_Perfiles.aspx.designer.cs">
+      <DependentUpon>Lista_Perfiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Menu\Fun_Menus.aspx.cs">
       <DependentUpon>Fun_Menus.aspx</DependentUpon>

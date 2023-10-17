@@ -46,7 +46,7 @@ namespace WebApi.Repositorio.Permisos
                     {
                         TreeObj = new ObjTree();
                         TreeObj.Id = Convert.ToInt16(ds.Tables[0].Rows[i]["Id"].ToString());
-                        TreeObj.text = ds.Tables[0].Rows[i]["Descripcion"].ToString();
+                        TreeObj.text = (ds.Tables[0].Rows[i]["Concepto"].ToString() == "" ? ds.Tables[0].Rows[i]["Descripcion"].ToString() : "(" + ds.Tables[0].Rows[i]["Concepto"].ToString() + ") " + ds.Tables[0].Rows[i]["Descripcion"].ToString());
                         TreeObj.nombre = ds.Tables[0].Rows[i]["idreg"].ToString();
                         TreeObj.checkbox = Convert.ToBoolean(ds.Tables[0].Rows[i]["Marcar"].ToString());
                         TreeObj.IdPadre = ds.Tables[0].Rows[i]["IdPadre"] != DBNull.Value ? Convert.ToInt32(ds.Tables[0].Rows[i]["IdPadre"].ToString()) : (int?)null;

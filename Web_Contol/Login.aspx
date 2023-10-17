@@ -21,9 +21,9 @@
     <script src="Scripts/Login.js?0.1"></script>
 
 </head>
- <body >
-        <div class="bg-neutral-100 lg:flex">
-            <div class="lg:w-1/2 xl:max-w-screen-sm">
+ <body>
+        <div class="w-screen h-screen bg-neutral-100 lg:flex" style="overflow:hidden">
+            <div class="lg:w-1/2 xl:max-w-screen-sm" style="overflow:hidden">
               <%--  <div class="py-12 bg-red-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">                   
                     <div class="cursor-pointer flex items-center">
                         <div>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hidden lg:flex items-center justify-center bg-red-100 flex-1 h-screen">
+            <div class="hidden lg:flex items-center justify-center bg-red-100 flex-1 h-screen" style="overflow:hidden">
                 <img src="Imagenes/prestamos2.jpg" class="w-full h-full"/>              
             </div>
         </div>

@@ -722,34 +722,34 @@ fmov.icon-blank{
 }
 
 .Con32 {
-	background: url('icons/consulta32.png') no-repeat center center;
+	background: url('icons/rojo32/consulta32.png') no-repeat center center;
 }
 
 .Rep32 {
-	background: url('icons/reportes32.png') no-repeat center center;
+	background: url('icons/rojo32/reportes32.png') no-repeat center center;
 }
 
 .Cap32 {
-	background: url('icons/captura32.png') no-repeat center center;
+	background: url('icons/rojo32/captura32.png') no-repeat center center;
 }
 
 .Usu32 {
-	background: url('icons/usuario32.png') no-repeat center center;
+	background: url('icons/rojo32/usuario32.png') no-repeat center center;
 }
 
 .Sal32 {
-	background: url('icons/inicio2.png') no-repeat center center;
+	background: url('icons/rojo32/inicio32.png') no-repeat center center;
 }
 
 .Cat32 {
-	background: url('icons/catalogos32.png') no-repeat center center;
+	background: url('icons/rojo32/catalogos32.png') no-repeat center center;
 }
 
 .carga32 {
-	background: url('icons/carga_rojo.png') no-repeat center center;
+	background: url('icons/rojo32/carga32.png') no-repeat center center;
 }
 .descarga32 {
-	background: url('icons/descarga_rojo.png') no-repeat center center;
+	background: url('icons/rojo32/descarga32.png') no-repeat center center;
 }
 
 

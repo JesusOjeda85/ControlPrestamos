@@ -58,7 +58,7 @@ $(document).ready(function () {
     $('#btnGpermisos').bind('click', function () { GUARDAR_PERMISOS('#btnGpermisos'); });
 
     FILTRAR_TREE_TXT('#txtfilperfil', '#lstperfil');
-    FILTRAR_TREE_TXT('#txtfilmenu', '#lstmenu');
+    FILTRAR_TREE_TXT('#txtfilmenu', '#lstmenus');
 });
 
 function DESHABILITAR() {
@@ -409,7 +409,7 @@ function GUARDAR_PERMISOS(btnobj) {
             objpermisos: {
                 Idusuario: idusuario,
                 fkconceptos: getchkConceptos('#lstperfil'),
-                fkmenus: getchkMenus('#lstmenu'),              
+                fkmenus: getchkMenus('#lstmenus'),              
             }
         }
         $.ajax({

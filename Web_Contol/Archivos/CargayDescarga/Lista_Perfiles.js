@@ -1,4 +1,9 @@
-﻿$(document).ready(function () {
+﻿var modulo = "";
+$(document).ready(function () {
+    var mod = $_GET('mod');
+    if (mod != undefined) { modulo = mod; }
+    else { modulo = "C"; }
+
    
 });
 $(window).load(function () {
@@ -46,9 +51,9 @@ function LISTAR_PERFILES() {
                 data: obj,
                 onClick: function (node) {
                     if (node.children.length <= 0) {
-                        fkorganismo = node.idPadre;
-                        
-                        IR_PAGINA('Captura.aspx','fkorg='+fkorganismo+"&perfil="+node.text);         
+                        //fkorganismo = node.idPadre;   
+                        if (modulo == "C") { IR_PAGINA('CargarArchivos.aspx', 'perfil=' + node.text); }
+                        else { IR_PAGINA('DesCargarArchivos.aspx', 'perfil=' + node.text); }
                     }
                 }
             });

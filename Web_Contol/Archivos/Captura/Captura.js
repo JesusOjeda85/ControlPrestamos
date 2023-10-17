@@ -1,8 +1,14 @@
 ﻿var fkor = 0;
+var NomPerfil = "";
 $(document).ready(function () {   
     var org = $_GET('fkorg');
     if (org != undefined) { fkorg = org; }
     else { fkorg = ''; }
+    var Perfil = $_GET('perfil');
+    if (NomPerfil != undefined) { NomPerfil = Perfil; }
+    else { NomPerfil = ''; }
+
+    $('#lblconcepto').text('Perfil: ' + NomPerfil);
 
     var text = $('#txtvalor');
     text.textbox('textbox').bind('keydown', function (e) {
@@ -191,8 +197,8 @@ function CARGAR_EMPLEADOS(btnobj,filtro) {
         });
 
         $('#loading').hide(100);
-        //windows_porcentaje("#win", 90, 60, false, false, false, "Permisos");  
-        windows("#win", "90%", "550px", false, "Empleados");
+        windows_porcentaje("#win", 90, 60, false, false, false, "Permisos");  
+       // windows("#win", "90%", "60%", false, "Empleados");
     }
 }
 

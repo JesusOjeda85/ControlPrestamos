@@ -22,7 +22,7 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Captura.js?v0.1"></script>
+    <script src="Captura.js?v0.2"></script>
 </head>
 <body>   
      <div class="bg-neutral-100 w-screen h-screen flex flex-col bg-yellow-50 " align="Center">             
@@ -30,8 +30,9 @@
             <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'anterior'" id="btnRegresar">Regresar</a> 
             <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'limpiar',disabled:false" id="btnLimpiar" >Limpiar</a>                  
             <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'icon-save',disabled:false" id="btnGuardar" >Guardar</a>                                                        
+             <label id="lblconcepto" class="text-left text-lg text-red-900"></label> 
          </div>        
-          <div class="flex flex-col self-center px-2 py-2 w-8/12  rounded-md ">                     
+          <div class="flex flex-col self-center px-2 py-2 w-8/12 overflow-auto">                     
                     <div class="flex flex-col mb-1 ">
                         <label class="text-left text-lg text-red-900">Empleado</label>   
                         <div class="flex flex-row ">  

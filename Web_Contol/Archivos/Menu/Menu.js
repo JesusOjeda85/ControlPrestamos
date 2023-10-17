@@ -30,6 +30,7 @@
     $('#btnConsultas').bind('click', function () { AgregarTabPadre('#tpconsulta', 'Consultas', '../Consulta/Consulta.aspx'); });
     $('#btnReportes').bind('click', function () { AgregarTabPadre('#tpreportes', 'Reportes', '../Reportes/Reportes.aspx'); });
     $('#btnUsuarios').bind('click', function () { AgregarTabPadre('#tpusuarios', 'Usuarios', '../Usuarios/Usuarios.aspx'); });
+    $('#btnImportacion').bind('click', function () { AgregarTabPadre('#tpcargar', 'Cargar Archivos', '../CargayDescarga/Lista_Perfiles.aspx?mod=C'); });
 
 
 });

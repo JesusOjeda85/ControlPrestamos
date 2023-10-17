@@ -18,19 +18,19 @@
 
      <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
      <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
-    <script src="Menu.js?v0.3"></script>
+    <script src="Menu.js?v0.4"></script>
 </head>
 <body>    
      <div class="bg-neutral-100 w-screen h-screen flex flex-col" style="overflow:hidden">
-         <div class="h-12 border-2 bg-red-800 rounded flex flex-row">
+         <div class="h-12 border-2 bg-red-800 flex flex-row">
              <div class="w-1/2"  style="padding:4px;">               
                  <asp:Label id="Label1" class="text-2xl font-black text-white"  runat="server" Text="Control de Prestamos"></asp:Label>  
              </div>
-             <div class="w-1/2 justify-center" align="right" style="padding:4px;">                 
-                <asp:Label id="lblusuario" class="text-2xl font-black text-white item-center"  runat="server" Text=""></asp:Label>                
+             <div class="w-1/2 justify-center item-center" align="right" style="padding:4px;">                 
+                <asp:Label id="lblusuario" class="text-1xl font-black text-white item-center"  runat="server" Text=""></asp:Label>                
              </div>
          </div>
-         <div class="easyui-panel rounded" style="width:100%;  padding:2px;">            
+         <div class="easyui-panel" style="width:100%;">            
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Sal32'" style="width:80px;"  id="btnInicio">Cerrar</a>    
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Cap32'" style="width:80px;"  id="btnCaptura">Captura</a>    
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Con32'" style="width:80px;"  id="btnConsultas">Consultas</a>    
@@ -40,7 +40,7 @@
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Cat32'" style="width:80px;"  id="btnCatalogos">Catálogos</a>    
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Usu32'" style="width:80px;"  id="btnUsuarios">Usuarios</a>    
          </div>
-         <div class="h-full w-full border-2 border-red-200 bg-orange-50 rounded item-center" style="padding:2px; overflow:hidden">
+         <div class="w-full item-center" style="top:113px; height:88.5%; overflow:hidden; position:absolute">
               <div id="tt" class="easyui-tabs" style="width:100%;  height:100%; display:none;"></div>  
          </div>            
      </div>   

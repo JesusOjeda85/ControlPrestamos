@@ -19,7 +19,7 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Usuarios.js?v0.2"></script>
+    <script src="Usuarios.js?v0.3"></script>
 </head>
 <body>
   <div class="w-screen h-screen" align="Center">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div data-options="region:'center'" style="width:70%; height:100%; padding:10px;" align="center" class="overflow-hidden" > 
+            <div data-options="region:'center'" style="width:70%; height:100%; padding:10px;" align="center" class="overflow-auto" > 
                 <div class="flex flex-col px-4 sm:px-6 md:px-4 lg:px-4 py-4 rounded-md w-full max-w-md ">   
                     <div class="flex flex-col mb-3">
                         <label class="text-left text-lg text-red-900">Usuario</label>                    

@@ -52,8 +52,8 @@ function LISTAR_PERFILES() {
                 onClick: function (node) {
                     if (node.children.length <= 0) {
                         //fkorganismo = node.idPadre;   
-                        if (modulo == "C") { IR_PAGINA('CargarArchivos.aspx', 'perfil=' + node.text); }
-                        else { IR_PAGINA('DesCargarArchivos.aspx', 'perfil=' + node.text); }
+                        if (modulo == "C") { IR_PAGINA('CargarArchivos.aspx', 'perfil='+node.nombre+"&nombre=" + node.text); }
+                        else { IR_PAGINA('DesCargarArchivos.aspx', 'perfil=' + node.nombre + "&nombre=" + node.text); }
                     }
                 }
             });

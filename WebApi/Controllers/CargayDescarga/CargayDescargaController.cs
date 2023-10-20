@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ClsObjetos;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Entidades;
+using WebApi.Repositorio.CargayDescarga;
 
 namespace WebApi.Controllers.CargayDescarga
 {
@@ -7,20 +9,14 @@ namespace WebApi.Controllers.CargayDescarga
     [ApiController]
     public class CargayDescargaController : ControllerBase
     {
-        //[HttpPost]
-        //public JsonResult ImportarArchivo(HttpPostedFileBase file)
-        //{
+      
 
-        //    List<string> data = new List<string>();
-
-        //    if (file != null)
-        //    {
-
-        //        // hacer lo que quieras con el archivo
-
-        //    }
-
-        //    return Json(new { file.FileName });
-        //}
+        [HttpPost]
+        [Route("Subir_Archivo_014a")]
+        public IActionResult Subir_Archivo_014a(DatosCargar Obj)
+        {          
+            ObjMensaje msg = RCargayDescarga.Subir_Archivo_014a(Obj);
+            return StatusCode(StatusCodes.Status200OK, msg);
+        }
     }
 }

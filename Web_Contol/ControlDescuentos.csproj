@@ -153,6 +153,7 @@
     <Content Include="Archivos\Captura\Listar_Empleados.aspx" />
     <Content Include="Archivos\CargayDescarga\CargarArchivos.aspx" />
     <Content Include="Archivos\CargayDescarga\CargarArchivos.js" />
+    <Content Include="Archivos\CargayDescarga\Fun_CargaYDescarga.aspx" />
     <Content Include="Archivos\CargayDescarga\Lista_Perfiles.js" />
     <Content Include="Archivos\CargayDescarga\Lista_Perfiles.aspx" />
     <Content Include="Archivos\Menu\Fun_Menus.aspx" />
@@ -2249,6 +2250,13 @@
     </Compile>
     <Compile Include="Archivos\CargayDescarga\CargarArchivos.aspx.designer.cs">
       <DependentUpon>CargarArchivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\Fun_CargaYDescarga.aspx.cs">
+      <DependentUpon>Fun_CargaYDescarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\Fun_CargaYDescarga.aspx.designer.cs">
+      <DependentUpon>Fun_CargaYDescarga.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\CargayDescarga\Lista_Perfiles.aspx.cs">
       <DependentUpon>Lista_Perfiles.aspx</DependentUpon>

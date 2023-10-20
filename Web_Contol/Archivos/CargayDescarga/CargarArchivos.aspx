@@ -22,10 +22,12 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script src="../../jqueryEsy/plugins/jquery.filebox.js"></script>
+ 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
 
-    <script src="../../Scripts/sheetjs/xlsx.full.min.js"></script>
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="CargarArchivos.js?v0.2"></script>
+    <script src="CargarArchivos.js?v0.0"></script>
+
 </head>
 <body>
       <div class="bg-neutral-100 w-screen h-screen flex flex-col bg-yellow-50 " align="Center">  
@@ -38,7 +40,8 @@
        <div class="flex flex-col self-center px-2 py-2 w-8/12 ">    
              <div class="flex flex-col mb-1 w-2/3 self-center">
                 <label class="text-left text-lg text-red-900">Archivo de Excel</label>             
-                <input  id="xls"  class="easyui-filebox" data-options="accept:'application/vnd.ms-excel',prompt:'Seleccione el Archivo'" style="width:100%"/>
+                <input  id="xls"  class="easyui-filebox" data-options="accept:'application/vnd.ms-excel',prompt:'Seleccione el Archivo'" style="width:100%"/>   
+                 <pre id="jsonData"></pre>
             </div>           
         </div>
       </div> 

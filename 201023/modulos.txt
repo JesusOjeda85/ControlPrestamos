@@ -1,0 +1,28 @@
+Plazas
+  creacion de plazas
+Asistentes
+  diseñador de captura
+  diseñador de catalogos  
+  diseñador de indices de afectacion
+  diseñador de tercereos
+  diseñador de procesos especiales
+  incremento salaria 
+  catalogo de menu
+  catalogo de movimientos
+terceros
+pension alimenticia
+calculo de nomina
+control de nomina 
+  produccion
+  activacion de cheques
+  salida de bancos
+  Afectacion General
+  Restaurador de Documentos
+  Apertura y Cierre de nomina
+  Bloqueo de Retroactivos  
+  Bloqueo General
+consultas
+reportes
+costeo y proyeccoion
+recorrido de plazas
+  

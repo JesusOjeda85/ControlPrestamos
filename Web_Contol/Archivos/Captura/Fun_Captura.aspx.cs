@@ -1,5 +1,6 @@
 ﻿using ClsEntidades;
 using ClsObjetos;
+using ExcelLibrary.BinaryFileFormat;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace ControlDescuentos.Archivos.Captura
         [ScriptMethod]
         public static string[] LISTAR_PLAZOS(FiltroIdOrganismo objorganismo)
         {
-            string[] result = { "", "", "" };
+            string[] result = { "", "", "" };          
             string jsonobj = JsonConvert.SerializeObject(objorganismo);
             string respuesta = Llamar_Api.PostItem("Captura/Listar_Plazos",jsonobj);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);

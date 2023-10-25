@@ -1,7 +1,10 @@
 ﻿using ClsObjetos;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Dto;
 using WebApi.Entidades;
+using WebApi.Mapeo;
 using WebApi.Repositorio.CargayDescarga;
+using AutoMapper;
 
 namespace WebApi.Controllers.CargayDescarga
 {
@@ -9,6 +12,7 @@ namespace WebApi.Controllers.CargayDescarga
     [ApiController]
     public class CargayDescargaController : ControllerBase
     {
+
       
 
         [HttpPost]
@@ -18,5 +22,15 @@ namespace WebApi.Controllers.CargayDescarga
             ObjMensaje msg = RCargayDescarga.Subir_Archivo_014a(Obj);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
+
+        [HttpPost]
+        [Route("Cargar_Descuentos")]
+        public IActionResult Cargar_Descuentos(BuscarEmpleado Obj)
+        {
+            ObjMensaje msg = RCargayDescarga.Cargar_Descuentos(Obj);
+            return StatusCode(StatusCodes.Status200OK, msg);
+        }
+
+       
     }
 }

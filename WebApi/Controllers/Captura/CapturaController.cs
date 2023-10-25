@@ -59,5 +59,14 @@ namespace WebApi.Controllers.Captura
             ObjMensaje msg = RCaptura.Guardar_Captura(ObjDto);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
+
+        [HttpPost]
+        [Route("Modificar_Captura")]
+        public IActionResult Modificar_Captura(ModificarCapturaDto ObjDto)
+        {
+            var obj = mapper.Map<DatosCaptura>(ObjDto);
+            ObjMensaje msg = RCaptura.Modificar_Captura(obj);
+            return StatusCode(StatusCodes.Status200OK, msg);
+        }
     }
 }

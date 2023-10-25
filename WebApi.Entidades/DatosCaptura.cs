@@ -8,6 +8,7 @@ namespace WebApi.Entidades
 {
     public class DatosCaptura
     {
+        public int Id { get; set; }
         public int IdUsuario { get; set; }
         public int FkOrganismo { get; set; }
         public int Empleado { get; set; }
@@ -28,5 +29,6 @@ namespace WebApi.Entidades
         public int FkTipoPago { get; set; }
         public int FkBanco { get; set; }
         public string Cuenta { get; set; }
+        public string Valores { get; set; }
     }
 }

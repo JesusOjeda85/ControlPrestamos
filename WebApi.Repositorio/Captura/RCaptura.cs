@@ -177,41 +177,82 @@ namespace WebApi.Repositorio.Captura
         public static ObjMensaje Guardar_Captura(DatosCaptura Obj)
         {
             ObjMensaje msg = new();
-            List<SqlParameter> parametro = new()
-            {
-            new SqlParameter("@IdUsuario", SqlDbType.Int) {Value= Obj.IdUsuario },
-            new SqlParameter("@FkOrganismo", SqlDbType.Int) { Value = Obj.FkOrganismo },
-            new SqlParameter("@Empleado", SqlDbType.Int) { Value = Obj.Empleado },
-            new SqlParameter("@FechaSolicitud", SqlDbType.VarChar, 11) { Value = Obj.FechaSolicitud },
-            new SqlParameter("@Rfc", SqlDbType.VarChar, 20) { Value = Obj.Rfc },
-            new SqlParameter("@Curp", SqlDbType.VarChar, 20) { Value = Obj.Curp },
-            new SqlParameter("@ApPaterno", SqlDbType.VarChar, 100) { Value = Obj.ApPaterno },
-            new SqlParameter("@ApMaterno", SqlDbType.VarChar, 100) { Value = Obj.ApMaterno },
-            new SqlParameter("@Nombres", SqlDbType.VarChar, 100) { Value = Obj.Nombres },
-            new SqlParameter("@CvePagaduria", SqlDbType.VarChar, 20) { Value = Obj.CvePagaduria },
-            new SqlParameter("@DesPagaduria", SqlDbType.VarChar, 300) { Value = Obj.DesPagaduria },
-            new SqlParameter("@CveCategoria", SqlDbType.VarChar, 20) { Value = Obj.CveCategoria },
-            new SqlParameter("@DesCategoria", SqlDbType.VarChar, 300) { Value = Obj.DesCategoria },
-            new SqlParameter("@CveAdscripcion", SqlDbType.VarChar, 20) { Value = Obj.CveAdscripcion },
-            new SqlParameter("@DesAdscripcion", SqlDbType.VarChar, 300) { Value = Obj.DesAdscripcion },
-            new SqlParameter("@ImporteCredito", SqlDbType.BigInt) { Value = Obj.ImporteCredito },
-            new SqlParameter("@FkPlazo", SqlDbType.Int) { Value = Obj.FkPlazo },
-            new SqlParameter("@FkTipoPago", SqlDbType.Int) { Value = Obj.FkTipoPago },
-            new SqlParameter("@FkBanco", SqlDbType.Int) { Value = Obj.FkBanco },
-            new SqlParameter("@Cuenta", SqlDbType.Int) { Value = Obj.Cuenta },
-            };
+            try { 
+                List<SqlParameter> parametro = new()
+                {
+                    new SqlParameter("@IdUsuario", SqlDbType.Int) {Value= Obj.IdUsuario },
+                    new SqlParameter("@FkOrganismo", SqlDbType.Int) { Value = Obj.FkOrganismo },
+                    new SqlParameter("@Empleado", SqlDbType.Int) { Value = Obj.Empleado },
+                    new SqlParameter("@FechaSolicitud", SqlDbType.VarChar, 11) { Value = Obj.FechaSolicitud },
+                    new SqlParameter("@Rfc", SqlDbType.VarChar, 20) { Value = Obj.Rfc },
+                    new SqlParameter("@Curp", SqlDbType.VarChar, 20) { Value = Obj.Curp },
+                    new SqlParameter("@ApPaterno", SqlDbType.VarChar, 100) { Value = Obj.ApPaterno },
+                    new SqlParameter("@ApMaterno", SqlDbType.VarChar, 100) { Value = Obj.ApMaterno },
+                    new SqlParameter("@Nombres", SqlDbType.VarChar, 100) { Value = Obj.Nombres },
+                    new SqlParameter("@CvePagaduria", SqlDbType.VarChar, 20) { Value = Obj.CvePagaduria },
+                    new SqlParameter("@DesPagaduria", SqlDbType.VarChar, 300) { Value = Obj.DesPagaduria },
+                    new SqlParameter("@CveCategoria", SqlDbType.VarChar, 20) { Value = Obj.CveCategoria },
+                    new SqlParameter("@DesCategoria", SqlDbType.VarChar, 300) { Value = Obj.DesCategoria },
+                    new SqlParameter("@CveAdscripcion", SqlDbType.VarChar, 20) { Value = Obj.CveAdscripcion },
+                    new SqlParameter("@DesAdscripcion", SqlDbType.VarChar, 300) { Value = Obj.DesAdscripcion },
+                    new SqlParameter("@ImporteCredito", SqlDbType.BigInt) { Value = Obj.ImporteCredito },
+                    new SqlParameter("@FkPlazo", SqlDbType.Int) { Value = Obj.FkPlazo },
+                    new SqlParameter("@FkTipoPago", SqlDbType.Int) { Value = Obj.FkTipoPago },
+                    new SqlParameter("@FkBanco", SqlDbType.Int) { Value = Obj.FkBanco },
+                    new SqlParameter("@Cuenta", SqlDbType.Int) { Value = Obj.Cuenta },
+                };
 
 
-            //DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Captura_Guardar "+ Obj.IdUsuario+","+ Obj.FkOrganismo+","+ Obj.Empleado+",'"+ Obj.FechaSolicitud +"','"+ Obj.Rfc + "','" + Obj.Curp + "','" + Obj.ApPaterno + "','" + Obj.ApMaterno + "','" + Obj.Nombres + "','" + Obj.CvePagaduria + "','" + Obj.DesPagaduria + "','" + Obj.CveCategoria + "','" + Obj.DesCategoria + "','" + Obj.CveAdscripcion + "','" + Obj.DesAdscripcion + "'," + Obj.ImporteCredito+","+ Obj.FkPlazo + "," + Obj.FkTipoPago + "," + Obj.FkBanco + "," + Obj.Cuenta);
-            DataSet ds = MetodosBD.EjecutarProcedimiento("SPT_Captura_Guardar ", parametro);
-            if (ds.Tables.Count > 0)
-            {
-                msg.Error = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());
-                msg.Mensaje = ds.Tables[0].Rows[0][1].ToString();
-                msg.Data = null;
-                msg.Datos = "";
+                //DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Captura_Guardar "+ Obj.IdUsuario+","+ Obj.FkOrganismo+","+ Obj.Empleado+",'"+ Obj.FechaSolicitud +"','"+ Obj.Rfc + "','" + Obj.Curp + "','" + Obj.ApPaterno + "','" + Obj.ApMaterno + "','" + Obj.Nombres + "','" + Obj.CvePagaduria + "','" + Obj.DesPagaduria + "','" + Obj.CveCategoria + "','" + Obj.DesCategoria + "','" + Obj.CveAdscripcion + "','" + Obj.DesAdscripcion + "'," + Obj.ImporteCredito+","+ Obj.FkPlazo + "," + Obj.FkTipoPago + "," + Obj.FkBanco + "," + Obj.Cuenta);
+                DataSet ds = MetodosBD.EjecutarProcedimiento("SPT_Captura_Guardar ", parametro);
+                if (ds.Tables.Count > 0)
+                {
+                    msg.Error = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());
+                    msg.Mensaje = ds.Tables[0].Rows[0][1].ToString();
+                    msg.Data = null;
+                    msg.Datos = "";
+                }
+                ds.Dispose();
             }
-            ds.Dispose();
+            catch (Exception ex)
+            {
+                msg.Error = 1;
+                msg.Mensaje = ex.Message.ToString();
+            }
+            return msg;
+        }
+        public static ObjMensaje Modificar_Captura(DatosCaptura Obj)
+        {
+            ObjMensaje msg = new();
+            try
+            {
+                List<SqlParameter> parametro = new()
+                {
+                    new SqlParameter("@IdUsuario", SqlDbType.Int) {Value= Obj.IdUsuario },
+                    new SqlParameter("@Id", SqlDbType.Int) {Value= Obj.Id },
+                    new SqlParameter("@Empleado", SqlDbType.Int) {Value= Obj.Empleado },
+                    new SqlParameter("@ImporteCredito", SqlDbType.BigInt) { Value = Obj.ImporteCredito },
+                    new SqlParameter("@FkPlazo", SqlDbType.Int) { Value = Obj.FkPlazo },
+                    new SqlParameter("@FkTipoPago", SqlDbType.Int) { Value = Obj.FkTipoPago },
+                    new SqlParameter("@FkBanco", SqlDbType.Int) { Value = Obj.FkBanco },
+                    new SqlParameter("@Cuenta", SqlDbType.Int) { Value = Obj.Cuenta },
+                };
+                
+                DataSet ds = MetodosBD.EjecutarProcedimiento("SPT_Captura_Modificar ", parametro);
+                if (ds.Tables.Count > 0)
+                {
+                    msg.Error = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());
+                    msg.Mensaje = ds.Tables[0].Rows[0][1].ToString();
+                    msg.Data = null;
+                    msg.Datos = "";
+                }
+                ds.Dispose();
+            }
+            catch (Exception ex)
+            {
+                msg.Error = 1;
+                msg.Mensaje = ex.Message.ToString();
+            }
             return msg;
         }
     }

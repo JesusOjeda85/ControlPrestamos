@@ -49,11 +49,15 @@ function expandTree(tobj) {
 
 }
 
-function LIMPIAR_SELECCION_GRID(dgobj)
+function LIMPIAR_SELECCION_GRID(dgobj,chk)
 {
     var rows = $(dgobj).datagrid('getSelected');
     var rowIndex = $(dgobj).datagrid("getRowIndex", rows);
+
     $(dgobj).datagrid('unselectRow', rowIndex);
+    if (chk == true) {
+        $(dgobj).datagrid('uncheckAll', rowIndex);
+    }
 }
 
 

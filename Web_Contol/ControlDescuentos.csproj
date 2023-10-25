@@ -145,6 +145,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx" />
+    <Content Include="Archivos\AplicarDescuentos\AplicarDescuentos.js" />
+    <Content Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx" />
+    <Content Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx" />
     <Content Include="Archivos\Captura\Captura.aspx" />
     <Content Include="Archivos\Captura\Captura.js" />
     <Content Include="Archivos\Captura\Conceptos.aspx" />
@@ -2216,6 +2220,27 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx.cs">
+      <DependentUpon>AplicarDescuentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx.designer.cs">
+      <DependentUpon>AplicarDescuentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx.cs">
+      <DependentUpon>Fun_AplicarDescuentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx.designer.cs">
+      <DependentUpon>Fun_AplicarDescuentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx.cs">
+      <DependentUpon>Listar_Descuentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx.designer.cs">
+      <DependentUpon>Listar_Descuentos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Archivos\Captura\Captura.aspx.cs">
       <DependentUpon>Captura.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

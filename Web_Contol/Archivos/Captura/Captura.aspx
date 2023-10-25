@@ -118,7 +118,7 @@
                     </div>   
                     <div class="flex flax-row space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 ">
-                            <label class="text-left text-lg text-red-900">Importe Solicidado</label>                    
+                            <label class="text-left text-lg text-red-900">Importe Solicitado</label>                    
                             <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtimporte" precision="0" data-options="required:true"/>                   
                         </div>
                          <div class="flex flex-col mb-1 w-1/2 ">
@@ -135,7 +135,7 @@
              <div class="w-2/5">
                <input type="text" value="" class="easyui-textbox" id="txtvalor" style="width:100%"/>
              </div>             
-             <a id="btnBempleado" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">Buscar</a>            
+             <a id="btnBempleado" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:false">Buscar</a>            
          </div>          
          <table class="easyui-datagrid " id="dgempleados" style="width:100%; height:100%;"> 
             <thead>

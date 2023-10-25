@@ -37,7 +37,7 @@ $(window).load(function () {
 function LISTAR_PLAZOS() {
     var data = {
         objorganismo: {
-            FkOrganismo: 1,
+            FkOrganismo: fkorg,
         }
     }
     $.ajax({

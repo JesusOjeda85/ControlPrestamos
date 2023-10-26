@@ -27,7 +27,7 @@
  <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-export.js"></script>
  <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-detailview.js"></script>
     <script src="../../Scripts/Funsiones.js?v0.0"></script>
-    <script src="AplicarDescuentos.js?v0.5"></script>
+    <script src="AplicarDescuentos.js?v0.6"></script>
 </head>
 <body>
      <div class="bg-neutral-100 w-screen h-screen flex flex-col bg-yellow-50 " align="Center">   
@@ -47,7 +47,7 @@
             <table class="easyui-datagrid " id="dgdatos" style="width:100%; height:75%;" > 
                 <thead>
                     <tr>                        
-                        <th data-options="field:'chk',checkbox:true"></th>    
+                        <th data-options="field:'chk',checkbox:true"></th>                         
                         <th data-options="field:'id',width:90,align:'center',halign:'center',hidden:true">id</th>
                         <th data-options="field:'fkorganismo',width:90,align:'center',halign:'center',hidden:true">id</th>
                         <th data-options="field:'Empleado',width:90,align:'center',halign:'center'">Empleado</th>
@@ -134,7 +134,7 @@
             <div class="flex flax-row space-x-1">
                 <div class="flex flex-col w-1/2 ">
                     <label class="text-left text-lg text-red-900">Importe Solicitado</label>                    
-                    <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtimporte" precision="0" data-options="required:true"/>                   
+                    <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtimporte" precision="0" data-options="required:true,precision:2,groupSeparator:',',decimalSeparator:'.'"/>                   
                 </div>
                 <div class="flex flex-col  w-1/2 ">
                     <label class="text-left text-lg text-red-900">Cuenta Bancaria</label>                    
@@ -144,19 +144,18 @@
          </div>
      </div>
      <div class="easyui-dialog flex flex-col items-center space-y-2" id="WAplicacion"  closed="true" style="padding:2px;">
-         <div class="easyui-panel mb-3" style="padding:2px; width:100%">                 
-             <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'limpiar',disabled:false" id="btnLAplicar" >Limpiar</a>
-             <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'icon-save',disabled:false" id="btnGAplicar" >Aplicar</a>
+         <div class="easyui-panel mb-3" style="padding:2px; width:100%">                              
+             <a href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'icon-ok',disabled:false" id="btnGAplicar" >Aplicar</a>
          </div> 
          <div class="flex flex-col self-center px-2 py-2 w-full overflow-auto">
               <div class="flex flax-row space-x-2">
                 <div class="flex flex-col mb-1 w-1/2 ">
                     <label class="text-left text-lg text-red-900">Quincena</label>                    
-                    <input class="easyui-combobox" style="width:100%; text-align:center" id="cboquincena"  data-options="required:true"/>                   
+                    <input class="easyui-numberspinner" style="width:100%; text-align:center" id="numquincena"  data-options="readonly:false, spinAlign:'horizontal',min:1,max:24,editable:true"/>                   
                 </div>
                 <div class="flex flex-col mb-1 w-1/2 ">
                     <label class="text-left text-lg text-red-900">Año</label>                    
-                    <input class="easyui-combobox" style="width:100%; text-align:left"  id="cboaño" data-options="required:true"/>                   
+                    <input class="easyui-numberspinner" style="width:100%; text-align:center"  id="numaño" data-options="readonly:false,spinAlign:'horizontal',editable:false"/>                   
                 </div>
             </div>
          </div>

@@ -180,7 +180,7 @@ namespace WebApi.Repositorio.Captura
             try { 
                 List<SqlParameter> parametro = new()
                 {
-                    new SqlParameter("@IdUsuario", SqlDbType.Int) {Value= Obj.IdUsuario },
+                    new SqlParameter("@FkUsuarioCaptura", SqlDbType.Int) {Value= Obj.FkUsuarioCaptura },
                     new SqlParameter("@FkOrganismo", SqlDbType.Int) { Value = Obj.FkOrganismo },
                     new SqlParameter("@Empleado", SqlDbType.Int) { Value = Obj.Empleado },
                     new SqlParameter("@FechaSolicitud", SqlDbType.VarChar, 11) { Value = Obj.FechaSolicitud },
@@ -228,7 +228,7 @@ namespace WebApi.Repositorio.Captura
             {
                 List<SqlParameter> parametro = new()
                 {
-                    new SqlParameter("@IdUsuario", SqlDbType.Int) {Value= Obj.IdUsuario },
+                    new SqlParameter("@FkUsuarioCaptura", SqlDbType.Int) {Value= Obj.FkUsuarioCaptura },
                     new SqlParameter("@Id", SqlDbType.Int) {Value= Obj.Id },
                     new SqlParameter("@Empleado", SqlDbType.Int) {Value= Obj.Empleado },
                     new SqlParameter("@ImporteCredito", SqlDbType.BigInt) { Value = Obj.ImporteCredito },

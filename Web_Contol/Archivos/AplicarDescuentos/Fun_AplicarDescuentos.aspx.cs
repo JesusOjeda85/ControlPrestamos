@@ -36,7 +36,7 @@ namespace ControlDescuentos.Archivos.AplicarDescuentos
         {
             string[] result = { "", "", "" };
             SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
-            Obj.IdUsuario = objusuario.Idusuario;
+            Obj.FkUsuarioCaptura = objusuario.Idusuario;
             string jsonobj = JsonConvert.SerializeObject(Obj);
             string respuesta = Llamar_Api.PostItem("Captura/Modificar_Captura", jsonobj);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
@@ -52,9 +52,22 @@ namespace ControlDescuentos.Archivos.AplicarDescuentos
         {
             string[] result = { "", "", "" };
             SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
-            Obj.IdUsuario = objusuario.Idusuario;
+            Obj.FkUsuarioAutoriza = objusuario.Idusuario;
             string jsonobj = JsonConvert.SerializeObject(Obj);
             string respuesta = Llamar_Api.PostItem("Aplicacion/Aplicar_Descuentos", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] LISTAR_QUINCENAS()
+        {
+            string[] result = { "", "", "" };                       
+            string respuesta = Llamar_Api.GetItem("Aplicacion/Listar_Quincenas");
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
             result[0] = msg.Error.ToString();
             result[1] = msg.Mensaje;

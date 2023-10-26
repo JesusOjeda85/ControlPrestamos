@@ -8,7 +8,10 @@ namespace WebApi.Dto
 {
     public class Aplicar_DescuentosDto
     {
-        public int IdUsuario { get; set; }
-        public string Valores { get; set; }
+        public int FkUsuarioAutoriza { get; set; }
+        public int Quincena { get; set; }
+        public int Año { get; set; }
+        public string Aplicados { get; set; }
+        public string Rechazados { get; set; }
     }
 }

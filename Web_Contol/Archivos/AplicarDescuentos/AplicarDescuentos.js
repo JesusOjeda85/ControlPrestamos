@@ -1,4 +1,5 @@
 ﻿var checkedRows = [];
+
 $(document).ready(function () {
     CARGAR_DESCUENTOS("");
 
@@ -40,6 +41,11 @@ $(document).ready(function () {
             return true;
         }
     });
+
+    //$('#dgdatos').datagrid('enableCellEditing').datagrid('gotoCell', {
+    //    index: 1,
+    //    field: 'Id',
+    //});
 });
 
 function onCheck(index, row) {
@@ -165,6 +171,33 @@ function LISTAR_TIPOPAGO(tipopago) {
     });
 }
 
+function LISTAR_QUINCENA() {
+   
+    $.ajax({
+        type: "POST",
+        url: 'Fun_AplicarDescuentos.aspx/LISTAR_QUINCENAS',       
+        dataType: "json",
+        async: true,
+        cache: false,
+        contentType: "application/json; charset=utf-8",
+        beforeSend: function () {
+            $('#loading').show();
+        },
+        success: function (data) {
+            var obj = jQuery.parseJSON(data.d[2]);
+            localStorage.setItem('quin', obj[0].Quincena);
+            localStorage.setItem('año', obj[0].Año);
+            $('#numquincena').numberspinner('setValue',obj[0].Quincena);
+            $('#numaño').numberspinner('setValue', obj[0].Año);
+        },
+        error: function (err) {
+            $('#loading').hide(100);
+            $.messager.alert('Error', er.statusText, 'error');
+        },
+        complete: function () { $('#loading').hide(100); }
+    });
+}
+
 
 function CARGAR_DESCUENTOS(filtro) {
     if (filtro != "") { $('#txtvalor').textbox('setValue', filtro); }
@@ -199,13 +232,13 @@ function CARGAR_DESCUENTOS(filtro) {
                     rownumbers: true,
                     fitColumns: true,
                     autoRowHeight: false,
-                    singleSelect: true,
+                    singleSelect: false,
                     striped: true,
                     scroll: true,
                     pageSize: 20,                    
                     showPageList: false,
-                    checkOnSelect: false,
-                    selectOnCheck: false,
+                    checkOnSelect: true,
+                    selectOnCheck: true,
                     onCheckAll: function () {
                         var allRows = $(this).datagrid('getRows');
                         checkedRows = allRows;
@@ -215,7 +248,7 @@ function CARGAR_DESCUENTOS(filtro) {
                     },
                     onCheck: onCheck,
                     onUncheck: onUncheck,
-                    view: detailview,
+                    view: detailview,                   
                     detailFormatter: function (index, row) {
                         return '<div style="padding:2px;position:relative;"><table class="ddv"></table></div><div style="padding:2px;position:relative;"><table class="ddv2"></table></div>';
                     },
@@ -337,8 +370,8 @@ function LIMPIAR_DESCUENTOS() {
 }
 
 function APLICAR_DESCUENTOS() {
-    if (checkedRows.length > 0) {
-        $('#loading').hide(100);
+    if (checkedRows.length > 0) {      
+        LISTAR_QUINCENA();        
         windows_porcentaje("#WAplicacion", 40, 35, false, false, false, "Aplicación de Descuentos");  
     }
     else { $.messager.alert('Error', 'Falta seleccionar los empleados a aplicar', 'error'); return 0; }
@@ -347,45 +380,70 @@ function APLICAR_DESCUENTOS() {
 function GUARDAR_DESCUENTOS(objbtn) {
     if ($(objbtn).linkbutton('options').disabled) { return false; }
     else {
-        var valores = "";
-        if (checkedRows.length > 0) {
-            for (var f = 0; f < checkedRows.length; f++) {
-                valores += checkedRows[f].Id + ",";
-            }
-            valores = valores.substring(0, valores.length - 1);
-
-            var data = {
-                Obj: {
-                    valores: valores,                            
+        if ($('#numaño').numberspinner('getValue') < localStorage.getItem('año')) { $.messager.alert('Error', 'El Año Seleccionado no puede ser menor al año actual', 'error'); return 0; }
+        else
+        if ($('#numquincena').numberspinner('getValue') < localStorage.getItem('quin')) { $.messager.alert('Error', 'La Quincena Seleccionada no puede ser menor a la quincena actual', 'error'); return 0; }
+        else
+            if ($('#numaño').numberspinner('getValue') < localStorage.getItem('año')) { $.messager.alert('Error', 'La Año Seleccionado no puede ser menor al año actual', 'error'); return 0; }
+            else {
+                if ($('#numaño').numberspinner('getValue') > localStorage.getItem('año')) { $('#numquincena').numberspinner('setValue', 1); }
+                  
+                
+                var Aplicados = [], Rechazados = [];
+                var encontrado = false;
+                var dg = $('#dgdatos');  
+              
+                var rows = dg.datagrid('getRows');
+                var seleccion = dg.datagrid('getSelections');
+                for (var r = 0; r < rows.length; r++) {   
+                    for (var s = 0; s < seleccion.length; s++) {
+                        if (rows[r].Id == seleccion[s].Id)
+                        {
+                            Aplicados += seleccion[s].Id + ",";
+                            encontrado = true;
+                        }                       
+                    }  
+                    if (encontrado == false) { Rechazados += rows[r].Id + ","; }
                 }
-            }
-            $.ajax({
-                type: "POST",
-                url: "Fun_AplicarDescuentos.aspx/APLICAR_DESCUENTOS",
-                data: JSON.stringify(data),
-                async: true,
-                cache: false,
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                beforeSend: function () {
-                    $('#loading').show();
-                },
-                success: function (data) {
-                    if (data.d[0] == "0") {
-                        $.messager.alert('Información', data.d[1], 'info');
+                if (Aplicados.length > 0) { Aplicados = Aplicados.substring(0, Aplicados.length - 1); } else { Aplicados = 0; }
+                if (Rechazados.length > 0) { Rechazados = Rechazados.substring(0, Rechazados.length - 1); } else { Rechazados = 0; }
+
+                $("#WAplicacion").window('close');
+                var data = {
+                    Obj: {
+                        Quincena: $('#numquincena').numberspinner('getValue'),
+                        Año: $('#numaño').numberspinner('getValue'),
+                        Aplicados: Aplicados,
+                        Rechazados: Rechazados
                     }
-                    else { $.messager.alert('Error', data.d[1], 'error'); }
-                },
-                error: function (er) {
-                    $('#loading').hide();
-                    $.messager.alert('Error', er.responseJSON.Message, 'error');
-                },
-                complete: function () {
-                    $('#loading').hide(100);
                 }
-            });
-
-        }
+                $.ajax({
+                    type: "POST",
+                    url: "Fun_AplicarDescuentos.aspx/APLICAR_DESCUENTOS",
+                    data: JSON.stringify(data),
+                    async: true,
+                    cache: false,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    beforeSend: function () {
+                        $('#loading').show();
+                    },
+                    success: function (data) {
+                        if (data.d[0] == "0") {
+                            $.messager.alert('Información', data.d[1], 'info');
+                        }
+                        else { $.messager.alert('Error', data.d[1], 'error'); }
+                    },
+                    error: function (er) {
+                        $('#loading').hide();
+                        $.messager.alert('Error', er.responseJSON.Message, 'error');
+                    },
+                    complete: function () {
+                        $('#loading').hide(100);
+                    }
+                });
+            }
+      
     }
 }
 
@@ -417,7 +475,7 @@ function GUARDAR_CAMBIOS_DESCUENTOS(objbtn) {
             },
             success: function (data) {
                 if (data.d[0] == "0") {
-                    $.messager.alert('Información', data.d[1], 'info');
+                    $.messager.alert('Información', data.d[1], 'info');                  
                 }
                 else { $.messager.alert('Error', data.d[1], 'error'); }
             },

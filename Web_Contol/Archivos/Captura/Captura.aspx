@@ -119,7 +119,7 @@
                     <div class="flex flax-row space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-red-900">Importe Solicitado</label>                    
-                            <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtimporte" precision="0" data-options="required:true"/>                   
+                            <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtimporte" precision="0" data-options="required:true,precision:2,groupSeparator:',',decimalSeparator:'.'"/>                   
                         </div>
                          <div class="flex flex-col mb-1 w-1/2 ">
                              <label class="text-left text-lg text-red-900">Cuenta Bancaria</label>                    

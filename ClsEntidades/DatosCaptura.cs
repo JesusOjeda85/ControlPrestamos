@@ -10,7 +10,8 @@ namespace ClsEntidades
     public class DatosCaptura
     {
         public int Id { get; set; }
-        public int IdUsuario { get; set; }
+        public int FkUsuarioCaptura { get; set; }
+        public int FkUsuarioAutoriza { get; set; }
         public int FkOrganismo { get; set; }
         public int Empleado { get; set; }
         public string FechaSolicitud { get; set; }
@@ -30,7 +31,10 @@ namespace ClsEntidades
         public int FkTipoPago { get; set; }
         public int FkBanco { get; set; }
         public string Cuenta { get; set; }
-        public string Valores { get; set; }
+        public string Aplicados { get; set; }
+        public string Rechazados { get; set; }
+        public int Quincena { get; set; }
+        public int Año { get; set; }
 
     }
 }

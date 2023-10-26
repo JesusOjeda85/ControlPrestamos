@@ -25,5 +25,13 @@ namespace WebApi.Controllers.AplicacionDescuentos
             ObjMensaje msg = RAplicacion.Aplicar_Descuentos(obj);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
+
+        [HttpGet]
+        [Route("Listar_Quincenas")]
+        public IActionResult Listar_Quincenas()
+        {         
+           ObjMensaje msg = RAplicacion.Listar_Quincenas();
+           return StatusCode(StatusCodes.Status200OK, msg);
+        }
     }
 }

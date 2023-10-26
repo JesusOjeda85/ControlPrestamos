@@ -60,7 +60,13 @@ namespace WebApi.Repositorio.Usuarios
                     msg.Mensaje = "";
                     msg.Data = Tbljson;
                 }
-                ds.Dispose();
+                else
+                {
+                    msg.Error = 1;
+                    msg.Mensaje = "No Existe Información a Mostrar";
+                    msg.Data = null;
+                }
+                    ds.Dispose();
             }
             catch (Exception ex)
             {
@@ -73,7 +79,9 @@ namespace WebApi.Repositorio.Usuarios
         public static ObjMensaje Guardar_Usuario(DatosUsuario Obj)
         {
             ObjMensaje msg = new();
-            DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Sesion_Guardar_Usuarios " + Obj.Idusuario + ",'" + Obj.Usuario + "','" + Obj.Contraseña + "','" + Obj.APPaterno.ToUpper() + "','" + Obj.APMaterno.ToUpper() + "','" + Obj.Nombres.ToUpper() + "'," + Obj.Administrador + "," + Obj.Estatus);
+            try
+            {
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Sesion_Guardar_Usuarios " + Obj.Idusuario + ",'" + Obj.Usuario + "','" + Obj.Contraseña + "','" + Obj.APPaterno.ToUpper() + "','" + Obj.APMaterno.ToUpper() + "','" + Obj.Nombres.ToUpper() + "'," + Obj.Administrador + "," + Obj.Estatus);
             if (ds.Tables.Count > 0)
             {
                 msg.Error = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());
@@ -81,7 +89,19 @@ namespace WebApi.Repositorio.Usuarios
                 msg.Data = null;
                 msg.Datos = "";
             }
-            ds.Dispose();
+                else
+                {
+                    msg.Error = 1;
+                    msg.Mensaje = "No Existe Información a Mostrar";
+                    msg.Data = null;
+                }
+                ds.Dispose();
+            }
+            catch (Exception ex)
+            {
+                msg.Error = 1;
+                msg.Mensaje = ex.Message.ToString();
+            }
             return msg;
         }
     }

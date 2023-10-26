@@ -9,7 +9,7 @@ namespace WebApi.Dto
     public class ModificarCapturaDto
     {
         public int Id { get; set; }
-        public int IdUsuario { get; set; }      
+        public int FkUsuarioCaptura { get; set; }      
         public int Empleado { get; set; }
         public Int64 ImporteCredito { get; set; }
         public int FkPlazo { get; set; }

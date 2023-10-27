@@ -15,17 +15,22 @@ namespace ClsObjetos
         //url publicada local 
         //public static string host = $"http://10.10.213.73/api/";
 
-        public static string host = $"http://localhost:5155/api/";
+        //public static string host = $"http://10.10.129.82/Api-Descuentos/pi/";
+
+        //public static string host = $"http://localhost:5155/api/";
 
 
-        //public static string host = $"https://localhost:44375/api/";
+        public static string host = $"https://desarrollorh.sinaloa.gob.mx/Api-Descuentos/api/";
 
 
         public static string GetItem(string url)
         {
             // string url = $"" + Control;
             string responseBody = "";
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             var request = (HttpWebRequest)WebRequest.Create(host + url);
+            ((HttpWebRequest)request).UserAgent = "rhdesarrollo";
             request.Method = "GET";
             request.ContentType = "application/json";
             request.Accept = "application/json";
@@ -53,7 +58,10 @@ namespace ClsObjetos
         public static string GetItems(string url, string data)
         {
             string responseBody = "";
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             var request = (HttpWebRequest)WebRequest.Create(host + url);
+            ((HttpWebRequest)request).UserAgent = "rhdesarrollo";
             string json = $"" + data;
             request.Method = "GET";
             request.ContentType = "application/json";
@@ -88,7 +96,11 @@ namespace ClsObjetos
         public static string PutItem(string url, string data)
         {
             string responseBody = "";
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             var request = (HttpWebRequest)WebRequest.Create(host + url);
+            ((HttpWebRequest)request).UserAgent = "rhdesarrollo";
             string json = $"" + data;
             request.Method = "PUT";
             request.ContentType = "application/json";
@@ -125,7 +137,11 @@ namespace ClsObjetos
         public static string PostItem(string url, string data)
         {
             string responseBody = "";
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             var request = (HttpWebRequest)WebRequest.Create(host + url);
+            ((HttpWebRequest)request).UserAgent = "rhdesarrollo";
             request.Method = "POST";
             request.ContentType = "application/json";
             request.Accept = "application/json";
@@ -163,6 +179,7 @@ namespace ClsObjetos
         {
             string result = "";
             WebRequest oRequest = WebRequest.Create(host + url);
+
             oRequest.Method = "Post";
             oRequest.ContentType = "application/json; chartse4t=UTO-8";
 
@@ -190,7 +207,10 @@ namespace ClsObjetos
         public static string DeleteItem(string url, string data)
         {
             string responseBody = "";
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             var request = (HttpWebRequest)WebRequest.Create(host + url);
+            ((HttpWebRequest)request).UserAgent = "rhdesarrollo";
             string json = $"" + data;
             request.Method = "DELETE";
             request.ContentType = "application/json";

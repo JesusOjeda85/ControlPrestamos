@@ -1,0 +1,2414 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9B67389-5BAA-48BE-ACFE-A05E17B1A32D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ControlDescuentos</RootNamespace>
+    <AssemblyName>ControlDescuentos</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="ClsEntidades, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\WEBAP-NOMINA_INICIAL\Nomina\bin\ClsEntidades.dll</HintPath>
+    </Reference>
+    <Reference Include="ClsObjetos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\WEBAP-NOMINA_INICIAL\Nomina\bin\ClsObjetos.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelXml, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ExcelXml.dll</HintPath>
+    </Reference>
+    <Reference Include="FubarCoder.RestSharp.Portable.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=be81bb0f53eab22f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubarCoder.RestSharp.Portable.Core.4.0.8\lib\net45\FubarCoder.RestSharp.Portable.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FubarCoder.RestSharp.Portable.HttpClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=be81bb0f53eab22f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubarCoder.RestSharp.Portable.HttpClient.4.0.8\lib\net45\FubarCoder.RestSharp.Portable.HttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\office.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx" />
+    <Content Include="Archivos\AplicarDescuentos\AplicarDescuentos.js" />
+    <Content Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx" />
+    <Content Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx" />
+    <Content Include="Archivos\Captura\Captura.aspx" />
+    <Content Include="Archivos\Captura\Captura.js" />
+    <Content Include="Archivos\Captura\Conceptos.aspx" />
+    <Content Include="Archivos\Captura\Conceptos.js" />
+    <Content Include="Archivos\Captura\Fun_Captura.aspx" />
+    <Content Include="Archivos\Captura\Listar_Empleados.aspx" />
+    <Content Include="Archivos\CargayDescarga\CargarArchivos.aspx" />
+    <Content Include="Archivos\CargayDescarga\CargarArchivos.js" />
+    <Content Include="Archivos\CargayDescarga\Fun_CargaYDescarga.aspx" />
+    <Content Include="Archivos\CargayDescarga\Lista_Perfiles.js" />
+    <Content Include="Archivos\CargayDescarga\Lista_Perfiles.aspx" />
+    <Content Include="Archivos\Menu\Fun_Menus.aspx" />
+    <Content Include="Archivos\Menu\Menu.aspx" />
+    <Content Include="Archivos\Menu\Menu.js" />
+    <Content Include="Archivos\Usuarios\Fun_Usuarios.aspx" />
+    <Content Include="Archivos\Usuarios\Usuarios.aspx" />
+    <Content Include="Archivos\Usuarios\Usuarios.js" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.UI.Combined.dll" />
+    <Content Include="bin\ClsDatos.dll" />
+    <Content Include="bin\ClsDatos.pdb" />
+    <Content Include="bin\ClsEntidades.dll" />
+    <Content Include="bin\ClsEntidades.pdb" />
+    <Content Include="bin\ClsObjetos.dll" />
+    <Content Include="bin\ClsObjetos.pdb" />
+    <Content Include="bin\ControlDescuentos.dll" />
+    <Content Include="bin\ControlDescuentos.pdb" />
+    <Content Include="bin\DotNetOpenAuth.AspNet.dll" />
+    <Content Include="bin\DotNetOpenAuth.Core.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\ExcelLibrary.dll" />
+    <Content Include="bin\ExcelXml.dll" />
+    <Content Include="bin\FubarCoder.RestSharp.Portable.Core.dll" />
+    <Content Include="bin\FubarCoder.RestSharp.Portable.Core.xml" />
+    <Content Include="bin\FubarCoder.RestSharp.Portable.HttpClient.dll" />
+    <Content Include="bin\FubarCoder.RestSharp.Portable.HttpClient.xml" />
+    <Content Include="bin\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="bin\Microsoft.AspNet.Membership.OpenAuth.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Excel.xml" />
+    <Content Include="bin\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Nomina.dll" />
+    <Content Include="bin\Nomina.pdb" />
+    <Content Include="bin\NominaLogica.dll" />
+    <Content Include="bin\NominaLogica.pdb" />
+    <Content Include="bin\Nomina_AdministracionDeUsuarios.dll" />
+    <Content Include="bin\Nomina_AdministracionDeUsuarios.pdb" />
+    <Content Include="bin\Nomina_ArchivosDeSalida.dll" />
+    <Content Include="bin\Nomina_ArchivosDeSalida.pdb" />
+    <Content Include="bin\Nomina_Asistentes.dll" />
+    <Content Include="bin\Nomina_Asistentes.pdb" />
+    <Content Include="bin\Nomina_CapturaDeMovimientos.dll" />
+    <Content Include="bin\Nomina_CapturaDeMovimientos.pdb" />
+    <Content Include="bin\Nomina_ControlDeAfectacion.dll" />
+    <Content Include="bin\Nomina_ControlDeAfectacion.pdb" />
+    <Content Include="bin\Nomina_ControlDeNomina.dll" />
+    <Content Include="bin\Nomina_ControlDeNomina.pdb" />
+    <Content Include="bin\Nomina_CreacionDePlazas.dll" />
+    <Content Include="bin\Nomina_CreacionDePlazas.pdb" />
+    <Content Include="bin\Nomina_PermisosYRoles.dll" />
+    <Content Include="bin\Nomina_PermisosYRoles.pdb" />
+    <Content Include="bin\Nomina_Sesion.dll" />
+    <Content Include="bin\Nomina_Sesion.pdb" />
+    <Content Include="bin\Nomina_ValidarNominas.dll" />
+    <Content Include="bin\office.dll" />
+    <Content Include="bin\System.Net.Http.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.WebRequest.dll" />
+    <Content Include="bin\System.Web.Providers.dll" />
+    <Content Include="bin\UsuariosYPermisos.dll" />
+    <Content Include="bin\UsuariosYPermisos.pdb" />
+    <Content Include="bin\WebApi.Dto.dll" />
+    <Content Include="Imagenes\botones\cerrar.png" />
+    <Content Include="Imagenes\botones\menu.png" />
+    <Content Include="Imagenes\botones\usuario.png" />
+    <Content Include="Imagenes\escudo.png" />
+    <Content Include="Imagenes\LETRAGRAMA1.png" />
+    <Content Include="Imagenes\prestamos.png" />
+    <Content Include="Imagenes\prestamos2.jpg" />
+    <Content Include="jqueryEsy\plugins\datagrid-export.js" />
+    <Content Include="jqueryEsy\plugins\datagrid-groupview.js" />
+    <Content Include="jqueryEsy\plugins\jquery.checkbox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.checkgroup.js" />
+    <Content Include="jqueryEsy\plugins\jquery.combotreegrid.js" />
+    <Content Include="jqueryEsy\plugins\jquery.drawer.js" />
+    <Content Include="jqueryEsy\plugins\jquery.maskedbox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.passwordbox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.radiobutton.js" />
+    <Content Include="jqueryEsy\plugins\jquery.radiogroup.js" />
+    <Content Include="jqueryEsy\plugins\jquery.sidemenu.js" />
+    <Content Include="jqueryEsy\plugins\jquery.tagbox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.timepicker.js" />
+    <Content Include="jqueryEsy\themes\icons\captura32.png" />
+    <Content Include="jqueryEsy\themes\icons\catalogos32.png" />
+    <Content Include="jqueryEsy\themes\icons\consulta32.png" />
+    <Content Include="jqueryEsy\themes\icons\diseñador32.png" />
+    <Content Include="jqueryEsy\themes\icons\movesp.png" />
+    <Content Include="jqueryEsy\themes\icons\penalim.png" />
+    <Content Include="jqueryEsy\themes\icons\personaliza.jpg" />
+    <Content Include="jqueryEsy\themes\icons\personalizar.png" />
+    <Content Include="jqueryEsy\themes\icons\reportes32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\Accesos32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\captura32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\carga32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\catalogos32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\cerrar32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\configuracion2.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\consulta32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\descarga32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\inicio32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\menu32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\operacion32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\recepcion32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\reportes32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\usuario32.png" />
+    <Content Include="jqueryEsy\themes\icons\tooltip.png" />
+    <Content Include="jqueryEsy\themes\icons\usuariospermisos32.png" />
+    <Content Include="jqueryEsy\themes\material-blue\accordion.css" />
+    <Content Include="jqueryEsy\themes\material-blue\calendar.css" />
+    <Content Include="jqueryEsy\themes\material-blue\checkbox.css" />
+    <Content Include="jqueryEsy\themes\material-blue\combo.css" />
+    <Content Include="jqueryEsy\themes\material-blue\combobox.css" />
+    <Content Include="jqueryEsy\themes\material-blue\datagrid.css" />
+    <Content Include="jqueryEsy\themes\material-blue\datalist.css" />
+    <Content Include="jqueryEsy\themes\material-blue\datebox.css" />
+    <Content Include="jqueryEsy\themes\material-blue\dialog.css" />
+    <Content Include="jqueryEsy\themes\material-blue\drawer.css" />
+    <Content Include="jqueryEsy\themes\material-blue\easyui.css" />
+    <Content Include="jqueryEsy\themes\material-blue\filebox.css" />
+    <Content Include="jqueryEsy\themes\material-blue\flex.css" />
+    <Content Include="jqueryEsy\themes\material-blue\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\material-blue\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\material-blue\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\menu_arrows1.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\menu_arrows2.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\messager_icons16.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\passwordbox_close.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\passwordbox_open.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\tagbox_icons.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\material-blue\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\material-blue\layout.css" />
+    <Content Include="jqueryEsy\themes\material-blue\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\material-blue\menu.css" />
+    <Content Include="jqueryEsy\themes\material-blue\menubutton.css" />
+    <Content Include="jqueryEsy\themes\material-blue\messager.css" />
+    <Content Include="jqueryEsy\themes\material-blue\numberbox.css" />
+    <Content Include="jqueryEsy\themes\material-blue\pagination.css" />
+    <Content Include="jqueryEsy\themes\material-blue\panel.css" />
+    <Content Include="jqueryEsy\themes\material-blue\passwordbox.css" />
+    <Content Include="jqueryEsy\themes\material-blue\progressbar.css" />
+    <Content Include="jqueryEsy\themes\material-blue\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\material-blue\radiobutton.css" />
+    <Content Include="jqueryEsy\themes\material-blue\searchbox.css" />
+    <Content Include="jqueryEsy\themes\material-blue\sidemenu.css" />
+    <Content Include="jqueryEsy\themes\material-blue\slider.css" />
+    <Content Include="jqueryEsy\themes\material-blue\spinner.css" />
+    <Content Include="jqueryEsy\themes\material-blue\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\material-blue\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\material-blue\tabs.css" />
+    <Content Include="jqueryEsy\themes\material-blue\tagbox.css" />
+    <Content Include="jqueryEsy\themes\material-blue\textbox.css" />
+    <Content Include="jqueryEsy\themes\material-blue\timepicker.css" />
+    <Content Include="jqueryEsy\themes\material-blue\tooltip.css" />
+    <Content Include="jqueryEsy\themes\material-blue\tree.css" />
+    <Content Include="jqueryEsy\themes\material-blue\validatebox.css" />
+    <Content Include="jqueryEsy\themes\material-blue\window.css" />
+    <Content Include="jqueryEsy\themes\material-teal\accordion.css" />
+    <Content Include="jqueryEsy\themes\material-teal\calendar.css" />
+    <Content Include="jqueryEsy\themes\material-teal\checkbox.css" />
+    <Content Include="jqueryEsy\themes\material-teal\combo.css" />
+    <Content Include="jqueryEsy\themes\material-teal\combobox.css" />
+    <Content Include="jqueryEsy\themes\material-teal\datagrid.css" />
+    <Content Include="jqueryEsy\themes\material-teal\datalist.css" />
+    <Content Include="jqueryEsy\themes\material-teal\datebox.css" />
+    <Content Include="jqueryEsy\themes\material-teal\dialog.css" />
+    <Content Include="jqueryEsy\themes\material-teal\drawer.css" />
+    <Content Include="jqueryEsy\themes\material-teal\easyui.css" />
+    <Content Include="jqueryEsy\themes\material-teal\filebox.css" />
+    <Content Include="jqueryEsy\themes\material-teal\flex.css" />
+    <Content Include="jqueryEsy\themes\material-teal\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\material-teal\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\material-teal\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\messager_icons16.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\passwordbox_close.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\passwordbox_open.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\tagbox_icons.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\material-teal\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\material-teal\layout.css" />
+    <Content Include="jqueryEsy\themes\material-teal\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\material-teal\menu.css" />
+    <Content Include="jqueryEsy\themes\material-teal\menubutton.css" />
+    <Content Include="jqueryEsy\themes\material-teal\messager.css" />
+    <Content Include="jqueryEsy\themes\material-teal\numberbox.css" />
+    <Content Include="jqueryEsy\themes\material-teal\pagination.css" />
+    <Content Include="jqueryEsy\themes\material-teal\panel.css" />
+    <Content Include="jqueryEsy\themes\material-teal\passwordbox.css" />
+    <Content Include="jqueryEsy\themes\material-teal\progressbar.css" />
+    <Content Include="jqueryEsy\themes\material-teal\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\material-teal\radiobutton.css" />
+    <Content Include="jqueryEsy\themes\material-teal\searchbox.css" />
+    <Content Include="jqueryEsy\themes\material-teal\sidemenu.css" />
+    <Content Include="jqueryEsy\themes\material-teal\slider.css" />
+    <Content Include="jqueryEsy\themes\material-teal\spinner.css" />
+    <Content Include="jqueryEsy\themes\material-teal\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\material-teal\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\material-teal\tabs.css" />
+    <Content Include="jqueryEsy\themes\material-teal\tagbox.css" />
+    <Content Include="jqueryEsy\themes\material-teal\textbox.css" />
+    <Content Include="jqueryEsy\themes\material-teal\timepicker.css" />
+    <Content Include="jqueryEsy\themes\material-teal\tooltip.css" />
+    <Content Include="jqueryEsy\themes\material-teal\tree.css" />
+    <Content Include="jqueryEsy\themes\material-teal\validatebox.css" />
+    <Content Include="jqueryEsy\themes\material-teal\window.css" />
+    <Content Include="jqueryEsy\themes\material\images\Thumbs.db" />
+    <Content Include="jqueryEsy\themes\metro-blue\accordion.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\calendar.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\checkbox.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\combo.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\combobox.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\datagrid.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\datalist.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\datebox.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\dialog.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\easyui.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\filebox.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\flex.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\passwordbox_close.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\passwordbox_open.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\tagbox_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\metro-blue\layout.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\menu.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\menubutton.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\messager.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\numberbox.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\pagination.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\panel.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\passwordbox.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\progressbar.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\radiobutton.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\searchbox.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\sidemenu.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\slider.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\spinner.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\tabs.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\tagbox.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\textbox.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\timepicker.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\tooltip.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\tree.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\validatebox.css" />
+    <Content Include="jqueryEsy\themes\metro-blue\window.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\accordion.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\calendar.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\checkbox.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\combo.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\combobox.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\datagrid.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\datalist.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\datebox.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\dialog.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\easyui.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\filebox.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\flex.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\passwordbox_close.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\passwordbox_open.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\tagbox_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\metro-gray\layout.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\menu.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\menubutton.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\messager.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\numberbox.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\pagination.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\panel.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\passwordbox.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\progressbar.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\radiobutton.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\searchbox.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\sidemenu.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\slider.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\spinner.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\tabs.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\tagbox.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\textbox.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\timepicker.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\tooltip.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\tree.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\validatebox.css" />
+    <Content Include="jqueryEsy\themes\metro-gray\window.css" />
+    <Content Include="jqueryEsy\themes\metro-green\accordion.css" />
+    <Content Include="jqueryEsy\themes\metro-green\calendar.css" />
+    <Content Include="jqueryEsy\themes\metro-green\checkbox.css" />
+    <Content Include="jqueryEsy\themes\metro-green\combo.css" />
+    <Content Include="jqueryEsy\themes\metro-green\combobox.css" />
+    <Content Include="jqueryEsy\themes\metro-green\datagrid.css" />
+    <Content Include="jqueryEsy\themes\metro-green\datalist.css" />
+    <Content Include="jqueryEsy\themes\metro-green\datebox.css" />
+    <Content Include="jqueryEsy\themes\metro-green\dialog.css" />
+    <Content Include="jqueryEsy\themes\metro-green\easyui.css" />
+    <Content Include="jqueryEsy\themes\metro-green\filebox.css" />
+    <Content Include="jqueryEsy\themes\metro-green\flex.css" />
+    <Content Include="jqueryEsy\themes\metro-green\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\metro-green\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\metro-green\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\passwordbox_close.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\passwordbox_open.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\tagbox_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-green\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\metro-green\layout.css" />
+    <Content Include="jqueryEsy\themes\metro-green\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-green\menu.css" />
+    <Content Include="jqueryEsy\themes\metro-green\menubutton.css" />
+    <Content Include="jqueryEsy\themes\metro-green\messager.css" />
+    <Content Include="jqueryEsy\themes\metro-green\numberbox.css" />
+    <Content Include="jqueryEsy\themes\metro-green\pagination.css" />
+    <Content Include="jqueryEsy\themes\metro-green\panel.css" />
+    <Content Include="jqueryEsy\themes\metro-green\passwordbox.css" />
+    <Content Include="jqueryEsy\themes\metro-green\progressbar.css" />
+    <Content Include="jqueryEsy\themes\metro-green\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\metro-green\radiobutton.css" />
+    <Content Include="jqueryEsy\themes\metro-green\searchbox.css" />
+    <Content Include="jqueryEsy\themes\metro-green\sidemenu.css" />
+    <Content Include="jqueryEsy\themes\metro-green\slider.css" />
+    <Content Include="jqueryEsy\themes\metro-green\spinner.css" />
+    <Content Include="jqueryEsy\themes\metro-green\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-green\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-green\tabs.css" />
+    <Content Include="jqueryEsy\themes\metro-green\tagbox.css" />
+    <Content Include="jqueryEsy\themes\metro-green\textbox.css" />
+    <Content Include="jqueryEsy\themes\metro-green\timepicker.css" />
+    <Content Include="jqueryEsy\themes\metro-green\tooltip.css" />
+    <Content Include="jqueryEsy\themes\metro-green\tree.css" />
+    <Content Include="jqueryEsy\themes\metro-green\validatebox.css" />
+    <Content Include="jqueryEsy\themes\metro-green\window.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\accordion.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\calendar.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\checkbox.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\combo.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\combobox.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\datagrid.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\datalist.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\datebox.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\dialog.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\easyui.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\filebox.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\flex.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\passwordbox_close.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\passwordbox_open.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\tagbox_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\metro-orange\layout.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\menu.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\menubutton.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\messager.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\numberbox.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\pagination.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\panel.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\passwordbox.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\progressbar.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\radiobutton.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\searchbox.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\sidemenu.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\slider.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\spinner.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\tabs.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\tagbox.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\textbox.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\timepicker.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\tooltip.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\tree.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\validatebox.css" />
+    <Content Include="jqueryEsy\themes\metro-orange\window.css" />
+    <Content Include="jqueryEsy\themes\metro-red\accordion.css" />
+    <Content Include="jqueryEsy\themes\metro-red\calendar.css" />
+    <Content Include="jqueryEsy\themes\metro-red\checkbox.css" />
+    <Content Include="jqueryEsy\themes\metro-red\combo.css" />
+    <Content Include="jqueryEsy\themes\metro-red\combobox.css" />
+    <Content Include="jqueryEsy\themes\metro-red\datagrid.css" />
+    <Content Include="jqueryEsy\themes\metro-red\datalist.css" />
+    <Content Include="jqueryEsy\themes\metro-red\datebox.css" />
+    <Content Include="jqueryEsy\themes\metro-red\dialog.css" />
+    <Content Include="jqueryEsy\themes\metro-red\easyui.css" />
+    <Content Include="jqueryEsy\themes\metro-red\filebox.css" />
+    <Content Include="jqueryEsy\themes\metro-red\flex.css" />
+    <Content Include="jqueryEsy\themes\metro-red\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\metro-red\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\metro-red\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\passwordbox_close.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\passwordbox_open.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\tagbox_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\metro-red\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\metro-red\layout.css" />
+    <Content Include="jqueryEsy\themes\metro-red\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-red\menu.css" />
+    <Content Include="jqueryEsy\themes\metro-red\menubutton.css" />
+    <Content Include="jqueryEsy\themes\metro-red\messager.css" />
+    <Content Include="jqueryEsy\themes\metro-red\numberbox.css" />
+    <Content Include="jqueryEsy\themes\metro-red\pagination.css" />
+    <Content Include="jqueryEsy\themes\metro-red\panel.css" />
+    <Content Include="jqueryEsy\themes\metro-red\passwordbox.css" />
+    <Content Include="jqueryEsy\themes\metro-red\progressbar.css" />
+    <Content Include="jqueryEsy\themes\metro-red\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\metro-red\radiobutton.css" />
+    <Content Include="jqueryEsy\themes\metro-red\searchbox.css" />
+    <Content Include="jqueryEsy\themes\metro-red\sidemenu.css" />
+    <Content Include="jqueryEsy\themes\metro-red\slider.css" />
+    <Content Include="jqueryEsy\themes\metro-red\spinner.css" />
+    <Content Include="jqueryEsy\themes\metro-red\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-red\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\metro-red\tabs.css" />
+    <Content Include="jqueryEsy\themes\metro-red\tagbox.css" />
+    <Content Include="jqueryEsy\themes\metro-red\textbox.css" />
+    <Content Include="jqueryEsy\themes\metro-red\timepicker.css" />
+    <Content Include="jqueryEsy\themes\metro-red\tooltip.css" />
+    <Content Include="jqueryEsy\themes\metro-red\tree.css" />
+    <Content Include="jqueryEsy\themes\metro-red\validatebox.css" />
+    <Content Include="jqueryEsy\themes\metro-red\window.css" />
+    <Content Include="jqueryEsy\themes\pasante.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\checkbox.css" />
+    <Content Include="KendoUI\lib\jquery.min.js" />
+    <Content Include="KendoUI\lib\jszip.min.js" />
+    <Content Include="KendoUI\lib\kendo.all.min.js" />
+    <Content Include="KendoUI\styles\Black\editor.png" />
+    <Content Include="KendoUI\styles\Black\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Black\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Black\loading-image.gif" />
+    <Content Include="KendoUI\styles\Black\loading.gif" />
+    <Content Include="KendoUI\styles\Black\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Black\markers.png" />
+    <Content Include="KendoUI\styles\Black\markers_2x.png" />
+    <Content Include="KendoUI\styles\Black\slider-h.gif" />
+    <Content Include="KendoUI\styles\Black\slider-v.gif" />
+    <Content Include="KendoUI\styles\Black\sprite.png" />
+    <Content Include="KendoUI\styles\Black\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Black\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Black\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\BlueOpal\editor.png" />
+    <Content Include="KendoUI\styles\BlueOpal\imagebrowser.png" />
+    <Content Include="KendoUI\styles\BlueOpal\indeterminate.gif" />
+    <Content Include="KendoUI\styles\BlueOpal\loading-image.gif" />
+    <Content Include="KendoUI\styles\BlueOpal\loading.gif" />
+    <Content Include="KendoUI\styles\BlueOpal\loading_2x.gif" />
+    <Content Include="KendoUI\styles\BlueOpal\markers.png" />
+    <Content Include="KendoUI\styles\BlueOpal\markers_2x.png" />
+    <Content Include="KendoUI\styles\BlueOpal\slider-h.gif" />
+    <Content Include="KendoUI\styles\BlueOpal\slider-v.gif" />
+    <Content Include="KendoUI\styles\BlueOpal\sprite.png" />
+    <Content Include="KendoUI\styles\BlueOpal\sprite_2x.png" />
+    <Content Include="KendoUI\styles\BlueOpal\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\BlueOpal\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\Bootstrap\editor.png" />
+    <Content Include="KendoUI\styles\Bootstrap\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Bootstrap\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Bootstrap\loading-image.gif" />
+    <Content Include="KendoUI\styles\Bootstrap\loading.gif" />
+    <Content Include="KendoUI\styles\Bootstrap\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Bootstrap\markers.png" />
+    <Content Include="KendoUI\styles\Bootstrap\markers_2x.png" />
+    <Content Include="KendoUI\styles\Bootstrap\slider-h.gif" />
+    <Content Include="KendoUI\styles\Bootstrap\slider-v.gif" />
+    <Content Include="KendoUI\styles\Bootstrap\sprite.png" />
+    <Content Include="KendoUI\styles\Bootstrap\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Bootstrap\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\Default\editor.png" />
+    <Content Include="KendoUI\styles\Default\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Default\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Default\loading-image.gif" />
+    <Content Include="KendoUI\styles\Default\loading.gif" />
+    <Content Include="KendoUI\styles\Default\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Default\markers.png" />
+    <Content Include="KendoUI\styles\Default\markers_2x.png" />
+    <Content Include="KendoUI\styles\Default\slider-h.gif" />
+    <Content Include="KendoUI\styles\Default\slider-v.gif" />
+    <Content Include="KendoUI\styles\Default\sprite.png" />
+    <Content Include="KendoUI\styles\Default\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Default\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Default\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\Fiori\editor.png" />
+    <Content Include="KendoUI\styles\Fiori\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Fiori\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Fiori\loading-image.gif" />
+    <Content Include="KendoUI\styles\Fiori\loading.gif" />
+    <Content Include="KendoUI\styles\Fiori\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Fiori\markers.png" />
+    <Content Include="KendoUI\styles\Fiori\markers_2x.png" />
+    <Content Include="KendoUI\styles\Fiori\slider-h.gif" />
+    <Content Include="KendoUI\styles\Fiori\slider-v.gif" />
+    <Content Include="KendoUI\styles\Fiori\sprite.png" />
+    <Content Include="KendoUI\styles\Fiori\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Fiori\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Fiori\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\Flat\editor.png" />
+    <Content Include="KendoUI\styles\Flat\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Flat\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Flat\loading-image.gif" />
+    <Content Include="KendoUI\styles\Flat\loading.gif" />
+    <Content Include="KendoUI\styles\Flat\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Flat\markers.png" />
+    <Content Include="KendoUI\styles\Flat\markers_2x.png" />
+    <Content Include="KendoUI\styles\Flat\slider-h.gif" />
+    <Content Include="KendoUI\styles\Flat\slider-v.gif" />
+    <Content Include="KendoUI\styles\Flat\sprite.png" />
+    <Content Include="KendoUI\styles\Flat\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Flat\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Flat\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="KendoUI\styles\fonts\glyphs\KendoUIGlyphs.svg" />
+    <Content Include="KendoUI\styles\HighContrast\editor.png" />
+    <Content Include="KendoUI\styles\HighContrast\imagebrowser.png" />
+    <Content Include="KendoUI\styles\HighContrast\indeterminate.gif" />
+    <Content Include="KendoUI\styles\HighContrast\loading-image.gif" />
+    <Content Include="KendoUI\styles\HighContrast\loading.gif" />
+    <Content Include="KendoUI\styles\HighContrast\loading_2x.gif" />
+    <Content Include="KendoUI\styles\HighContrast\markers.png" />
+    <Content Include="KendoUI\styles\HighContrast\markers_2x.png" />
+    <Content Include="KendoUI\styles\HighContrast\slider-h.gif" />
+    <Content Include="KendoUI\styles\HighContrast\slider-v.gif" />
+    <Content Include="KendoUI\styles\HighContrast\sprite.png" />
+    <Content Include="KendoUI\styles\HighContrast\sprite_2x.png" />
+    <Content Include="KendoUI\styles\HighContrast\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\HighContrast\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\images\back.png" />
+    <Content Include="KendoUI\styles\images\kendoui.svg" />
+    <Content Include="KendoUI\styles\images\wp8_icons.png" />
+    <Content Include="KendoUI\styles\images\wp8_inverseicons.png" />
+    <Content Include="KendoUI\styles\kendo.black.min.css" />
+    <Content Include="KendoUI\styles\kendo.black.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.blueopal.min.css" />
+    <Content Include="KendoUI\styles\kendo.blueopal.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.bootstrap.min.css" />
+    <Content Include="KendoUI\styles\kendo.bootstrap.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.common-bootstrap.core.min.css" />
+    <Content Include="KendoUI\styles\kendo.common-bootstrap.min.css" />
+    <Content Include="KendoUI\styles\kendo.common-fiori.min.css" />
+    <Content Include="KendoUI\styles\kendo.common-material.core.min.css" />
+    <Content Include="KendoUI\styles\kendo.common-material.min.css" />
+    <Content Include="KendoUI\styles\kendo.common-nova.core.min.css" />
+    <Content Include="KendoUI\styles\kendo.common-nova.min.css" />
+    <Content Include="KendoUI\styles\kendo.common-office365.min.css" />
+    <Content Include="KendoUI\styles\kendo.common.core.min.css" />
+    <Content Include="KendoUI\styles\kendo.common.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.black.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.blueopal.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.default.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.fiori.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.flat.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.highcontrast.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.material.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.materialblack.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.metro.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.metroblack.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.moonlight.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.nova.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.office365.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.silver.min.css" />
+    <Content Include="KendoUI\styles\kendo.dataviz.uniform.min.css" />
+    <Content Include="KendoUI\styles\kendo.default.min.css" />
+    <Content Include="KendoUI\styles\kendo.default.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.fiori.min.css" />
+    <Content Include="KendoUI\styles\kendo.fiori.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.flat.min.css" />
+    <Content Include="KendoUI\styles\kendo.flat.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.highcontrast.min.css" />
+    <Content Include="KendoUI\styles\kendo.highcontrast.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.material.min.css" />
+    <Content Include="KendoUI\styles\kendo.material.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.materialblack.min.css" />
+    <Content Include="KendoUI\styles\kendo.materialblack.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.metro.min.css" />
+    <Content Include="KendoUI\styles\kendo.metro.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.metroblack.min.css" />
+    <Content Include="KendoUI\styles\kendo.metroblack.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.all.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.android.dark.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.android.light.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.blackberry.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.common.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.fiori.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.flat.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.ios.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.material.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.meego.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.nova.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.office365.min.css" />
+    <Content Include="KendoUI\styles\kendo.mobile.wp8.min.css" />
+    <Content Include="KendoUI\styles\kendo.moonlight.min.css" />
+    <Content Include="KendoUI\styles\kendo.moonlight.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.nova.min.css" />
+    <Content Include="KendoUI\styles\kendo.nova.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.office365.min.css" />
+    <Content Include="KendoUI\styles\kendo.office365.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.rtl.min.css" />
+    <Content Include="KendoUI\styles\kendo.silver.min.css" />
+    <Content Include="KendoUI\styles\kendo.silver.mobile.min.css" />
+    <Content Include="KendoUI\styles\kendo.uniform.min.css" />
+    <Content Include="KendoUI\styles\kendo.uniform.mobile.min.css" />
+    <Content Include="KendoUI\styles\MaterialBlack\editor.png" />
+    <Content Include="KendoUI\styles\MaterialBlack\imagebrowser.png" />
+    <Content Include="KendoUI\styles\MaterialBlack\indeterminate.gif" />
+    <Content Include="KendoUI\styles\MaterialBlack\loading-image.gif" />
+    <Content Include="KendoUI\styles\MaterialBlack\loading.gif" />
+    <Content Include="KendoUI\styles\MaterialBlack\loading_2x.gif" />
+    <Content Include="KendoUI\styles\MaterialBlack\markers.png" />
+    <Content Include="KendoUI\styles\MaterialBlack\markers_2x.png" />
+    <Content Include="KendoUI\styles\MaterialBlack\slider-h.gif" />
+    <Content Include="KendoUI\styles\MaterialBlack\slider-v.gif" />
+    <Content Include="KendoUI\styles\MaterialBlack\sprite.png" />
+    <Content Include="KendoUI\styles\MaterialBlack\sprite_2x.png" />
+    <Content Include="KendoUI\styles\MaterialBlack\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\MaterialBlack\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\Material\editor.png" />
+    <Content Include="KendoUI\styles\Material\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Material\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Material\loading-image.gif" />
+    <Content Include="KendoUI\styles\Material\loading.gif" />
+    <Content Include="KendoUI\styles\Material\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Material\markers.png" />
+    <Content Include="KendoUI\styles\Material\markers_2x.png" />
+    <Content Include="KendoUI\styles\Material\slider-h.gif" />
+    <Content Include="KendoUI\styles\Material\slider-v.gif" />
+    <Content Include="KendoUI\styles\Material\sprite.png" />
+    <Content Include="KendoUI\styles\Material\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Material\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Material\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\MetroBlack\editor.png" />
+    <Content Include="KendoUI\styles\MetroBlack\imagebrowser.png" />
+    <Content Include="KendoUI\styles\MetroBlack\indeterminate.gif" />
+    <Content Include="KendoUI\styles\MetroBlack\loading-image.gif" />
+    <Content Include="KendoUI\styles\MetroBlack\loading.gif" />
+    <Content Include="KendoUI\styles\MetroBlack\loading_2x.gif" />
+    <Content Include="KendoUI\styles\MetroBlack\markers.png" />
+    <Content Include="KendoUI\styles\MetroBlack\markers_2x.png" />
+    <Content Include="KendoUI\styles\MetroBlack\slider-h.gif" />
+    <Content Include="KendoUI\styles\MetroBlack\slider-v.gif" />
+    <Content Include="KendoUI\styles\MetroBlack\sprite.png" />
+    <Content Include="KendoUI\styles\MetroBlack\sprite_2x.png" />
+    <Content Include="KendoUI\styles\MetroBlack\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\MetroBlack\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\Metro\editor.png" />
+    <Content Include="KendoUI\styles\Metro\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Metro\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Metro\loading-image.gif" />
+    <Content Include="KendoUI\styles\Metro\loading.gif" />
+    <Content Include="KendoUI\styles\Metro\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Metro\markers.png" />
+    <Content Include="KendoUI\styles\Metro\markers_2x.png" />
+    <Content Include="KendoUI\styles\Metro\slider-h.gif" />
+    <Content Include="KendoUI\styles\Metro\slider-v.gif" />
+    <Content Include="KendoUI\styles\Metro\sprite.png" />
+    <Content Include="KendoUI\styles\Metro\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Metro\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Metro\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\Moonlight\editor.png" />
+    <Content Include="KendoUI\styles\Moonlight\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Moonlight\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Moonlight\loading-image.gif" />
+    <Content Include="KendoUI\styles\Moonlight\loading.gif" />
+    <Content Include="KendoUI\styles\Moonlight\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Moonlight\markers.png" />
+    <Content Include="KendoUI\styles\Moonlight\markers_2x.png" />
+    <Content Include="KendoUI\styles\Moonlight\slider-h.gif" />
+    <Content Include="KendoUI\styles\Moonlight\slider-v.gif" />
+    <Content Include="KendoUI\styles\Moonlight\sprite.png" />
+    <Content Include="KendoUI\styles\Moonlight\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Moonlight\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Moonlight\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\Nova\editor.png" />
+    <Content Include="KendoUI\styles\Nova\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Nova\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Nova\loading-image.gif" />
+    <Content Include="KendoUI\styles\Nova\loading.gif" />
+    <Content Include="KendoUI\styles\Nova\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Nova\markers.png" />
+    <Content Include="KendoUI\styles\Nova\markers_2x.png" />
+    <Content Include="KendoUI\styles\Nova\slider-h.gif" />
+    <Content Include="KendoUI\styles\Nova\slider-v.gif" />
+    <Content Include="KendoUI\styles\Nova\sprite.png" />
+    <Content Include="KendoUI\styles\Nova\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Nova\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Nova\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\Office365\editor.png" />
+    <Content Include="KendoUI\styles\Office365\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Office365\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Office365\loading-image.gif" />
+    <Content Include="KendoUI\styles\Office365\loading.gif" />
+    <Content Include="KendoUI\styles\Office365\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Office365\markers.png" />
+    <Content Include="KendoUI\styles\Office365\markers_2x.png" />
+    <Content Include="KendoUI\styles\Office365\slider-h.gif" />
+    <Content Include="KendoUI\styles\Office365\slider-v.gif" />
+    <Content Include="KendoUI\styles\Office365\sprite.png" />
+    <Content Include="KendoUI\styles\Office365\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Office365\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Office365\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\Silver\editor.png" />
+    <Content Include="KendoUI\styles\Silver\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Silver\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Silver\loading-image.gif" />
+    <Content Include="KendoUI\styles\Silver\loading.gif" />
+    <Content Include="KendoUI\styles\Silver\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Silver\markers.png" />
+    <Content Include="KendoUI\styles\Silver\markers_2x.png" />
+    <Content Include="KendoUI\styles\Silver\slider-h.gif" />
+    <Content Include="KendoUI\styles\Silver\slider-v.gif" />
+    <Content Include="KendoUI\styles\Silver\sprite.png" />
+    <Content Include="KendoUI\styles\Silver\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Silver\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Silver\sprite_kpi_2x.png" />
+    <Content Include="KendoUI\styles\textures\brushed-metal.png" />
+    <Content Include="KendoUI\styles\textures\dots1.png" />
+    <Content Include="KendoUI\styles\textures\dots10.png" />
+    <Content Include="KendoUI\styles\textures\dots11.png" />
+    <Content Include="KendoUI\styles\textures\dots12.png" />
+    <Content Include="KendoUI\styles\textures\dots13.png" />
+    <Content Include="KendoUI\styles\textures\dots2.png" />
+    <Content Include="KendoUI\styles\textures\dots3.png" />
+    <Content Include="KendoUI\styles\textures\dots4.png" />
+    <Content Include="KendoUI\styles\textures\dots5.png" />
+    <Content Include="KendoUI\styles\textures\dots6.png" />
+    <Content Include="KendoUI\styles\textures\dots7.png" />
+    <Content Include="KendoUI\styles\textures\dots8.png" />
+    <Content Include="KendoUI\styles\textures\dots9.png" />
+    <Content Include="KendoUI\styles\textures\glass-lighter.png" />
+    <Content Include="KendoUI\styles\textures\glass.png" />
+    <Content Include="KendoUI\styles\textures\highlight.png" />
+    <Content Include="KendoUI\styles\textures\hsv-gradient.png" />
+    <Content Include="KendoUI\styles\textures\hue.png" />
+    <Content Include="KendoUI\styles\textures\leather1.png" />
+    <Content Include="KendoUI\styles\textures\leather2.png" />
+    <Content Include="KendoUI\styles\textures\noise.png" />
+    <Content Include="KendoUI\styles\textures\stripe1.png" />
+    <Content Include="KendoUI\styles\textures\stripe2.png" />
+    <Content Include="KendoUI\styles\textures\stripe3.png" />
+    <Content Include="KendoUI\styles\textures\stripe4.png" />
+    <Content Include="KendoUI\styles\textures\stripe5.png" />
+    <Content Include="KendoUI\styles\textures\stripe6.png" />
+    <Content Include="KendoUI\styles\textures\transparency.png" />
+    <Content Include="KendoUI\styles\textures\transtexture.png" />
+    <Content Include="KendoUI\styles\Uniform\editor.png" />
+    <Content Include="KendoUI\styles\Uniform\imagebrowser.png" />
+    <Content Include="KendoUI\styles\Uniform\indeterminate.gif" />
+    <Content Include="KendoUI\styles\Uniform\loading-image.gif" />
+    <Content Include="KendoUI\styles\Uniform\loading.gif" />
+    <Content Include="KendoUI\styles\Uniform\loading_2x.gif" />
+    <Content Include="KendoUI\styles\Uniform\markers.png" />
+    <Content Include="KendoUI\styles\Uniform\markers_2x.png" />
+    <Content Include="KendoUI\styles\Uniform\slider-h.gif" />
+    <Content Include="KendoUI\styles\Uniform\slider-v.gif" />
+    <Content Include="KendoUI\styles\Uniform\sprite.png" />
+    <Content Include="KendoUI\styles\Uniform\sprite_2x.png" />
+    <Content Include="KendoUI\styles\Uniform\sprite_kpi.png" />
+    <Content Include="KendoUI\styles\Uniform\sprite_kpi_2x.png" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\Nomina.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\Nomina.csprojAssemblyReference.cache" />
+    <Content Include="Scripts\ConsultaDatos_Script.js" />
+    <Content Include="Scripts\js-Imagenes\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\js-Imagenes\lightgallery-all.js" />
+    <Content Include="Scripts\js-Imagenes\lightgallery-all.min.js" />
+    <Content Include="Scripts\js-Imagenes\lightgallery.js" />
+    <Content Include="Scripts\js-Imagenes\lightgallery.min.js" />
+    <Content Include="Scripts\js-Imagenes\picturefill.min.js" />
+    <Content Include="Scripts\sheetjs\shim.js" />
+    <Content Include="Scripts\sheetjs\xlsx.flow.js" />
+    <Content Include="Scripts\sheetjs\xlsx.full.min.js" />
+    <Content Include="Scripts\sheetjs\xlsx.js" />
+    <Content Include="Scripts\sheetjs\xlsx.mini.flow.js" />
+    <Content Include="Scripts\sheetjs\xlsx.mini.js" />
+    <Content Include="Scripts\sheetjs\xlsxworker.flow.js" />
+    <Content Include="Scripts\sheetjs\xlsxworker.js" />
+    <Content Include="Styles\ConsultaDatos_Estilo.css" />
+    <Content Include="Styles\css-Imagenes\lg-fb-comment-box.css" />
+    <Content Include="Styles\css-Imagenes\lg-fb-comment-box.min.css" />
+    <Content Include="Styles\css-Imagenes\lg-transitions.css" />
+    <Content Include="Styles\css-Imagenes\lg-transitions.min.css" />
+    <Content Include="Styles\css-Imagenes\lightgallery.css" />
+    <Content Include="Styles\css-Imagenes\lightgallery.min.css" />
+    <Content Include="Styles\EstiloFuente.css" />
+    <Content Include="Styles\fonts-MetrosUI\metro.eot" />
+    <Content Include="Styles\fonts-MetrosUI\metro.ttf" />
+    <Content Include="Styles\fonts-MetrosUI\metro.woff" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="KendoUI\styles\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="KendoUI\styles\fonts\glyphs\KendoUIGlyphs.eot" />
+    <Content Include="KendoUI\styles\fonts\glyphs\KendoUIGlyphs.ttf" />
+    <Content Include="KendoUI\styles\fonts\glyphs\KendoUIGlyphs.woff" />
+    <Content Include="KendoUI\styles\images\kendoui.ttf" />
+    <Content Include="KendoUI\styles\images\kendoui.woff" />
+    <Content Include="KendoUI\styles\kendo.black.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.black.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.blueopal.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.blueopal.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.bootstrap.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.bootstrap.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.common-bootstrap.core.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.common-bootstrap.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.common-fiori.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.common-material.core.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.common-material.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.common-nova.core.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.common-nova.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.common-office365.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.common.core.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.common.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.black.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.blueopal.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.bootstrap.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.default.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.fiori.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.flat.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.highcontrast.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.material.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.materialblack.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.metro.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.metroblack.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.moonlight.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.nova.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.office365.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.silver.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.dataviz.uniform.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.default.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.default.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.fiori.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.fiori.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.flat.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.flat.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.highcontrast.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.highcontrast.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.material.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.material.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.materialblack.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.materialblack.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.metro.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.metro.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.metroblack.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.metroblack.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.all.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.android.dark.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.android.light.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.blackberry.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.common.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.fiori.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.flat.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.ios.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.material.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.meego.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.nova.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.office365.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.mobile.wp8.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.moonlight.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.moonlight.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.nova.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.nova.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.office365.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.office365.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.rtl.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.silver.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.silver.mobile.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.uniform.min.css.map" />
+    <Content Include="KendoUI\styles\kendo.uniform.mobile.min.css.map" />
+    <Content Include="bin\Nomina.dll.config" />
+    <Content Include="jqueryEsy\themes\material-teal\images\Thumbs.db" />
+    <Content Include="bin\ClsEntidades.dll.config" />
+    <Content Include="bin\ControlDescuentos.dll.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\ajax-loader.gif" />
+    <Content Include="Imagenes\botones\Accesos.png" />
+    <Content Include="Imagenes\botones\add-imagen.png" />
+    <Content Include="Imagenes\botones\add.png" />
+    <Content Include="Imagenes\botones\alerta.png" />
+    <Content Include="Imagenes\botones\anexo.png" />
+    <Content Include="Imagenes\botones\Anexos-ico.png" />
+    <Content Include="Imagenes\botones\anexos.png" />
+    <Content Include="Imagenes\botones\archivero.png" />
+    <Content Include="Imagenes\botones\BajarArchivo1.png" />
+    <Content Include="Imagenes\botones\BajarArchivo2.png" />
+    <Content Include="Imagenes\botones\Balloon.png" />
+    <Content Include="Imagenes\botones\barCode.png" />
+    <Content Include="Imagenes\botones\BExcel1.png" />
+    <Content Include="Imagenes\botones\BExcel2.png" />
+    <Content Include="Imagenes\botones\boton.png" />
+    <Content Include="Imagenes\botones\boton2.png" />
+    <Content Include="Imagenes\botones\boton2over.png" />
+    <Content Include="Imagenes\botones\botonover.png" />
+    <Content Include="Imagenes\botones\buscar2.png" />
+    <Content Include="Imagenes\botones\buscar_doc.png" />
+    <Content Include="Imagenes\botones\cancelar.png" />
+    <Content Include="Imagenes\botones\captura.png" />
+    <Content Include="Imagenes\botones\Cargar1.png" />
+    <Content Include="Imagenes\botones\Cargar2.png" />
+    <Content Include="Imagenes\botones\CargarExcel1.png" />
+    <Content Include="Imagenes\botones\CargarExcel2.png" />
+    <Content Include="Imagenes\botones\cerrar1.png" />
+    <Content Include="Imagenes\botones\cerrar2.png" />
+    <Content Include="Imagenes\botones\claDocumentos.gif" />
+    <Content Include="Imagenes\botones\comentario.png" />
+    <Content Include="Imagenes\botones\configuracion.png" />
+    <Content Include="Imagenes\botones\delete.gif" />
+    <Content Include="Imagenes\botones\descarga.png" />
+    <Content Include="Imagenes\botones\doc-ico.png" />
+    <Content Include="Imagenes\botones\documento.png" />
+    <Content Include="Imagenes\botones\document_delete.png" />
+    <Content Include="Imagenes\botones\editar.png" />
+    <Content Include="Imagenes\botones\eliminar.png" />
+    <Content Include="Imagenes\botones\entrega.png" />
+    <Content Include="Imagenes\botones\estado.png" />
+    <Content Include="Imagenes\botones\estado2.gif" />
+    <Content Include="Imagenes\botones\examinar.png" />
+    <Content Include="Imagenes\botones\Examinar1.png" />
+    <Content Include="Imagenes\botones\Examinar2.png" />
+    <Content Include="Imagenes\botones\examinarover.png" />
+    <Content Include="Imagenes\botones\EXCEL.png" />
+    <Content Include="Imagenes\botones\file unload.png" />
+    <Content Include="Imagenes\botones\filesave.png" />
+    <Content Include="Imagenes\botones\filter_add.png" />
+    <Content Include="Imagenes\botones\ico-pdf.png" />
+    <Content Include="Imagenes\botones\imagenes2.png" />
+    <Content Include="Imagenes\botones\impresorabarras.png" />
+    <Content Include="Imagenes\botones\key.png" />
+    <Content Include="Imagenes\botones\layout.png" />
+    <Content Include="Imagenes\botones\limpiar.png" />
+    <Content Include="Imagenes\botones\lupa.png" />
+    <Content Include="Imagenes\botones\marcar.gif" />
+    <Content Include="Imagenes\botones\menu1.png" />
+    <Content Include="Imagenes\botones\menu2.png" />
+    <Content Include="Imagenes\botones\no.png" />
+    <Content Include="Imagenes\botones\pendientes.png" />
+    <Content Include="Imagenes\botones\pendientes2.png" />
+    <Content Include="Imagenes\botones\rastrear.jpg" />
+    <Content Include="Imagenes\botones\rechazar2.png" />
+    <Content Include="Imagenes\botones\refresh.png" />
+    <Content Include="Imagenes\botones\regresar.png" />
+    <Content Include="Imagenes\botones\relacion.png" />
+    <Content Include="Imagenes\botones\restaurar3.png" />
+    <Content Include="Imagenes\botones\Salir.png" />
+    <Content Include="Imagenes\botones\scaner.png" />
+    <Content Include="Imagenes\botones\si.png" />
+    <Content Include="Imagenes\botones\Signature.png" />
+    <Content Include="Imagenes\botones\Subject.png" />
+    <Content Include="Imagenes\botones\Update.png" />
+    <Content Include="Imagenes\botones\usuario1.png" />
+    <Content Include="Imagenes\botones\usuario2.png" />
+    <Content Include="Imagenes\botones\vistoBueno.png" />
+    <Content Include="Imagenes\logos\LOGO1.png" />
+    <Content Include="Imagenes\logos\LOGO2.png" />
+    <Content Include="Imagenes\MenuMetro\afectacion.png" />
+    <Content Include="Imagenes\MenuMetro\ant\about.png" />
+    <Content Include="Imagenes\MenuMetro\ant\about.svg" />
+    <Content Include="Imagenes\MenuMetro\ant\afectacion.png" />
+    <Content Include="Imagenes\MenuMetro\ant\BlocDesbloc.png" />
+    <Content Include="Imagenes\MenuMetro\ant\blog.png" />
+    <Content Include="Imagenes\MenuMetro\ant\blog.svg" />
+    <Content Include="Imagenes\MenuMetro\ant\Calculo.png" />
+    <Content Include="Imagenes\MenuMetro\ant\calculonomina.png" />
+    <Content Include="Imagenes\MenuMetro\ant\catalogos.png" />
+    <Content Include="Imagenes\MenuMetro\ant\cifrascontrol.png" />
+    <Content Include="Imagenes\MenuMetro\ant\Configuracion.png" />
+    <Content Include="Imagenes\MenuMetro\ant\consulta.png" />
+    <Content Include="Imagenes\MenuMetro\ant\controlnomina.png" />
+    <Content Include="Imagenes\MenuMetro\ant\diseñador.png" />
+    <Content Include="Imagenes\MenuMetro\ant\extra.png" />
+    <Content Include="Imagenes\MenuMetro\ant\extra.svg" />
+    <Content Include="Imagenes\MenuMetro\ant\fonac.png" />
+    <Content Include="Imagenes\MenuMetro\ant\home.png" />
+    <Content Include="Imagenes\MenuMetro\ant\home.svg" />
+    <Content Include="Imagenes\MenuMetro\ant\impexcel.png" />
+    <Content Include="Imagenes\MenuMetro\ant\movconcepto.png" />
+    <Content Include="Imagenes\MenuMetro\ant\movdatper.png" />
+    <Content Include="Imagenes\MenuMetro\ant\movespec.png" />
+    <Content Include="Imagenes\MenuMetro\ant\movimientos.png" />
+    <Content Include="Imagenes\MenuMetro\ant\movinclab.png" />
+    <Content Include="Imagenes\MenuMetro\ant\movpersonal.png" />
+    <Content Include="Imagenes\MenuMetro\ant\movter.png" />
+    <Content Include="Imagenes\MenuMetro\ant\penalim.png" />
+    <Content Include="Imagenes\MenuMetro\ant\plazas.png" />
+    <Content Include="Imagenes\MenuMetro\ant\portfolio.png" />
+    <Content Include="Imagenes\MenuMetro\ant\portfolio.svg" />
+    <Content Include="Imagenes\MenuMetro\ant\presupuesto.png" />
+    <Content Include="Imagenes\MenuMetro\ant\procesp.png" />
+    <Content Include="Imagenes\MenuMetro\ant\produccion.png" />
+    <Content Include="Imagenes\MenuMetro\ant\referencias.png" />
+    <Content Include="Imagenes\MenuMetro\ant\reportes.png" />
+    <Content Include="Imagenes\MenuMetro\ant\sar.png" />
+    <Content Include="Imagenes\MenuMetro\ant\services.png" />
+    <Content Include="Imagenes\MenuMetro\ant\services.svg" />
+    <Content Include="Imagenes\MenuMetro\ant\shop.png" />
+    <Content Include="Imagenes\MenuMetro\ant\shop.svg" />
+    <Content Include="Imagenes\MenuMetro\ant\shortcodes.png" />
+    <Content Include="Imagenes\MenuMetro\ant\shortcodes.svg" />
+    <Content Include="Imagenes\MenuMetro\ant\sparkles.svg" />
+    <Content Include="Imagenes\MenuMetro\ant\spikes-bottom.svg" />
+    <Content Include="Imagenes\MenuMetro\ant\spikes-top.svg" />
+    <Content Include="Imagenes\MenuMetro\ant\terceros.png" />
+    <Content Include="Imagenes\MenuMetro\ant\usuariospermisos.png" />
+    <Content Include="Imagenes\MenuMetro\BlocDesbloc.png" />
+    <Content Include="Imagenes\MenuMetro\calculonomina.png" />
+    <Content Include="Imagenes\MenuMetro\catalogos.png" />
+    <Content Include="Imagenes\MenuMetro\cifrascontrol.png" />
+    <Content Include="Imagenes\MenuMetro\configuracion.png" />
+    <Content Include="Imagenes\MenuMetro\consulta.png" />
+    <Content Include="Imagenes\MenuMetro\controlnomina.png" />
+    <Content Include="Imagenes\MenuMetro\costeo.png" />
+    <Content Include="Imagenes\MenuMetro\diseñador.png" />
+    <Content Include="Imagenes\MenuMetro\fonac.png" />
+    <Content Include="Imagenes\MenuMetro\movconcepto.png" />
+    <Content Include="Imagenes\MenuMetro\movdatper.png" />
+    <Content Include="Imagenes\MenuMetro\movespec.png" />
+    <Content Include="Imagenes\MenuMetro\movimientos.png" />
+    <Content Include="Imagenes\MenuMetro\movinclab.png" />
+    <Content Include="Imagenes\MenuMetro\movpersonal.png" />
+    <Content Include="Imagenes\MenuMetro\movter.png" />
+    <Content Include="Imagenes\MenuMetro\penalim.png" />
+    <Content Include="Imagenes\MenuMetro\plazas.png" />
+    <Content Include="Imagenes\MenuMetro\presupuesto.png" />
+    <Content Include="Imagenes\MenuMetro\procesp.png" />
+    <Content Include="Imagenes\MenuMetro\produccion.png" />
+    <Content Include="Imagenes\MenuMetro\referencias.png" />
+    <Content Include="Imagenes\MenuMetro\reportes.png" />
+    <Content Include="Imagenes\MenuMetro\sar.png" />
+    <Content Include="Imagenes\MenuMetro\terceros.png" />
+    <Content Include="Imagenes\MenuMetro\usuario1.png" />
+    <Content Include="Imagenes\MenuMetro\usuariospermisos.png" />
+    <Content Include="Imagenes\menus\001.jpg" />
+    <Content Include="Imagenes\menus\002.jpg" />
+    <Content Include="Imagenes\menus\003.jpg" />
+    <Content Include="Imagenes\menus\004.jpg" />
+    <Content Include="Imagenes\menus\005.jpg" />
+    <Content Include="Imagenes\menus\006.jpg" />
+    <Content Include="Imagenes\menus\007.jpg" />
+    <Content Include="Imagenes\menus\008.jpg" />
+    <Content Include="Imagenes\menus\009.jpg" />
+    <Content Include="Imagenes\menus\010.jpg" />
+    <Content Include="Imagenes\menus\011.jpg" />
+    <Content Include="Imagenes\menus\ajax-loader.gif" />
+    <Content Include="Imagenes\menus\cat.png" />
+    <Content Include="Imagenes\menus\home.png" />
+    <Content Include="Imagenes\menus\icon.png" />
+    <Content Include="Imagenes\menus\pics.png" />
+    <Content Include="Imagenes\menus\purty_wood.jpg" />
+    <Content Include="Imagenes\menus\rightarrow.png" />
+    <Content Include="jqueryEsy\jquery-1.4.min.js" />
+    <Content Include="jqueryEsy\jquery.easyui.min.js" />
+    <Content Include="jqueryEsy\jquery.easyui.mobile.js" />
+    <Content Include="jqueryEsy\jquery.easyui.patch.js" />
+    <Content Include="jqueryEsy\jquery.min-ant.js" />
+    <Content Include="jqueryEsy\jquery.min.js" />
+    <Content Include="jqueryEsy\plugins\datagrid-bufferview-ant.js" />
+    <Content Include="jqueryEsy\plugins\datagrid-bufferview.js" />
+    <Content Include="jqueryEsy\plugins\datagrid-cellediting.js" />
+    <Content Include="jqueryEsy\plugins\datagrid-detailview.js" />
+    <Content Include="jqueryEsy\plugins\datagrid-filter-ant.js" />
+    <Content Include="jqueryEsy\plugins\datagrid-filter.js" />
+    <Content Include="jqueryEsy\plugins\datagrid-scrollview.js" />
+    <Content Include="jqueryEsy\plugins\jquery.accordion.js" />
+    <Content Include="jqueryEsy\plugins\jquery.calendar.js" />
+    <Content Include="jqueryEsy\plugins\jquery.combo.js" />
+    <Content Include="jqueryEsy\plugins\jquery.combobox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.combogrid.js" />
+    <Content Include="jqueryEsy\plugins\jquery.combotree.js" />
+    <Content Include="jqueryEsy\plugins\jquery.datagrid.js" />
+    <Content Include="jqueryEsy\plugins\jquery.datalist.js" />
+    <Content Include="jqueryEsy\plugins\jquery.datebox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.datetimebox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.datetimespinner.js" />
+    <Content Include="jqueryEsy\plugins\jquery.dialog.js" />
+    <Content Include="jqueryEsy\plugins\jquery.draggable.js" />
+    <Content Include="jqueryEsy\plugins\jquery.droppable.js" />
+    <Content Include="jqueryEsy\plugins\jquery.edatagrid.js" />
+    <Content Include="jqueryEsy\plugins\jquery.filebox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.form.js" />
+    <Content Include="jqueryEsy\plugins\jquery.layout.js" />
+    <Content Include="jqueryEsy\plugins\jquery.linkbutton.js" />
+    <Content Include="jqueryEsy\plugins\jquery.menu.js" />
+    <Content Include="jqueryEsy\plugins\jquery.menubutton.js" />
+    <Content Include="jqueryEsy\plugins\jquery.messager.js" />
+    <Content Include="jqueryEsy\plugins\jquery.mobile.js" />
+    <Content Include="jqueryEsy\plugins\jquery.numberbox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.numberspinner.js" />
+    <Content Include="jqueryEsy\plugins\jquery.pagination.js" />
+    <Content Include="jqueryEsy\plugins\jquery.panel.js" />
+    <Content Include="jqueryEsy\plugins\jquery.parser.js" />
+    <Content Include="jqueryEsy\plugins\jquery.pivotgrid.js" />
+    <Content Include="jqueryEsy\plugins\jquery.progressbar.js" />
+    <Content Include="jqueryEsy\plugins\jquery.propertygrid.js" />
+    <Content Include="jqueryEsy\plugins\jquery.resizable.js" />
+    <Content Include="jqueryEsy\plugins\jquery.searchbox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.slider.js" />
+    <Content Include="jqueryEsy\plugins\jquery.spinner.js" />
+    <Content Include="jqueryEsy\plugins\jquery.splitbutton.js" />
+    <Content Include="jqueryEsy\plugins\jquery.switchbutton.js" />
+    <Content Include="jqueryEsy\plugins\jquery.tabs.js" />
+    <Content Include="jqueryEsy\plugins\jquery.textbox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.timespinner.js" />
+    <Content Include="jqueryEsy\plugins\jquery.tooltip.js" />
+    <Content Include="jqueryEsy\plugins\jquery.tree.js" />
+    <Content Include="jqueryEsy\plugins\jquery.treegrid.js" />
+    <Content Include="jqueryEsy\plugins\jquery.validatebox.js" />
+    <Content Include="jqueryEsy\plugins\jquery.window.js" />
+    <Content Include="jqueryEsy\src\easyloader.js" />
+    <Content Include="jqueryEsy\src\jquery.accordion.js" />
+    <Content Include="jqueryEsy\src\jquery.calendar.js" />
+    <Content Include="jqueryEsy\src\jquery.combobox.js" />
+    <Content Include="jqueryEsy\src\jquery.datebox.js" />
+    <Content Include="jqueryEsy\src\jquery.draggable.js" />
+    <Content Include="jqueryEsy\src\jquery.droppable.js" />
+    <Content Include="jqueryEsy\src\jquery.form.js" />
+    <Content Include="jqueryEsy\src\jquery.linkbutton.js" />
+    <Content Include="jqueryEsy\src\jquery.menu.js" />
+    <Content Include="jqueryEsy\src\jquery.parser.js" />
+    <Content Include="jqueryEsy\src\jquery.progressbar.js" />
+    <Content Include="jqueryEsy\src\jquery.propertygrid.js" />
+    <Content Include="jqueryEsy\src\jquery.resizable.js" />
+    <Content Include="jqueryEsy\src\jquery.slider.js" />
+    <Content Include="jqueryEsy\src\jquery.tabs.js" />
+    <Content Include="jqueryEsy\src\jquery.window.js" />
+    <Content Include="jqueryEsy\themes\black\accordion.css" />
+    <Content Include="jqueryEsy\themes\black\calendar.css" />
+    <Content Include="jqueryEsy\themes\black\combo.css" />
+    <Content Include="jqueryEsy\themes\black\combobox.css" />
+    <Content Include="jqueryEsy\themes\black\datagrid.css" />
+    <Content Include="jqueryEsy\themes\black\datalist.css" />
+    <Content Include="jqueryEsy\themes\black\datebox.css" />
+    <Content Include="jqueryEsy\themes\black\dialog.css" />
+    <Content Include="jqueryEsy\themes\black\easyui.css" />
+    <Content Include="jqueryEsy\themes\black\filebox.css" />
+    <Content Include="jqueryEsy\themes\black\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\black\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\black\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\black\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\black\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\black\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\black\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\black\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\black\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\black\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\black\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\black\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\black\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\black\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\black\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\black\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\black\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\black\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\black\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\black\layout.css" />
+    <Content Include="jqueryEsy\themes\black\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\black\menu.css" />
+    <Content Include="jqueryEsy\themes\black\menubutton.css" />
+    <Content Include="jqueryEsy\themes\black\messager.css" />
+    <Content Include="jqueryEsy\themes\black\numberbox.css" />
+    <Content Include="jqueryEsy\themes\black\pagination.css" />
+    <Content Include="jqueryEsy\themes\black\panel.css" />
+    <Content Include="jqueryEsy\themes\black\progressbar.css" />
+    <Content Include="jqueryEsy\themes\black\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\black\searchbox.css" />
+    <Content Include="jqueryEsy\themes\black\slider.css" />
+    <Content Include="jqueryEsy\themes\black\spinner.css" />
+    <Content Include="jqueryEsy\themes\black\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\black\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\black\tabs.css" />
+    <Content Include="jqueryEsy\themes\black\textbox.css" />
+    <Content Include="jqueryEsy\themes\black\tooltip.css" />
+    <Content Include="jqueryEsy\themes\black\tree.css" />
+    <Content Include="jqueryEsy\themes\black\validatebox.css" />
+    <Content Include="jqueryEsy\themes\black\window.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\accordion.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\calendar.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\combo.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\combobox.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\datagrid.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\datalist.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\datebox.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\dialog.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\easyui.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\filebox.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\bootstrap\layout.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\menu.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\menubutton.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\messager.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\numberbox.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\pagination.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\panel.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\progressbar.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\searchbox.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\slider.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\spinner.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\tabs.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\textbox.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\tooltip.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\tree.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\validatebox.css" />
+    <Content Include="jqueryEsy\themes\bootstrap\window.css" />
+    <Content Include="jqueryEsy\themes\color.css" />
+    <Content Include="jqueryEsy\themes\cupertino\accordion.css" />
+    <Content Include="jqueryEsy\themes\cupertino\calendar.css" />
+    <Content Include="jqueryEsy\themes\cupertino\combo.css" />
+    <Content Include="jqueryEsy\themes\cupertino\combobox.css" />
+    <Content Include="jqueryEsy\themes\cupertino\datagrid.css" />
+    <Content Include="jqueryEsy\themes\cupertino\datalist.css" />
+    <Content Include="jqueryEsy\themes\cupertino\datebox.css" />
+    <Content Include="jqueryEsy\themes\cupertino\dialog.css" />
+    <Content Include="jqueryEsy\themes\cupertino\easyui.css" />
+    <Content Include="jqueryEsy\themes\cupertino\filebox.css" />
+    <Content Include="jqueryEsy\themes\cupertino\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\cupertino\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\cupertino\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\passwordbox_close.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\passwordbox_open.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\cupertino\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\cupertino\layout.css" />
+    <Content Include="jqueryEsy\themes\cupertino\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\cupertino\menu.css" />
+    <Content Include="jqueryEsy\themes\cupertino\menubutton.css" />
+    <Content Include="jqueryEsy\themes\cupertino\messager.css" />
+    <Content Include="jqueryEsy\themes\cupertino\numberbox.css" />
+    <Content Include="jqueryEsy\themes\cupertino\pagination.css" />
+    <Content Include="jqueryEsy\themes\cupertino\panel.css" />
+    <Content Include="jqueryEsy\themes\cupertino\passwordbox.css" />
+    <Content Include="jqueryEsy\themes\cupertino\progressbar.css" />
+    <Content Include="jqueryEsy\themes\cupertino\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\cupertino\searchbox.css" />
+    <Content Include="jqueryEsy\themes\cupertino\slider.css" />
+    <Content Include="jqueryEsy\themes\cupertino\spinner.css" />
+    <Content Include="jqueryEsy\themes\cupertino\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\cupertino\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\cupertino\tabs.css" />
+    <Content Include="jqueryEsy\themes\cupertino\textbox.css" />
+    <Content Include="jqueryEsy\themes\cupertino\tooltip.css" />
+    <Content Include="jqueryEsy\themes\cupertino\tree.css" />
+    <Content Include="jqueryEsy\themes\cupertino\validatebox.css" />
+    <Content Include="jqueryEsy\themes\cupertino\window.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\accordion.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\calendar.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\combo.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\combobox.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\datagrid.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\datalist.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\datebox.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\dialog.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\easyui.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\filebox.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\passwordbox_close.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\passwordbox_open.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\dark-hive\layout.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\menu.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\menubutton.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\messager.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\numberbox.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\pagination.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\panel.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\passwordbox.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\progressbar.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\searchbox.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\slider.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\spinner.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\tabs.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\textbox.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\tooltip.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\tree.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\validatebox.css" />
+    <Content Include="jqueryEsy\themes\dark-hive\window.css" />
+    <Content Include="jqueryEsy\themes\default\accordion.css" />
+    <Content Include="jqueryEsy\themes\default\calendar.css" />
+    <Content Include="jqueryEsy\themes\default\combo.css" />
+    <Content Include="jqueryEsy\themes\default\combobox.css" />
+    <Content Include="jqueryEsy\themes\default\datagrid.css" />
+    <Content Include="jqueryEsy\themes\default\datalist.css" />
+    <Content Include="jqueryEsy\themes\default\datebox.css" />
+    <Content Include="jqueryEsy\themes\default\dialog.css" />
+    <Content Include="jqueryEsy\themes\default\easyui.css" />
+    <Content Include="jqueryEsy\themes\default\filebox.css" />
+    <Content Include="jqueryEsy\themes\default\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\default\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\default\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\default\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\default\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\default\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\default\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\default\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\default\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\default\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\default\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\default\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\default\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\default\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\default\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\default\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\default\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\default\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\default\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\default\layout.css" />
+    <Content Include="jqueryEsy\themes\default\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\default\menu.css" />
+    <Content Include="jqueryEsy\themes\default\menubutton.css" />
+    <Content Include="jqueryEsy\themes\default\messager.css" />
+    <Content Include="jqueryEsy\themes\default\numberbox.css" />
+    <Content Include="jqueryEsy\themes\default\pagination.css" />
+    <Content Include="jqueryEsy\themes\default\panel.css" />
+    <Content Include="jqueryEsy\themes\default\progressbar.css" />
+    <Content Include="jqueryEsy\themes\default\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\default\searchbox.css" />
+    <Content Include="jqueryEsy\themes\default\slider.css" />
+    <Content Include="jqueryEsy\themes\default\spinner.css" />
+    <Content Include="jqueryEsy\themes\default\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\default\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\default\tabs.css" />
+    <Content Include="jqueryEsy\themes\default\textbox.css" />
+    <Content Include="jqueryEsy\themes\default\tooltip.css" />
+    <Content Include="jqueryEsy\themes\default\tree.css" />
+    <Content Include="jqueryEsy\themes\default\validatebox.css" />
+    <Content Include="jqueryEsy\themes\default\window.css" />
+    <Content Include="jqueryEsy\themes\gray\accordion.css" />
+    <Content Include="jqueryEsy\themes\gray\calendar.css" />
+    <Content Include="jqueryEsy\themes\gray\combo.css" />
+    <Content Include="jqueryEsy\themes\gray\combobox.css" />
+    <Content Include="jqueryEsy\themes\gray\datagrid.css" />
+    <Content Include="jqueryEsy\themes\gray\datalist.css" />
+    <Content Include="jqueryEsy\themes\gray\datebox.css" />
+    <Content Include="jqueryEsy\themes\gray\dialog.css" />
+    <Content Include="jqueryEsy\themes\gray\easyui.css" />
+    <Content Include="jqueryEsy\themes\gray\filebox.css" />
+    <Content Include="jqueryEsy\themes\gray\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\gray\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\gray\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\gray\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\gray\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\gray\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\gray\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\gray\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\gray\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\gray\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\gray\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\gray\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\gray\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\gray\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\gray\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\gray\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\gray\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\gray\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\gray\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\gray\layout.css" />
+    <Content Include="jqueryEsy\themes\gray\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\gray\menu.css" />
+    <Content Include="jqueryEsy\themes\gray\menubutton.css" />
+    <Content Include="jqueryEsy\themes\gray\messager.css" />
+    <Content Include="jqueryEsy\themes\gray\numberbox.css" />
+    <Content Include="jqueryEsy\themes\gray\pagination.css" />
+    <Content Include="jqueryEsy\themes\gray\panel.css" />
+    <Content Include="jqueryEsy\themes\gray\progressbar.css" />
+    <Content Include="jqueryEsy\themes\gray\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\gray\searchbox.css" />
+    <Content Include="jqueryEsy\themes\gray\slider.css" />
+    <Content Include="jqueryEsy\themes\gray\spinner.css" />
+    <Content Include="jqueryEsy\themes\gray\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\gray\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\gray\tabs.css" />
+    <Content Include="jqueryEsy\themes\gray\textbox.css" />
+    <Content Include="jqueryEsy\themes\gray\tooltip.css" />
+    <Content Include="jqueryEsy\themes\gray\tree.css" />
+    <Content Include="jqueryEsy\themes\gray\validatebox.css" />
+    <Content Include="jqueryEsy\themes\gray\window.css" />
+    <Content Include="jqueryEsy\themes\icons.css" />
+    <Content Include="jqueryEsy\themes\icons\actualizar.png" />
+    <Content Include="jqueryEsy\themes\icons\add-imagen.png" />
+    <Content Include="jqueryEsy\themes\icons\add.png" />
+    <Content Include="jqueryEsy\themes\icons\Adocumento.png" />
+    <Content Include="jqueryEsy\themes\icons\AD_Cat.png" />
+    <Content Include="jqueryEsy\themes\icons\AD_Nivel.png" />
+    <Content Include="jqueryEsy\themes\icons\Afectados.png" />
+    <Content Include="jqueryEsy\themes\icons\agregar.png" />
+    <Content Include="jqueryEsy\themes\icons\alerta.png" />
+    <Content Include="jqueryEsy\themes\icons\anexo.png" />
+    <Content Include="jqueryEsy\themes\icons\Anexos-ico.png" />
+    <Content Include="jqueryEsy\themes\icons\anexos.png" />
+    <Content Include="jqueryEsy\themes\icons\anterior.png" />
+    <Content Include="jqueryEsy\themes\icons\anterior2.png" />
+    <Content Include="jqueryEsy\themes\icons\Anterior20.png" />
+    <Content Include="jqueryEsy\themes\icons\Anterior32.png" />
+    <Content Include="jqueryEsy\themes\icons\aportaciones.png" />
+    <Content Include="jqueryEsy\themes\icons\archivados.png" />
+    <Content Include="jqueryEsy\themes\icons\archivero.png" />
+    <Content Include="jqueryEsy\themes\icons\Archivero2.png" />
+    <Content Include="jqueryEsy\themes\icons\back.png" />
+    <Content Include="jqueryEsy\themes\icons\bajar.png" />
+    <Content Include="jqueryEsy\themes\icons\BajarExcel.png" />
+    <Content Include="jqueryEsy\themes\icons\Balloon.png" />
+    <Content Include="jqueryEsy\themes\icons\barCode.png" />
+    <Content Include="jqueryEsy\themes\icons\Bexcel.png" />
+    <Content Include="jqueryEsy\themes\icons\blank.gif" />
+    <Content Include="jqueryEsy\themes\icons\Bloqueo.png" />
+    <Content Include="jqueryEsy\themes\icons\btnAnterior.png" />
+    <Content Include="jqueryEsy\themes\icons\btninicio.png" />
+    <Content Include="jqueryEsy\themes\icons\btnSiguiente.png" />
+    <Content Include="jqueryEsy\themes\icons\btnUltimo.png" />
+    <Content Include="jqueryEsy\themes\icons\buscar.png" />
+    <Content Include="jqueryEsy\themes\icons\buscar2.png" />
+    <Content Include="jqueryEsy\themes\icons\buscarArchivos.png" />
+    <Content Include="jqueryEsy\themes\icons\buscar_doc.png" />
+    <Content Include="jqueryEsy\themes\icons\calendario.png" />
+    <Content Include="jqueryEsy\themes\icons\cambiopas.png" />
+    <Content Include="jqueryEsy\themes\icons\cancel.png" />
+    <Content Include="jqueryEsy\themes\icons\cancelar.png" />
+    <Content Include="jqueryEsy\themes\icons\cap.png" />
+    <Content Include="jqueryEsy\themes\icons\captura.png" />
+    <Content Include="jqueryEsy\themes\icons\cargar.png" />
+    <Content Include="jqueryEsy\themes\icons\cargar1.png" />
+    <Content Include="jqueryEsy\themes\icons\cargar2.png" />
+    <Content Include="jqueryEsy\themes\icons\CargarExcel.png" />
+    <Content Include="jqueryEsy\themes\icons\cat.png" />
+    <Content Include="jqueryEsy\themes\icons\cerrar-sesion.png" />
+    <Content Include="jqueryEsy\themes\icons\cerrar2.png" />
+    <Content Include="jqueryEsy\themes\icons\Cifras.png" />
+    <Content Include="jqueryEsy\themes\icons\claDocumentos.gif" />
+    <Content Include="jqueryEsy\themes\icons\clear.png" />
+    <Content Include="jqueryEsy\themes\icons\CodBar16.png" />
+    <Content Include="jqueryEsy\themes\icons\CodBar32.png" />
+    <Content Include="jqueryEsy\themes\icons\comentario.png" />
+    <Content Include="jqueryEsy\themes\icons\comentarios16.png" />
+    <Content Include="jqueryEsy\themes\icons\Completa.png" />
+    <Content Include="jqueryEsy\themes\icons\conf.png" />
+    <Content Include="jqueryEsy\themes\icons\configuracion.png" />
+    <Content Include="jqueryEsy\themes\icons\contrato.png" />
+    <Content Include="jqueryEsy\themes\icons\copiar2.png" />
+    <Content Include="jqueryEsy\themes\icons\costo.png" />
+    <Content Include="jqueryEsy\themes\icons\cut.png" />
+    <Content Include="jqueryEsy\themes\icons\deducciones.png" />
+    <Content Include="jqueryEsy\themes\icons\delete.gif" />
+    <Content Include="jqueryEsy\themes\icons\delete.png" />
+    <Content Include="jqueryEsy\themes\icons\Desbloqueo.png" />
+    <Content Include="jqueryEsy\themes\icons\descarga.png" />
+    <Content Include="jqueryEsy\themes\icons\disfiltro.png" />
+    <Content Include="jqueryEsy\themes\icons\disreporte.png" />
+    <Content Include="jqueryEsy\themes\icons\disreportes.png" />
+    <Content Include="jqueryEsy\themes\icons\doc-ico.png" />
+    <Content Include="jqueryEsy\themes\icons\DocPendientes.png" />
+    <Content Include="jqueryEsy\themes\icons\documento.png" />
+    <Content Include="jqueryEsy\themes\icons\documentos.png" />
+    <Content Include="jqueryEsy\themes\icons\document_delete.png" />
+    <Content Include="jqueryEsy\themes\icons\editar.png" />
+    <Content Include="jqueryEsy\themes\icons\EditorImg.png" />
+    <Content Include="jqueryEsy\themes\icons\edit_add.png" />
+    <Content Include="jqueryEsy\themes\icons\edit_remove.png" />
+    <Content Include="jqueryEsy\themes\icons\Edocumento.png" />
+    <Content Include="jqueryEsy\themes\icons\eliminar.png" />
+    <Content Include="jqueryEsy\themes\icons\Empleados.png" />
+    <Content Include="jqueryEsy\themes\icons\entrega.png" />
+    <Content Include="jqueryEsy\themes\icons\estado.png" />
+    <Content Include="jqueryEsy\themes\icons\estado2.gif" />
+    <Content Include="jqueryEsy\themes\icons\excel.png" />
+    <Content Include="jqueryEsy\themes\icons\exec.png" />
+    <Content Include="jqueryEsy\themes\icons\export_text.png" />
+    <Content Include="jqueryEsy\themes\icons\file unload.png" />
+    <Content Include="jqueryEsy\themes\icons\filesave.png" />
+    <Content Include="jqueryEsy\themes\icons\filter.png" />
+    <Content Include="jqueryEsy\themes\icons\filter_add.png" />
+    <Content Include="jqueryEsy\themes\icons\folder.png" />
+    <Content Include="jqueryEsy\themes\icons\folder2.png" />
+    <Content Include="jqueryEsy\themes\icons\folios.png" />
+    <Content Include="jqueryEsy\themes\icons\folios32.png" />
+    <Content Include="jqueryEsy\themes\icons\generarkey.png" />
+    <Content Include="jqueryEsy\themes\icons\help.png" />
+    <Content Include="jqueryEsy\themes\icons\historia2.png" />
+    <Content Include="jqueryEsy\themes\icons\historial.png" />
+    <Content Include="jqueryEsy\themes\icons\Honorarios.png" />
+    <Content Include="jqueryEsy\themes\icons\ico-pdf.png" />
+    <Content Include="jqueryEsy\themes\icons\Imagenes.png" />
+    <Content Include="jqueryEsy\themes\icons\imagenes2.png" />
+    <Content Include="jqueryEsy\themes\icons\impbarras16.png" />
+    <Content Include="jqueryEsy\themes\icons\impbarras36.png" />
+    <Content Include="jqueryEsy\themes\icons\Importar.png" />
+    <Content Include="jqueryEsy\themes\icons\impreporte.png" />
+    <Content Include="jqueryEsy\themes\icons\impresorabarras.png" />
+    <Content Include="jqueryEsy\themes\icons\IncLab.png" />
+    <Content Include="jqueryEsy\themes\icons\ini.png" />
+    <Content Include="jqueryEsy\themes\icons\inicio.png" />
+    <Content Include="jqueryEsy\themes\icons\Inicio20.png" />
+    <Content Include="jqueryEsy\themes\icons\Inicio32.png" />
+    <Content Include="jqueryEsy\themes\icons\Interinos.png" />
+    <Content Include="jqueryEsy\themes\icons\Jubilados.png" />
+    <Content Include="jqueryEsy\themes\icons\key.png" />
+    <Content Include="jqueryEsy\themes\icons\large_chart.png" />
+    <Content Include="jqueryEsy\themes\icons\large_clipart.png" />
+    <Content Include="jqueryEsy\themes\icons\large_picture.png" />
+    <Content Include="jqueryEsy\themes\icons\large_shapes.png" />
+    <Content Include="jqueryEsy\themes\icons\large_smartart.png" />
+    <Content Include="jqueryEsy\themes\icons\layout.png" />
+    <Content Include="jqueryEsy\themes\icons\limpiar.png" />
+    <Content Include="jqueryEsy\themes\icons\lock.png" />
+    <Content Include="jqueryEsy\themes\icons\login.png" />
+    <Content Include="jqueryEsy\themes\icons\login64.png" />
+    <Content Include="jqueryEsy\themes\icons\lupa.png" />
+    <Content Include="jqueryEsy\themes\icons\man.png" />
+    <Content Include="jqueryEsy\themes\icons\marcar.gif" />
+    <Content Include="jqueryEsy\themes\icons\Marcar.png" />
+    <Content Include="jqueryEsy\themes\icons\mdoc.png" />
+    <Content Include="jqueryEsy\themes\icons\Mdocumento.png" />
+    <Content Include="jqueryEsy\themes\icons\mini-cat.png" />
+    <Content Include="jqueryEsy\themes\icons\mini-export_text.png" />
+    <Content Include="jqueryEsy\themes\icons\MiniBajarExcel.png" />
+    <Content Include="jqueryEsy\themes\icons\mini_add.png" />
+    <Content Include="jqueryEsy\themes\icons\mini_edit.png" />
+    <Content Include="jqueryEsy\themes\icons\mini_refresh.png" />
+    <Content Include="jqueryEsy\themes\icons\Mod_Cat.png" />
+    <Content Include="jqueryEsy\themes\icons\Mod_Nivel.png" />
+    <Content Include="jqueryEsy\themes\icons\more.png" />
+    <Content Include="jqueryEsy\themes\icons\movconcepto.png" />
+    <Content Include="jqueryEsy\themes\icons\movdatper.png" />
+    <Content Include="jqueryEsy\themes\icons\movpersonal.png" />
+    <Content Include="jqueryEsy\themes\icons\Ndoc.png" />
+    <Content Include="jqueryEsy\themes\icons\no.png" />
+    <Content Include="jqueryEsy\themes\icons\NoEmpleados.png" />
+    <Content Include="jqueryEsy\themes\icons\notificaciones16.png" />
+    <Content Include="jqueryEsy\themes\icons\notificaciones2.png" />
+    <Content Include="jqueryEsy\themes\icons\notificaciones32.png" />
+    <Content Include="jqueryEsy\themes\icons\Nuevodoc.png" />
+    <Content Include="jqueryEsy\themes\icons\o.png" />
+    <Content Include="jqueryEsy\themes\icons\ok.png" />
+    <Content Include="jqueryEsy\themes\icons\opciones.png" />
+    <Content Include="jqueryEsy\themes\icons\ope.png" />
+    <Content Include="jqueryEsy\themes\icons\ordenacion.png" />
+    <Content Include="jqueryEsy\themes\icons\pagos.png" />
+    <Content Include="jqueryEsy\themes\icons\Parcial.png" />
+    <Content Include="jqueryEsy\themes\icons\pasante.png" />
+    <Content Include="jqueryEsy\themes\icons\PDF.gif" />
+    <Content Include="jqueryEsy\themes\icons\PDF.png" />
+    <Content Include="jqueryEsy\themes\icons\pencil.png" />
+    <Content Include="jqueryEsy\themes\icons\Pendientes.png" />
+    <Content Include="jqueryEsy\themes\icons\pendientes2.png" />
+    <Content Include="jqueryEsy\themes\icons\percepciones.png" />
+    <Content Include="jqueryEsy\themes\icons\print.png" />
+    <Content Include="jqueryEsy\themes\icons\proyeccion.png" />
+    <Content Include="jqueryEsy\themes\icons\rastrear.jpg" />
+    <Content Include="jqueryEsy\themes\icons\Rechazados.png" />
+    <Content Include="jqueryEsy\themes\icons\rechazar2.png" />
+    <Content Include="jqueryEsy\themes\icons\recibircodigo.png" />
+    <Content Include="jqueryEsy\themes\icons\redo.png" />
+    <Content Include="jqueryEsy\themes\icons\referencias.png" />
+    <Content Include="jqueryEsy\themes\icons\refresh.png" />
+    <Content Include="jqueryEsy\themes\icons\regresar.png" />
+    <Content Include="jqueryEsy\themes\icons\relacion.png" />
+    <Content Include="jqueryEsy\themes\icons\relacion2.png" />
+    <Content Include="jqueryEsy\themes\icons\reload.png" />
+    <Content Include="jqueryEsy\themes\icons\rep.png" />
+    <Content Include="jqueryEsy\themes\icons\reportes2.png" />
+    <Content Include="jqueryEsy\themes\icons\residente.png" />
+    <Content Include="jqueryEsy\themes\icons\restaurar3.png" />
+    <Content Include="jqueryEsy\themes\icons\Rotate180.png" />
+    <Content Include="jqueryEsy\themes\icons\RotateLeft.png" />
+    <Content Include="jqueryEsy\themes\icons\RotateRight.png" />
+    <Content Include="jqueryEsy\themes\icons\Salir.png" />
+    <Content Include="jqueryEsy\themes\icons\Salir20.png" />
+    <Content Include="jqueryEsy\themes\icons\Salir32.png" />
+    <Content Include="jqueryEsy\themes\icons\scaner.png" />
+    <Content Include="jqueryEsy\themes\icons\search.png" />
+    <Content Include="jqueryEsy\themes\icons\seleccion.png" />
+    <Content Include="jqueryEsy\themes\icons\seleccion2.png" />
+    <Content Include="jqueryEsy\themes\icons\seleccion3.png" />
+    <Content Include="jqueryEsy\themes\icons\Seltabla.png" />
+    <Content Include="jqueryEsy\themes\icons\si.png" />
+    <Content Include="jqueryEsy\themes\icons\Signature.png" />
+    <Content Include="jqueryEsy\themes\icons\siguiente.png" />
+    <Content Include="jqueryEsy\themes\icons\Siguiente20.png" />
+    <Content Include="jqueryEsy\themes\icons\Siguiente32.png" />
+    <Content Include="jqueryEsy\themes\icons\subir.png" />
+    <Content Include="jqueryEsy\themes\icons\Subject.png" />
+    <Content Include="jqueryEsy\themes\icons\sum.png" />
+    <Content Include="jqueryEsy\themes\icons\Sustitutos.png" />
+    <Content Include="jqueryEsy\themes\icons\tabla.png" />
+    <Content Include="jqueryEsy\themes\icons\tablas.png" />
+    <Content Include="jqueryEsy\themes\icons\tabla_edit.png" />
+    <Content Include="jqueryEsy\themes\icons\tareas.png" />
+    <Content Include="jqueryEsy\themes\icons\texto.png" />
+    <Content Include="jqueryEsy\themes\icons\tip.png" />
+    <Content Include="jqueryEsy\themes\icons\Ultimo20.png" />
+    <Content Include="jqueryEsy\themes\icons\undo.png" />
+    <Content Include="jqueryEsy\themes\icons\Update.png" />
+    <Content Include="jqueryEsy\themes\icons\vencido.png" />
+    <Content Include="jqueryEsy\themes\icons\vistareporte.png" />
+    <Content Include="jqueryEsy\themes\icons\vistoBueno.png" />
+    <Content Include="jqueryEsy\themes\icons\Y.png" />
+    <Content Include="jqueryEsy\themes\material\accordion.css" />
+    <Content Include="jqueryEsy\themes\material\calendar.css" />
+    <Content Include="jqueryEsy\themes\material\combo.css" />
+    <Content Include="jqueryEsy\themes\material\combobox.css" />
+    <Content Include="jqueryEsy\themes\material\datagrid.css" />
+    <Content Include="jqueryEsy\themes\material\datalist.css" />
+    <Content Include="jqueryEsy\themes\material\datebox.css" />
+    <Content Include="jqueryEsy\themes\material\dialog.css" />
+    <Content Include="jqueryEsy\themes\material\easyui.css" />
+    <Content Include="jqueryEsy\themes\material\filebox.css" />
+    <Content Include="jqueryEsy\themes\material\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\material\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\material\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\material\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\material\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\material\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\material\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\material\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\material\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\material\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\material\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\material\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\material\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\material\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\material\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\material\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\material\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\material\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\material\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\material\layout.css" />
+    <Content Include="jqueryEsy\themes\material\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\material\menu.css" />
+    <Content Include="jqueryEsy\themes\material\menubutton.css" />
+    <Content Include="jqueryEsy\themes\material\messager.css" />
+    <Content Include="jqueryEsy\themes\material\numberbox.css" />
+    <Content Include="jqueryEsy\themes\material\pagination.css" />
+    <Content Include="jqueryEsy\themes\material\panel.css" />
+    <Content Include="jqueryEsy\themes\material\progressbar.css" />
+    <Content Include="jqueryEsy\themes\material\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\material\searchbox.css" />
+    <Content Include="jqueryEsy\themes\material\slider.css" />
+    <Content Include="jqueryEsy\themes\material\spinner.css" />
+    <Content Include="jqueryEsy\themes\material\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\material\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\material\tabs.css" />
+    <Content Include="jqueryEsy\themes\material\textbox.css" />
+    <Content Include="jqueryEsy\themes\material\tooltip.css" />
+    <Content Include="jqueryEsy\themes\material\tree.css" />
+    <Content Include="jqueryEsy\themes\material\validatebox.css" />
+    <Content Include="jqueryEsy\themes\material\window.css" />
+    <Content Include="jqueryEsy\themes\metro\accordion.css" />
+    <Content Include="jqueryEsy\themes\metro\calendar.css" />
+    <Content Include="jqueryEsy\themes\metro\combo.css" />
+    <Content Include="jqueryEsy\themes\metro\combobox.css" />
+    <Content Include="jqueryEsy\themes\metro\datagrid.css" />
+    <Content Include="jqueryEsy\themes\metro\datalist.css" />
+    <Content Include="jqueryEsy\themes\metro\datebox.css" />
+    <Content Include="jqueryEsy\themes\metro\dialog.css" />
+    <Content Include="jqueryEsy\themes\metro\easyui.css" />
+    <Content Include="jqueryEsy\themes\metro\filebox.css" />
+    <Content Include="jqueryEsy\themes\metro\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\metro\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\metro\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\metro\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\metro\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\metro\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\metro\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\metro\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\metro\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\metro\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\metro\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\metro\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\metro\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\metro\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\metro\layout.css" />
+    <Content Include="jqueryEsy\themes\metro\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\metro\menu.css" />
+    <Content Include="jqueryEsy\themes\metro\menubutton.css" />
+    <Content Include="jqueryEsy\themes\metro\messager.css" />
+    <Content Include="jqueryEsy\themes\metro\MetroGob.css" />
+    <Content Include="jqueryEsy\themes\metro\numberbox.css" />
+    <Content Include="jqueryEsy\themes\metro\pagination.css" />
+    <Content Include="jqueryEsy\themes\metro\panel.css" />
+    <Content Include="jqueryEsy\themes\metro\progressbar.css" />
+    <Content Include="jqueryEsy\themes\metro\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\metro\searchbox.css" />
+    <Content Include="jqueryEsy\themes\metro\slider.css" />
+    <Content Include="jqueryEsy\themes\metro\spinner.css" />
+    <Content Include="jqueryEsy\themes\metro\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\metro\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\metro\tabs.css" />
+    <Content Include="jqueryEsy\themes\metro\TabsMetroOrange.css" />
+    <Content Include="jqueryEsy\themes\metro\textbox.css" />
+    <Content Include="jqueryEsy\themes\metro\tooltip.css" />
+    <Content Include="jqueryEsy\themes\metro\tree.css" />
+    <Content Include="jqueryEsy\themes\metro\validatebox.css" />
+    <Content Include="jqueryEsy\themes\metro\window.css" />
+    <Content Include="jqueryEsy\themes\mobile.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\accordion.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\calendar.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\combo.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\combobox.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\datagrid.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\datalist.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\datebox.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\dialog.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\easyui.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\filebox.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\passwordbox_close.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\passwordbox_open.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\layout.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\menu.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\menubutton.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\messager.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\numberbox.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\pagination.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\panel.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\passwordbox.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\progressbar.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\searchbox.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\slider.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\spinner.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\tabs.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\textbox.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\tooltip.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\tree.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\validatebox.css" />
+    <Content Include="jqueryEsy\themes\pepper-grinder\window.css" />
+    <Content Include="jqueryEsy\themes\sunny\accordion.css" />
+    <Content Include="jqueryEsy\themes\sunny\calendar.css" />
+    <Content Include="jqueryEsy\themes\sunny\combo.css" />
+    <Content Include="jqueryEsy\themes\sunny\combobox.css" />
+    <Content Include="jqueryEsy\themes\sunny\datagrid.css" />
+    <Content Include="jqueryEsy\themes\sunny\datalist.css" />
+    <Content Include="jqueryEsy\themes\sunny\datebox.css" />
+    <Content Include="jqueryEsy\themes\sunny\dialog.css" />
+    <Content Include="jqueryEsy\themes\sunny\easyui.css" />
+    <Content Include="jqueryEsy\themes\sunny\filebox.css" />
+    <Content Include="jqueryEsy\themes\sunny\images\accordion_arrows.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\blank.gif" />
+    <Content Include="jqueryEsy\themes\sunny\images\calendar_arrows.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\combo_arrow.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\datagrid_icons.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\datebox_arrow.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\layout_arrows.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\linkbutton_bg.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\loading.gif" />
+    <Content Include="jqueryEsy\themes\sunny\images\menu_arrows.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\messager_icons.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\pagination_icons.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\panel_tools.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\passwordbox_close.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\passwordbox_open.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\searchbox_button.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\slider_handle.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\spinner_arrows.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\tabs_icons.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\tree_icons.png" />
+    <Content Include="jqueryEsy\themes\sunny\images\validatebox_warning.png" />
+    <Content Include="jqueryEsy\themes\sunny\layout.css" />
+    <Content Include="jqueryEsy\themes\sunny\linkbutton.css" />
+    <Content Include="jqueryEsy\themes\sunny\menu.css" />
+    <Content Include="jqueryEsy\themes\sunny\menubutton.css" />
+    <Content Include="jqueryEsy\themes\sunny\messager.css" />
+    <Content Include="jqueryEsy\themes\sunny\numberbox.css" />
+    <Content Include="jqueryEsy\themes\sunny\pagination.css" />
+    <Content Include="jqueryEsy\themes\sunny\panel.css" />
+    <Content Include="jqueryEsy\themes\sunny\passwordbox.css" />
+    <Content Include="jqueryEsy\themes\sunny\progressbar.css" />
+    <Content Include="jqueryEsy\themes\sunny\propertygrid.css" />
+    <Content Include="jqueryEsy\themes\sunny\searchbox.css" />
+    <Content Include="jqueryEsy\themes\sunny\slider.css" />
+    <Content Include="jqueryEsy\themes\sunny\spinner.css" />
+    <Content Include="jqueryEsy\themes\sunny\splitbutton.css" />
+    <Content Include="jqueryEsy\themes\sunny\switchbutton.css" />
+    <Content Include="jqueryEsy\themes\sunny\tabs.css" />
+    <Content Include="jqueryEsy\themes\sunny\textbox.css" />
+    <Content Include="jqueryEsy\themes\sunny\tooltip.css" />
+    <Content Include="jqueryEsy\themes\sunny\tree.css" />
+    <Content Include="jqueryEsy\themes\sunny\validatebox.css" />
+    <Content Include="jqueryEsy\themes\sunny\window.css" />
+    <Content Include="Login.aspx" />
+    <Content Include="Scripts\accounting.js" />
+    <Content Include="Scripts\base64js.min.js" />
+    <Content Include="Scripts\demos.js" />
+    <Content Include="Scripts\Funsiones.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-Mask.js" />
+    <Content Include="Scripts\jquery.leanModal.min.js" />
+    <Content Include="Scripts\jquery.session.js" />
+    <Content Include="Scripts\jquery.slidereveal.js" />
+    <Content Include="Scripts\jquery.slidereveal.min.js" />
+    <Content Include="Scripts\js-MetrosUI\docs.js" />
+    <Content Include="Scripts\js-MetrosUI\ga.js" />
+    <Content Include="Scripts\js-MetrosUI\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\js-MetrosUI\jquery.dataTables.min.js" />
+    <Content Include="Scripts\js-MetrosUI\metro.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-apollo.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-basic.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-clj.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-css.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-dart.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-erlang.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-go.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-hs.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-lisp.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-llvm.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-lua.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-matlab.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-ml.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-mumps.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-n.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-pascal.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-proto.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-r.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-rd.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-scala.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-sql.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-tcl.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-tex.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-vb.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-vhdl.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-wiki.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-xq.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\lang-yaml.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\prettify.css" />
+    <Content Include="Scripts\js-MetrosUI\prettify\prettify.js" />
+    <Content Include="Scripts\js-MetrosUI\prettify\run_prettify.js" />
+    <Content Include="Scripts\js-MetrosUI\select2.min.js" />
+    <Content Include="Scripts\Login.js" />
+    <Content Include="Scripts\MenuMetro\allec-nav.js" />
+    <Content Include="Scripts\MenuMetro\Busqueda.js" />
+    <Content Include="Scripts\MenuMetro\demo-custom.js" />
+    <Content Include="Scripts\MenuMetro\TweenMax.min.js" />
+    <Content Include="Scripts\numeral.js" />
+    <Content Include="Scripts\stimulsoft.designer.js" />
+    <Content Include="Scripts\stimulsoft.reports.js" />
+    <Content Include="Scripts\stimulsoft.reports.maps.js" />
+    <Content Include="Scripts\stimulsoft.viewer.js" />
+    <Content Include="Scripts\viewer.js" />
+    <Content Include="Styles\carga.css" />
+    <Content Include="Styles\Contenedor.css" />
+    <Content Include="Styles\css-MetrosUI\docs.css" />
+    <Content Include="Styles\css-MetrosUI\metro-icons.css" />
+    <Content Include="Styles\css-MetrosUI\metro-responsive.css" />
+    <Content Include="Styles\css-MetrosUI\metro-rtl.css" />
+    <Content Include="Styles\css-MetrosUI\metro-schemes.css" />
+    <Content Include="Styles\css-MetrosUI\metro.css" />
+    <Content Include="Styles\fonts-MetrosUI\metro.svg" />
+    <Content Include="Styles\ListaImg.css" />
+    <Content Include="Styles\loader.css" />
+    <Content Include="Styles\Login.css" />
+    <Content Include="Styles\Login\style.css" />
+    <Content Include="Styles\MenuMetro\css.css" />
+    <Content Include="Styles\MenuMetro\css_.css" />
+    <Content Include="Styles\MenuMetro\demo-style.css" />
+    <Content Include="Styles\MenuMetro\demo-style_.css" />
+    <Content Include="Styles\MenuMetro\style-allec-nav.css" />
+    <Content Include="Styles\MenuMetro\style-allec-nav_.css" />
+    <Content Include="Styles\pagina.css" />
+    <Content Include="Styles\stimulsoft.designer.office2013.whiteblue.css" />
+    <Content Include="Styles\stimulsoft.viewer.office2013.whiteblue.css" />
+    <Content Include="Styles\style-creacion-de-plazas.css" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Styles\styleIndice.css" />
+    <Content Include="Styles\tema.css" />
+    <Content Include="Styles\viewer.css" />
+    <Content Include="Styles\VisorReporte.css" />
+    <Content Include="tailwinds\Assets\avatar.svg" />
+    <Content Include="tailwinds\Assets\unlock.svg" />
+    <Content Include="tailwinds\static\dist\tailwind.css" />
+    <Content Include="tailwinds\Styles\css\tailwind.css" />
+    <Content Include="tailwinds\tailwind.config.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx.cs">
+      <DependentUpon>AplicarDescuentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx.designer.cs">
+      <DependentUpon>AplicarDescuentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx.cs">
+      <DependentUpon>Fun_AplicarDescuentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx.designer.cs">
+      <DependentUpon>Fun_AplicarDescuentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx.cs">
+      <DependentUpon>Listar_Descuentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx.designer.cs">
+      <DependentUpon>Listar_Descuentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Captura.aspx.cs">
+      <DependentUpon>Captura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Captura.aspx.designer.cs">
+      <DependentUpon>Captura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Conceptos.aspx.cs">
+      <DependentUpon>Conceptos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Conceptos.aspx.designer.cs">
+      <DependentUpon>Conceptos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Fun_Captura.aspx.cs">
+      <DependentUpon>Fun_Captura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Fun_Captura.aspx.designer.cs">
+      <DependentUpon>Fun_Captura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Listar_Empleados.aspx.cs">
+      <DependentUpon>Listar_Empleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Listar_Empleados.aspx.designer.cs">
+      <DependentUpon>Listar_Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\CargarArchivos.aspx.cs">
+      <DependentUpon>CargarArchivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\CargarArchivos.aspx.designer.cs">
+      <DependentUpon>CargarArchivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\Fun_CargaYDescarga.aspx.cs">
+      <DependentUpon>Fun_CargaYDescarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\Fun_CargaYDescarga.aspx.designer.cs">
+      <DependentUpon>Fun_CargaYDescarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\Lista_Perfiles.aspx.cs">
+      <DependentUpon>Lista_Perfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\CargayDescarga\Lista_Perfiles.aspx.designer.cs">
+      <DependentUpon>Lista_Perfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Menu\Fun_Menus.aspx.cs">
+      <DependentUpon>Fun_Menus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Menu\Fun_Menus.aspx.designer.cs">
+      <DependentUpon>Fun_Menus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Menu\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Menu\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Usuarios\Fun_Usuarios.aspx.cs">
+      <DependentUpon>Fun_Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Usuarios\Fun_Usuarios.aspx.designer.cs">
+      <DependentUpon>Fun_Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Usuarios\Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Usuarios\Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_GlobalResources\" />
+    <Folder Include="aspnet_client\system_web\2_0_50727\" />
+    <Folder Include="aspnet_client\system_web\4_0_30319\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63483</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63483/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

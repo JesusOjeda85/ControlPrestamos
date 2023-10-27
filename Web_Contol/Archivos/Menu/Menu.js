@@ -99,7 +99,7 @@ function AgregarTabPadre(objtap, titulo, href) {
         $('#tt').tabs('select', titulo);
     }
     else {
-        var contenido = '<iframe src="' + href + '" frameborder="0" scrolling="no" style="width:100%; height:99.6%;" ></iframe> ';
+        var contenido = '<iframe src="' + href + '" frameborder="0" scrolling="no"  style="width:100%; height:99.6%;" ></iframe> ';
         $('#tt').tabs('add', {
             title: titulo,
             content: contenido,         

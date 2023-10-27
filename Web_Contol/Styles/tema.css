@@ -5,10 +5,11 @@
       /*background:gray;*/ 
       font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
     }
-    body {
-        margin: 0px;
-      background:white;
-    }
+body {
+    margin: 0px;
+   /* background: white;*/
+    background-color: rgb(226 232 240);
+}
     body1 { /* change body to body1 or vice versa for quick commenting-out. */
       min-height: 100%;
     }

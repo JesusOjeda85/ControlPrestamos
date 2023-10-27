@@ -43,38 +43,7 @@ namespace WebApi.Repositorio.CargayDescarga
             return msg;
         }
 
-        public static ObjMensaje Cargar_Descuentos(BuscarEmpleado obj)
-        {
-            ObjMensaje msg = new();
-
-            try
-            {
-                List<SqlParameter> parametro = new()
-                {
-                     new SqlParameter("@Desde", SqlDbType.Int) {Value= obj.Desde },
-                      new SqlParameter("@Hasta", SqlDbType.Int) {Value= obj.Hasta },
-                     new SqlParameter("@IdUsuario", SqlDbType.Int) {Value= obj.IdUsuario },
-                       new SqlParameter("@Busqueda", SqlDbType.VarChar,50) {Value= obj.Busqueda },
-                };
-
-                DataSet ds = MetodosBD.EjecutarProcedimiento("SPT_Captura_Listar_CreditosAplicar ", parametro);
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    List<Dictionary<string, object>> Tbljson = MetodosBD.convertirDatatableEnJsonString(ds.Tables[0]);
-                    msg.Error = 0;
-                    msg.Mensaje = "";
-                    msg.Data = Tbljson;
-                    msg.Datos = ds.Tables[1].Rows[0][0].ToString();
-                }
-                ds.Dispose();
-            }
-            catch (Exception ex)
-            {
-                msg.Error = 1;
-                msg.Mensaje = ex.Message.ToString();
-            }
-            return msg;
-        }
+      
 
       
     }

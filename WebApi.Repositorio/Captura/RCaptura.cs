@@ -182,6 +182,7 @@ namespace WebApi.Repositorio.Captura
                 {
                     new SqlParameter("@FkUsuarioCaptura", SqlDbType.Int) {Value= Obj.FkUsuarioCaptura },
                     new SqlParameter("@FkOrganismo", SqlDbType.Int) { Value = Obj.FkOrganismo },
+                    new SqlParameter("@FkConcepto", SqlDbType.Int) { Value = Obj.FkConcepto },
                     new SqlParameter("@Empleado", SqlDbType.Int) { Value = Obj.Empleado },
                     new SqlParameter("@FechaSolicitud", SqlDbType.VarChar, 11) { Value = Obj.FechaSolicitud },
                     new SqlParameter("@Rfc", SqlDbType.VarChar, 20) { Value = Obj.Rfc },

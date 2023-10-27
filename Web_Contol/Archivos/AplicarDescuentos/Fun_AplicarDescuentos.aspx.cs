@@ -22,7 +22,7 @@ namespace ControlDescuentos.Archivos.AplicarDescuentos
             SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
             Obj.IdUsuario = objusuario.Idusuario;
             string jsonobj = JsonConvert.SerializeObject(Obj);
-            string respuesta = Llamar_Api.PostItem("CargayDescarga/Cargar_Descuentos", jsonobj);
+            string respuesta = Llamar_Api.PostItem("Aplicacion/Cargar_Descuentos", jsonobj);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
             result[0] = msg.Error.ToString();
             result[1] = msg.Mensaje;

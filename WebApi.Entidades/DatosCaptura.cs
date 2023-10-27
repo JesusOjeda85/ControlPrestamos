@@ -12,6 +12,7 @@ namespace WebApi.Entidades
         public int FkUsuarioCaptura { get; set; }
         public int FkUsuarioAutoriza { get; set; }        
         public int FkOrganismo { get; set; }
+        public int FkConcepto { get; set; }
         public int Empleado { get; set; }
         public string FechaSolicitud { get; set; }
         public string Rfc { get; set; }

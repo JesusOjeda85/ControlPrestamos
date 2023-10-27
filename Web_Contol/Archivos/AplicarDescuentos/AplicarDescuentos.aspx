@@ -49,24 +49,21 @@
                     <tr>                        
                         <th data-options="field:'chk',checkbox:true"></th>                         
                         <th data-options="field:'id',width:90,align:'center',halign:'center',hidden:true">id</th>
-                        <th data-options="field:'fkorganismo',width:90,align:'center',halign:'center',hidden:true">id</th>
-                        <th data-options="field:'Empleado',width:90,align:'center',halign:'center'">Empleado</th>
-                        <th data-options="field:'Rfc',width:150,align:'center',halign:'center'">Rfc</th>                                                  
+                        <th data-options="field:'fkorganismo',width:90,align:'center',halign:'center',hidden:true">fkorganismo</th>
+                        <th data-options="field:'Organismo',width:70,align:'center',halign:'center',hidden:false">Organismo</th>
+                        <th data-options="field:'fkconcepto',width:90,align:'center',halign:'center',hidden:true">fkconcepto</th>
+                        <th data-options="field:'Concepto',width:250,align:'left',halign:'center',hidden:false">Concepto</th>
+                        <th data-options="field:'Empleado',width:70,align:'center',halign:'center'">Empleado</th>
+                        <th data-options="field:'Rfc',width:120,align:'center',halign:'center'">Rfc</th>                                                  
                         <th data-options="field:'Nombre',width:300,align:'left',halign:'center'">Nombre</th>                        
-                        <th data-options="field:'ImporteCredito',width:100,align:'right',halign:'center',hidden:false">Credito</th>
+                        <th data-options="field:'ImporteCredito',width:90,align:'right',halign:'center',hidden:false">Credito</th>
                         <th data-options="field:'fkPlazo',width:180,align:'center',halign:'center',hidden:true">fkPlazo</th>
-                        <th data-options="field:'Plazo',width:100,align:'center',halign:'center',hidden:false">Plazo</th>
+                        <th data-options="field:'Plazo',width:90,align:'center',halign:'center',hidden:false">Plazo</th>
                         <th data-options="field:'fkTipoPago',width:180,align:'center',halign:'center',hidden:true">fkTipoPago</th>
-                        <th data-options="field:'TipoPago',width:100,align:'center',halign:'center',hidden:false">Tipo de Pago</th>                       
+                        <th data-options="field:'TipoPago',width:150,align:'center',halign:'center',hidden:false">Tipo de Pago</th>                       
                         <th data-options="field:'fkBanco',width:180,align:'center',halign:'center',hidden:true">fkBanco</th>
-                        <th data-options="field:'Banco',width:100,align:'center',halign:'center',hidden:false">Banco</th>
-                        <th data-options="field:'CuentaBancaria',width:180,align:'center',halign:'center',hidden:false">Cuenta Bancaria</th>
-                      <%--  <th data-options="field:'Categoria',width:180,align:'center',halign:'center',hidden:true">CveCategoria</th>
-                        <th data-options="field:'DescCategoria',width:200,align:'left',halign:'center',hidden:true">Categoria</th>
-                        <th data-options="field:'Adscripcion',width:180,align:'center',halign:'center',hidden:true">cveAdscripcion</th>
-                        <th data-options="field:'DescAdscripcion',width:200,align:'left',halign:'center',hidden:true">Adscripcion</th>
-                        <th data-options="field:'Pagaduria',width:180,align:'center',halign:'center',hidden:true">cvePagaduria</th>
-                        <th data-options="field:'DescPagaduria',width:200,align:'left',halign:'center',hidden:true">Pagaduria</th>--%>
+                        <th data-options="field:'Banco',width:90,align:'center',halign:'center',hidden:false">Banco</th>
+                        <th data-options="field:'CuentaBancaria',width:150,align:'center',halign:'center',hidden:false">Cuenta Bancaria</th>                    
                     </tr>
                 </thead>
             </table> 

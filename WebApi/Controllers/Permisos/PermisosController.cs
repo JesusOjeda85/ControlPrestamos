@@ -29,11 +29,12 @@ namespace WebApi.Controllers.Permisos
         //    ObjMensaje msg = RPermisos.Listar_Permisos_Asignados(obj);
         //    return StatusCode(StatusCodes.Status200OK, msg);
         //}
-        [HttpGet]
+        [HttpPost]
         [Route("Listar_Perfiles")]
-        public IActionResult Listar_Perfiles()
-        {           
-            ObjMensaje msg = RPermisos.Listar_Perfiles();
+        public IActionResult Listar_Perfiles(IdUuarioDto objDto)
+        {
+            var obj = mapper.Map<DatosUsuario>(objDto);
+            ObjMensaje msg = RPermisos.Listar_Perfiles(obj);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
 

@@ -32,14 +32,14 @@ namespace WebApi.Repositorio.Permisos
         //    return msg;
         //}
 
-        public static ObjMensaje Listar_Perfiles()
+        public static ObjMensaje Listar_Perfiles(DatosUsuario Obj)
         {
             ObjMensaje msg = new();
             ObjTree TreeObj = new();
             List<ObjTree> LstObj = new();
             try
             {
-                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Permisos_Listar_Perfiles");
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Permisos_Listar_Perfiles "+Obj.Idusuario);
                 if (ds.Tables.Count > 0)
                 {
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)

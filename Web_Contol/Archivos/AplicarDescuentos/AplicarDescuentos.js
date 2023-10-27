@@ -239,6 +239,7 @@ function CARGAR_DESCUENTOS(filtro) {
                     showPageList: false,
                     checkOnSelect: true,
                     selectOnCheck: true,
+                    view: detailview,     
                     onCheckAll: function () {
                         var allRows = $(this).datagrid('getRows');
                         checkedRows = allRows;
@@ -247,8 +248,7 @@ function CARGAR_DESCUENTOS(filtro) {
                         checkedRows = [];
                     },
                     onCheck: onCheck,
-                    onUncheck: onUncheck,
-                    view: detailview,                   
+                    onUncheck: onUncheck,                                 
                     detailFormatter: function (index, row) {
                         return '<div style="padding:2px;position:relative;"><table class="ddv"></table></div><div style="padding:2px;position:relative;"><table class="ddv2"></table></div>';
                     },

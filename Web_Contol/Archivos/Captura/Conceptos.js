@@ -48,7 +48,7 @@ function LISTAR_PERFILES() {
                     if (node.children.length <= 0) {
                         fkorganismo = node.idPadre;
                         
-                        IR_PAGINA('Captura.aspx','fkorg='+fkorganismo+"&perfil="+node.text);         
+                        IR_PAGINA('Captura.aspx','fkorg='+fkorganismo+"&cve="+node.nombre+"&perfil="+node.text);         
                     }
                 }
             });

@@ -1,11 +1,15 @@
 ﻿var fkor = 0;
+var cveperfil = 0;
 var NomPerfil = "";
 $(document).ready(function () {   
     var org = $_GET('fkorg');
     if (org != undefined) { fkorg = org; }
     else { fkorg = ''; }
+    var cve = $_GET('cve');
+    if (cve != undefined) { cveperfil = cve; }
+    else { cveperfil = ''; }
     var Perfil = $_GET('perfil');
-    if (NomPerfil != undefined) { NomPerfil = Perfil; }
+    if (Perfil != undefined) { NomPerfil = Perfil; }
     else { NomPerfil = ''; }
 
     $('#lblconcepto').text('Perfil: ' + NomPerfil);
@@ -214,6 +218,7 @@ function GUARDAR_CAPTURA(btnobj) {
                     var data = {
                         Obj: {                           
                             FkOrganismo: fkorg,
+                            FkConcepto: cveperfil,
                             Empleado: $('#txtempleado').textbox('getValue'),
                             FechaSolicitud: $('#txtfechasolicitud').datebox('getValue'),
                             Rfc: $('#txtrfc').textbox('getValue'),

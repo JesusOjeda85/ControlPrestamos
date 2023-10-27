@@ -23,13 +23,7 @@ namespace WebApi.Controllers.CargayDescarga
             return StatusCode(StatusCodes.Status200OK, msg);
         }
 
-        [HttpPost]
-        [Route("Cargar_Descuentos")]
-        public IActionResult Cargar_Descuentos(BuscarEmpleado Obj)
-        {
-            ObjMensaje msg = RCargayDescarga.Cargar_Descuentos(Obj);
-            return StatusCode(StatusCodes.Status200OK, msg);
-        }
+       
 
        
     }

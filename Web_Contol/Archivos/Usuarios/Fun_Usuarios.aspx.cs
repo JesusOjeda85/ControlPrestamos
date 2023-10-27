@@ -2,6 +2,7 @@
 using ClsObjetos;
 using Newtonsoft.Json;
 using System;
+using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.Script.Services;
 using System.Web.Services;
@@ -61,7 +62,12 @@ namespace ControlDescuentos.Archivos.Usuarios
         public static string[] LISTAR_PERFILES()
         {
             string[] result = { "", "", "" };
-            string respuesta = Llamar_Api.GetItem("Permisos/Listar_Perfiles");
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            FiltroIdUsuario obj = new FiltroIdUsuario();
+            obj.Idusuario = objusuario.Idusuario;
+            string jsonobj = JsonConvert.SerializeObject(obj);
+
+            string respuesta = Llamar_Api.PostItem("Permisos/Listar_Perfiles", jsonobj);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
             result[0] = msg.Error.ToString();
             result[1] = msg.Mensaje;

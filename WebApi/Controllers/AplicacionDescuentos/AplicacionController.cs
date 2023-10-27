@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApi.Dto;
 using WebApi.Entidades;
 using WebApi.Repositorio.AplicacionDescuentos;
+using WebApi.Repositorio.CargayDescarga;
 
 namespace WebApi.Controllers.AplicacionDescuentos
 {
@@ -17,6 +18,15 @@ namespace WebApi.Controllers.AplicacionDescuentos
         {
             this.mapper = mapper;
         }
+
+        [HttpPost]
+        [Route("Cargar_Descuentos")]
+        public IActionResult Cargar_Descuentos(BuscarEmpleado Obj)
+        {
+            ObjMensaje msg = RAplicacion.Cargar_Descuentos(Obj);
+            return StatusCode(StatusCodes.Status200OK, msg);
+        }
+
         [HttpPost]
         [Route("Aplicar_Descuentos")]
         public IActionResult Aplicar_Descuentos(Aplicar_DescuentosDto ObjDto)

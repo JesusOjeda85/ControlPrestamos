@@ -22,7 +22,7 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Captura.js?v0.2"></script>
+    <script src="Captura.js?v0.4"></script>
 </head>
 <body>   
      <div class="w-screen h-screen flex flex-col " align="Center" style="background-color:#FCFDFF;">              
@@ -36,11 +36,11 @@
                     <div class="flex flex-col mb-1  w-1/2">
                         <label class="text-left text-lg text-blue-900">Empleado</label>   
                          <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtempleado"  data-options="required:true"/>  
-                        <%--<div class="flex flex-row ">                                                                        
+                       <%-- <div class="flex flex-row ">                                                                        
                            <div class="flex flex-row w-full px-4 space-x-2 ">        
                                 <a id="btnBuscar" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:false">Buscar</a>            
                             </div> 
-                        </div>     --%>                   
+                        </div> --%>                       
                     </div>                      
                     <div class="flex flax-row space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 ">

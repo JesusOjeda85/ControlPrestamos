@@ -27,7 +27,7 @@
     $('#btnInicio').bind('click', function () { Cerrar(); });
 
     $('#btnCaptura').bind('click', function () { AgregarTabPadre('#tpcaptura', 'Captura', '../Captura/Conceptos.aspx'); });
-    $('#btnAplicacion').bind('click', function () { AgregarTabPadre('#tpaplicacion', 'Aplicar Descuentos', '../AplicarDescuentos/AplicarDescuentos.aspx'); });
+    $('#btnAplicacion').bind('click', function () { AgregarTabPadre('#tpaplicacion', 'Aplicar Descuentos', '../AplicarDescuentos/Listar_Conceptos.aspx'); });
     $('#btnReportes').bind('click', function () { AgregarTabPadre('#tpreportes', 'Reportes', '../Reportes/Reportes.aspx'); });
     $('#btnUsuarios').bind('click', function () { AgregarTabPadre('#tpusuarios', 'Usuarios', '../Usuarios/Usuarios.aspx'); });
     $('#btnImportacion').bind('click', function () { AgregarTabPadre('#tpcargar', 'Cargar Archivos', '../CargayDescarga/Lista_Perfiles.aspx?mod=C'); });

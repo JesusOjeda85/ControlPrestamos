@@ -1,6 +1,22 @@
 ﻿var checkedRows = [];
+var fkor = 0;
+var cveperfil = 0;
+var NomPerfil = "";
 
 $(document).ready(function () {
+    var org = $_GET('fkorg');
+    if (org != undefined) { fkorg = org; }
+    else { fkorg = ''; }
+    var cve = $_GET('cve');
+    if (cve != undefined) { cveperfil = cve; }
+    else { cveperfil = ''; }
+    var Perfil = $_GET('perfil');
+    if (Perfil != undefined) { NomPerfil = Perfil; }
+    else { NomPerfil = ''; }
+
+    $('#lblconcepto').text('Perfil: ' + NomPerfil);
+
+
     CARGAR_DESCUENTOS("");
 
     var text = $('#txtvalor');
@@ -10,6 +26,7 @@ $(document).ready(function () {
             CARGAR_DESCUENTOS(valor);
         }
     });
+    $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Conceptos.aspx', ''); });
 
     $('#btnBuscar').bind('click', function () { CARGAR_DESCUENTOS($('#txtvalor').textbox('getValue')); });
 
@@ -208,6 +225,8 @@ function CARGAR_DESCUENTOS(filtro) {
         Obj: {
             Desde: 1,
             Hasta: 20,
+            FkOrganismo: fkorg,
+            FkConcepto: cveperfil,
             Busqueda: (filtro == undefined ? filtro = "" : filtro)
         }
     }

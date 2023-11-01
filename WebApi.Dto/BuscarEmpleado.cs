@@ -12,6 +12,7 @@ namespace WebApi.Dto
         public int Hasta { get; set; }     
         public int IdUsuario { get; set; }
         public int FkOrganismo { get; set; }
+        public int FkConcepto { get; set; }
         public string Busqueda { get; set; }
     }
 }

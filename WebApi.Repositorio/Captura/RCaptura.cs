@@ -141,6 +141,51 @@ namespace WebApi.Repositorio.Captura
             }
             return msg;
         }
+        public static ObjMensaje Listar_TipoPuesto()
+        {
+            ObjComboBox Cboobj = new();
+            ObjMensaje msg = new();
+            List<ObjComboBox> lstcat = new();
+            try
+            {
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Catalogos_Listar_TipoPuesto ");
+                if (ds.Tables.Count > 0)
+                {
+                    //Cboobj = new ObjComboBox();
+                    //Cboobj.valor = "x";
+                    //Cboobj.descripcion = "Seleccione una Opción";
+                    //Cboobj.selected = true;
+                    //lstcat.Add(Cboobj);
+
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        Cboobj = new ObjComboBox();
+                        Cboobj.valor = ds.Tables[0].Rows[i][0].ToString();
+                        Cboobj.descripcion = ds.Tables[0].Rows[i][1].ToString();
+                        if (i == 0) { Cboobj.selected = true; }
+                        else
+                        { Cboobj.selected = false; }
+                        lstcat.Add(Cboobj);
+                    }
+                    msg.Error = 0;
+                    msg.Mensaje = "";
+                    msg.Data = lstcat;
+                }
+                else
+                {
+                    msg.Error = 1;
+                    msg.Mensaje = ds.Tables[0].Rows[0][1].ToString();
+                    msg.Data = null;
+                }
+                ds.Dispose();
+            }
+            catch (Exception ex)
+            {
+                msg.Error = 1;
+                msg.Mensaje = ex.Message.ToString();
+            }
+            return msg;
+        }
         public static ObjMensaje Buscar_Empleado(BuscarEmpleado obj)
         {
             ObjMensaje msg = new();
@@ -185,11 +230,15 @@ namespace WebApi.Repositorio.Captura
                     new SqlParameter("@FkConcepto", SqlDbType.Int) { Value = Obj.FkConcepto },
                     new SqlParameter("@Empleado", SqlDbType.Int) { Value = Obj.Empleado },
                     new SqlParameter("@FechaSolicitud", SqlDbType.VarChar, 11) { Value = Obj.FechaSolicitud },
+                    new SqlParameter("@FechaIngreso", SqlDbType.VarChar, 11) { Value = Obj.FechaIngreso },
                     new SqlParameter("@Rfc", SqlDbType.VarChar, 20) { Value = Obj.Rfc },
                     new SqlParameter("@Curp", SqlDbType.VarChar, 20) { Value = Obj.Curp },
                     new SqlParameter("@ApPaterno", SqlDbType.VarChar, 100) { Value = Obj.ApPaterno },
                     new SqlParameter("@ApMaterno", SqlDbType.VarChar, 100) { Value = Obj.ApMaterno },
                     new SqlParameter("@Nombres", SqlDbType.VarChar, 100) { Value = Obj.Nombres },
+                    new SqlParameter("@Domicilio", SqlDbType.VarChar, 100) { Value = Obj.Domicilio },
+                    new SqlParameter("@Telefono1", SqlDbType.VarChar, 100) { Value = Obj.Telefono1 },
+                    new SqlParameter("@Telefono2", SqlDbType.VarChar, 100) { Value = Obj.Telefono2 },
                     new SqlParameter("@CvePagaduria", SqlDbType.VarChar, 20) { Value = Obj.CvePagaduria },
                     new SqlParameter("@DesPagaduria", SqlDbType.VarChar, 300) { Value = Obj.DesPagaduria },
                     new SqlParameter("@CveCategoria", SqlDbType.VarChar, 20) { Value = Obj.CveCategoria },
@@ -199,6 +248,7 @@ namespace WebApi.Repositorio.Captura
                     new SqlParameter("@ImporteCredito", SqlDbType.BigInt) { Value = Obj.ImporteCredito },
                     new SqlParameter("@FkPlazo", SqlDbType.Int) { Value = Obj.FkPlazo },
                     new SqlParameter("@FkTipoPago", SqlDbType.Int) { Value = Obj.FkTipoPago },
+                    new SqlParameter("@FkTipoPuesto", SqlDbType.Int) { Value = Obj.FkTipoPuesto },
                     new SqlParameter("@FkBanco", SqlDbType.Int) { Value = Obj.FkBanco },
                     new SqlParameter("@Cuenta", SqlDbType.Int) { Value = Obj.Cuenta },
                 };

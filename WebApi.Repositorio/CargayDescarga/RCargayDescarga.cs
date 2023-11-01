@@ -25,7 +25,7 @@ namespace WebApi.Repositorio.CargayDescarga
                 }
                 valores = valores.Substring(0, valores.Length - 1);
 
-                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_CargayDescarga_Cargar_Archivos " + Obj.IdUsuario + "," + Obj.CvePerfil + ",'" + Obj.Nombre + "','" + valores + "'");
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_ControlArchivos_Cargar " + Obj.IdUsuario + "," + Obj.CvePerfil +","+Obj.FkOrganismo +",'" + Obj.Nombre + "','"+Obj.Quincena+"','" + valores + "'");
                 if (ds.Tables.Count > 0)
                 {
                     msg.Error = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());

@@ -43,6 +43,14 @@ namespace WebApi.Controllers.Captura
             return StatusCode(StatusCodes.Status200OK, msg);
         }
 
+        [HttpGet]
+        [Route("Listar_TipoPuesto")]
+        public IActionResult Listar_TipoPuesto()
+        {
+            ObjMensaje msg = RCaptura.Listar_TipoPuesto();
+            return StatusCode(StatusCodes.Status200OK, msg);
+        }
+
 
         [HttpPost]
         [Route("Buscar_Empleado")]

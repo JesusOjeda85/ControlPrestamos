@@ -31,10 +31,12 @@
 </head>
 <body>
      <div class="bg-neutral-100 w-screen h-screen flex flex-col bg-yellow-50 " align="Center" style="background-color:#FCFDFF;">   
-          <div class="easyui-panel mb-3" style="padding:2px; width:100%">                 
+          <div class="easyui-panel mb-3" style="padding:2px; width:100%">    
+               <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'anterior'" id="btnRegresar">Regresar</a> 
                 <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'limpiar',disabled:false" id="btnLimpiar" >Limpiar</a>  
                 <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-add',disabled:false" id="btnEditar">Editar</a>
-                <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-ok',disabled:false" id="btnAplicar" >Aplicar</a>                                                                     
+                <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-ok',disabled:false" id="btnAplicar" >Aplicar</a>  
+               <label id="lblconcepto" class="text-left font-black text-lg text-blue-900"></label> 
            </div>  
          <div class="flex flex-col space-y-2 w-full h-full">
            <div class="flex flex-row space-x-2 w-full justify-center items-center ">           

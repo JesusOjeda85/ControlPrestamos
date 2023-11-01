@@ -1,10 +1,5 @@
-﻿var modulo = "";
-$(document).ready(function () {
-    var mod = $_GET('mod');
-    if (mod != undefined) { modulo = mod; }
-    else { modulo = "C"; }
+﻿$(document).ready(function () {
 
-   
 });
 $(window).load(function () {
     LISTAR_PERFILES();
@@ -51,11 +46,9 @@ function LISTAR_PERFILES() {
                 data: obj,
                 onClick: function (node) {
                     if (node.children.length <= 0) {
-                        fkorganismo = node.idPadre;  
-                          
-                        if (modulo == "C") { IR_PAGINA('CargarArchivos.aspx', 'fkorg=' + fkorganismo + "&cve=" + node.nombre + "&perfil=" + node.text); }
-                        else { IR_PAGINA('DesCargarArchivos.aspx', 'fkorg=' + fkorganismo + "&cve=" + node.nombre + "&perfil=" + node.text); }
-                       
+                        fkorganismo = node.idPadre;
+
+                        IR_PAGINA('AplicarDescuentos.aspx', 'fkorg=' + fkorganismo + "&cve=" + node.nombre + "&perfil=" + node.text);
                     }
                 }
             });

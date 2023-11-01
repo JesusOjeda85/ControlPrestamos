@@ -22,7 +22,7 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Captura.js?v0.4"></script>
+    <script src="Captura.js?v0.0"></script>
 </head>
 <body>   
      <div class="w-screen h-screen flex flex-col " align="Center" style="background-color:#FCFDFF;">              
@@ -32,16 +32,22 @@
             <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save',disabled:false" id="btnGuardar" >Guardar</a>                                                        
              <label id="lblconcepto" class="text-left font-black text-lg text-blue-900"></label> 
          </div>        
-          <div class="flex flex-col self-center px-2 py-2 w-8/12 overflow-auto">                     
-                    <div class="flex flex-col mb-1  w-1/2">
-                        <label class="text-left text-lg text-blue-900">Empleado</label>   
-                         <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtempleado"  data-options="required:true"/>  
-                       <%-- <div class="flex flex-row ">                                                                        
-                           <div class="flex flex-row w-full px-4 space-x-2 ">        
-                                <a id="btnBuscar" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:false">Buscar</a>            
-                            </div> 
-                        </div> --%>                       
-                    </div>                      
+          <div class="flex flex-col self-center px-2 py-2 w-8/12 overflow-auto">   
+                    <div class="flex flax-row space-x-2">
+                        <div class="flex flex-col mb-1 w-1/2 ">
+                            <label class="text-left text-lg text-blue-900">Tipo de Puesto</label>                    
+                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cbotipopuesto"  data-options="required:true"/>                   
+                       </div>
+                       <div class="flex flex-col mb-1  w-1/2">
+                           <label class="text-left text-lg text-blue-900">Empleado</label>   
+                           <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtempleado"  data-options="required:true"/>  
+                           <%-- <div class="flex flex-row ">                                                                        
+                                <div class="flex flex-row w-full px-4 space-x-2 ">        
+                                    <a id="btnBuscar" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:false">Buscar</a>            
+                                </div> 
+                           </div>    --%>                    
+                      </div> 
+                   </div>
                     <div class="flex flax-row space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-blue-900">Paterno</label>                    
@@ -51,20 +57,36 @@
                             <label class="text-left text-lg text-blue-900">Materno</label>                                                 
                             <input class="easyui-textbox" style="width:100%; text-align:left"  id="txtmaterno" data-options="readonly:false"/>                                               
                         </div>
-                    </div>
-                    <div class="flex flex-col mb-1 ">
-                        <label class="text-left text-lg text-blue-900">Nombres</label>                    
-                        <input class="easyui-textbox" style="width:100%" id="txtnombres"  data-options="readonly:false"/>                   
-                    </div>
+                        <div class="flex flex-col mb-1 w-1/2  ">
+                            <label class="text-left text-lg text-blue-900">Nombres</label>                    
+                            <input class="easyui-textbox" style="width:100%" id="txtnombres"  data-options="readonly:false"/>                   
+                        </div>
+                    </div>                    
                     <div class="flex flax-col space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 border-red-200">
                             <label class="text-left text-lg text-blue-900">Rfc</label>                    
-                            <input class="easyui-textbox" style="width:100%" id="txtrfc"  data-options="readonly:false"/>                   
+                            <input class="easyui-textbox" style="width:100%" id="txtrfc"  data-options="readonly:false,required:true"/>                   
                         </div>
                         <div class="flex flex-col mb-1 w-1/2 border-red-200">
                             <label class="text-left text-lg text-blue-900">Curp</label>                    
                             <input class="easyui-textbox" style="width:100%" id="txtcurp"  data-options="readonly:false"/>                   
                         </div>                   
+                    </div> 
+                    <div class="flex flax-col space-x-2">
+                        <div class="flex flex-col mb-1 w-1/2 border-red-200">
+                            <label class="text-left text-lg text-blue-900">Domicilio</label>                    
+                            <input class="easyui-textbox" style="width:100%" id="txtdomicilio"  data-options="readonly:false,required:true"/>                   
+                        </div>
+                        <div class="flex flax-row space-x-2">
+                            <div class="flex flex-col mb-1 w-1/2 border-red-200">
+                                <label class="text-left text-lg text-blue-900">Telefono 1</label>                    
+                                <input class="easyui-maskedbox" mask="(999) 999-99-99"  style="text-align:center" width:100%" id="txttelefono1"  data-options="readonly:false"/>                   
+                            </div>   
+                            <div class="flex flex-col mb-1 w-1/2 border-red-200">
+                                <label class="text-left text-lg text-blue-900">Telefono 2</label>                    
+                                <input class="easyui-maskedbox" mask="(999) 999-99-99"  style="text-align:center" width:100%" id="txttelefono2"  data-options="readonly:false"/>                   
+                            </div> 
+                        </div>
                     </div> 
                     <div class="flex flex-row mb-1 space-x-2">
                       <div class="flex flex-col mb-1 w-1/3 ">
@@ -102,11 +124,15 @@
                             <input class="easyui-datebox" style="width:100%; text-align:center" id="txtfechasolicitud"  data-options="required:true,formatter:myformatter,parser:myparser"/>                   
                         </div>
                         <div class="flex flex-col mb-1 w-1/2 ">
-                            <label class="text-left text-lg text-blue-900">Plazo</label>                    
-                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cboplazos" data-options="required:true"/>                   
+                            <label class="text-left text-lg text-blue-900">Fecha de Ingreso</label>                    
+                            <input class="easyui-datebox" style="width:100%; text-align:center" id="txtfechaingreso"  data-options="required:true,formatter:myformatter,parser:myparser"/>                   
                         </div>
                     </div>
                     <div class="flex flax-row space-x-2">
+                         <div class="flex flex-col mb-1 w-1/2 ">
+                             <label class="text-left text-lg text-blue-900">Plazo</label>                    
+                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cboplazos" data-options="required:true"/>                   
+                        </div>
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-blue-900">Tipo de Pago</label>                    
                             <input class="easyui-combobox" style="width:100%; text-align:left"  id="cbotipopago"  data-options="required:true"/>                   

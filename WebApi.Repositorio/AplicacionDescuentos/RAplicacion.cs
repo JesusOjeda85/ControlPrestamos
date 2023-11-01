@@ -20,6 +20,8 @@ namespace WebApi.Repositorio.AplicacionDescuentos
                      new SqlParameter("@Desde", SqlDbType.Int) {Value= obj.Desde },
                       new SqlParameter("@Hasta", SqlDbType.Int) {Value= obj.Hasta },
                      new SqlParameter("@IdUsuario", SqlDbType.Int) {Value= obj.IdUsuario },
+                     new SqlParameter("@FkOrganismo", SqlDbType.Int) {Value= obj.FkOrganismo },
+                     new SqlParameter("@FkConcepto", SqlDbType.Int) {Value= obj.FkConcepto },
                        new SqlParameter("@Busqueda", SqlDbType.VarChar,50) {Value= obj.Busqueda },
                 };
 

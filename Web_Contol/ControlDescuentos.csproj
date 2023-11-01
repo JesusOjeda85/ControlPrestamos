@@ -148,6 +148,8 @@
     <Content Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx" />
     <Content Include="Archivos\AplicarDescuentos\AplicarDescuentos.js" />
     <Content Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx" />
+    <Content Include="Archivos\AplicarDescuentos\Listar_Conceptos.aspx" />
+    <Content Include="Archivos\AplicarDescuentos\Listar_Conceptos.js" />
     <Content Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx" />
     <Content Include="Archivos\Captura\Captura.aspx" />
     <Content Include="Archivos\Captura\Captura.js" />
@@ -2265,6 +2267,13 @@
     </Compile>
     <Compile Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx.designer.cs">
       <DependentUpon>Fun_AplicarDescuentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\Listar_Conceptos.aspx.cs">
+      <DependentUpon>Listar_Conceptos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\AplicarDescuentos\Listar_Conceptos.aspx.designer.cs">
+      <DependentUpon>Listar_Conceptos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx.cs">
       <DependentUpon>Listar_Descuentos.aspx</DependentUpon>

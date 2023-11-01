@@ -22,7 +22,7 @@ namespace ControlDescuentos.Archivos.CargayDescarga
         {
             string[] result = { "", "", "" };
             SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
-            Obj.IdUsuario = 1;// objusuario.Idusuario;
+            Obj.IdUsuario =  objusuario.Idusuario;
                       
             string jsonobj = JsonConvert.SerializeObject(Obj);
             string respuesta = Llamar_Api.PostItem("CargayDescarga/Subir_Archivo_014a", jsonobj);

@@ -40,7 +40,8 @@
        <div class="flex flex-col self-center px-2 py-2 w-8/12 ">    
              <div class="flex flex-col mb-1 w-2/3 self-center">
                 <label class="text-left text-lg text-blue-900">Archivo de Excel</label>             
-                <input  id="xls"  class="easyui-filebox" data-options="accept:'application/vnd.ms-excel',prompt:'Seleccione el Archivo'" style="width:100%"/>   
+                <input  id="xls"  class="easyui-filebox" data-options="accept:'application/vnd.ms-excel',prompt:'Seleccione el Archivo'" style="width:100%"/> 
+                 <label id="lblquincena" class="text-left font-black text-lg text-blue-900"></label> 
                  <pre id="jsonData"></pre>
             </div>           
         </div>

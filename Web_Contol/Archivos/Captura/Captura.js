@@ -37,6 +37,7 @@ $(window).load(function () {
     LISTAR_PLAZOS();
     LISTAR_BANCOS();
     LISTAR_TIPOPAGO();   
+    LISTAR_TIPOPUESTO();
 });
 function LISTAR_PLAZOS() {
     var data = {
@@ -140,15 +141,54 @@ function LISTAR_TIPOPAGO() {
         complete: function () { $('#loading').hide(100); }
     });
 }
+function LISTAR_TIPOPUESTO() {
+    //var data = {
+    //    objorganismo: {
+    //        FkOrganismo: 1,
+    //    }
+    //}
+    $.ajax({
+        type: "POST",
+        url: 'Fun_Captura.aspx/LISTAR_TIPOPUESTO',
+        // data: JSON.stringify(data),
+        dataType: "json",
+        async: true,
+        cache: false,
+        contentType: "application/json; charset=utf-8",
+        beforeSend: function () {
+            $('#loading').show();
+        },
+        success: function (data) {
+            var obj = jQuery.parseJSON(data.d[2]);
+
+            $('#cbotipopuesto').combobox({
+                data: obj,
+                valueField: 'valor',
+                textField: 'descripcion',
+                editable: false
+            });
+        },
+        error: function (err) {
+            $('#loading').hide(100);
+            $.messager.alert('Error', er.statusText, 'error');
+        },
+        complete: function () { $('#loading').hide(100); }
+    });
+}
+
 
 function LIMPIAR_CAPTURA() {
     $('#txtempleado').textbox('setValue', '');
     $('#txtfechasolicitud').datebox('setValue', '');
+    $('#txtfechaingreso').datebox('setValue', '');
     $('#txtrfc').textbox('setValue', '');
     $('#txtcurp').textbox('setValue', '');
     $('#txtpaterno').textbox('setValue', '');
     $('#txtmaterno').textbox('setValue', '');
     $('#txtnombres').textbox('setValue', '');
+    $('#txtdireccion').textbox('setValue', '');
+    $('#txttelefono1').maskedbox('setValue', '');
+    $('#txttelefono2').maskedbox('setValue', '');
     $('#txtcvecat').textbox('setValue', '');
     $('#txtdescat').textbox('setValue', '');
     $('#txtcveads').textbox('setValue', '');
@@ -157,7 +197,8 @@ function LIMPIAR_CAPTURA() {
     $('#txtdespag').textbox('setValue', '');
     $('#txtimporte').numberbox('setValue','');
     $('#cboplazos').combobox('setValue', 'x');
-    $('#cbotipopago').combobox('setValue','x');
+    $('#cbotipopago').combobox('setValue', 'x');
+    $('#cbotipopuesto').combobox('setValue', '1');
     $('#cbobanco').combobox('setValue', 'x');
     $('#txtcuenta').numberbox('setValue', '');
     $('#txtvalor').textbox('setValue', '');
@@ -221,11 +262,15 @@ function GUARDAR_CAPTURA(btnobj) {
                             FkConcepto: cveperfil,
                             Empleado: $('#txtempleado').textbox('getValue'),
                             FechaSolicitud: $('#txtfechasolicitud').datebox('getValue'),
+                            FechaIngreso: $('#txtfechaingreso').datebox('getValue'),
                             Rfc: $('#txtrfc').textbox('getValue'),
                             Curp: $('#txtcurp').textbox('getValue'),
                             ApPaterno: $('#txtpaterno').textbox('getValue'),
                             ApMaterno: $('#txtmaterno').textbox('getValue'),
                             Nombres: $('#txtnombres').textbox('getValue'),
+                            Domicilio: $('#txtdomicilio').textbox('getValue'),
+                            Telefono1: $('#txttelefono1').maskedbox('getValue'),
+                            Telefono2: $('#txttelefono2').maskedbox('getValue'),
                             CvePagaduria: $('#txtcvepag').textbox('getValue'),
                             DesPagaduria: $('#txtdespag').textbox('getValue'),
                             CveCategoria: $('#txtcvecat').textbox('getValue'),
@@ -235,6 +280,7 @@ function GUARDAR_CAPTURA(btnobj) {
                             ImporteCredito: $('#txtimporte').numberbox('getValue'),
                             FkPlazo: $('#cboplazos').combobox('getValue'),
                             FkTipoPago: $('#cbotipopago').combobox('getValue'),
+                            FkTipoPuesto: $('#cbotipopuesto').combobox('getValue'),
                             FkBanco: $('#cbobanco').combobox('getValue'),
                             Cuenta: $('#txtcuenta').numberbox('getValue'),
                         }

@@ -1,12 +1,14 @@
 ﻿var NomPerfil = "";
 var cvePerfil = 0;
 $(document).ready(function () {
-    var perfil = $_GET('perfil');
-    if (perfil != undefined) { cvePerfil = perfil; }
-    else { cvePerfil = ''; }
-
-    var nombre = $_GET('nombre');
-    if (nombre != undefined) { NomPerfil = nombre; }
+    var org = $_GET('fkorg');
+    if (org != undefined) { fkorg = org; }
+    else { fkorg = ''; }
+    var cve = $_GET('cve');
+    if (cve != undefined) { cveperfil = cve; }
+    else { cveperfil = ''; }
+    var Perfil = $_GET('perfil');
+    if (Perfil != undefined) { NomPerfil = Perfil; }
     else { NomPerfil = ''; }
 
     $('#lblperfil').text('Perfil: ' + NomPerfil);
@@ -24,7 +26,14 @@ $(document).ready(function () {
                 var reader = new FileReader();
                 reader.onload = function (evt) {
                   var data = evt.target.result;
-                    
+
+                    var NombreArchivo = files[0].name;
+                    var NombreArchivo = NombreArchivo.replace('.xls', '');
+                    var NombreArchivo = NombreArchivo.replace('.xlsx', '');
+                    var quincena = NombreArchivo.slice(NombreArchivo.length - 7)
+
+                    $('#lblquincena').text('Quincena a Cargar: ' + quincena);
+
                     var workbook = XLSX.read(data, {
                         type: "binary"
                     });
@@ -81,11 +90,17 @@ function GUARDAR_ARCHIVO(btnobj) {
         else {
             var fileName = file.value;
             var NombreArchivo = nombre[0].name;
-           
+            var NombreArchivo = NombreArchivo.replace('.xls', '');
+            var NombreArchivo = NombreArchivo.replace('.xlsx','');
+            var quincena = NombreArchivo.slice(NombreArchivo.length - 7)
+
+
             var data = {
                 Obj: {
-                    CvePerfil:cvePerfil,
+                    CvePerfil: cveperfil,
+                    FkOrganismo:fkorg,
                     Nombre: NombreArchivo, 
+                    Quincena:quincena,
                     Archivo: sessionStorage.getItem('JsonData'),
                 }
             }

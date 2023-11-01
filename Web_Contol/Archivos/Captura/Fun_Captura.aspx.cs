@@ -63,6 +63,19 @@ namespace ControlDescuentos.Archivos.Captura
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod]
+        public static string[] LISTAR_TIPOPUESTO()
+        {
+            string[] result = { "", "", "" };
+            string respuesta = Llamar_Api.GetItem("Captura/Listar_TipoPuesto");
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
         public static string[] BUSCAR_EMPLEADOS(BuscarEmpleado obj)
         {
             string[] result = { "", "", "" };

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Fun_CargaYDescarga.aspx.cs" Inherits="ControlDescuentos.Archivos.CargayDescarga.Fun_CargaYDescarga" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Fun_CargaYDescarga.aspx.cs" Inherits="ControlDescuentos.Archivos.CargaryDescargar.Fun_CargaYDescarga" %>
 
 <!DOCTYPE html>
 

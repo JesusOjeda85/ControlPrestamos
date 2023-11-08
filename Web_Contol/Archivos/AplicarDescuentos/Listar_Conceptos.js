@@ -48,7 +48,7 @@ function LISTAR_PERFILES() {
                     if (node.children.length <= 0) {
                         fkorganismo = node.idPadre;
 
-                        IR_PAGINA('AplicarDescuentos.aspx', 'fkorg=' + fkorganismo + "&cve=" + node.nombre + "&perfil=" + node.text);
+                        IR_PAGINA('AplicarDescuentos.aspx', 'fkorg=' + fkorganismo + "&cve=" + node.strclave + "&perfil=" + node.text);
                     }
                 }
             });

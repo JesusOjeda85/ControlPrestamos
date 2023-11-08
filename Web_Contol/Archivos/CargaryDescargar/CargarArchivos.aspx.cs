@@ -6,18 +6,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ControlDescuentos.Archivos.CargayDescarga
+namespace ControlDescuentos.Archivos.CargaryDescargar
 {
     public partial class CargarArchivos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
 
-            //if (objusuario == null)
-            //{
-            //    Response.Redirect("../../Login.aspx");
-            //}
+            if (objusuario == null)
+            {
+                Response.Redirect("../../Login.aspx");
+            }
         }
         [System.Web.Services.WebMethod]
         public static bool GetResponse()

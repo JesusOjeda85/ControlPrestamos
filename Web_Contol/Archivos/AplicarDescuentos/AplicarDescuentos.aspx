@@ -27,7 +27,7 @@
  <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-export.js"></script>
  <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-detailview.js"></script>
     <script src="../../Scripts/Funsiones.js?v0.0"></script>
-    <script src="AplicarDescuentos.js?v0.0"></script>
+    <script src="AplicarDescuentos.js?v0.1"></script>
 </head>
 <body>
      <div class="bg-neutral-100 w-screen h-screen flex flex-col bg-yellow-50 " align="Center" style="background-color:#FCFDFF;">   
@@ -58,7 +58,7 @@
                         <th data-options="field:'Empleado',width:70,align:'center',halign:'center'">Empleado</th>
                         <th data-options="field:'Rfc',width:120,align:'center',halign:'center'">Rfc</th>                                                  
                         <th data-options="field:'Nombre',width:300,align:'left',halign:'center'">Nombre</th>                        
-                        <th data-options="field:'ImporteCredito',width:90,align:'right',halign:'center',hidden:false">Credito</th>
+                        <th data-options="field:'ImporteCredito',width:90,align:'right',halign:'center',hidden:false,editor: { type: 'textbox'}">Credito</th>
                         <th data-options="field:'fkPlazo',width:180,align:'center',halign:'center',hidden:true">fkPlazo</th>
                         <th data-options="field:'Plazo',width:90,align:'center',halign:'center',hidden:false">Plazo</th>
                         <th data-options="field:'fkTipoPago',width:180,align:'center',halign:'center',hidden:true">fkTipoPago</th>

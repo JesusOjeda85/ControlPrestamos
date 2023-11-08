@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     $('#lblperfil').text('Perfil: ' + NomPerfil);
 
-    $('#btnRegresar').bind('click', function () { IR_PAGINA('Lista_Perfiles.aspx', ''); });
+    $('#btnRegresar').bind('click', function () { IR_PAGINA('Lista_Perfiles.aspx', 'mod=C'); });
 
     $('#xls').filebox({
         buttonText: 'Examinar',
@@ -52,6 +52,7 @@ $(document).ready(function () {
             }
         }
     });
+
     $('#btnGuardar').bind('click', function () { GUARDAR_ARCHIVO('#btnGuardar'); });
 
     
@@ -117,9 +118,9 @@ function GUARDAR_ARCHIVO(btnobj) {
                 },
                 success: function (data) {
                     if (data.d[0] == "0") {
-                        $.messager.alert('Información', data.d[1], 'info');
+                        $.messager.alert('Información', data.d[2] + ' ' + data.d[1], 'info');
                     }
-                    else { $.messager.alert('Error', data.d[1], 'error'); }
+                    else { $.messager.alert('Error',  data.d[1], 'error'); }
                 },
                 error: function (er) {
                     $('#loading').hide();

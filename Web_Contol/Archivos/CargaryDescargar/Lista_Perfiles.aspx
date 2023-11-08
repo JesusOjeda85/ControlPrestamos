@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Lista_Perfiles.aspx.cs" Inherits="ControlDescuentos.Archivos.CargayDescarga.Lista_Perfiles" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Lista_Perfiles.aspx.cs" Inherits="ControlDescuentos.Archivos.CargaryDescargar.Lista_Perfiles" %>
 
 <!DOCTYPE html>
 

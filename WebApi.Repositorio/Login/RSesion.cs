@@ -22,9 +22,8 @@ namespace WebApi.Repositorio.RSesion
                     sesion.Idusuario = Convert.ToInt16(ds.Tables[1].Rows[0][0].ToString());
                     sesion.Usuario = ds.Tables[1].Rows[0][1].ToString();
                     sesion.Nombre = ds.Tables[1].Rows[0][2].ToString();
-                    sesion.Administrador= Convert.ToBoolean(ds.Tables[1].Rows[0][3].ToString());
-                    //string Tbljson = MetodosBD.TablasToJson(ds);
-                    //ClsMensaje.Datos = Tbljson;
+                    sesion.Administrador= Convert.ToBoolean(ds.Tables[1].Rows[0][3].ToString());                    
+                    ClsMensaje.Datos = ds.Tables[2].Rows[0][1].ToString()+"_"+ ds.Tables[2].Rows[0][0].ToString();
                     ClsMensaje.Data = sesion;
                 }
                 ClsMensaje.Error = Convert.ToInt32(ds.Tables[0].Rows[0]["Error"].ToString());

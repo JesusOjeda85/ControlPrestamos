@@ -157,11 +157,13 @@
     <Content Include="Archivos\Captura\Conceptos.js" />
     <Content Include="Archivos\Captura\Fun_Captura.aspx" />
     <Content Include="Archivos\Captura\Listar_Empleados.aspx" />
-    <Content Include="Archivos\CargayDescarga\CargarArchivos.aspx" />
-    <Content Include="Archivos\CargayDescarga\CargarArchivos.js" />
-    <Content Include="Archivos\CargayDescarga\Fun_CargaYDescarga.aspx" />
-    <Content Include="Archivos\CargayDescarga\Lista_Perfiles.js" />
-    <Content Include="Archivos\CargayDescarga\Lista_Perfiles.aspx" />
+    <Content Include="Archivos\CargaryDescargar\CargarArchivos.aspx" />
+    <Content Include="Archivos\CargaryDescargar\CargarArchivos.js" />
+    <Content Include="Archivos\CargaryDescargar\Fun_CargaYDescarga.aspx" />
+    <Content Include="Archivos\CargaryDescargar\Lista_Perfiles.js" />
+    <Content Include="Archivos\CargaryDescargar\Lista_Perfiles.aspx" />
+    <Content Include="Archivos\CargaryDescargar\SalidaArchivos.aspx" />
+    <Content Include="Archivos\CargaryDescargar\SalidaArchivos.js" />
     <Content Include="Archivos\Menu\Fun_Menus.aspx" />
     <Content Include="Archivos\Menu\Menu.aspx" />
     <Content Include="Archivos\Menu\Menu.js" />
@@ -2310,26 +2312,33 @@
     <Compile Include="Archivos\Captura\Listar_Empleados.aspx.designer.cs">
       <DependentUpon>Listar_Empleados.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\CargayDescarga\CargarArchivos.aspx.cs">
+    <Compile Include="Archivos\CargaryDescargar\CargarArchivos.aspx.cs">
       <DependentUpon>CargarArchivos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\CargayDescarga\CargarArchivos.aspx.designer.cs">
+    <Compile Include="Archivos\CargaryDescargar\CargarArchivos.aspx.designer.cs">
       <DependentUpon>CargarArchivos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\CargayDescarga\Fun_CargaYDescarga.aspx.cs">
+    <Compile Include="Archivos\CargaryDescargar\Fun_CargaYDescarga.aspx.cs">
       <DependentUpon>Fun_CargaYDescarga.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\CargayDescarga\Fun_CargaYDescarga.aspx.designer.cs">
+    <Compile Include="Archivos\CargaryDescargar\Fun_CargaYDescarga.aspx.designer.cs">
       <DependentUpon>Fun_CargaYDescarga.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\CargayDescarga\Lista_Perfiles.aspx.cs">
+    <Compile Include="Archivos\CargaryDescargar\Lista_Perfiles.aspx.cs">
       <DependentUpon>Lista_Perfiles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\CargayDescarga\Lista_Perfiles.aspx.designer.cs">
+    <Compile Include="Archivos\CargaryDescargar\Lista_Perfiles.aspx.designer.cs">
       <DependentUpon>Lista_Perfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\CargaryDescargar\SalidaArchivos.aspx.cs">
+      <DependentUpon>SalidaArchivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\CargaryDescargar\SalidaArchivos.aspx.designer.cs">
+      <DependentUpon>SalidaArchivos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Menu\Fun_Menus.aspx.cs">
       <DependentUpon>Fun_Menus.aspx</DependentUpon>

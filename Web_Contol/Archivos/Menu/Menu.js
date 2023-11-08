@@ -30,8 +30,9 @@
     $('#btnAplicacion').bind('click', function () { AgregarTabPadre('#tpaplicacion', 'Aplicar Descuentos', '../AplicarDescuentos/Listar_Conceptos.aspx'); });
     $('#btnReportes').bind('click', function () { AgregarTabPadre('#tpreportes', 'Reportes', '../Reportes/Reportes.aspx'); });
     $('#btnUsuarios').bind('click', function () { AgregarTabPadre('#tpusuarios', 'Usuarios', '../Usuarios/Usuarios.aspx'); });
-    $('#btnImportacion').bind('click', function () { AgregarTabPadre('#tpcargar', 'Cargar Archivos', '../CargayDescarga/Lista_Perfiles.aspx?mod=C'); });
-
+    $('#btnImportacion').bind('click', function () { AgregarTabPadre('#tpcargar', 'Cargar Archivos', '../CargarYDescargar/Lista_Perfiles.aspx?mod=C'); });
+    $('#btnExportacion').bind('click', function () { AgregarTabPadre('#tpsalida', 'Salida De Archivos', '../CargarYDescargar/Lista_Perfiles.aspx?mod=S'); });
+    
 
 });
 $(window).load(function () {

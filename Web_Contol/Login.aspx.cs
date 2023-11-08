@@ -37,7 +37,8 @@ namespace ControlDescuentos
             {
                 string strsesion= JsonConvert.SerializeObject(msg.Data);
                 SesionDto sesion = JsonConvert.DeserializeObject<SesionDto>(strsesion);
-                HttpContext.Current.Session["Sesion"] = sesion;              
+                HttpContext.Current.Session["Sesion"] = sesion;
+                HttpContext.Current.Session["Quincena"] = msg.Datos;
             }
             return result;
         }

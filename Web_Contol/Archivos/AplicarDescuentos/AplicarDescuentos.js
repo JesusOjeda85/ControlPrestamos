@@ -59,10 +59,10 @@ $(document).ready(function () {
         }
     });
 
-    //$('#dgdatos').datagrid('enableCellEditing').datagrid('gotoCell', {
-    //    index: 1,
-    //    field: 'Id',
-    //});
+    $('#dgdatos').datagrid('enableCellEditing').datagrid('gotoCell', {
+        index: 1,
+        field: 'Id',
+    });
 });
 
 function onCheck(index, row) {
@@ -254,23 +254,27 @@ function CARGAR_DESCUENTOS(filtro) {
                     singleSelect: false,
                     striped: true,
                     scroll: true,
-                    pageSize: 20,                    
+                    pageSize: 20,                          
                     showPageList: false,
-                    checkOnSelect: true,
-                    selectOnCheck: true,
-                    view: detailview,     
+                    checkOnSelect: false,
+                    selectOnCheck: false,                   
+                    onCheck: onCheck,
+                    onUncheck: onUncheck,    
                     onCheckAll: function () {
                         var allRows = $(this).datagrid('getRows');
                         checkedRows = allRows;
-                    },
+                    },                              
+                    view: detailview,
                     onUncheckAll: function () {
                         checkedRows = [];
-                    },
-                    onCheck: onCheck,
-                    onUncheck: onUncheck,                                 
+                    },                                                 
                     detailFormatter: function (index, row) {
                         return '<div style="padding:2px;position:relative;"><table class="ddv"></table></div><div style="padding:2px;position:relative;"><table class="ddv2"></table></div>';
                     },
+                    onBeforeEdit: function (index, row) {
+                        row.editing = true;
+                        $('#dgdatos').datagrid('checkRow', index);
+                    },        
                     onExpandRow: function (index, row) {
                         var ddv = $(this).datagrid('getRowDetail', index).find('table.ddv');
                         var valor = row["Id"];
@@ -312,8 +316,7 @@ function CARGAR_DESCUENTOS(filtro) {
                         $.messager.alert('Error', err.statusText, 'error');
                     },
                     complete: function () { $('#loading').hide(100); },
-
-                });
+                });              
             }
             else { $.messager.alert('Error', "No existen datos a mostrar", 'error'); }
         },

@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ControlDescuentos.Archivos.CargayDescarga
+namespace ControlDescuentos.Archivos.CargaryDescargar
 {
 
 
-    public partial class Lista_Perfiles
+    public partial class CargarArchivos
     {
     }
 }

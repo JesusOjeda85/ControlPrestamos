@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CargarArchivos.aspx.cs" Inherits="ControlDescuentos.Archivos.CargayDescarga.CargarArchivos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CargarArchivos.aspx.cs" Inherits="ControlDescuentos.Archivos.CargaryDescargar.CargarArchivos" %>
 
 <!DOCTYPE html>
 
@@ -43,7 +43,8 @@
                 <input  id="xls"  class="easyui-filebox" data-options="accept:'application/vnd.ms-excel',prompt:'Seleccione el Archivo'" style="width:100%"/> 
                  <label id="lblquincena" class="text-left font-black text-lg text-blue-900"></label> 
                  <pre id="jsonData"></pre>
-            </div>           
+            </div>  
+           
         </div>
       </div> 
      <div class="modal w-screen h-screen items-center" style="display: none;" id="loading" align="center">

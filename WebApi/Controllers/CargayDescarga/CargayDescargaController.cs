@@ -13,18 +13,23 @@ namespace WebApi.Controllers.CargayDescarga
     public class CargayDescargaController : ControllerBase
     {
 
-      
-
         [HttpPost]
-        [Route("Subir_Archivo_014a")]
-        public IActionResult Subir_Archivo_014a(DatosCargar Obj)
+        [Route("Subir_Archivo")]
+        public IActionResult Subir_Archivo(DatosCargar Obj)
         {          
-            ObjMensaje msg = RCargayDescarga.Subir_Archivo_014a(Obj);
+            ObjMensaje msg = RCargayDescarga.Subir_Archivo(Obj);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
 
-       
+        [HttpPost]
+        [Route("Salida_Archivo")]
+        public IActionResult Salida_Archivo(ArchivoSalida Obj)
+        {
+            ObjMensaje msg = RCargayDescarga.Salida_Archivo(Obj);
+            return StatusCode(StatusCodes.Status200OK, msg);
+        }
 
-       
+
+
     }
 }

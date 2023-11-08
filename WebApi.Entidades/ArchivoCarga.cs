@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebApi.Entidades
 {
-    public class Archivo_014a
+    public class ArchivoCarga
     {
         public string descrech { get; set; }
         public string desind { get; set; }

@@ -19,7 +19,7 @@
    
      <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
      <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
-    <script src="Menu.js?v0.0"></script>
+    <script src="Menu.js?v0.1"></script>
 </head>
 <body>    
      <div class="w-screen h-screen flex flex-col" style="overflow:hidden; background-color:#FCFDFF;">

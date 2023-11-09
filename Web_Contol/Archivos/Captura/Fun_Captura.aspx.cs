@@ -61,6 +61,21 @@ namespace ControlDescuentos.Archivos.Captura
             return result;
         }
 
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] LISTAR_ZONAPAGO()
+        {
+            string[] result = { "", "", "" };
+            string respuesta = Llamar_Api.GetItem("Captura/Listar_ZonaPago");
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+
         [WebMethod(EnableSession = true)]
         [ScriptMethod]
         public static string[] LISTAR_TIPOPUESTO()

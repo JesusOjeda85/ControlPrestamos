@@ -141,6 +141,49 @@ namespace WebApi.Repositorio.Captura
             }
             return msg;
         }
+        public static ObjMensaje Listar_ZonaPago()
+        {
+            ObjComboBox Cboobj = new();
+            ObjMensaje msg = new();
+            List<ObjComboBox> lstcat = new();
+            try
+            {
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Catalogos_Listar_ZonaPago ");
+                if (ds.Tables.Count > 0)
+                {
+                    Cboobj = new ObjComboBox();
+                    Cboobj.valor = "x";
+                    Cboobj.descripcion = "Seleccione una Opción";
+                    Cboobj.selected = true;
+                    lstcat.Add(Cboobj);
+
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        Cboobj = new ObjComboBox();
+                        Cboobj.valor = ds.Tables[0].Rows[i][0].ToString();
+                        Cboobj.descripcion = ds.Tables[0].Rows[i][1].ToString();
+                        Cboobj.selected = false;
+                        lstcat.Add(Cboobj);
+                    }
+                    msg.Error = 0;
+                    msg.Mensaje = "";
+                    msg.Data = lstcat;
+                }
+                else
+                {
+                    msg.Error = 1;
+                    msg.Mensaje = ds.Tables[0].Rows[0][1].ToString();
+                    msg.Data = null;
+                }
+                ds.Dispose();
+            }
+            catch (Exception ex)
+            {
+                msg.Error = 1;
+                msg.Mensaje = ex.Message.ToString();
+            }
+            return msg;
+        }
         public static ObjMensaje Listar_TipoPuesto()
         {
             ObjComboBox Cboobj = new();
@@ -186,6 +229,7 @@ namespace WebApi.Repositorio.Captura
             }
             return msg;
         }
+
         public static ObjMensaje Buscar_Empleado(BuscarEmpleado obj)
         {
             ObjMensaje msg = new();

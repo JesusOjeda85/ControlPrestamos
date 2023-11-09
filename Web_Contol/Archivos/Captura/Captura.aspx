@@ -71,11 +71,15 @@
                             <label class="text-left text-lg text-blue-900">Curp</label>                    
                             <input class="easyui-textbox" style="width:100%" id="txtcurp"  data-options="readonly:false"/>                   
                         </div>                   
-                    </div> 
-                    <div class="flex flax-col space-x-2">
-                        <div class="flex flex-col mb-1 w-1/2 border-red-200">
-                            <label class="text-left text-lg text-blue-900">Domicilio</label>                    
-                            <input class="easyui-textbox" style="width:100%" id="txtdomicilio"  data-options="readonly:false,required:true"/>                   
+                    </div>
+                    <div class="flex flex-col mb-1 border-red-200">
+                         <label class="text-left text-lg text-blue-900">Domicilio</label>                    
+                         <input class="easyui-textbox" style="width:100%" id="txtdomicilio"  data-options="readonly:false,required:true"/>                   
+                    </div>
+                    <div class="flex flax-col space-x-2">    
+                         <div class="flex flex-col mb-1 w-1/2 ">
+                            <label class="text-left text-lg text-blue-900">Zona Pago</label>                    
+                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cbozonapago" data-options="required:true"/>                   
                         </div>
                         <div class="flex flax-row space-x-2">
                             <div class="flex flex-col mb-1 w-1/2 border-red-200">

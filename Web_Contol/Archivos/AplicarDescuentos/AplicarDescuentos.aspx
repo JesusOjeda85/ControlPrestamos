@@ -6,28 +6,24 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
- <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>    
- <link href="../../tailwinds/static/dist/tailwind.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>    
+    <link href="../../tailwinds/static/dist/tailwind.css" rel="stylesheet" />
     <link href="../../Styles/tema.css" rel="stylesheet" />
     <link href="../../Styles/loader.css" rel="stylesheet" />
+ 
+    <link rel="stylesheet" type="text/css" href="../../jqueryEsy/themes/metro-gray/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../jqueryEsy/themes/icons.css"/>
+  
+    <script type="text/javascript" src="../../jqueryEsy/jquery.min.js"></script>
+    <script type="text/javascript" src="../../jqueryEsy/jquery.easyui.min.js"></script>
+      
+    <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-detailview.js"></script>
+     <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-cellediting.js"></script>
 
- <script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>
- <script type="text/javascript" src="../../scripts/demos.js"></script>
-
-<link rel="stylesheet" type="text/css" href="../../jqueryesy/themes/metro-gray/easyui.css"/>
- <link href="../../jqueryEsy/themes/icons.css" rel="stylesheet" />
-
- <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
- <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
- <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-cellediting.js"></script>
- <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-scrollview.js"></script>
- <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-filter.js"></script>
- <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-export.js"></script>
- <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-detailview.js"></script>
     <script src="../../Scripts/Funsiones.js?v0.0"></script>
-    <script src="AplicarDescuentos.js?v0.1"></script>
+    <script src="AplicarDescuentos.js?v0.7"></script>
 </head>
 <body>
      <div class="bg-neutral-100 w-screen h-screen flex flex-col bg-yellow-50 " align="Center" style="background-color:#FCFDFF;">   
@@ -35,6 +31,7 @@
                <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'anterior'" id="btnRegresar">Regresar</a> 
                 <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'limpiar',disabled:false" id="btnLimpiar" >Limpiar</a>  
                 <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-add',disabled:false" id="btnEditar">Editar</a>
+                <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save',disabled:false" id="btnGuardar">Guardar</a>
                 <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-ok',disabled:false" id="btnAplicar" >Aplicar</a>  
                <label id="lblconcepto" class="text-left font-black text-lg text-blue-900"></label> 
            </div>  
@@ -52,13 +49,13 @@
                         <th data-options="field:'chk',checkbox:true"></th>                         
                         <th data-options="field:'id',width:90,align:'center',halign:'center',hidden:true">id</th>
                         <th data-options="field:'fkorganismo',width:90,align:'center',halign:'center',hidden:true">fkorganismo</th>
-                        <th data-options="field:'Organismo',width:70,align:'center',halign:'center',hidden:false">Organismo</th>
+                        <th data-options="field:'Organismo',width:80,align:'center',halign:'center',hidden:false">Organismo</th>
                         <th data-options="field:'fkconcepto',width:90,align:'center',halign:'center',hidden:true">fkconcepto</th>
-                        <th data-options="field:'Concepto',width:250,align:'left',halign:'center',hidden:false">Concepto</th>
+                        <th data-options="field:'Concepto',width:300,align:'left',halign:'center',hidden:false">Concepto</th>
                         <th data-options="field:'Empleado',width:70,align:'center',halign:'center'">Empleado</th>
-                        <th data-options="field:'Rfc',width:120,align:'center',halign:'center'">Rfc</th>                                                  
+                        <th data-options="field:'Rfc',width:130,align:'center',halign:'center'">Rfc</th>                                                  
                         <th data-options="field:'Nombre',width:300,align:'left',halign:'center'">Nombre</th>                        
-                        <th data-options="field:'ImporteCredito',width:90,align:'right',halign:'center',hidden:false,editor: { type: 'textbox'}">Credito</th>
+                        <th data-options="field:'ImporteCredito',width:90,align:'right',halign:'center',hidden:false,editor:{type:'numberbox',options:{precision:2}}">Credito</th>
                         <th data-options="field:'fkPlazo',width:180,align:'center',halign:'center',hidden:true">fkPlazo</th>
                         <th data-options="field:'Plazo',width:90,align:'center',halign:'center',hidden:false">Plazo</th>
                         <th data-options="field:'fkTipoPago',width:180,align:'center',halign:'center',hidden:true">fkTipoPago</th>
@@ -68,10 +65,8 @@
                         <th data-options="field:'CuentaBancaria',width:150,align:'center',halign:'center',hidden:false">Cuenta Bancaria</th>                    
                     </tr>
                 </thead>
-            </table> 
-              <div id="tb" style="height:auto">                
-               
-              <%--  <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:false,disabled:false" id="btnDetalle">Detalle</a>--%>
+            </table>             
+              <div id="tb" style="height:auto">                             
             </div>
          </div>
      </div>  
@@ -147,22 +142,24 @@
              <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-ok',disabled:false" id="btnGAplicar" >Autorizar</a>
          </div> 
          <div class="flex flex-col self-center px-2 py-2 w-full overflow-auto">
-              <div class="flex flax-row space-x-1 overflow-hidden">
-                <div class="flex flex-col mb-1 w-1/2 ">
+            <div class="flex flex-col mb-1 ">
+                    <label class="text-left text-lg text-blue-900">Emisión</label>                    
+                    <input class="easyui-textbox" style="width:100%; text-align:center" " id="txtemision"   data-options="readonly:false"/>                   
+            </div>  
+             <div class="flex flex-col mb-1 ">
                     <label class="text-left text-lg text-blue-900">Quincena</label>                    
                     <input class="easyui-numberspinner" style="width:100%; text-align:center" id="numquincena"  data-options="readonly:false, spinAlign:'horizontal',min:1,max:24,editable:true"/>                   
-                </div>
-                <div class="flex flex-col mb-1 w-1/2 ">
+            </div>
+            <div class="flex flex-col mb-1 ">
                     <label class="text-left text-lg text-blue-900">Año</label>                    
                     <input class="easyui-numberspinner" style="width:100%; text-align:center"  id="numaño" data-options="readonly:false,spinAlign:'horizontal',editable:false"/>                   
-                </div>
-            </div>
+            </div>        
          </div>
      </div>
       <div class="modal w-screen h-screen items-center" style="display: none;" id="loading" align="center">
          <div class="center w-screen h-screen items-center"  align="center" >
             <img alt="" src="../../Imagenes/ajax-loader.gif" />
          </div> 
-       </div> 
+       </div>    
 </body>
 </html>

@@ -37,6 +37,7 @@ $(window).load(function () {
     LISTAR_PLAZOS();
     LISTAR_BANCOS();
     LISTAR_TIPOPAGO();   
+    LISTAR_ZONAPAGO();   
     LISTAR_TIPOPUESTO();
 });
 function LISTAR_PLAZOS() {
@@ -141,6 +142,40 @@ function LISTAR_TIPOPAGO() {
         complete: function () { $('#loading').hide(100); }
     });
 }
+function LISTAR_ZONAPAGO() {
+    //var data = {
+    //    objorganismo: {
+    //        FkOrganismo: 1,
+    //    }
+    //}
+    $.ajax({
+        type: "POST",
+        url: 'Fun_Captura.aspx/LISTAR_ZONAPAGO',
+        // data: JSON.stringify(data),
+        dataType: "json",
+        async: true,
+        cache: false,
+        contentType: "application/json; charset=utf-8",
+        beforeSend: function () {
+            $('#loading').show();
+        },
+        success: function (data) {
+            var obj = jQuery.parseJSON(data.d[2]);
+
+            $('#cbozonapago').combobox({
+                data: obj,
+                valueField: 'valor',
+                textField: 'descripcion',
+                editable: false
+            });
+        },
+        error: function (err) {
+            $('#loading').hide(100);
+            $.messager.alert('Error', er.statusText, 'error');
+        },
+        complete: function () { $('#loading').hide(100); }
+    });
+}
 function LISTAR_TIPOPUESTO() {
     //var data = {
     //    objorganismo: {
@@ -198,6 +233,7 @@ function LIMPIAR_CAPTURA() {
     $('#txtimporte').numberbox('setValue','');
     $('#cboplazos').combobox('setValue', 'x');
     $('#cbotipopago').combobox('setValue', 'x');
+    $('#cbozonapago').combobox('setValue', 'x');
     $('#cbotipopuesto').combobox('setValue', '1');
     $('#cbobanco').combobox('setValue', 'x');
     $('#txtcuenta').numberbox('setValue', '');
@@ -283,6 +319,7 @@ function GUARDAR_CAPTURA(btnobj) {
                             FkTipoPuesto: $('#cbotipopuesto').combobox('getValue'),
                             FkBanco: $('#cbobanco').combobox('getValue'),
                             Cuenta: $('#txtcuenta').numberbox('getValue'),
+                            FkZonaPago: $('#cbozonapago').combobox('getValue'),
                         }
                     }
                     $.ajax({

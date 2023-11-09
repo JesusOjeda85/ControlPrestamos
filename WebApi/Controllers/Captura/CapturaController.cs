@@ -28,6 +28,7 @@ namespace WebApi.Controllers.Captura
             ObjMensaje msg = RCaptura.Listar_Plazos(obj);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
+
         [HttpGet]
         [Route("Listar_Bancos")]
         public IActionResult Listar_Bancos()
@@ -35,11 +36,20 @@ namespace WebApi.Controllers.Captura
             ObjMensaje msg = RCaptura.Listar_Bancos();
             return StatusCode(StatusCodes.Status200OK, msg);
         }
+
         [HttpGet]
         [Route("Listar_TipoPago")]
         public IActionResult Listar_TipoPago()
         {
             ObjMensaje msg = RCaptura.Listar_TipoPago();
+            return StatusCode(StatusCodes.Status200OK, msg);
+        }
+
+        [HttpGet]
+        [Route("Listar_ZonaPago")]
+        public IActionResult Listar_ZonaPago()
+        {
+            ObjMensaje msg = RCaptura.Listar_ZonaPago();
             return StatusCode(StatusCodes.Status200OK, msg);
         }
 

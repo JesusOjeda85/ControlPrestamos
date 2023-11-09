@@ -41,6 +41,7 @@ namespace ClsEntidades
         public string Rechazados { get; set; }
         public int Quincena { get; set; }
         public int Año { get; set; }
+        public string Emision { get; set; }
 
     }
 }

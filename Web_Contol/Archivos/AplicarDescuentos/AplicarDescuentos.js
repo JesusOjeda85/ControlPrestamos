@@ -4,6 +4,7 @@ var cveperfil = 0;
 var NomPerfil = "";
 
 $(document).ready(function () {
+   
     var org = $_GET('fkorg');
     if (org != undefined) { fkorg = org; }
     else { fkorg = ''; }
@@ -15,7 +16,6 @@ $(document).ready(function () {
     else { NomPerfil = ''; }
 
     $('#lblconcepto').text('Perfil: ' + NomPerfil);
-
 
     CARGAR_DESCUENTOS("");
 
@@ -59,10 +59,12 @@ $(document).ready(function () {
         }
     });
 
+        
     $('#dgdatos').datagrid('enableCellEditing').datagrid('gotoCell', {
-        index: 1,
-        field: 'Id',
+        index: 0,
+        field: 'id',
     });
+   
 });
 
 function onCheck(index, row) {
@@ -245,36 +247,23 @@ function CARGAR_DESCUENTOS(filtro) {
             if (data.d[0] == "0") {                
                 obj = $.parseJSON(data.d[2]);
                 $('#dgdatos').datagrid({
-                    data: obj,
-                    pagination: true,
-                    enableFilter: true,
-                    rownumbers: true,
-                    fitColumns: true,
-                    autoRowHeight: false,
-                    singleSelect: false,
-                    striped: true,
-                    scroll: true,
-                    pageSize: 20,                          
-                    showPageList: false,
-                    checkOnSelect: false,
-                    selectOnCheck: false,                   
+                    data: obj,  
+                    pagination: true,                    
+                    rownumbers: false,               
+                    pageSize: 20,        
                     onCheck: onCheck,
-                    onUncheck: onUncheck,    
+                    onUncheck: onUncheck,                      
                     onCheckAll: function () {
                         var allRows = $(this).datagrid('getRows');
                         checkedRows = allRows;
-                    },                              
-                    view: detailview,
+                    },                                                
                     onUncheckAll: function () {
                         checkedRows = [];
-                    },                                                 
+                    },                            
+                    view: detailview,
                     detailFormatter: function (index, row) {
                         return '<div style="padding:2px;position:relative;"><table class="ddv"></table></div><div style="padding:2px;position:relative;"><table class="ddv2"></table></div>';
                     },
-                    onBeforeEdit: function (index, row) {
-                        row.editing = true;
-                        $('#dgdatos').datagrid('checkRow', index);
-                    },        
                     onExpandRow: function (index, row) {
                         var ddv = $(this).datagrid('getRowDetail', index).find('table.ddv');
                         var valor = row["Id"];
@@ -287,7 +276,7 @@ function CARGAR_DESCUENTOS(filtro) {
                             singleSelect: true,
                             rownumbers: true,
                             striped: true,
-                            loadMsg: '',
+                            loadMsg: 'Cargando Detalle',
                             height: 'auto',
                             columns: [[
                                 { field: 'Categoria', title: 'Categoria', align: 'center' },
@@ -307,16 +296,60 @@ function CARGAR_DESCUENTOS(filtro) {
                             }
                         });
                         $('#dgdatos').datagrid('fixDetailRowHeight', index);
-                    },
-                    onClickRow: function () {
-                        var row = $('#dgempleados').datagrid('getSelected');
+                    },                    
+                    onBeforeEdit: function (index, row) {      
+                        var dg = $(this);
+                        dg.datagrid('checkRow', index);                             
+                    },   
+                    //onBeginEdit: function (index, row) {                       
+                        //var dg = $(this);
+                        //var ed = dg.datagrid('getEditors', index)[0];
+                        //if (!ed) { return; }
+                        //var t = $(ed.target);
+                        //if (t.hasClass('textbox-f')) {
+                        //    t = t.textbox('textbox');
+                        //}
+                        //t.bind('keydown', function (e) {
+                        //    if (e.keyCode == 13) {
+                        //        dg.datagrid('endEdit', index);
+                        //    } else if (e.keyCode == 27) {
+                        //        dg.datagrid('endEdit', index);
+                        //    }
+                        //})
+                    //},
+                    onClickCell: function (index, field, value) {     
+                        var dg = $(this);
+                        if (field == 'ImporteCredito') {                          
+                            dg.datagrid('beginEdit', index);                            
+                            var ed = dg.datagrid('getEditor', { index: index, field: field });
+                            $(ed.target).focus();  
+
+                            var ed = dg.datagrid('getEditors', index)[0];
+                            if (!ed) { return; }
+                            var t = $(ed.target);
+                            if (t.hasClass('textbox-f')) {
+                                t = t.textbox('textbox');
+                            }
+                            t.bind('keydown', function (e) {
+                                if (e.keyCode == 13) {
+                                    dg.datagrid('endEdit', index);
+                                } else if (e.keyCode == 27) {
+                                    dg.datagrid('endEdit', index);
+                                }
+                            })
+                        }
+                        else {
+                            dg.datagrid('acceptChanges');
+                        }
                     },
                     error: function (err) {
                         $('#loading').hide(100);
                         $.messager.alert('Error', err.statusText, 'error');
                     },
-                    complete: function () { $('#loading').hide(100); },
-                });              
+                    complete: function () {
+                        $('#loading').hide(100);
+                    },
+                });          
             }
             else { $.messager.alert('Error', "No existen datos a mostrar", 'error'); }
         },
@@ -402,7 +435,7 @@ function LIMPIAR_DESCUENTOS() {
 function APLICAR_DESCUENTOS() {
     if (checkedRows.length > 0) {      
         LISTAR_QUINCENA();        
-        windows_porcentaje("#WAplicacion", 40, 35, false, false, false, "Aplicación de Descuentos");  
+        windows_porcentaje("#WAplicacion", 40, 40, false, false, false, "Aplicación de Descuentos");  
     }
     else { $.messager.alert('Error', 'Falta seleccionar los empleados a aplicar', 'error'); return 0; }
 }
@@ -415,6 +448,8 @@ function GUARDAR_DESCUENTOS(objbtn) {
         if ($('#numquincena').numberspinner('getValue') < localStorage.getItem('quin')) { $.messager.alert('Error', 'La Quincena Seleccionada no puede ser menor a la quincena actual', 'error'); return 0; }
         else
             if ($('#numaño').numberspinner('getValue') < localStorage.getItem('año')) { $.messager.alert('Error', 'La Año Seleccionado no puede ser menor al año actual', 'error'); return 0; }
+            else
+                if ($('#txtemision').textbox('getValue') == "") { $.messager.alert('Error', 'Falta el folio de la emisión', 'error'); return 0; }
             else {
                 if ($('#numaño').numberspinner('getValue') > localStorage.getItem('año')) { $('#numquincena').numberspinner('setValue', 1); }
                   
@@ -444,7 +479,8 @@ function GUARDAR_DESCUENTOS(objbtn) {
                         Quincena: $('#numquincena').numberspinner('getValue'),
                         Año: $('#numaño').numberspinner('getValue'),
                         Aplicados: Aplicados,
-                        Rechazados: Rechazados
+                        Rechazados: Rechazados,
+                        Emision: $('#txtemision').textbox('getValue')
                     }
                 }
                 $.ajax({

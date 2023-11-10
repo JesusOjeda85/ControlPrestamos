@@ -34,6 +34,7 @@ namespace ClsEntidades
         public Int64 ImporteCredito { get; set; }
         public int FkPlazo { get; set; }
         public int FkTipoPago { get; set; }
+        public int FkZonaPago { get; set; }
         public int FkTipoPuesto { get; set; }
         public int FkBanco { get; set; }
         public string Cuenta { get; set; }
@@ -42,6 +43,7 @@ namespace ClsEntidades
         public int Quincena { get; set; }
         public int Año { get; set; }
         public string Emision { get; set; }
+        public string Datos { get; set; }
 
     }
 }

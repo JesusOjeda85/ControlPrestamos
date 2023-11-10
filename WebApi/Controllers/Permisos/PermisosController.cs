@@ -46,6 +46,14 @@ namespace WebApi.Controllers.Permisos
             return StatusCode(StatusCodes.Status200OK, msg);
         }
 
+        [HttpGet]
+        [Route("Listar_Reportes")]
+        public IActionResult Listar_Reportes()
+        {
+            ObjMensaje msg = RPermisos.Listar_Reportes();
+            return StatusCode(StatusCodes.Status200OK, msg);
+        }
+
         [HttpPost]
         [Route("Guardar_Permisos")]
         public IActionResult Guardar_Permisos(DatosPermisos ObjDto)

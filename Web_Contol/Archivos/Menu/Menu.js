@@ -26,12 +26,18 @@
 
     $('#btnInicio').bind('click', function () { Cerrar(); });
 
-    $('#btnCaptura').bind('click', function () { AgregarTabPadre('#tpcaptura', 'Captura', '../Captura/Conceptos.aspx'); });
-    $('#btnAplicacion').bind('click', function () { AgregarTabPadre('#tpaplicacion', 'Aplicar Descuentos', '../AplicarDescuentos/Listar_Conceptos.aspx'); });
-    $('#btnReportes').bind('click', function () { AgregarTabPadre('#tpreportes', 'Reportes', '../Reportes/Reportes.aspx'); });
+    $('#btnCaptura').bind('click', function () { AgregarTabPadre('#tpcaptura', 'Captura', '../Captura/Listar_Perfiles.aspx'); });
+    $('#btnAplicacion').bind('click', function () { AgregarTabPadre('#tpaplicacion', 'Aplicar Descuentos', '../AplicarDescuentos/Listar_Perfiles.aspx'); });
+    $('#btnNumeracion').bind('click', function () { AgregarTabPadre('#tpnumeracion', 'Numeración Cheques', '../Numeracion/Listar_Perfiles.aspx'); });
+    $('#btnReportes').bind('click', function () { AgregarTabPadre('#tpreportes', 'Reportes', '../Reportes/Listar_Perfiles.aspx'); });
     $('#btnUsuarios').bind('click', function () { AgregarTabPadre('#tpusuarios', 'Usuarios', '../Usuarios/Usuarios.aspx'); });
-    $('#btnImportacion').bind('click', function () { AgregarTabPadre('#tpcargar', 'Cargar Archivos', '../CargarYDescargar/Lista_Perfiles.aspx?mod=C'); });
-    $('#btnExportacion').bind('click', function () { AgregarTabPadre('#tpsalida', 'Salida De Archivos', '../CargarYDescargar/Lista_Perfiles.aspx?mod=S'); });
+    $('#btnImportacion').bind('click', function () { AgregarTabPadre('#tpcargar', 'Cargar Archivos', '../CargarYDescargar/Listar_Perfiles.aspx?mod=C'); });
+    $('#btnExportacion').bind('click', function () { AgregarTabPadre('#tpsalida', 'Salida De Archivos', '../CargarYDescargar/Listar_Perfiles.aspx?mod=S'); });
+
+    $('#dmLiquidez').bind('click', function () { AgregarTabPadre('#tpsalida', 'Liquidez', '../CargarPadrones/Listar_Perfiles.aspx?mod=L'); });
+    $('#dmFondoA').bind('click', function () { AgregarTabPadre('#tpsalida', 'Fondo de Ahorrro', '../CargarPadrones/Listar_Perfiles.aspx?mod=F'); });
+
+    //$('#dmpagare').bind('click', function () { AgregarTabPadre('#tpsalida', 'Pagaré', '../Reportes/Pagare.aspx'); });
     
 
 });

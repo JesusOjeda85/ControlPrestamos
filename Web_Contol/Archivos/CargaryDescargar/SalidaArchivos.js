@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     $('#txtnombrearchivo').textbox('setValue', archivo);
 
-    $('#btnRegresar').bind('click', function () { IR_PAGINA('Lista_Perfiles.aspx', 'mod=S'); });
+    $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Perfiles.aspx', 'mod=S'); });
 
     CARGAR_INFORMACION_SALIDA();
 

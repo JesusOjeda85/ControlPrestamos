@@ -21,16 +21,20 @@
       
     <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-detailview.js"></script>
      <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-cellediting.js"></script>
-
+    <style type="text/css">
+	   .textbox .textbox-text{
+		   text-transform: uppercase;
+	    }
+</style>
     <script src="../../Scripts/Funsiones.js?v0.0"></script>
-    <script src="AplicarDescuentos.js?v0.7"></script>
+    <script src="AplicarDescuentos.js?v0.0"></script>
 </head>
 <body>
      <div class="bg-neutral-100 w-screen h-screen flex flex-col bg-yellow-50 " align="Center" style="background-color:#FCFDFF;">   
           <div class="easyui-panel mb-3" style="padding:2px; width:100%">    
                <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'anterior'" id="btnRegresar">Regresar</a> 
                 <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'limpiar',disabled:false" id="btnLimpiar" >Limpiar</a>  
-                <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-add',disabled:false" id="btnEditar">Editar</a>
+                <%--<a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-add',disabled:false" id="btnEditar">Editar</a>--%>
                 <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save',disabled:false" id="btnGuardar">Guardar</a>
                 <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-ok',disabled:false" id="btnAplicar" >Aplicar</a>  
                <label id="lblconcepto" class="text-left font-black text-lg text-blue-900"></label> 
@@ -62,7 +66,8 @@
                         <th data-options="field:'TipoPago',width:150,align:'center',halign:'center',hidden:false">Tipo de Pago</th>                       
                         <th data-options="field:'fkBanco',width:180,align:'center',halign:'center',hidden:true">fkBanco</th>
                         <th data-options="field:'Banco',width:90,align:'center',halign:'center',hidden:false">Banco</th>
-                        <th data-options="field:'CuentaBancaria',width:150,align:'center',halign:'center',hidden:false">Cuenta Bancaria</th>                    
+                        <th data-options="field:'CuentaBancaria',width:150,align:'center',halign:'center',hidden:false">Cuenta Bancaria</th>    
+                        <th data-options="field:'Liquidez',width:90,align:'right',halign:'center',hidden:false">Liquidez</th>
                     </tr>
                 </thead>
             </table>             

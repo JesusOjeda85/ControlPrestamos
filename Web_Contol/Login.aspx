@@ -48,13 +48,13 @@
                     <div class="mt-12">                      
                             <div>
                                 <div class="text-2xl font-black text-blue-900 ">Usuario</div>
-                                <input id="txtusu" class="w-full text-1xl font-black py-2 border-b border-blue-800 focus:outline-none focus:border-blue-500" type="text" placeholder="Usuario"/>
+                                <input id="txtusu" class="uppercase w-full text-1xl font-black py-2 border-b border-blue-800 focus:outline-none focus:border-blue-500" type="text" value="Admin" placeholder="Usuario"/>
                             </div>
                             <div class="mt-8">
                                 <div class="flex justify-between items-center">
                                     <div class="text-2xl font-black text-blue-900 ">Contraseña</div>                                
                                 </div>
-                                <input id="txtpas" class="w-full text-1xl font-black py-2 border-b border-blue-800 focus:outline-none focus:border-blue-500" type="password" placeholder="Contraseña"/>
+                                <input id="txtpas" class="uppercase w-full text-1xl font-black py-2 border-b border-blue-800 focus:outline-none focus:border-blue-500" type="password" value="@dM1n" placeholder="Contraseña"/>
                             </div>
                             <div class="mt-10">
                                 <button id='btnentrar' class="bg-gray-300 text-2xl text-blue-900 p-4 w-full rounded-full tracking-wide

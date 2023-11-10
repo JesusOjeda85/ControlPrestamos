@@ -90,12 +90,58 @@ namespace WebApi.Repositorio.Permisos
                         TreeObj = new ObjTree();
                         TreeObj.Id = Convert.ToInt16(ds.Tables[0].Rows[i]["Id"].ToString());
                         TreeObj.text = ds.Tables[0].Rows[i]["Descripcion"].ToString();
-                        TreeObj.target = ds.Tables[0].Rows[i]["Nombre"].ToString();
+                        TreeObj.nombre = ds.Tables[0].Rows[i]["Nombre"].ToString();
+                        TreeObj.checkbox = Convert.ToBoolean(ds.Tables[0].Rows[i]["Marcar"].ToString());
+                        TreeObj.IdPadre = ds.Tables[0].Rows[i]["IdPadre"] != DBNull.Value ? Convert.ToInt32(ds.Tables[0].Rows[i]["IdPadre"].ToString()) : (int?)null;
                         LstObj.Add(TreeObj);
                     }
+                    List<ObjTree> LstTreeObj = Funsiones.GetObjTree(LstObj, 0);
+
                     msg.Error = 0;
                     msg.Mensaje = "";
-                    msg.Data = LstObj;
+                    msg.Data = LstTreeObj;
+                }
+                else
+                {
+                    msg.Error = 1;
+                    msg.Mensaje = "No Existe Información a Mostrar";
+                    msg.Data = null;
+                }
+                ds.Dispose();
+            }
+            catch (Exception ex)
+            {
+                msg.Error = 1;
+                msg.Mensaje = ex.Message.ToString();
+            }
+            return msg;
+        }
+
+        public static ObjMensaje Listar_Reportes()
+        {
+            ObjMensaje msg = new();
+            ObjTree TreeObj = new();
+            List<ObjTree> LstObj = new();
+            try
+            {
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Permisos_Listar_Reportes");
+                if (ds.Tables.Count > 0)
+                {
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        TreeObj = new ObjTree();
+                        TreeObj.Id = Convert.ToInt16(ds.Tables[0].Rows[i]["Id"].ToString());
+                        TreeObj.text = ds.Tables[0].Rows[i]["Descripcion"].ToString();
+                        TreeObj.nombre = ds.Tables[0].Rows[i]["Nombre"].ToString();
+                        TreeObj.checkbox = Convert.ToBoolean(ds.Tables[0].Rows[i]["Marcar"].ToString());
+                        TreeObj.IdPadre = ds.Tables[0].Rows[i]["IdPadre"] != DBNull.Value ? Convert.ToInt32(ds.Tables[0].Rows[i]["IdPadre"].ToString()) : (int?)null;
+                        LstObj.Add(TreeObj);
+                    }
+                    List<ObjTree> LstTreeObj = Funsiones.GetObjTree(LstObj, 0);
+
+                    msg.Error = 0;
+                    msg.Mensaje = "";
+                    msg.Data = LstTreeObj;
                 }
                 else
                 {

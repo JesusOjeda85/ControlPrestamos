@@ -48,7 +48,7 @@ namespace ControlDescuentos.Archivos.AplicarDescuentos
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod]
-        public static string[] APLICAR_DESCUENTOS(DatosCaptura Obj)
+        public static string[] APLICAR_DESCUENTOS(DatosAplicar Obj)
         {
             string[] result = { "", "", "" };
             SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];

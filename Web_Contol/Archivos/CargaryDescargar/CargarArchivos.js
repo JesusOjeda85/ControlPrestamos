@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     $('#lblperfil').text('Perfil: ' + NomPerfil);
 
-    $('#btnRegresar').bind('click', function () { IR_PAGINA('Lista_Perfiles.aspx', 'mod=C'); });
+    $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Perfiles.aspx', 'mod=C'); });
 
     $('#xls').filebox({
         buttonText: 'Examinar',

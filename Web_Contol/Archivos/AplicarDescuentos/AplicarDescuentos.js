@@ -26,7 +26,7 @@ $(document).ready(function () {
             CARGAR_DESCUENTOS(valor);
         }
     });
-    $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Conceptos.aspx', ''); });
+    $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Perfiles.aspx', ''); });
 
     $('#btnBuscar').bind('click', function () { CARGAR_DESCUENTOS($('#txtvalor').textbox('getValue')); });
 
@@ -41,6 +41,8 @@ $(document).ready(function () {
     $('#btnGAplicar').bind('click', function () { GUARDAR_DESCUENTOS('#btnGAplicar'); });
 
     $('#btnGDetalle').bind('click', function () { GUARDAR_CAMBIOS_DESCUENTOS('#btnGDetalle'); });
+
+    $('#btnGuardar').bind('click', function () { MODIFICAR_DATOS('#btnGuardar'); });
 
     $('#btnLDetalle').bind('click', function () { LIMPIAR_CAPTURA(); });
 
@@ -248,8 +250,9 @@ function CARGAR_DESCUENTOS(filtro) {
                 obj = $.parseJSON(data.d[2]);
                 $('#dgdatos').datagrid({
                     data: obj,  
-                    pagination: true,                    
-                    rownumbers: false,               
+                    pagination: false,                    
+                    rownumbers: false,                     
+                    scroll:true,
                     pageSize: 20,        
                     onCheck: onCheck,
                     onUncheck: onUncheck,                      
@@ -459,12 +462,12 @@ function GUARDAR_DESCUENTOS(objbtn) {
                 var dg = $('#dgdatos');  
               
                 var rows = dg.datagrid('getRows');
-                var seleccion = dg.datagrid('getSelections');
+               // var seleccion = dg.datagrid('getSelections');
                 for (var r = 0; r < rows.length; r++) {   
-                    for (var s = 0; s < seleccion.length; s++) {
-                        if (rows[r].Id == seleccion[s].Id)
+                    for (var s = 0; s < checkedRows.length; s++) {
+                        if (rows[r].Id == checkedRows[s].Id)
                         {
-                            Aplicados += seleccion[s].Id + ",";
+                            Aplicados += checkedRows[s].Id + ",";
                             encontrado = true;
                         }                       
                     }  
@@ -473,14 +476,15 @@ function GUARDAR_DESCUENTOS(objbtn) {
                 if (Aplicados.length > 0) { Aplicados = Aplicados.substring(0, Aplicados.length - 1); } else { Aplicados = 0; }
                 if (Rechazados.length > 0) { Rechazados = Rechazados.substring(0, Rechazados.length - 1); } else { Rechazados = 0; }
 
-                $("#WAplicacion").window('close');
+                    $("#WAplicacion").window('close');
+
                 var data = {
                     Obj: {
                         Quincena: $('#numquincena').numberspinner('getValue'),
                         Año: $('#numaño').numberspinner('getValue'),
                         Aplicados: Aplicados,
                         Rechazados: Rechazados,
-                        Emision: $('#txtemision').textbox('getValue')
+                        Emision: $('#txtemision').textbox('getValue').toUpperCase()
                     }
                 }
                 $.ajax({
@@ -564,6 +568,61 @@ function LIMPIAR_CAPTURA() {
         $('#cbotipopago').combobox('setValue', row.fkTipoPago);
         $('#txtcuenta').numberbox('setValue', row.CuentaBancaria);
         $('#txtimporte').numberbox('setValue', row.ImporteCredito);
+    }
+}
+
+function MODIFICAR_DATOS(objbtn) {
+    if ($(objbtn).linkbutton('options').disabled) { return false; }
+    else {
+        var Datos = "";
+        if (checkedRows.length == 0) { $.messager.alert('Error', 'Falta seleccionar los descuentos a modificar', 'error'); return 0; }
+        else {
+            for (var s = 0; s < checkedRows.length; s++) {
+                Datos += "ImporteCredito=" + checkedRows[s].ImporteCredito + " where id=" + checkedRows[s].Id + "|"; 
+            }
+            if (Datos.length > 0) { Datos = Datos.substring(0, Datos.length - 1); }
+
+            var data = {
+                Obj: {
+                    Id: 0,
+                    Empleado: 0,
+                    FkPlazo: 0,
+                    FkBanco: 0,
+                    FkTipoPago: 0,
+                    Cuenta: 0,
+                    ImporteCredito: 0,  
+                    Datos:Datos
+                }
+            }
+            $.ajax({
+                type: "POST",
+                url: "Fun_AplicarDescuentos.aspx/MODIFICAR_CAPTURA",
+                data: JSON.stringify(data),
+                async: true,
+                cache: false,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                beforeSend: function () {
+                    $('#loading').show();
+                },
+                success: function (data) {
+                    if (data.d[0] == "0") {
+                        $.messager.alert('Información', data.d[1], 'info');
+                    }
+                    else { $.messager.alert('Error', data.d[1], 'error'); }
+                },
+                error: function (er) {
+                    $('#loading').hide();
+                    $.messager.alert('Error', er.responseJSON.Message, 'error');
+                },
+                complete: function () {
+                    $('#loading').hide(100);
+                }
+            });
+
+        }
+        
+
     }
 }
 

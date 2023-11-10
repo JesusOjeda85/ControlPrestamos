@@ -90,6 +90,19 @@ namespace ControlDescuentos.Archivos.Usuarios
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod]
+        public static string[] LISTAR_REPORTES()
+        {
+            string[] result = { "", "", "" };
+            string respuesta = Llamar_Api.GetItem("Permisos/Listar_Reportes");
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
         public static string[] GUARDAR_PERMISOS(DatosPermisos objpermisos)
         {
             string[] result = { "", "" };

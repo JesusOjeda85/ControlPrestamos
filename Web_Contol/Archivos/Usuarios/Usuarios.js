@@ -265,8 +265,7 @@ function LISTAR_PERFILES() {
             $('#loading').show();
         },
         success: function (data) {            
-            var obj = jQuery.parseJSON(data.d[2]);
-           
+            var obj = jQuery.parseJSON(data.d[2]);           
             $('#lstperfil').tree({
                 data: obj,
                 checkbox: function (node) {
@@ -298,7 +297,12 @@ function LISTAR_MENUS() {
         success: function (data) {
             var obj = jQuery.parseJSON(data.d[2]);
             $('#lstmenus').tree({
-                data: obj
+                data: obj,
+                checkbox: function (node) {
+                    if (node.checkbox == true) {
+                        return true;
+                    }
+                }
             });
             CARGAR_PERMISOS_ASIGNADOS('#lstmenus', 'M');
         },
@@ -339,7 +343,7 @@ function CARGAR_PERMISOS_ASIGNADOS(objtree,modulo) {
                         var tree = $(objtree).tree('getChildren', tri[h].target);
                         for (var i = 0; i < tree.length; i++) {
                             for (var j = 0; j < tblconceptos.length; j++) {
-                                if (tblconceptos[j].fkConcepto == tree[i].nombre) {
+                                if (tblconceptos[j].fkConcepto == tree[i].strclave) {
                                     $(objtree).tree('check', tree[i].target)                                    
                                 }
                             }
@@ -348,16 +352,31 @@ function CARGAR_PERMISOS_ASIGNADOS(objtree,modulo) {
                 }
             }
             if (modulo == 'M') {
-                var tblmenus = jQuery.parseJSON(obj[1]);
+                 var tblmenus = jQuery.parseJSON(obj[1]);
                 if (tblmenus.length > 0) {
                     for (var h = 0; h < tri.length; h++) {
-                        for (var j = 0; j < tblmenus.length; j++) {
-                            if (tblmenus[j].fkMenu == tri[h].id) {
-                                $(objtree).tree('check', tri[h].target)
+                        var tree = $(objtree).tree('getChildren', tri[h].target);
+                        if (tree.length == 0) {
+                            for (var j = 0; j < tblmenus.length; j++) {
+                                if (tblmenus[j].fkMenu == tri[h].id) {
+                                    $(objtree).tree('check', tri[h].target);
+                                }
+                            }
+                        }
+                        else {
+                            for (var i = 0; i < tree.length; i++) {
+                                for (var j = 0; j < tblmenus.length; j++) {
+                                    if (tblmenus[j].fkMenu == tree[i].id) {
+                                        $(objtree).tree('check', tree[i].target)                                    
+                                    }
+                                    if (tblmenus[j].fkMenu == tri[h].id) {
+                                        $(objtree).tree('check', tri[h].target);
+                                    }
+                                }
                             }
                         }
                     }
-                }
+                }               
             }
 
         },
@@ -387,7 +406,7 @@ function getchkConceptos(objtre) {
     var nodes = $(objtre).tree('getChecked', ['checked', 'indeterminate']);
     var ss = [];
     for (var i = 0; i < nodes.length; i++) {
-        ss.push(nodes[i].idPadre + "," + nodes[i].nombre);
+        ss.push(nodes[i].idPadre + "," + nodes[i].strclave);
     }
     return ss.join('|');
 }

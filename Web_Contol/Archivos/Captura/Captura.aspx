@@ -41,40 +41,40 @@
                        <div class="flex flex-col mb-1  w-1/2">
                            <label class="text-left text-lg text-blue-900">Empleado</label>   
                            <input class="easyui-numberbox" style="width:100%; text-align:center"  id="txtempleado"  data-options="required:true"/>  
-                           <%-- <div class="flex flex-row ">                                                                        
+                         <%--   <div class="flex flex-row ">                                                                        
                                 <div class="flex flex-row w-full px-4 space-x-2 ">        
                                     <a id="btnBuscar" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:false">Buscar</a>            
                                 </div> 
-                           </div>    --%>                    
+                           </div>       --%>                 
                       </div> 
                    </div>
                     <div class="flex flax-row space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-blue-900">Paterno</label>                    
-                            <input class="easyui-textbox" style="width:100%" id="txtpaterno"  data-options="readonly:false"/>                   
+                            <input class="easyui-textbox uppercase" style="width:100%" id="txtpaterno"  data-options="readonly:false"/>                   
                         </div>                       
                          <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-blue-900">Materno</label>                                                 
-                            <input class="easyui-textbox" style="width:100%; text-align:left"  id="txtmaterno" data-options="readonly:false"/>                                               
+                            <input class="easyui-textbox uppercase" style="width:100%; text-align:left"  id="txtmaterno" data-options="readonly:false"/>                                               
                         </div>
                         <div class="flex flex-col mb-1 w-1/2  ">
                             <label class="text-left text-lg text-blue-900">Nombres</label>                    
-                            <input class="easyui-textbox" style="width:100%" id="txtnombres"  data-options="readonly:false"/>                   
+                            <input class="easyui-textbox uppercase" style="width:100%" id="txtnombres"  data-options="readonly:false"/>                   
                         </div>
                     </div>                    
                     <div class="flex flax-col space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 border-red-200">
                             <label class="text-left text-lg text-blue-900">Rfc</label>                    
-                            <input class="easyui-textbox" style="width:100%" id="txtrfc"  data-options="readonly:false,required:true"/>                   
+                            <input class="easyui-textbox uppercase" style="width:100%" id="txtrfc"  data-options="readonly:false,required:true"/>                   
                         </div>
                         <div class="flex flex-col mb-1 w-1/2 border-red-200">
                             <label class="text-left text-lg text-blue-900">Curp</label>                    
-                            <input class="easyui-textbox" style="width:100%" id="txtcurp"  data-options="readonly:false"/>                   
+                            <input class="easyui-textbox uppercase" style="width:100%" id="txtcurp"  data-options="readonly:false"/>                   
                         </div>                   
                     </div>
                     <div class="flex flex-col mb-1 border-red-200">
                          <label class="text-left text-lg text-blue-900">Domicilio</label>                    
-                         <input class="easyui-textbox" style="width:100%" id="txtdomicilio"  data-options="readonly:false,required:true"/>                   
+                         <input class="easyui-textbox uppercase" style="width:100%" id="txtdomicilio"  data-options="readonly:false,required:true"/>                   
                     </div>
                     <div class="flex flax-col space-x-2">    
                          <div class="flex flex-col mb-1 w-1/2 ">
@@ -95,37 +95,37 @@
                     <div class="flex flex-row mb-1 space-x-2">
                       <div class="flex flex-col mb-1 w-1/3 ">
                          <label class="text-left text-lg text-blue-900">Categoría</label>   
-                         <input class="easyui-textbox" style="width:100%; text-align:center"  id="txtcvecat"  data-options="readonly:false"/>
+                         <input class="easyui-textbox uppercase" style="width:100%; text-align:center"  id="txtcvecat"  data-options="readonly:false"/>
                       </div>
                       <div class="flex flex-col mb-1 w-2/3 ">
                           <label class="text-left text-lg text-blue-900">Descripción</label>   
-                          <input class="easyui-textbox" style="width:100%; text-align:left"  id="txtdescat"  data-options="readonly:false"/>
+                          <input class="easyui-textbox uppercase" style="width:100%; text-align:left"  id="txtdescat"  data-options="readonly:false"/>
                       </div>
                     </div>
                      <div class="flex flex-row mb-1 space-x-2">
                           <div class="flex flex-col mb-1 w-1/3 ">
                             <label class="text-left text-lg text-blue-900">Adscripción</label>   
-                            <input class="easyui-textbox" style="width:100%; text-align:center"  id="txtcveads"  data-options="readonly:false"/>
+                            <input class="easyui-textbox uppercase" style="width:100%; text-align:center"  id="txtcveads"  data-options="readonly:false"/>
                          </div>
                         <div class="flex flex-col mb-1 w-2/3 ">
                             <label class="text-left text-lg text-blue-900">Descripción</label>   
-                            <input class="easyui-textbox" style="width:100%; text-align:left"  id="txtdesads"  data-options="readonly:false"/>
+                            <input class="easyui-textbox uppercase" style="width:100%; text-align:left"  id="txtdesads"  data-options="readonly:false"/>
                         </div>
                     </div>                    
                      <div class="flex flex-row mb-1 space-x-2">
                         <div class="flex flex-col mb-1 w-1/3 ">
                             <label class="text-left text-lg text-blue-900">Pagaduría</label>   
-                            <input class="easyui-textbox" style="width:100%; text-align:center"  id="txtcvepag"  data-options="readonly:false"/>
+                            <input class="easyui-textbox uppercase" style="width:100%; text-align:center"  id="txtcvepag"  data-options="readonly:false"/>
                         </div>
                         <div class="flex flex-col mb-1 w-2/3 ">
                             <label class="text-left text-lg text-blue-900">Descripción</label>   
-                            <input class="easyui-textbox" style="width:100%; text-align:left"  id="txtdespag"  data-options="readonly:false"/>
+                            <input class="easyui-textbox uppercase" style="width:100%; text-align:left"  id="txtdespag"  data-options="readonly:false"/>
                         </div>
                     </div> 
                     <div class="flex flax-row space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-blue-900">Fecha de Solicitud</label>                    
-                            <input class="easyui-datebox" style="width:100%; text-align:center" id="txtfechasolicitud"  data-options="required:true,formatter:myformatter,parser:myparser"/>                   
+                            <input class="easyui-datebox " style="width:100%; text-align:center" id="txtfechasolicitud"  data-options="required:true,formatter:myformatter,parser:myparser"/>                   
                         </div>
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-blue-900">Fecha de Ingreso</label>                    

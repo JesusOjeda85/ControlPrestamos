@@ -98,13 +98,26 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.ReportViewer.Common.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1586.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1586.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Vbe.Interop, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -148,25 +161,81 @@
     <Content Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx" />
     <Content Include="Archivos\AplicarDescuentos\AplicarDescuentos.js" />
     <Content Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx" />
-    <Content Include="Archivos\AplicarDescuentos\Listar_Conceptos.aspx" />
-    <Content Include="Archivos\AplicarDescuentos\Listar_Conceptos.js" />
+    <Content Include="Archivos\AplicarDescuentos\Listar_Perfiles.aspx" />
+    <Content Include="Archivos\AplicarDescuentos\Listar_Perfiles.js" />
     <Content Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx" />
     <Content Include="Archivos\Captura\Captura.aspx" />
     <Content Include="Archivos\Captura\Captura.js" />
-    <Content Include="Archivos\Captura\Conceptos.aspx" />
-    <Content Include="Archivos\Captura\Conceptos.js" />
+    <Content Include="Archivos\Captura\Listar_Perfiles.aspx" />
+    <Content Include="Archivos\Captura\Listar_Perfiles.js" />
     <Content Include="Archivos\Captura\Fun_Captura.aspx" />
     <Content Include="Archivos\Captura\Listar_Empleados.aspx" />
+    <Content Include="Archivos\CargarPadrones\CargarLiquidez.aspx" />
+    <Content Include="Archivos\CargarPadrones\CargarLiquidez.js" />
+    <Content Include="Archivos\CargarPadrones\Fun_CargarPadrones.aspx" />
+    <Content Include="Archivos\CargarPadrones\Listar_Perfiles.aspx" />
+    <Content Include="Archivos\CargarPadrones\Listar_Perfiles.js" />
     <Content Include="Archivos\CargaryDescargar\CargarArchivos.aspx" />
     <Content Include="Archivos\CargaryDescargar\CargarArchivos.js" />
     <Content Include="Archivos\CargaryDescargar\Fun_CargaYDescarga.aspx" />
-    <Content Include="Archivos\CargaryDescargar\Lista_Perfiles.js" />
-    <Content Include="Archivos\CargaryDescargar\Lista_Perfiles.aspx" />
+    <Content Include="Archivos\CargaryDescargar\Listar_Perfiles.js" />
+    <Content Include="Archivos\CargaryDescargar\Listar_Perfiles.aspx" />
     <Content Include="Archivos\CargaryDescargar\SalidaArchivos.aspx" />
     <Content Include="Archivos\CargaryDescargar\SalidaArchivos.js" />
     <Content Include="Archivos\Menu\Fun_Menus.aspx" />
     <Content Include="Archivos\Menu\Menu.aspx" />
     <Content Include="Archivos\Menu\Menu.js" />
+    <Content Include="Archivos\Numeracion\Fun_Numeracion.aspx" />
+    <Content Include="Archivos\Numeracion\Listar_Perfiles.aspx" />
+    <Content Include="Archivos\Numeracion\Listar_Perfiles.js" />
+    <Content Include="Archivos\Numeracion\Numeracion.aspx" />
+    <Content Include="Archivos\Numeracion\Numeracion.js" />
+    <Content Include="Archivos\Reportes\Listar_Empleados.aspx" />
+    <Content Include="Archivos\Reportes\Listar_Perfiles.aspx" />
+    <Content Include="Archivos\Reportes\Listar_Perfiles.js" />
+    <Content Include="Archivos\Reportes\Localization\ar.xml" />
+    <Content Include="Archivos\Reportes\Localization\be.xml" />
+    <Content Include="Archivos\Reportes\Localization\bg.xml" />
+    <Content Include="Archivos\Reportes\Localization\ca-ES.xml" />
+    <Content Include="Archivos\Reportes\Localization\cs.xml" />
+    <Content Include="Archivos\Reportes\Localization\de.ext.xml" />
+    <Content Include="Archivos\Reportes\Localization\de.xml" />
+    <Content Include="Archivos\Reportes\Localization\el-GR.xml" />
+    <Content Include="Archivos\Reportes\Localization\en-GB.xml" />
+    <Content Include="Archivos\Reportes\Localization\en.ext.xml" />
+    <Content Include="Archivos\Reportes\Localization\en.xml" />
+    <Content Include="Archivos\Reportes\Localization\es.xml" />
+    <Content Include="Archivos\Reportes\Localization\eu-ES.xml" />
+    <Content Include="Archivos\Reportes\Localization\fa.xml" />
+    <Content Include="Archivos\Reportes\Localization\fr.ext.xml" />
+    <Content Include="Archivos\Reportes\Localization\fr.xml" />
+    <Content Include="Archivos\Reportes\Localization\gl-ES.xml" />
+    <Content Include="Archivos\Reportes\Localization\hr.xml" />
+    <Content Include="Archivos\Reportes\Localization\hu.xml" />
+    <Content Include="Archivos\Reportes\Localization\id.xml" />
+    <Content Include="Archivos\Reportes\Localization\it.xml" />
+    <Content Include="Archivos\Reportes\Localization\ka.xml" />
+    <Content Include="Archivos\Reportes\Localization\Lt-sr-SP.xml" />
+    <Content Include="Archivos\Reportes\Localization\lt.xml" />
+    <Content Include="Archivos\Reportes\Localization\nb-NO.xml" />
+    <Content Include="Archivos\Reportes\Localization\nl.xml" />
+    <Content Include="Archivos\Reportes\Localization\pl.xml" />
+    <Content Include="Archivos\Reportes\Localization\pt-BR.xml" />
+    <Content Include="Archivos\Reportes\Localization\pt.xml" />
+    <Content Include="Archivos\Reportes\Localization\ro.xml" />
+    <Content Include="Archivos\Reportes\Localization\ru.ext.xml" />
+    <Content Include="Archivos\Reportes\Localization\ru.xml" />
+    <Content Include="Archivos\Reportes\Localization\sk.xml" />
+    <Content Include="Archivos\Reportes\Localization\sv.ext.xml" />
+    <Content Include="Archivos\Reportes\Localization\sv.xml" />
+    <Content Include="Archivos\Reportes\Localization\tr.xml" />
+    <Content Include="Archivos\Reportes\Localization\uk.xml" />
+    <Content Include="Archivos\Reportes\Localization\zh-CHS.xml" />
+    <Content Include="Archivos\Reportes\Localization\zh-CHT.xml" />
+    <Content Include="Archivos\Reportes\Reportes.aspx" />
+    <Content Include="Archivos\Reportes\Reportes.js" />
+    <Content Include="Archivos\Reportes\Visor_Reportes.aspx" />
+    <Content Include="Archivos\Reportes\Visor_Reportes.js" />
     <Content Include="Archivos\Usuarios\Fun_Usuarios.aspx" />
     <Content Include="Archivos\Usuarios\Usuarios.aspx" />
     <Content Include="Archivos\Usuarios\Usuarios.js" />
@@ -268,6 +337,7 @@
     <Content Include="jqueryEsy\themes\icons\rojo32\consulta32.png" />
     <Content Include="jqueryEsy\themes\icons\rojo32\descarga32.png" />
     <Content Include="jqueryEsy\themes\icons\rojo32\inicio32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\padrones32.png" />
     <Content Include="jqueryEsy\themes\icons\rojo32\reportes32.png" />
     <Content Include="jqueryEsy\themes\icons\rojo32\usuario32.png" />
     <Content Include="jqueryEsy\themes\icons\tooltip.png" />
@@ -1056,6 +1126,19 @@
     <Content Include="Scripts\sheetjs\xlsx.mini.js" />
     <Content Include="Scripts\sheetjs\xlsxworker.flow.js" />
     <Content Include="Scripts\sheetjs\xlsxworker.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Styles\ConsultaDatos_Estilo.css" />
     <Content Include="Styles\css-Imagenes\lg-fb-comment-box.css" />
     <Content Include="Styles\css-Imagenes\lg-fb-comment-box.min.css" />
@@ -2270,12 +2353,12 @@
     <Compile Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx.designer.cs">
       <DependentUpon>Fun_AplicarDescuentos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\AplicarDescuentos\Listar_Conceptos.aspx.cs">
-      <DependentUpon>Listar_Conceptos.aspx</DependentUpon>
+    <Compile Include="Archivos\AplicarDescuentos\Listar_Perfiles.aspx.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\AplicarDescuentos\Listar_Conceptos.aspx.designer.cs">
-      <DependentUpon>Listar_Conceptos.aspx</DependentUpon>
+    <Compile Include="Archivos\AplicarDescuentos\Listar_Perfiles.aspx.designer.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx.cs">
       <DependentUpon>Listar_Descuentos.aspx</DependentUpon>
@@ -2291,12 +2374,12 @@
     <Compile Include="Archivos\Captura\Captura.aspx.designer.cs">
       <DependentUpon>Captura.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\Captura\Conceptos.aspx.cs">
-      <DependentUpon>Conceptos.aspx</DependentUpon>
+    <Compile Include="Archivos\Captura\Listar_Perfiles.aspx.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\Captura\Conceptos.aspx.designer.cs">
-      <DependentUpon>Conceptos.aspx</DependentUpon>
+    <Compile Include="Archivos\Captura\Listar_Perfiles.aspx.designer.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Captura\Fun_Captura.aspx.cs">
       <DependentUpon>Fun_Captura.aspx</DependentUpon>
@@ -2312,6 +2395,27 @@
     <Compile Include="Archivos\Captura\Listar_Empleados.aspx.designer.cs">
       <DependentUpon>Listar_Empleados.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Archivos\CargarPadrones\CargarLiquidez.aspx.cs">
+      <DependentUpon>CargarLiquidez.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\CargarPadrones\CargarLiquidez.aspx.designer.cs">
+      <DependentUpon>CargarLiquidez.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\CargarPadrones\Fun_CargarPadrones.aspx.cs">
+      <DependentUpon>Fun_CargarPadrones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\CargarPadrones\Fun_CargarPadrones.aspx.designer.cs">
+      <DependentUpon>Fun_CargarPadrones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\CargarPadrones\Listar_Perfiles.aspx.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\CargarPadrones\Listar_Perfiles.aspx.designer.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Archivos\CargaryDescargar\CargarArchivos.aspx.cs">
       <DependentUpon>CargarArchivos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2326,12 +2430,12 @@
     <Compile Include="Archivos\CargaryDescargar\Fun_CargaYDescarga.aspx.designer.cs">
       <DependentUpon>Fun_CargaYDescarga.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\CargaryDescargar\Lista_Perfiles.aspx.cs">
-      <DependentUpon>Lista_Perfiles.aspx</DependentUpon>
+    <Compile Include="Archivos\CargaryDescargar\Listar_Perfiles.aspx.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\CargaryDescargar\Lista_Perfiles.aspx.designer.cs">
-      <DependentUpon>Lista_Perfiles.aspx</DependentUpon>
+    <Compile Include="Archivos\CargaryDescargar\Listar_Perfiles.aspx.designer.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\CargaryDescargar\SalidaArchivos.aspx.cs">
       <DependentUpon>SalidaArchivos.aspx</DependentUpon>
@@ -2353,6 +2457,55 @@
     </Compile>
     <Compile Include="Archivos\Menu\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Fun_Numeracion.aspx.cs">
+      <DependentUpon>Fun_Numeracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Fun_Numeracion.aspx.designer.cs">
+      <DependentUpon>Fun_Numeracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Listar_Perfiles.aspx.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Listar_Perfiles.aspx.designer.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Numeracion.aspx.cs">
+      <DependentUpon>Numeracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Numeracion.aspx.designer.cs">
+      <DependentUpon>Numeracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Listar_Empleados.aspx.cs">
+      <DependentUpon>Listar_Empleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Listar_Empleados.aspx.designer.cs">
+      <DependentUpon>Listar_Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Listar_Perfiles.aspx.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Listar_Perfiles.aspx.designer.cs">
+      <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Visor_Reportes.aspx.cs">
+      <DependentUpon>Visor_Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Visor_Reportes.aspx.designer.cs">
+      <DependentUpon>Visor_Reportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Usuarios\Fun_Usuarios.aspx.cs">
       <DependentUpon>Fun_Usuarios.aspx</DependentUpon>
@@ -2376,6 +2529,7 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_GlobalResources\" />
@@ -2392,6 +2546,9 @@
       <Project>{697e6878-d37b-4e51-aa8e-c47f850e0398}</Project>
       <Name>ClsObjetos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Archivos\Reportes\Pagare.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

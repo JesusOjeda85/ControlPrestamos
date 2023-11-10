@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     $('#btnGuardar').bind('click', function () { GUARDAR_CAPTURA('#btnGuardar'); });
 
-    $('#btnRegresar').bind('click', function () { IR_PAGINA('Conceptos.aspx', ''); });
+    $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Perfiles.aspx', ''); });
 
     $('#btnLimpiar').bind('click', function () { LIMPIAR_CAPTURA(); });
 });
@@ -40,6 +40,30 @@ $(window).load(function () {
     LISTAR_ZONAPAGO();   
     LISTAR_TIPOPUESTO();
 });
+
+function IR_PAGINA(url, parametros) {
+    var strpagina = "";
+    if (parametros != "") { strpagina = url + "?" + parametros; } else { strpagina = url; }
+    $.ajax({
+        url: url + "/GetResponse",
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        beforeSend: function () {
+            $('#loading').show();
+        },
+        success: function (data) {
+            if (data.d == true) {
+                window.location = strpagina;
+            }
+        },
+        error: function (a, b, c) {
+            $('#loading').hide(100);
+            $.messager.alert('Error', c, 'error');
+        }
+    });
+}
+
 function LISTAR_PLAZOS() {
     var data = {
         objorganismo: {
@@ -221,7 +245,7 @@ function LIMPIAR_CAPTURA() {
     $('#txtpaterno').textbox('setValue', '');
     $('#txtmaterno').textbox('setValue', '');
     $('#txtnombres').textbox('setValue', '');
-    $('#txtdireccion').textbox('setValue', '');
+    $('#txtdomicilio').textbox('setValue', '');
     $('#txttelefono1').maskedbox('setValue', '');
     $('#txttelefono2').maskedbox('setValue', '');
     $('#txtcvecat').textbox('setValue', '');
@@ -291,6 +315,8 @@ function GUARDAR_CAPTURA(btnobj) {
             if ($('#cbotipopago').combobox('getValue') == "x") { $.messager.alert('Error', "Falta Seleccionar el Tipo de Pago", 'error'); }
             else
                 if ($('#cbobanco').combobox('getValue') == "x") { $.messager.alert('Error', "Falta Seleccionar el Banco", 'error'); }
+                else
+                    if ($('#cbozonapago').combobox('getValue') == "x") { $.messager.alert('Error', "Falta Seleccionar la Zona de Pago", 'error'); }
                 else {
                     var data = {
                         Obj: {                           
@@ -319,7 +345,7 @@ function GUARDAR_CAPTURA(btnobj) {
                             FkTipoPuesto: $('#cbotipopuesto').combobox('getValue'),
                             FkBanco: $('#cbobanco').combobox('getValue'),
                             Cuenta: $('#txtcuenta').numberbox('getValue'),
-                            FkZonaPago: $('#cbozonapago').combobox('getValue'),
+                            FkZonaPago: $('#cbozonapago').combobox('getValue')
                         }
                     }
                     $.ajax({

@@ -13,5 +13,6 @@ namespace WebApi.Dto
         public int Año { get; set; }
         public string Aplicados { get; set; }
         public string Rechazados { get; set; }
+        public string Emision { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace ClsObjetos
         public static string host = $"http://localhost:5155/api/";
 
 
-        //public static string host = $"https://desarrollorh.sinaloa.gob.mx/Api-Descuentos/api/";
+       //public static string host = $"https://desarrollorh.sinaloa.gob.mx/Api-Descuentos/api/";
 
 
         public static string GetItem(string url)

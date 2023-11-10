@@ -34,14 +34,24 @@
          <div class="easyui-panel" style="width:100%;">            
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Sal32'" style="width:90px;"  id="btnInicio">Cerrar</a>    
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Cap32'" style="width:90px;"  id="btnCaptura">Captura</a>    
-             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Con32'" style="width:90px;"  id="btnAplicacion">Aplicación</a>    
+             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Con32'" style="width:90px;"  id="btnAplicacion">Aplicación</a> 
+             <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Con32'" style="width:90px;"  id="btnNumeracion">Numeración</a> 
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Rep32'" style="width:90px;"  id="btnReportes">Reportes</a>    
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'carga32'" style="width:100px;"  id="btnImportacion">Importación</a>
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'descarga32'" style="width:100px;"  id="btnExportacion">Exportación</a>
+             <a href="#" class="easyui-menubutton" data-options="menu:'#mpadrones',plain:true,size:'large',iconAlign:'top',iconCls:'Padron32'" style="width:100px;"  id="btnPadrones">Padrones</a>
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Cat32'" style="width:100px;"  id="btnCatalogos">Catálogos</a>    
              <a href="#" class="easyui-linkbutton" data-options="plain:true,size:'large',iconAlign:'top',iconCls:'Usu32'" style="width:100px;"  id="btnUsuarios">Usuarios</a>    
          </div>
-         <div class="w-full item-center" style="top:113px; height:88.5%; overflow:hidden; position:absolute">
+          <div id="mpadrones" style="width:170px;">
+                <div id="dmLiquidez">Liquidez</div>         
+               <%-- <div id="dmFondoA">Fondo de Ahorro</div>        --%> 
+          </div>
+        <%--  <div id="mreportes" style="width:170px;">
+             <div id="dmpagare">Pagaré</div>         
+             <div id="dmcheque">Cheque Santander</div>         
+         </div>--%>
+         <div class="w-full item-center" style="top:125px; height:87%; overflow:hidden; position:absolute">
               <div id="tt" class="easyui-tabs  " style="width:100%;  height:100%; display:none;"></div>  
          </div>            
      </div>   

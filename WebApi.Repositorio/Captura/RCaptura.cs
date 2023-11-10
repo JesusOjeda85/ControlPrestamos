@@ -295,6 +295,7 @@ namespace WebApi.Repositorio.Captura
                     new SqlParameter("@FkTipoPuesto", SqlDbType.Int) { Value = Obj.FkTipoPuesto },
                     new SqlParameter("@FkBanco", SqlDbType.Int) { Value = Obj.FkBanco },
                     new SqlParameter("@Cuenta", SqlDbType.Int) { Value = Obj.Cuenta },
+                    new SqlParameter("@FkZonaPago", SqlDbType.Int) { Value = Obj.FkZonaPago },
                 };
 
 
@@ -331,6 +332,7 @@ namespace WebApi.Repositorio.Captura
                     new SqlParameter("@FkTipoPago", SqlDbType.Int) { Value = Obj.FkTipoPago },
                     new SqlParameter("@FkBanco", SqlDbType.Int) { Value = Obj.FkBanco },
                     new SqlParameter("@Cuenta", SqlDbType.Int) { Value = Obj.Cuenta },
+                    new SqlParameter("@Datos", SqlDbType.VarChar) { Value = Obj.Datos },
                 };
                 
                 DataSet ds = MetodosBD.EjecutarProcedimiento("SPT_Captura_Modificar ", parametro);

@@ -21,6 +21,9 @@
 
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>  
+
+      <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-detailview.js"></script>
+   <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-cellediting.js"></script>
   
     <script src="../../Scripts/Funsiones.js"></script>
     <script src="Numeracion.js"></script>
@@ -38,9 +41,9 @@
                 <tr>                        
                     <th data-options="field:'chk',checkbox:true"></th>                         
                     <th data-options="field:'Id',width:90,align:'center',halign:'center',hidden:true">Id</th>            
-                    <th data-options="field:'Descripcion',width:300,align:'left',halign:'center',hidden:false">Perfil</th> 
+                    <th data-options="field:'Perfil',width:300,align:'left',halign:'center',hidden:false">Perfil</th> 
                     <th data-options="field:'Emision',width:100,align:'left',halign:'center',hidden:false">Emision</th> 
-                    <th data-options="field:'Cheque',width:90,align:'right',halign:'center',hidden:false,editor:{type:'numberbox',options:{precision:2}}">Cheque</th>           
+                    <th data-options="field:'Cheque',width:90,align:'right',halign:'center',hidden:false,editor:{type:'numberbox',options:{precision:0}}">Cheque</th>           
                 </tr>
             </thead>
         </table> 

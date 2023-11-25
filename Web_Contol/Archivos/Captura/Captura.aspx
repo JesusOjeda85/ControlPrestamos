@@ -36,7 +36,7 @@
                     <div class="flex flax-row space-x-2">
                         <div class="flex flex-col mb-1 w-1/2 ">
                             <label class="text-left text-lg text-blue-900">Tipo de Puesto</label>                    
-                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cbotipopuesto"  data-options="required:true"/>                   
+                            <input class="easyui-combobox" style="width:100%; text-align:left"  id="cbotipopuesto"  data-options="required:false"/>                   
                        </div>
                        <div class="flex flex-col mb-1  w-1/2">
                            <label class="text-left text-lg text-blue-900">Empleado</label>   

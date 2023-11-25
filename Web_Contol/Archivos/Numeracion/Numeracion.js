@@ -21,6 +21,8 @@ $(document).ready(function () {
 
     $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Perfiles.aspx', 'mod=S'); });
 
+    $('#btnProcesar').bind('click', function () { PROCESO_NUMERACION('#btnProcesar'); });
+
     $('#dgdatos').datagrid('enableCellEditing').datagrid('gotoCell', {
         index: 0,
         field: 'id',
@@ -173,4 +175,50 @@ function CARGAR_PROCESOS(filtro) {
         }
     });
 
+}
+
+function PROCESO_NUMERACION(btnobj) {
+    if ($(btnobj).linkbutton('options').disabled) { return false; }
+    else {
+        if (checkedRows.length == 0) { $.messager.alert('Error', 'Falta seleccionar los procesos a numerar', 'error'); return 0; }
+        else
+        {
+            var Procesos = [];         
+            for (var s = 0; s < checkedRows.length; s++) {                   
+               Procesos += "''"+checkedRows[s].Emision + "'',"+checkedRows[s].Cheque+"|";                     
+            }   
+            if (Procesos.length > 0) { Procesos = Procesos.substring(0, Procesos.length - 1); } else { Procesos = 0; }
+
+            var data = {
+                Obj: {                    
+                    Proceso: Procesos                  
+                }
+            }
+            $.ajax({
+                type: "POST",
+                url: "Fun_Numeracion.aspx/APLICAR_NUMERACION",
+                data: JSON.stringify(data),
+                async: true,
+                cache: false,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                beforeSend: function () {
+                    $('#loading').show();
+                },
+                success: function (data) {
+                    if (data.d[0] == "0") {
+                        $.messager.alert('Información', data.d[1], 'info');
+                    }
+                    else { $.messager.alert('Error', data.d[1], 'error'); }
+                },
+                error: function (er) {
+                    $('#loading').hide();
+                    $.messager.alert('Error', er.responseJSON.Message, 'error');
+                },
+                complete: function () {
+                    $('#loading').hide(100);
+                }
+            });
+        }        
+    }
 }

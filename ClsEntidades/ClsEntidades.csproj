@@ -75,6 +75,7 @@
     <Compile Include="DatosAplicar.cs" />
     <Compile Include="DatosCaptura.cs" />
     <Compile Include="DatosCargar.cs" />
+    <Compile Include="DatosNumeracion.cs" />
     <Compile Include="DatosPermisos.cs" />
     <Compile Include="DatosUsuario.cs" />
     <Compile Include="FiltroIdOrganismo.cs" />

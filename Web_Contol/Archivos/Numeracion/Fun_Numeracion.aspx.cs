@@ -33,5 +33,22 @@ namespace ControlDescuentos.Archivos.Numeracion
             result[2] = JsonConvert.SerializeObject(msg.Data);
             return result;
         }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] APLICAR_NUMERACION(DatosNumeracion Obj)
+        {
+            string[] result = { "", "", "" };
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            Obj.fkusuario = objusuario.Idusuario;
+
+            string jsonobj = JsonConvert.SerializeObject(Obj);
+            string respuesta = Llamar_Api.PostItem("Numeracion/Aplicar_Numeracion", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
     }
 }

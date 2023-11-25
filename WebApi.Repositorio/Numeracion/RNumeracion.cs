@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebApi.BaseDatos;
+using WebApi.Entidades;
 
 namespace WebApi.Repositorio.Numeracion
 {
@@ -17,7 +18,7 @@ namespace WebApi.Repositorio.Numeracion
 
             try
             {
-               
+
                 DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Numeracion_Listar_Emisiones ");
                 if (ds.Tables[0].Rows.Count > 0)
                 {
@@ -25,7 +26,35 @@ namespace WebApi.Repositorio.Numeracion
                     msg.Error = 0;
                     msg.Mensaje = "";
                     msg.Data = Tbljson;
-                    msg.Datos = ds.Tables[1].Rows[0][0].ToString();
+                }
+                ds.Dispose();
+            }
+            catch (Exception ex)
+            {
+                msg.Error = 1;
+                msg.Mensaje = ex.Message.ToString();
+            }
+            return msg;
+        }
+
+        public static ObjMensaje Aplicar_Numeracion(DatosNumeracion Obj)
+        {
+            ObjMensaje msg = new();
+            try
+            {
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Numeracion_Generar_Produccion " + Obj.fkusuario + ",'" + Obj.Proceso + "'");
+                if (ds.Tables.Count > 0)
+                {
+                    msg.Error = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());
+                    msg.Mensaje = ds.Tables[0].Rows[0][1].ToString();
+                    msg.Data = null;
+                    msg.Datos = "";
+                }
+                else
+                {
+                    msg.Error = 1;
+                    msg.Mensaje = ds.Tables[0].Rows[0][1].ToString();
+                    msg.Data = null;
                 }
                 ds.Dispose();
             }

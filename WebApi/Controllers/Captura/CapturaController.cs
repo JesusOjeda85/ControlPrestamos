@@ -21,11 +21,29 @@ namespace WebApi.Controllers.Captura
         }
 
         [HttpPost]
+        [Route("Listar_ImportePlazos")]
+        public IActionResult Listar_ImportePlazos(IdOrganismoDto ObjDto)
+        {
+            var obj = mapper.Map<DatosCaptura>(ObjDto);
+            ObjMensaje msg = RCaptura.Listar_ImportesPlazos(obj);
+            return StatusCode(StatusCodes.Status200OK, msg);
+        }
+
+        [HttpPost]
         [Route("Listar_Plazos")]
         public IActionResult Listar_Plazos(IdOrganismoDto ObjDto)
         {
             var obj = mapper.Map<DatosCaptura>(ObjDto);
             ObjMensaje msg = RCaptura.Listar_Plazos(obj);
+            return StatusCode(StatusCodes.Status200OK, msg);
+        }
+
+        [HttpPost]
+        [Route("Listar_ConceptosPorPuesto")]
+        public IActionResult Listar_ConceptosPorPuesto(IdTipoPuestoDto ObjDto)
+        {
+            var obj = mapper.Map<DatosCaptura>(ObjDto);
+            ObjMensaje msg = RCaptura.Listar_ConceptosPorPuesto(obj);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
 

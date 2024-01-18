@@ -21,20 +21,19 @@ namespace ControlDescuentos.Archivos.Reportes
         int Organismo = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Reporte = Request.QueryString["Reporte"].ToString();
-            Organismo = Convert.ToInt16(Request.QueryString["fkorg"].ToString());
+            //Reporte = Request.QueryString["Reporte"].ToString();
+            //Organismo = Convert.ToInt16(Request.QueryString["fkorg"].ToString());
 
             if (!IsPostBack)
             {
                 Impresion();
             }
 
-            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
-
-            if (objusuario == null)
-            {
-                Response.Redirect("../../Login.aspx");
-            }
+            //SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            //if (objusuario == null)
+            //{
+            //    Response.Redirect("../../Login.aspx");
+            //}
         }
         [System.Web.Services.WebMethod]
         public static bool GetResponse()
@@ -45,20 +44,38 @@ namespace ControlDescuentos.Archivos.Reportes
         [WebMethod(EnableSession = true)]
         [ScriptMethod]
         public void Impresion()
-        {           
-            rvVista.LocalReport.ReportPath = Server.MapPath("~/Archivos/Reportes/"+ Reporte + ".rdlc");
-           
-            //SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
-            //string jsonobj = JsonConvert.SerializeObject(objusuario);
-            //string respuesta = Llamar_Api.PostItem("Permisos/Cargar_Permisos", jsonobj);
-            //ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
-           
-            rvVista.LocalReport.DataSources.Clear();
+        {
+            ReportDataSource DsDatos = new ReportDataSource();
+            ReportViewer viewer = new ReportViewer();
+            viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
 
-            //ReportDataSource dsDatGen = new ReportDataSource("DatosGenerales", ds.Tables[0]);
-            //rvVista.LocalReport.DataSources.Add(dsDatGen);
-          
-            rvVista.LocalReport.Refresh();
+            if (Reporte == "Pagare")
+            {
+                viewer.LocalReport.ReportPath = Server.MapPath("~/Archivos/" + Reporte + ".rdlc");
+
+                FiltroPagare filtro = new FiltroPagare();
+                filtro.FkOrganismo = 1;
+                filtro.Condicion = "";
+
+                string jsonobj = JsonConvert.SerializeObject(filtro);
+                string respuesta = Llamar_Api.PostItem("Reportes/Listar_Pagare", jsonobj);
+                ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+
+                string jsondt = JsonConvert.SerializeObject(msg.Data);
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject(jsondt, typeof(DataTable));
+
+                DsDatos = new ReportDataSource("dtPagare", dt);               
+
+            }
+            /*pasar parametros al reporte*/
+            //ReportParameter[] repParameters = new ReportParameter[1];
+            //repParameters[0] = new ReportParameter();
+            //repParameters[0].Name = "Batch";
+            //repParameters[0].Values.Add("Test");
+
+            viewer.LocalReport.DataSources.Clear();
+            viewer.LocalReport.DataSources.Add(DsDatos);
+            viewer.LocalReport.Refresh();
         }
     }
 }

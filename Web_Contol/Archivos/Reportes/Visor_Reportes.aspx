@@ -25,7 +25,7 @@
         <script src="Visor_Reportes.js"></script>
         <script type="text/javascript">       
             function Print() {
-         var report = document.getElementById("<%=rvVista.ClientID %>");
+         //var report = document.getElementById("<%=rvVista.ClientID %>");
          var div = report.getElementsByTagName("DIV");
          var reportContents;
          for (var i = 0; i < div.length; i++) {
@@ -58,21 +58,22 @@
 </head>
 <body>
     <form id="form1" runat="server">
-       <div class="w-screen h-screen" align="Center">
-             <div class="easyui-panel mb-3" style="padding:2px; width:100%; background-color:#FCFDFF;">   
+       <div class="w-screen h-screen" align="Center" style="background-color:#FCFDFF;">
+             <div class="easyui-panel mb-0" style="padding:2px; width:100%; ">   
                 <a id="btnRegresar" href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'anterior'" >Regresar</a> 
                 <a id="btnBuscar" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:false">Buscar</a>
                 <a id="btnImpresion" href="#" class="easyui-linkbutton" data-options="plain:false,iconCls:'icon-impbarras16',disabled:true" >Imprimir</a>   
                 <label id="lbl" class="text-left font-black text-lg text-blue-900"></label> 
-            </div> 
-           <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-           <rsweb:ReportViewer ID="rvVista" Width="100%" Height="90%" runat="server"></rsweb:ReportViewer>
+            </div>           
+           <%--<rsweb:ReportViewer ID="rvVista" Width="100%" Height="95%" runat="server"></rsweb:ReportViewer>--%>
+           <embed src="files/Brochure.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="95%" />
         </div>
          <div class="modal w-screen h-screen items-center" style="display: none;" id="loading" align="center">
             <div class="center w-screen h-screen items-center"  align="center" >
                 <img alt="" src="../../Imagenes/ajax-loader.gif" />
             </div>       
         </div> 
+         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     </form>
 </body>
 </html>

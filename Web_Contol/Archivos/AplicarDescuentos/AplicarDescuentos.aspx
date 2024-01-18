@@ -27,10 +27,10 @@
 	    }
 </style>
     <script src="../../Scripts/Funsiones.js?v0.0"></script>
-    <script src="AplicarDescuentos.js?v0.0"></script>
+    <script src="AplicarDescuentos.js?v0.1"></script>
 </head>
 <body>
-     <div class="bg-neutral-100 w-screen h-screen flex flex-col bg-yellow-50 " align="Center" style="background-color:#FCFDFF;">   
+     <div class="w-screen h-screen flex flex-col" align="Center" style="background-color:#FCFDFF;">   
           <div class="easyui-panel mb-3" style="padding:2px; width:100%">    
                <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'anterior'" id="btnRegresar">Regresar</a> 
                 <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'limpiar',disabled:false" id="btnLimpiar" >Limpiar</a>  
@@ -50,7 +50,8 @@
             <table class="easyui-datagrid " id="dgdatos" style="width:100%; height:75%;" > 
                 <thead>
                     <tr>                        
-                        <th data-options="field:'chk',checkbox:true"></th>                         
+                        <th data-options="field:'chk',checkbox:true"></th>   
+                        <th data-options="field:'RowNumber',width:50,align:'center',halign:'center',hidden:false">#</th>
                         <th data-options="field:'id',width:90,align:'center',halign:'center',hidden:true">id</th>
                         <th data-options="field:'fkorganismo',width:90,align:'center',halign:'center',hidden:true">fkorganismo</th>
                         <th data-options="field:'Organismo',width:80,align:'center',halign:'center',hidden:false">Organismo</th>
@@ -61,12 +62,11 @@
                         <th data-options="field:'Nombre',width:300,align:'left',halign:'center'">Nombre</th>                        
                         <th data-options="field:'ImporteCredito',width:90,align:'right',halign:'center',hidden:false,editor:{type:'numberbox',options:{precision:2}}">Credito</th>
                         <th data-options="field:'fkPlazo',width:180,align:'center',halign:'center',hidden:true">fkPlazo</th>
-                        <th data-options="field:'Plazo',width:90,align:'center',halign:'center',hidden:false">Plazo</th>
+                        <th data-options="field:'Plazo',width:80,align:'center',halign:'center',hidden:false">Plazo</th>
                         <th data-options="field:'fkTipoPago',width:180,align:'center',halign:'center',hidden:true">fkTipoPago</th>
-                        <th data-options="field:'TipoPago',width:150,align:'center',halign:'center',hidden:false">Tipo de Pago</th>                       
-                        <th data-options="field:'fkBanco',width:180,align:'center',halign:'center',hidden:true">fkBanco</th>
-                        <th data-options="field:'Banco',width:90,align:'center',halign:'center',hidden:false">Banco</th>
-                        <th data-options="field:'CuentaBancaria',width:150,align:'center',halign:'center',hidden:false">Cuenta Bancaria</th>    
+                        <th data-options="field:'TipoPago',width:100,align:'center',halign:'center',hidden:false">Tipo de Pago</th>                                              
+                        <th data-options="field:'Banco',width:240,align:'left',halign:'center',hidden:false">Banco</th>
+                        <th data-options="field:'CuentaMaestra',width:150,align:'center',halign:'center',hidden:false">Cuenta Bancaria</th>    
                         <th data-options="field:'Liquidez',width:90,align:'right',halign:'center',hidden:false">Liquidez</th>
                     </tr>
                 </thead>

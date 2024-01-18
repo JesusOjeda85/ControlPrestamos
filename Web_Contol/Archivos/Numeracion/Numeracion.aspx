@@ -39,10 +39,11 @@
          <table class="easyui-datagrid " id="dgdatos" style="width:100%; height:75%;" > 
             <thead>
                 <tr>                        
-                    <th data-options="field:'chk',checkbox:true"></th>                         
-                    <th data-options="field:'Id',width:90,align:'center',halign:'center',hidden:true">Id</th>            
+                    <th data-options="field:'chk',checkbox:true"></th>                                             
+                    <th data-options="field:'Organismo',width:100,align:'center',halign:'center',hidden:false">Organismo</th> 
                     <th data-options="field:'Perfil',width:300,align:'left',halign:'center',hidden:false">Perfil</th> 
-                    <th data-options="field:'Emision',width:100,align:'left',halign:'center',hidden:false">Emision</th> 
+                    <th data-options="field:'Emision',width:130,align:'center',halign:'center',hidden:false">Emision</th>                     
+                    <th data-options="field:'TipoPuesto',width:100,align:'center',halign:'center',hidden:false">Tipo de Puesto</th> 
                     <th data-options="field:'Cheque',width:90,align:'right',halign:'center',hidden:false,editor:{type:'numberbox',options:{precision:0}}">Cheque</th>           
                 </tr>
             </thead>

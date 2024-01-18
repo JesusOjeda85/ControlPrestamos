@@ -21,6 +21,8 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,6 +49,12 @@
     </Reference>
     <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
       <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Core.1.25.0\lib\net461\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Identity, Version=1.7.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Identity.1.7.0\lib\netstandard2.0\Azure.Identity.dll</HintPath>
     </Reference>
     <Reference Include="DotNetOpenAuth.AspNet">
       <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\DotNetOpenAuth.AspNet.dll</HintPath>
@@ -92,7 +100,37 @@
     <Reference Include="Microsoft.AspNet.Membership.OpenAuth">
       <HintPath>..\..\SITIO-NOMINA_EJECUTIVO\bin\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.SqlClient, Version=5.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.SqlClient.5.1.2\lib\net462\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.47.2.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.4.47.2\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=2.19.3.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.Extensions.Msal.2.19.3\lib\net45\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.6.24.0\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.24.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.24.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.6.24.0\lib\net472\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.24.0\lib\net472\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.24.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -136,9 +174,104 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\office.dll</HintPath>
     </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.6.0.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.24.0\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory.Data, Version=1.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.Data.1.0.2\lib\net461\System.Memory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.ProtectedData.4.7.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -151,11 +284,13 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx" />
@@ -166,6 +301,8 @@
     <Content Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx" />
     <Content Include="Archivos\Captura\Captura.aspx" />
     <Content Include="Archivos\Captura\Captura.js" />
+    <Content Include="Archivos\Captura\Captura_ant.aspx" />
+    <Content Include="Archivos\Captura\Captura_ant.js" />
     <Content Include="Archivos\Captura\Listar_Perfiles.aspx" />
     <Content Include="Archivos\Captura\Listar_Perfiles.js" />
     <Content Include="Archivos\Captura\Fun_Captura.aspx" />
@@ -182,14 +319,25 @@
     <Content Include="Archivos\CargaryDescargar\Listar_Perfiles.aspx" />
     <Content Include="Archivos\CargaryDescargar\SalidaArchivos.aspx" />
     <Content Include="Archivos\CargaryDescargar\SalidaArchivos.js" />
+    <Content Include="Archivos\Consulta\Buscar_Empleados.aspx" />
+    <Content Include="Archivos\Consulta\Consulta.aspx" />
+    <Content Include="Archivos\Consulta\Consulta.js" />
+    <Content Include="Archivos\Consulta\Fun_Consulta.aspx" />
+    <Content Include="Archivos\Menu\BarraMenu.aspx" />
+    <Content Include="Archivos\Menu\BarraMenu.js" />
     <Content Include="Archivos\Menu\Fun_Menus.aspx" />
     <Content Include="Archivos\Menu\Menu.aspx" />
     <Content Include="Archivos\Menu\Menu.js" />
+    <Content Include="Archivos\Menu\sidebar.html" />
     <Content Include="Archivos\Numeracion\Fun_Numeracion.aspx" />
     <Content Include="Archivos\Numeracion\Listar_Perfiles.aspx" />
     <Content Include="Archivos\Numeracion\Listar_Perfiles.js" />
     <Content Include="Archivos\Numeracion\Numeracion.aspx" />
     <Content Include="Archivos\Numeracion\Numeracion.js" />
+    <Content Include="Archivos\Reportes\Filtro_Reportes.aspx" />
+    <Content Include="Archivos\Reportes\Filtro_Reportes.js" />
+    <Content Include="Archivos\Reportes\Fun_Reportes.aspx" />
+    <Content Include="Archivos\Reportes\Imagenes\pagare.png" />
     <Content Include="Archivos\Reportes\Listar_Empleados.aspx" />
     <Content Include="Archivos\Reportes\Listar_Perfiles.aspx" />
     <Content Include="Archivos\Reportes\Listar_Perfiles.js" />
@@ -302,9 +450,14 @@
     <Content Include="bin\UsuariosYPermisos.dll" />
     <Content Include="bin\UsuariosYPermisos.pdb" />
     <Content Include="bin\WebApi.Dto.dll" />
-    <Content Include="Imagenes\botones\cerrar.png" />
-    <Content Include="Imagenes\botones\menu.png" />
-    <Content Include="Imagenes\botones\usuario.png" />
+    <Content Include="Imagenes\botones\aplicacion.png" />
+    <Content Include="Imagenes\botones\catalogos.png" />
+    <Content Include="Imagenes\botones\exportacion.png" />
+    <Content Include="Imagenes\botones\importacion.png" />
+    <Content Include="Imagenes\botones\numeracion.png" />
+    <Content Include="Imagenes\botones\padrones.png" />
+    <Content Include="Imagenes\botones\reportes.png" />
+    <Content Include="Imagenes\botones\usuarios.png" />
     <Content Include="Imagenes\escudo.png" />
     <Content Include="Imagenes\LETRAGRAMA1.png" />
     <Content Include="Imagenes\prestamos.png" />
@@ -322,6 +475,7 @@
     <Content Include="jqueryEsy\plugins\jquery.sidemenu.js" />
     <Content Include="jqueryEsy\plugins\jquery.tagbox.js" />
     <Content Include="jqueryEsy\plugins\jquery.timepicker.js" />
+    <Content Include="jqueryEsy\themes\icons\Accesos.png" />
     <Content Include="jqueryEsy\themes\icons\captura32.png" />
     <Content Include="jqueryEsy\themes\icons\catalogos32.png" />
     <Content Include="jqueryEsy\themes\icons\consulta32.png" />
@@ -337,6 +491,7 @@
     <Content Include="jqueryEsy\themes\icons\rojo32\consulta32.png" />
     <Content Include="jqueryEsy\themes\icons\rojo32\descarga32.png" />
     <Content Include="jqueryEsy\themes\icons\rojo32\inicio32.png" />
+    <Content Include="jqueryEsy\themes\icons\rojo32\numeracion32.png" />
     <Content Include="jqueryEsy\themes\icons\rojo32\padrones32.png" />
     <Content Include="jqueryEsy\themes\icons\rojo32\reportes32.png" />
     <Content Include="jqueryEsy\themes\icons\rojo32\usuario32.png" />
@@ -1246,7 +1401,52 @@
     <Content Include="jqueryEsy\themes\material-teal\images\Thumbs.db" />
     <Content Include="bin\ClsEntidades.dll.config" />
     <Content Include="bin\ControlDescuentos.dll.config" />
+    <Content Include="Archivos\Reportes\DsDatosPagare.xsc">
+      <DependentUpon>DsDatosPagare.xsd</DependentUpon>
+    </Content>
+    <Content Include="Archivos\Reportes\Archivos\Pagare.pdf" />
+    <None Include="Archivos\Reportes\DsDatosPagare.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsDatosPagare.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Archivos\Reportes\DsDatosPagare.xss">
+      <DependentUpon>DsDatosPagare.xsd</DependentUpon>
+    </Content>
+    <Content Include="ControlDescuentosDataSet.xsc">
+      <DependentUpon>ControlDescuentosDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="ControlDescuentosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ControlDescuentosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ControlDescuentosDataSet.xss">
+      <DependentUpon>ControlDescuentosDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
+    <Content Include="Pagare.xsc">
+      <DependentUpon>Pagare.xsd</DependentUpon>
+    </Content>
+    <None Include="Pagare.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Pagare.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Pagare.xss">
+      <DependentUpon>Pagare.xsd</DependentUpon>
+    </Content>
+    <Content Include="PagareDataSet.xsc">
+      <DependentUpon>PagareDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="PagareDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PagareDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PagareDataSet.xss">
+      <DependentUpon>PagareDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1257,83 +1457,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagenes\ajax-loader.gif" />
-    <Content Include="Imagenes\botones\Accesos.png" />
-    <Content Include="Imagenes\botones\add-imagen.png" />
-    <Content Include="Imagenes\botones\add.png" />
-    <Content Include="Imagenes\botones\alerta.png" />
-    <Content Include="Imagenes\botones\anexo.png" />
-    <Content Include="Imagenes\botones\Anexos-ico.png" />
-    <Content Include="Imagenes\botones\anexos.png" />
-    <Content Include="Imagenes\botones\archivero.png" />
-    <Content Include="Imagenes\botones\BajarArchivo1.png" />
-    <Content Include="Imagenes\botones\BajarArchivo2.png" />
-    <Content Include="Imagenes\botones\Balloon.png" />
-    <Content Include="Imagenes\botones\barCode.png" />
-    <Content Include="Imagenes\botones\BExcel1.png" />
-    <Content Include="Imagenes\botones\BExcel2.png" />
-    <Content Include="Imagenes\botones\boton.png" />
-    <Content Include="Imagenes\botones\boton2.png" />
-    <Content Include="Imagenes\botones\boton2over.png" />
-    <Content Include="Imagenes\botones\botonover.png" />
-    <Content Include="Imagenes\botones\buscar2.png" />
-    <Content Include="Imagenes\botones\buscar_doc.png" />
-    <Content Include="Imagenes\botones\cancelar.png" />
     <Content Include="Imagenes\botones\captura.png" />
-    <Content Include="Imagenes\botones\Cargar1.png" />
-    <Content Include="Imagenes\botones\Cargar2.png" />
-    <Content Include="Imagenes\botones\CargarExcel1.png" />
-    <Content Include="Imagenes\botones\CargarExcel2.png" />
-    <Content Include="Imagenes\botones\cerrar1.png" />
-    <Content Include="Imagenes\botones\cerrar2.png" />
-    <Content Include="Imagenes\botones\claDocumentos.gif" />
-    <Content Include="Imagenes\botones\comentario.png" />
-    <Content Include="Imagenes\botones\configuracion.png" />
-    <Content Include="Imagenes\botones\delete.gif" />
-    <Content Include="Imagenes\botones\descarga.png" />
-    <Content Include="Imagenes\botones\doc-ico.png" />
-    <Content Include="Imagenes\botones\documento.png" />
-    <Content Include="Imagenes\botones\document_delete.png" />
-    <Content Include="Imagenes\botones\editar.png" />
-    <Content Include="Imagenes\botones\eliminar.png" />
-    <Content Include="Imagenes\botones\entrega.png" />
-    <Content Include="Imagenes\botones\estado.png" />
-    <Content Include="Imagenes\botones\estado2.gif" />
-    <Content Include="Imagenes\botones\examinar.png" />
-    <Content Include="Imagenes\botones\Examinar1.png" />
-    <Content Include="Imagenes\botones\Examinar2.png" />
-    <Content Include="Imagenes\botones\examinarover.png" />
-    <Content Include="Imagenes\botones\EXCEL.png" />
-    <Content Include="Imagenes\botones\file unload.png" />
-    <Content Include="Imagenes\botones\filesave.png" />
-    <Content Include="Imagenes\botones\filter_add.png" />
-    <Content Include="Imagenes\botones\ico-pdf.png" />
-    <Content Include="Imagenes\botones\imagenes2.png" />
-    <Content Include="Imagenes\botones\impresorabarras.png" />
-    <Content Include="Imagenes\botones\key.png" />
-    <Content Include="Imagenes\botones\layout.png" />
-    <Content Include="Imagenes\botones\limpiar.png" />
-    <Content Include="Imagenes\botones\lupa.png" />
-    <Content Include="Imagenes\botones\marcar.gif" />
-    <Content Include="Imagenes\botones\menu1.png" />
-    <Content Include="Imagenes\botones\menu2.png" />
-    <Content Include="Imagenes\botones\no.png" />
-    <Content Include="Imagenes\botones\pendientes.png" />
-    <Content Include="Imagenes\botones\pendientes2.png" />
-    <Content Include="Imagenes\botones\rastrear.jpg" />
-    <Content Include="Imagenes\botones\rechazar2.png" />
-    <Content Include="Imagenes\botones\refresh.png" />
-    <Content Include="Imagenes\botones\regresar.png" />
-    <Content Include="Imagenes\botones\relacion.png" />
-    <Content Include="Imagenes\botones\restaurar3.png" />
-    <Content Include="Imagenes\botones\Salir.png" />
-    <Content Include="Imagenes\botones\scaner.png" />
-    <Content Include="Imagenes\botones\si.png" />
-    <Content Include="Imagenes\botones\Signature.png" />
-    <Content Include="Imagenes\botones\Subject.png" />
-    <Content Include="Imagenes\botones\Update.png" />
-    <Content Include="Imagenes\botones\usuario1.png" />
-    <Content Include="Imagenes\botones\usuario2.png" />
-    <Content Include="Imagenes\botones\vistoBueno.png" />
     <Content Include="Imagenes\logos\LOGO1.png" />
     <Content Include="Imagenes\logos\LOGO2.png" />
     <Content Include="Imagenes\MenuMetro\afectacion.png" />
@@ -2331,6 +2455,7 @@
     <Content Include="Styles\VisorReporte.css" />
     <Content Include="tailwinds\Assets\avatar.svg" />
     <Content Include="tailwinds\Assets\unlock.svg" />
+    <Content Include="tailwinds\main.js" />
     <Content Include="tailwinds\static\dist\tailwind.css" />
     <Content Include="tailwinds\Styles\css\tailwind.css" />
     <Content Include="tailwinds\tailwind.config.js" />
@@ -2373,6 +2498,13 @@
     </Compile>
     <Compile Include="Archivos\Captura\Captura.aspx.designer.cs">
       <DependentUpon>Captura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Captura_ant.aspx.cs">
+      <DependentUpon>Captura_ant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Captura_ant.aspx.designer.cs">
+      <DependentUpon>Captura_ant.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Captura\Listar_Perfiles.aspx.cs">
       <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
@@ -2444,6 +2576,34 @@
     <Compile Include="Archivos\CargaryDescargar\SalidaArchivos.aspx.designer.cs">
       <DependentUpon>SalidaArchivos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Archivos\Consulta\Buscar_Empleados.aspx.cs">
+      <DependentUpon>Buscar_Empleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Consulta\Buscar_Empleados.aspx.designer.cs">
+      <DependentUpon>Buscar_Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Consulta\Consulta.aspx.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Consulta\Consulta.aspx.designer.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Consulta\Fun_Consulta.aspx.cs">
+      <DependentUpon>Fun_Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Consulta\Fun_Consulta.aspx.designer.cs">
+      <DependentUpon>Fun_Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Menu\BarraMenu.aspx.cs">
+      <DependentUpon>BarraMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Menu\BarraMenu.aspx.designer.cs">
+      <DependentUpon>BarraMenu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Archivos\Menu\Fun_Menus.aspx.cs">
       <DependentUpon>Fun_Menus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2478,6 +2638,25 @@
     </Compile>
     <Compile Include="Archivos\Numeracion\Numeracion.aspx.designer.cs">
       <DependentUpon>Numeracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Reportes\DsDatosPagare.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsDatosPagare.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Filtro_Reportes.aspx.cs">
+      <DependentUpon>Filtro_Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Filtro_Reportes.aspx.designer.cs">
+      <DependentUpon>Filtro_Reportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Fun_Reportes.aspx.cs">
+      <DependentUpon>Fun_Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Fun_Reportes.aspx.designer.cs">
+      <DependentUpon>Fun_Reportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Reportes\Listar_Empleados.aspx.cs">
       <DependentUpon>Listar_Empleados.aspx</DependentUpon>
@@ -2521,12 +2700,27 @@
     <Compile Include="Archivos\Usuarios\Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ControlDescuentosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ControlDescuentosDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pagare.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pagare.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PagareDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PagareDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -2548,6 +2742,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Archivos\Reportes\ChequeStd.rdlc" />
+    <EmbeddedResource Include="Archivos\Reportes\EstadoCuenta.rdlc" />
     <EmbeddedResource Include="Archivos\Reportes\Pagare.rdlc" />
   </ItemGroup>
   <PropertyGroup>
@@ -2575,6 +2771,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

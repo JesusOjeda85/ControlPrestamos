@@ -75,6 +75,21 @@ namespace ControlDescuentos.Archivos.Captura
             return result;
         }
 
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] LISTAR_IMPORTES_PLAZOS(FiltroIdOrganismo objorganismo)
+        {
+            string[] result = { "", "", "" };
+            string jsonobj = JsonConvert.SerializeObject(objorganismo);
+            string respuesta = Llamar_Api.PostItem("Captura/Listar_ImportePlazos", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod]
@@ -82,6 +97,21 @@ namespace ControlDescuentos.Archivos.Captura
         {
             string[] result = { "", "", "" };
             string respuesta = Llamar_Api.GetItem("Captura/Listar_TipoPuesto");
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] LISTAR_CONCEPTOSPORPUESTO(FiltroIdTipoEmpleado obj)
+        {
+            string[] result = { "", "", "" };
+            string jsonobj = JsonConvert.SerializeObject(obj);
+            string respuesta = Llamar_Api.PostItem("Captura/Listar_ConceptosPorPuesto", jsonobj);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
             result[0] = msg.Error.ToString();
             result[1] = msg.Mensaje;

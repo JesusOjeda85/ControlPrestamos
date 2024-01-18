@@ -1,10 +1,11 @@
-﻿var Perfil = "";
+﻿var Org = "";
 var NomRep = "";
 var Reporte = "";
+var checkedRows = [];
 $(document).ready(function () {
     var org = $_GET('fkorg');
-    if (org != undefined) { fkorg = org; }
-    else { fkorg = ''; }
+    if (org != undefined) { Org = org; }
+    else { Org = ''; }
     var perfil = $_GET('perfil');
     if (perfil != undefined) { Perfil = perfil; }
     else { Perfil = ''; }
@@ -17,22 +18,45 @@ $(document).ready(function () {
 
     $('#lbl').text('Perfil: ' + Perfil + " / Reporte: " + NomRep);
 
-    $('#btnImpresion').bind('click', function () {
-        if ($('#btnImpresion').linkbutton('options').disabled) { return false; }
-        else {            
-            report.print();
-        }
-    });
     $('#btnBuscar').bind('click', function () { CARGAR_EMPLEADOS('#btnBuscar', ""); });
 
-    $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Perfiles.aspx', ''); });
+    $('#btnBempleado').bind('click', function () { CARGAR_EMPLEADOS('#btnBuscar', $('#txtvalor').textbox('getValue')); });
 
-   
+    var text = $('#txtvalor');
+    text.textbox('textbox').bind('keydown', function (e) {
+        if (e.keyCode == 13) {
+            var valor = text.val();
+            CARGAR_EMPLEADOS('#btnBuscar', valor);
+        }
+    });
+
+    $('#btnLimpiar').bind('click', function () {
+        $('#pvista').empty();
+    });
+
+    $('#btnImpGeneral').bind('click', function () { IMPRESION_GENERAL('#btnImpGeneral'); });
+
+    $('#btnImprimir').bind('click', function () { IMPRESION_GENERAL('#btnImprimir'); });
 });
-function onBodyLoad() {
-    createViewer();  
-    setReport();
+
+
+function onCheck(index, row) {
+    for (var i = 0; i < checkedRows.length; i++) {
+        if (checkedRows[i].id == row.id) {
+            return
+        }
+    }
+    checkedRows.push(row);
 }
+function onUncheck(index, row) {
+    for (var i = 0; i < checkedRows.length; i++) {
+        if (checkedRows[i].id == row.id) {
+            checkedRows.splice(i, 1);
+            return;
+        }
+    }
+}
+
 
 function IR_PAGINA(url, parametros) {
     var strpagina = "";
@@ -57,95 +81,138 @@ function IR_PAGINA(url, parametros) {
     });
 }
 
-function createViewer() {
-    // Specify necessary options for the viewer
-    var options = new Stimulsoft.Viewer.StiViewerOptions();
-    options.height = "100%";
-    options.toolbar._zoom = 150;
-    options.appearance.scrollbarsMode = true;
-    options.toolbar.showDesignButton = false;
-    options.toolbar.showAboutButton = false;
-    options.toolbar.showBookmarksButton = false;
-    options.toolbar.showDesignButton = false;
-    options.toolbar.showFindButton = false;
-    options.toolbar.showFullScreenButton = false;
-    options.toolbar.showSaveButton = false;
-    options.toolbar.showParametersButton = false;
-    options.toolbar.showViewModeButton = false;
-    options.toolbar.showFirstPageButton = false;
-    options.toolbar.showLastPageButton = false;
-    options.toolbar.showZoomButton = false;
-    options.toolbar.showNextPageButton = false;
-    options.toolbar.showPreviousPageButton = false;
-    options.toolbar.showCurrentPageControl = false;
-    options.toolbar.showPrintButton = false;
-    options.toolbar.printDestination = Stimulsoft.Viewer.StiPrintDestination.Direct;
-    options.appearance.htmlRenderMode = Stimulsoft.Report.Export.StiHtmlExportMode.Table;
-    options.toolbar.visible = false;
-
-    Stimulsoft.Base.Localization.StiLocalization.setLocalizationFile("Localization/es.xml", true);
-
-    // Create an instance of the viewer
-    viewer = new Stimulsoft.Viewer.StiViewer(options, "StiViewer", false);
-
-    viewer.renderHtml("viewerContent");
-
-}
-function setReport() {
-    // Forcibly show process indicator
-    viewer.showProcessIndicator();
-
-    // tiempo necesario para mostrar el reporte signado
-    setTimeout(function () {
-        //crear la instancia del reporte
-        report = new Stimulsoft.Report.StiReport();
-
-        //cargar el repote desde una rita del directorio
-        report.loadFile(Reporte+".mrt");
-
-        //limpiar las base de datos de directorio de datos
-        //report.dictionary.databases.clear();
-
-        //asignar las variables del reporte para pasar los datos
-        //var ArrarDatos = valores.split('|');
-        //report._dictionary._variables._list[0].val = ArrarDatos[0];
-        //report._dictionary._variables._list[1].val = ArrarDatos[1];
-        //report._dictionary._variables._list[2].val = ArrarDatos[2];
-        //report._dictionary._variables._list[3].val = ArrarDatos[3];
-
-        //asignar el reporte al visor
-        viewer.report = report;
-    }, 50);
-}
-
-
 function CARGAR_EMPLEADOS(btnobj, filtro) {
     if ($(btnobj).linkbutton('options').disabled) { return false; }
-    else {
+    else {      
+        var data = {
+            Obj: {
+                FkOrganismo: 1,
+                Busqueda: (filtro == undefined ? filtro = "" : filtro)
+            }
+        }
+        $.ajax({
+            type: "POST",
+            url: "Fun_Reportes.aspx/Buscar_Empleados",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(data),
+            cache: "false",
+            beforeSend: function () {
+                $('#loading').show();
+            },
+            success: function (data) {
+                if (data.d[0] == "0") {
+                    obj = $.parseJSON(data.d[2]);
+                    $('#dgempleados').datagrid({
+                        data: obj,
+                        pagination: false,
+                        rownumbers: false,
+                        scroll: true,
+                        pageSize: 20,
+                        onCheck: onCheck,
+                        onUncheck: onUncheck,
+                        onCheckAll: function () {
+                            var allRows = $(this).datagrid('getRows');
+                            checkedRows = allRows;
+                        },
+                        onUncheckAll: function () {
+                            checkedRows = [];
+                        },
+                        error: function (err) {
+                            $('#loading').hide(100);
+                            $.messager.alert('Error', err.statusText, 'error');
+                        },
+                        complete: function () {
+                            $('#loading').hide(100);
+                        },
+                    });
+                }
+                else { $.messager.alert('Error', "No existen datos a mostrar", 'error'); }
+            },
+            error: function (err) {
+                $('#loading').hide(100);
+                $.messager.alert('Error', err.statusText, 'error');
+            },
+            complete: function () { $('#loading').hide(100); }
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            if (jqXHR.status === 0) {
 
-        if (filtro != "") { $('#txtvalor').textbox('setValue', filtro); }
-        else { filtro = $('#txtvalor').textbox('getValue'); }
+                alert('Not connect: Verify Network.');
 
-        if (filtro == undefined) { filtro = ""; }
+            } else if (jqXHR.status == 404) {
 
-        $('#dgempleados').datagrid({
-            url: 'listar_Empleados.aspx?busqueda=' + filtro + "&fkorganismo=" + fkorg,
-            pagination: true,
-            enableFilter: true,
-            rownumbers: true,
-            singleSelect: true,
-            striped: true,
-            scroll: true,
-            pageSize: 20,
-            showPageList: false,
-            onClickRow: function () {
-                var row = $('#dgempleados').datagrid('getSelected');               
-                $('#win').window('close');
+                alert('Requested page not found [404]');
+
+            } else if (jqXHR.status == 500) {
+
+                alert('Internal Server Error [500].');
+
+            } else if (textStatus === 'parsererror') {
+
+                alert('Requested JSON parse failed.');
+
+            } else if (textStatus === 'timeout') {
+
+                alert('Time out error.');
+
+            } else if (textStatus === 'abort') {
+
+                alert('Ajax request aborted.');
+
+            } else {
+
+                alert('Uncaught Error: ' + jqXHR.responseText);
+
             }
         });
 
         $('#loading').hide(100);
-        windows_porcentaje("#win", 90, 60, false, false, false, "Permisos");
-        // windows("#win", "90%", "60%", false, "Empleados");
+        windows_porcentaje("#win", 90, 60, false, false, false, "Empleados");       
+    }
+}
+
+
+function IMPRESION_GENERAL(btnobj) {
+    if ($(btnobj).linkbutton('options').disabled) { return false; }
+    else {
+        var Filtroa = "";
+
+        if (checkedRows.length > 0) {
+            for (var f = 0; f < checkedRows.length; f++) {
+                Filtroa += checkedRows[f].id + ",";
+            }
+            Filtroa = Filtroa.substring(0, Filtroa.length - 1);
+        }
+
+        var parametros = {};
+        parametros.FkOrganismo = Org;
+        parametros.Filtros = Filtroa;
+        parametros.Reporte = Reporte;
+
+        $.ajax({
+            type: "POST",
+            url: 'Fun_Reportes.aspx/Generar_Archivos',
+            data: JSON.stringify(parametros),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            beforeSend: function () {
+                $('#loading').show();
+            },
+            success: function (data) {
+                if (data.d[0] == "1") { $.messager.alert('Error', data.d, 'error'); }
+                else {  
+                    $("#win").window('close');
+                    $('#pvista').empty().html('<embed id="evista" width="100%" height="100%" src="' + data.d[2] + '"></embed>')
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $('#loading').hide(100);
+                $.messager.alert('Error', jqXHR.responseText, 'error');
+            },
+            complete: function () {
+                $('#loading').hide(100);
+            }
+        });
+
     }
 }

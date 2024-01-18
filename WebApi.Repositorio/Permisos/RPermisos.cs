@@ -39,14 +39,14 @@ namespace WebApi.Repositorio.Permisos
             List<ObjTree> LstObj = new();
             try
             {
-                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Permisos_Listar_Perfiles "+Obj.Idusuario);
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Permisos_Listar_Perfiles_TipoPuesto " + Obj.Idusuario);
                 if (ds.Tables.Count > 0)
                 {
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
                         TreeObj = new ObjTree();
                         TreeObj.Id = Convert.ToInt16(ds.Tables[0].Rows[i]["Id"].ToString());
-                        TreeObj.text = (ds.Tables[0].Rows[i]["Concepto"].ToString() == "" ? ds.Tables[0].Rows[i]["Descripcion"].ToString() : "(" + ds.Tables[0].Rows[i]["Concepto"].ToString() + ") " + ds.Tables[0].Rows[i]["Descripcion"].ToString());
+                        TreeObj.text = (ds.Tables[0].Rows[i]["Concepto"].ToString() == "" ? ds.Tables[0].Rows[i]["Descripcion"].ToString() : ds.Tables[0].Rows[i]["Descripcion"].ToString()+"-" + ds.Tables[0].Rows[i]["Concepto"].ToString());
                         TreeObj.strclave = ds.Tables[0].Rows[i]["idreg"].ToString();
                         TreeObj.nombre = ds.Tables[0].Rows[i]["NombreSalida"].ToString();
                         TreeObj.checkbox = Convert.ToBoolean(ds.Tables[0].Rows[i]["Marcar"].ToString());

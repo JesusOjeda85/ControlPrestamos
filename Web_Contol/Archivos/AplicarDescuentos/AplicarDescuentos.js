@@ -228,7 +228,7 @@ function CARGAR_DESCUENTOS(filtro) {
     var data = {
         Obj: {
             Desde: 1,
-            Hasta: 20,
+            Hasta: 50000,
             FkOrganismo: fkorg,
             FkConcepto: cveperfil,
             Busqueda: (filtro == undefined ? filtro = "" : filtro)
@@ -263,43 +263,43 @@ function CARGAR_DESCUENTOS(filtro) {
                     onUncheckAll: function () {
                         checkedRows = [];
                     },                            
-                    view: detailview,
-                    detailFormatter: function (index, row) {
-                        return '<div style="padding:2px;position:relative;"><table class="ddv"></table></div><div style="padding:2px;position:relative;"><table class="ddv2"></table></div>';
-                    },
-                    onExpandRow: function (index, row) {
-                        var ddv = $(this).datagrid('getRowDetail', index).find('table.ddv');
-                        var valor = row["Id"];
-                        var filobj = jQuery.grep(obj, function (Detalle, i) {
-                            return Detalle.Id == valor;
-                        });
-                        ddv.datagrid({
-                            data: filobj,
-                            fitColumns: true,
-                            singleSelect: true,
-                            rownumbers: true,
-                            striped: true,
-                            loadMsg: 'Cargando Detalle',
-                            height: 'auto',
-                            columns: [[
-                                { field: 'Categoria', title: 'Categoria', align: 'center' },
-                                { field: 'DescCategoria', title: 'DescCategoria', align: 'left' },
-                                { field: 'Adscripcion', title: 'Adscripcion', align: 'center' },
-                                { field: 'DescAdscripcion', title: 'DescAdscripcion', align: 'left' },
-                                { field: 'Pagaduria', title: 'Pagaduria', align: 'center' },
-                                { field: 'DescPagaduria', title: 'DescPagaduria', align: 'left' },
-                            ]],
-                            onResize: function () {
-                                $('#dgdatos').datagrid('fixDetailRowHeight', index);
-                            },
-                            onLoadSuccess: function () {
-                                setTimeout(function () {
-                                    $('#dgdatos').datagrid('fixDetailRowHeight', index);
-                                }, 0);
-                            }
-                        });
-                        $('#dgdatos').datagrid('fixDetailRowHeight', index);
-                    },                    
+                    //view: detailview,
+                    //detailFormatter: function (index, row) {
+                    //    return '<div style="padding:2px;position:relative;"><table class="ddv"></table></div><div style="padding:2px;position:relative;"><table class="ddv2"></table></div>';
+                    //},
+                    //onExpandRow: function (index, row) {
+                    //    var ddv = $(this).datagrid('getRowDetail', index).find('table.ddv');
+                    //    var valor = row["Id"];
+                    //    var filobj = jQuery.grep(obj, function (Detalle, i) {
+                    //        return Detalle.Id == valor;
+                    //    });
+                    //    ddv.datagrid({
+                    //        data: filobj,
+                    //        fitColumns: true,
+                    //        singleSelect: true,
+                    //        rownumbers: true,
+                    //        striped: true,
+                    //        loadMsg: 'Cargando Detalle',
+                    //        height: 'auto',
+                    //        columns: [[
+                    //            { field: 'Categoria', title: 'Categoria', align: 'center' },
+                    //            { field: 'DescCategoria', title: 'DescCategoria', align: 'left' },
+                    //            { field: 'Adscripcion', title: 'Adscripcion', align: 'center' },
+                    //            { field: 'DescAdscripcion', title: 'DescAdscripcion', align: 'left' },
+                    //            { field: 'Pagaduria', title: 'Pagaduria', align: 'center' },
+                    //            { field: 'DescPagaduria', title: 'DescPagaduria', align: 'left' },
+                    //        ]],
+                    //        onResize: function () {
+                    //            $('#dgdatos').datagrid('fixDetailRowHeight', index);
+                    //        },
+                    //        onLoadSuccess: function () {
+                    //            setTimeout(function () {
+                    //                $('#dgdatos').datagrid('fixDetailRowHeight', index);
+                    //            }, 0);
+                    //        }
+                    //    });
+                    //    $('#dgdatos').datagrid('fixDetailRowHeight', index);
+                    //},                    
                     onBeforeEdit: function (index, row) {      
                         var dg = $(this);
                         dg.datagrid('checkRow', index);                             
@@ -446,15 +446,17 @@ function APLICAR_DESCUENTOS() {
 function GUARDAR_DESCUENTOS(objbtn) {
     if ($(objbtn).linkbutton('options').disabled) { return false; }
     else {
-        if ($('#numaño').numberspinner('getValue') < localStorage.getItem('año')) { $.messager.alert('Error', 'El Año Seleccionado no puede ser menor al año actual', 'error'); return 0; }
+        var año = localStorage.getItem('año');
+        var quin = localStorage.getItem('quin');
+        if ($('#numaño').numberspinner('getValue') < año) { $.messager.alert('Error', 'El Año Seleccionado no puede ser menor al año actual', 'error'); return 0; }
         else
-        if ($('#numquincena').numberspinner('getValue') < localStorage.getItem('quin')) { $.messager.alert('Error', 'La Quincena Seleccionada no puede ser menor a la quincena actual', 'error'); return 0; }
+            if (($('#numquincena').numberspinner('getValue') < quin) && ($('#numaño').numberspinner('getValue')==año)) { $.messager.alert('Error', 'La Quincena Seleccionada no puede ser menor a la quincena actual', 'error'); return 0; }
         else
-            if ($('#numaño').numberspinner('getValue') < localStorage.getItem('año')) { $.messager.alert('Error', 'La Año Seleccionado no puede ser menor al año actual', 'error'); return 0; }
+            if ($('#numaño').numberspinner('getValue') < año) { $.messager.alert('Error', 'La Año Seleccionado no puede ser menor al año actual', 'error'); return 0; }
             else
                 if ($('#txtemision').textbox('getValue') == "") { $.messager.alert('Error', 'Falta el folio de la emisión', 'error'); return 0; }
             else {
-                if ($('#numaño').numberspinner('getValue') > localStorage.getItem('año')) { $('#numquincena').numberspinner('setValue', 1); }
+                    if ($('#numaño').numberspinner('getValue') > año) { $('#numquincena').numberspinner('setValue', 1); }
                   
                 
                 var Aplicados = [], Rechazados = [];

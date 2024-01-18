@@ -4,18 +4,18 @@ var checkedRows = [];
 
 
 $(document).ready(function () {
-    var org = $_GET('fkorg');
-    if (org != undefined) { fkorg = org; }
-    else { fkorg = ''; }
-    var cve = $_GET('cve');
-    if (cve != undefined) { cveperfil = cve; }
-    else { cveperfil = ''; }
-    var Perfil = $_GET('perfil');
-    if (Perfil != undefined) { NomPerfil = Perfil; }
-    else { NomPerfil = ''; }
+    //var org = $_GET('fkorg');
+    //if (org != undefined) { fkorg = org; }
+    //else { fkorg = ''; }
+    //var cve = $_GET('cve');
+    //if (cve != undefined) { cveperfil = cve; }
+    //else { cveperfil = ''; }
+    //var Perfil = $_GET('perfil');
+    //if (Perfil != undefined) { NomPerfil = Perfil; }
+    //else { NomPerfil = ''; }
     
 
-    $('#lblperfil').text('Perfil: ' + NomPerfil);
+    //$('#lblperfil').text('Perfil: ' + NomPerfil);
   
     CARGAR_PROCESOS();
 

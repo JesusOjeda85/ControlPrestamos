@@ -205,6 +205,7 @@ namespace WebApi.Repositorio.Captura
                         Cboobj = new ObjComboBox();
                         Cboobj.valor = ds.Tables[0].Rows[i][0].ToString();
                         Cboobj.descripcion = ds.Tables[0].Rows[i][1].ToString();
+                       
                         if (i == 0) { Cboobj.selected = true; }
                         else
                         { Cboobj.selected = false; }
@@ -221,6 +222,97 @@ namespace WebApi.Repositorio.Captura
                     msg.Data = null;
                 }
                 ds.Dispose();
+            }
+            catch (Exception ex)
+            {
+                msg.Error = 1;
+                msg.Mensaje = ex.Message.ToString();
+            }
+            return msg;
+        }
+        public static ObjMensaje Listar_ImportesPlazos(DatosCaptura obj)
+        {
+            ObjComboBox Cboobj = new();
+            ObjMensaje msg = new();
+            List<ObjComboBox> lstimportes = new();
+            List<ObjComboBox> lstplazos = new();
+            List<object> lista = new(); 
+            try
+            {
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Catalogos_Listar_ImportesOtorgados " + obj.FkOrganismo);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    Cboobj = new ObjComboBox();
+                    Cboobj.valor = "x";
+                    Cboobj.descripcion = "Seleccione una Opción";
+                    Cboobj.selected = true;
+                    lstimportes.Add(Cboobj);
+
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        Cboobj = new ObjComboBox();
+                        Cboobj.valor = ds.Tables[0].Rows[i][0].ToString();
+                        Cboobj.descripcion = ds.Tables[0].Rows[i][0].ToString();                       
+                        lstimportes.Add(Cboobj);
+                    }
+                    lista.Add(lstimportes);
+                }
+                if (ds.Tables[1].Rows.Count > 0)
+                {                   
+                    for (int i = 0; i < ds.Tables[1].Rows.Count; i++)
+                    {
+                        Cboobj = new ObjComboBox();
+                        Cboobj.valor = ds.Tables[1].Rows[i][0].ToString();
+                        Cboobj.descripcion = ds.Tables[1].Rows[i][1].ToString();
+                        if (i == 0) { Cboobj.selected = true; }
+                        else
+                        { Cboobj.selected = false; }
+                        lstplazos.Add(Cboobj);
+                    }
+                    lista.Add(lstplazos);
+                }
+                msg.Error = 0;
+                msg.Mensaje = "";
+                msg.Data = lista;
+            }
+            catch (Exception ex)
+            {
+                msg.Error = 1;
+                msg.Mensaje = ex.Message.ToString();
+            }
+            return msg;
+        }
+        public static ObjMensaje Listar_ConceptosPorPuesto(DatosCaptura obj)
+        {
+            ObjComboBox Cboobj = new();
+            ObjMensaje msg = new();
+            List<ObjComboBox> lstcat = new();
+            try
+            {
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Captura_Listar_ConceptosPorPuesto " + obj.FkTipoPuesto);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    Cboobj = new ObjComboBox();
+                    Cboobj.valor = "x";
+                    Cboobj.descripcion = "Seleccione una Opción";
+                    Cboobj.Qry = "";
+                    Cboobj.selected = true;
+                    lstcat.Add(Cboobj);
+
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        Cboobj = new ObjComboBox();
+                        Cboobj.valor = ds.Tables[0].Rows[i][0].ToString();
+                        Cboobj.descripcion = ds.Tables[0].Rows[i][1].ToString();
+                        Cboobj.Qry = ds.Tables[0].Rows[i][2].ToString();
+                        Cboobj.selected = false;
+                        lstcat.Add(Cboobj);
+                    }
+                }
+                
+                msg.Error = 0;
+                msg.Mensaje = "";
+                msg.Data = lstcat;
             }
             catch (Exception ex)
             {
@@ -297,9 +389,7 @@ namespace WebApi.Repositorio.Captura
                     new SqlParameter("@Cuenta", SqlDbType.Int) { Value = Obj.Cuenta },
                     new SqlParameter("@FkZonaPago", SqlDbType.Int) { Value = Obj.FkZonaPago },
                 };
-
-
-                //DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Captura_Guardar "+ Obj.IdUsuario+","+ Obj.FkOrganismo+","+ Obj.Empleado+",'"+ Obj.FechaSolicitud +"','"+ Obj.Rfc + "','" + Obj.Curp + "','" + Obj.ApPaterno + "','" + Obj.ApMaterno + "','" + Obj.Nombres + "','" + Obj.CvePagaduria + "','" + Obj.DesPagaduria + "','" + Obj.CveCategoria + "','" + Obj.DesCategoria + "','" + Obj.CveAdscripcion + "','" + Obj.DesAdscripcion + "'," + Obj.ImporteCredito+","+ Obj.FkPlazo + "," + Obj.FkTipoPago + "," + Obj.FkBanco + "," + Obj.Cuenta);
+               
                 DataSet ds = MetodosBD.EjecutarProcedimiento("SPT_Captura_Guardar ", parametro);
                 if (ds.Tables.Count > 0)
                 {

@@ -90,7 +90,7 @@ function LISTAR_REPORTES() {
                 data: obj,
                 onClick: function (node) {
                     if (node.children.length <= 0) {                        
-                        IR_PAGINA('Visor_Reportes.aspx', 'fkorg=' + fkorganismo + "&perfil=" + concepto + "&nomrep=" + node.text+"&Reporte="+node.nombre); 
+                        IR_PAGINA('Reportes.aspx', 'fkorg=' + fkorganismo + "&perfil=" + concepto + "&nomrep=" + node.text+"&Reporte="+node.nombre); 
                     }
                 }
             });

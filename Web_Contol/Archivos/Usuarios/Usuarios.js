@@ -397,8 +397,8 @@ function CARGAR_PERMISOS(btnobj) {
         LISTAR_MENUS();
                
         $('#loading').hide(100);
-        //windows_porcentaje("#win", 90, 60, false, false, false, "Permisos");  
-        windows("#win","90%","550px",false,"Permisos");
+       // windows_porcentaje("#win", 90, 90, false, false, false, "Permisos");  
+        windows("#win","90%","440px",false,"Permisos");
     }
 }
 

@@ -23,6 +23,9 @@ namespace WebApi.Mapeo
             CreateMap<DatosCaptura, IdOrganismoDto>();
             CreateMap<IdOrganismoDto, DatosCaptura>();
 
+            CreateMap<DatosCaptura, IdTipoPuestoDto>();
+            CreateMap<IdTipoPuestoDto, DatosCaptura>();
+
             /*Captura*/
             CreateMap<DatosCaptura, ModificarCapturaDto>();
             CreateMap<ModificarCapturaDto, DatosCaptura>();

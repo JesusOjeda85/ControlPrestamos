@@ -26,16 +26,17 @@
 
     $('#btnInicio').bind('click', function () { Cerrar(); });
 
-    $('#btnCaptura').bind('click', function () { AgregarTabPadre('#tpcaptura', 'Captura', '../Captura/Listar_Perfiles.aspx'); });
+    $('#btnCaptura').bind('click', function () { AgregarTabPadre('#tpcaptura', 'Captura', '../Captura/Captura.aspx'); });
     $('#btnAplicacion').bind('click', function () { AgregarTabPadre('#tpaplicacion', 'Aplicar Descuentos', '../AplicarDescuentos/Listar_Perfiles.aspx'); });
-    $('#btnNumeracion').bind('click', function () { AgregarTabPadre('#tpnumeracion', 'Numeración Cheques', '../Numeracion/Listar_Perfiles.aspx'); });
+    $('#btnNumeracion').bind('click', function () { AgregarTabPadre('#tpnumeracion', 'Numeración Cheques', '../Numeracion/Numeracion.aspx'); });
+    $('#btnConsulta').bind('click', function () { AgregarTabPadre('#tpconsulta', 'Consulta', '../Consulta/Consulta.aspx'); });
     $('#btnReportes').bind('click', function () { AgregarTabPadre('#tpreportes', 'Reportes', '../Reportes/Listar_Perfiles.aspx'); });
     $('#btnUsuarios').bind('click', function () { AgregarTabPadre('#tpusuarios', 'Usuarios', '../Usuarios/Usuarios.aspx'); });
     $('#btnImportacion').bind('click', function () { AgregarTabPadre('#tpcargar', 'Cargar Archivos', '../CargarYDescargar/Listar_Perfiles.aspx?mod=C'); });
     $('#btnExportacion').bind('click', function () { AgregarTabPadre('#tpsalida', 'Salida De Archivos', '../CargarYDescargar/Listar_Perfiles.aspx?mod=S'); });
 
-    $('#dmLiquidez').bind('click', function () { AgregarTabPadre('#tpsalida', 'Liquidez', '../CargarPadrones/Listar_Perfiles.aspx?mod=L'); });
-    $('#dmFondoA').bind('click', function () { AgregarTabPadre('#tpsalida', 'Fondo de Ahorrro', '../CargarPadrones/Listar_Perfiles.aspx?mod=F'); });
+    $('#dmLiquidez').bind('click', function () { AgregarTabPadre('#tpliquidez', 'Liquidez', '../CargarPadrones/Listar_Perfiles.aspx?mod=L'); });
+    $('#dmFondoA').bind('click', function () { AgregarTabPadre('#tpfondoa', 'Fondo de Ahorrro', '../CargarPadrones/Listar_Perfiles.aspx?mod=F'); });
 
     //$('#dmpagare').bind('click', function () { AgregarTabPadre('#tpsalida', 'Pagaré', '../Reportes/Pagare.aspx'); });
     
@@ -61,6 +62,7 @@ function CARGAR_PERMISOS() {
             var tblpermisosmenu = jQuery.parseJSON(obj[1]);
             var tblmenu = jQuery.parseJSON(obj[2]);
 
+            var submenu = false;
             if (data.d[4] == "False") {
                 for (var m = 0; m < tblmenu.length; m++) {
                     $('#' + tblmenu[m].Nombre).hide();
@@ -69,12 +71,27 @@ function CARGAR_PERMISOS() {
                 if (tblpermisosmenu.length > 0) {
                     for (var p = 0; p < tblpermisosmenu.length; p++) {
                         for (var m = 0; m < tblmenu.length; m++) {
-                            if (tblmenu[m].Id == tblpermisosmenu[p].fkMenu) { $('#' + tblpermisosmenu[p].Nombre).show(); break; }
+                            if (tblmenu[m].Id == tblpermisosmenu[p].fkMenu) {
+                                $('#' + tblpermisosmenu[p].Nombre).show();
+                                if (tblmenu[m].Id == 8) { submenu = true; }
+                                break;
+                            }
                         }
+                    }
+                    if (submenu == false) {
+                        $("#dtap").css({ top: '112px', height: '90%', width: '100%', position: 'absolute' });
+                    }
+                    else {
+                        $("#dtap").css({ top: '125px', height: '90%', width: '100%', position: 'absolute' });
                     }
                 }
             }
+            else {
+                $("#dtap").css({ top: '125px', height: '90%', width: '100%', position: 'absolute' });
+            }
             document.getElementById('lblusuario').innerHTML = data.d[3];
+
+
         },
         error: function (err) {
             $('#loading').hide(100);
@@ -94,6 +111,9 @@ function Cerrar() {
 }
 
 function AgregarTabPadre(objtap, titulo, href) {    
+
+    
+
     $('#tt').show();
     $("#tt").tabs({
         heightStyle: "fill",

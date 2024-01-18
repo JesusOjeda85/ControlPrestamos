@@ -22,7 +22,7 @@
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Usuarios.js?v0.4"></script>
+    <script src="Usuarios.js?v0.0"></script>
 </head>
 <body>
   <div class="w-screen h-screen" align="Center">
@@ -31,7 +31,7 @@
             <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-add'"  id="btnNuevo">Nuevo</a>
             <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save',disabled:true" id="btnGuardar" >Guardar</a>                                                        
         </div>  
-        <div class="easyui-layout" style="padding:2px; top:15px; width:90%; height:90%;overflow:hidden;">    
+        <div class="easyui-layout " style="padding:2px; top:2px; width:90%; height:90%; overflow:hidden;">    
             <div id="rmenu"  data-options="region:'west',split:true,hideCollapsedContent:false,collapsed:false" title="<span style='font-size:16px'>Lista de Usuarios</span>" style="width:30%; height:100%; padding:0px; overflow:hidden;" align="center">             
                 <div class="flex flex-col items-center overflow-hidden h-full" style="padding:2px;">
                     <input class="easyui-textbox" style="width:100%" id="txtfiltrar" data-options="prompt:'Buscar Usuarios'"/>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div data-options="region:'center'" style="width:70%; height:100%; padding:10px;" align="center" class="overflow-auto" > 
+            <div data-options="region:'center'" style="width:70%; height:100%; padding:6px;" align="center" class="overflow-auto" > 
                 <div class="flex flex-col px-4 sm:px-6 md:px-4 lg:px-4 py-4  w-full max-w-md ">   
                     <div class="flex flex-col mb-3">
                         <label class="text-left text-lg text-blue-900">Usuario</label>                    
@@ -81,7 +81,7 @@
       <div class="easyui-panel" style="padding:2px; width:100%;">
           <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'limpiar'" id="btnLPermisos" >Limpiar</a>
           <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save'" id="btnGpermisos" >Guardar</a>                            
-      </div>
+      </div>        
      <div id="tt" class="easyui-tabs" style="width:100%; height:94%;overflow:hidden;padding:2px;" data-options="plain:true">
           <div title="Perfiles" align="center" class="flex flex-col items-left" style="overflow:hidden;"> 
                <div class="flex flex-col items-center overflow-hidden h-full" style="padding:2px;">

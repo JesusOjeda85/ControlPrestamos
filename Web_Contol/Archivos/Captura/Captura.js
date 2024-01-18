@@ -1,18 +1,18 @@
-﻿var fkor = 0;
+﻿var fkorg = 0;
 var cveperfil = 0;
 var NomPerfil = "";
 $(document).ready(function () {   
-    var org = $_GET('fkorg');
-    if (org != undefined) { fkorg = org; }
-    else { fkorg = ''; }
-    var cve = $_GET('cve');
-    if (cve != undefined) { cveperfil = cve; }
-    else { cveperfil = ''; }
-    var Perfil = $_GET('perfil');
-    if (Perfil != undefined) { NomPerfil = Perfil; }
-    else { NomPerfil = ''; }
+    //var org = $_GET('fkorg');
+    //if (org != undefined) { fkorg = org; }
+    //else { fkorg = ''; }
+    //var cve = $_GET('cve');
+    //if (cve != undefined) { cveperfil = cve; }
+    //else { cveperfil = ''; }
+    //var Perfil = $_GET('perfil');
+    //if (Perfil != undefined) { NomPerfil = Perfil; }
+    //else { NomPerfil = ''; }
 
-    $('#lblconcepto').text('Perfil: ' + NomPerfil);
+    //$('#lblconcepto').text('Perfil: ' + NomPerfil);
 
     var text = $('#txtvalor');
     text.textbox('textbox').bind('keydown', function (e) {
@@ -34,11 +34,12 @@ $(document).ready(function () {
 });
 
 $(window).load(function () {  
-    LISTAR_PLAZOS();
-    LISTAR_BANCOS();
-    LISTAR_TIPOPAGO();   
-    LISTAR_ZONAPAGO();   
+    //LISTAR_PLAZOS();
+    //LISTAR_BANCOS();
     LISTAR_TIPOPUESTO();
+    LISTAR_TIPOPAGO();   
+    LISTAR_ZONAPAGO();      
+  
 });
 
 function IR_PAGINA(url, parametros) {
@@ -223,8 +224,94 @@ function LISTAR_TIPOPUESTO() {
             $('#cbotipopuesto').combobox({
                 data: obj,
                 valueField: 'valor',
+                textField: 'descripcion',                
+                editable: false,
+                onSelect: function (rec) {   
+                    
+                    LISTAR_CONCEPTOSPORPUESTO(rec.valor);
+                }
+            });
+           // LISTAR_CONCEPTOSPORPUESTO($('#cbotipopuesto').combobox('getValue'));
+        },
+        error: function (err) {
+            $('#loading').hide(100);
+            $.messager.alert('Error', er.statusText, 'error');
+        },
+        complete: function () { $('#loading').hide(100); }
+    });
+}
+function LISTAR_IMPORTES_PLAZOS(fkorg) {
+    var data = {
+        objorganismo: {
+            FkOrganismo: fkorg,
+        }
+    }
+    $.ajax({
+        type: "POST",
+        url: 'Fun_Captura.aspx/LISTAR_IMPORTES_PLAZOS',
+        data: JSON.stringify(data),
+        dataType: "json",
+        async: true,
+        cache: false,
+        contentType: "application/json; charset=utf-8",
+        beforeSend: function () {
+            $('#loading').show();
+        },
+        success: function (data) {
+            var obj = jQuery.parseJSON(data.d[2]);
+
+            $('#cboimporte').combobox({
+                data: obj[0],
+                valueField: 'valor',
                 textField: 'descripcion',
                 editable: false
+            });
+
+            $('#cboplazos').combobox({
+                data: obj[1],
+                valueField: 'valor',
+                textField: 'descripcion',
+                editable: false
+            });
+        },
+        error: function (err) {
+            $('#loading').hide(100);
+            $.messager.alert('Error', er.statusText, 'error');
+        },
+        complete: function () { $('#loading').hide(100); }
+    });
+}
+function LISTAR_CONCEPTOSPORPUESTO(fktipopuesto) {
+    var data = {
+        obj: {
+            FkTipopuesto: fktipopuesto,
+        }
+    }
+    $.ajax({
+        type: "POST",
+        url: 'Fun_Captura.aspx/LISTAR_CONCEPTOSPORPUESTO',
+        data: JSON.stringify(data),
+        dataType: "json",
+        async: true,
+        cache: false,
+        contentType: "application/json; charset=utf-8",
+        beforeSend: function () {
+            $('#loading').show();
+        },
+        success: function (data) {
+            var obj = jQuery.parseJSON(data.d[2]);
+         
+            $('#cboconceptos').combobox({
+                data: obj,
+                valueField: 'valor',
+                textField: 'descripcion',
+                editable: false,
+                onSelect: function (rec) {
+                    //fkorg = rec.qry;     
+                    if (rec.qry != "x") {
+                        LISTAR_IMPORTES_PLAZOS(rec.qry);
+                    }
+                }
             });
         },
         error: function (err) {
@@ -238,30 +325,32 @@ function LISTAR_TIPOPUESTO() {
 
 function LIMPIAR_CAPTURA() {
     $('#txtempleado').textbox('setValue', '');
-    $('#txtfechasolicitud').datebox('setValue', '');
-    $('#txtfechaingreso').datebox('setValue', '');
+    //$('#txtfechasolicitud').datebox('setValue', '');
+    //$('#txtfechaingreso').datebox('setValue', '');
     $('#txtrfc').textbox('setValue', '');
-    $('#txtcurp').textbox('setValue', '');
+    //$('#txtcurp').textbox('setValue', '');
     $('#txtpaterno').textbox('setValue', '');
     $('#txtmaterno').textbox('setValue', '');
     $('#txtnombres').textbox('setValue', '');
-    $('#txtdomicilio').textbox('setValue', '');
-    $('#txttelefono1').maskedbox('setValue', '');
-    $('#txttelefono2').maskedbox('setValue', '');
-    $('#txtcvecat').textbox('setValue', '');
-    $('#txtdescat').textbox('setValue', '');
-    $('#txtcveads').textbox('setValue', '');
-    $('#txtdesads').textbox('setValue', '');
-    $('#txtcvepag').textbox('setValue', '');
-    $('#txtdespag').textbox('setValue', '');
-    $('#txtimporte').numberbox('setValue','');
-    $('#cboplazos').combobox('setValue', 'x');
+    //$('#txtdomicilio').textbox('setValue', '');
+
+    $('#txttelefono1').textbox('setValue', '');
+  
+    $('#txttelefono2').textbox('setValue', '');
+    //$('#txtcvecat').textbox('setValue', '');
+    //$('#txtdescat').textbox('setValue', '');
+    //$('#txtcveads').textbox('setValue', '');
+    //$('#txtdesads').textbox('setValue', '');
+    //$('#txtcvepag').textbox('setValue', '');
+    //$('#txtdespag').textbox('setValue', '');   
+    $('#cboimporte').combobox('setValue', 'x');   
+    $('#cboplazos').combobox('select', $('#cboplazos').combobox('getData')[0].valor);
     $('#cbotipopago').combobox('setValue', 'x');
     $('#cbozonapago').combobox('setValue', 'x');
     $('#cbotipopuesto').combobox('setValue', '1');
-    $('#cbobanco').combobox('setValue', 'x');
+  /*  $('#cbobanco').combobox('setValue', 'x');*/
     $('#txtcuenta').numberbox('setValue', '');
-    $('#txtvalor').textbox('setValue', '');
+   /* $('#txtvalor').textbox('setValue', '');*/
 }
 
 function CARGAR_EMPLEADOS(btnobj,filtro) {
@@ -309,42 +398,44 @@ function CARGAR_EMPLEADOS(btnobj,filtro) {
 
 function GUARDAR_CAPTURA(btnobj) {
     if ($(btnobj).linkbutton('options').disabled) { return false; }
-    else {       
-        if ($('#cboplazos').combobox('getValue') == "x") { $.messager.alert('Error', "Falta Seleccionar el Plazo", 'error'); }
+    else {  
+        if ($('#cboconceptos').combobox('getValue') == "x") { $.messager.alert('Error', "Falta Seleccionar el Conceptor", 'error'); }
+        else
+        if ($('#cboplazos').combobox('getValue') == "") { $.messager.alert('Error', "Falta Seleccionar el Plazo", 'error'); }
         else
             if ($('#cbotipopago').combobox('getValue') == "x") { $.messager.alert('Error', "Falta Seleccionar el Tipo de Pago", 'error'); }
             else
-                if ($('#cbobanco').combobox('getValue') == "x") { $.messager.alert('Error', "Falta Seleccionar el Banco", 'error'); }
+                if (($('#txtcuenta').numberbox('getValue') == "") && (parseInt($('#cbotipopago').combobox('getValue'))==2)) { $.messager.alert('Error', "Falta la Cuenta Bancaria", 'error'); }
                 else
                     if ($('#cbozonapago').combobox('getValue') == "x") { $.messager.alert('Error', "Falta Seleccionar la Zona de Pago", 'error'); }
                 else {
                     var data = {
                         Obj: {                           
-                            FkOrganismo: fkorg,
-                            FkConcepto: cveperfil,
+                            FkOrganismo: 0,
+                            FkConcepto: $('#cboconceptos').combobox('getValue'),
                             Empleado: $('#txtempleado').textbox('getValue'),
-                            FechaSolicitud: $('#txtfechasolicitud').datebox('getValue'),
-                            FechaIngreso: $('#txtfechaingreso').datebox('getValue'),
+                            FechaSolicitud: '',
+                            FechaIngreso:'',
                             Rfc: $('#txtrfc').textbox('getValue'),
-                            Curp: $('#txtcurp').textbox('getValue'),
+                            Curp: '',
                             ApPaterno: $('#txtpaterno').textbox('getValue'),
                             ApMaterno: $('#txtmaterno').textbox('getValue'),
                             Nombres: $('#txtnombres').textbox('getValue'),
-                            Domicilio: $('#txtdomicilio').textbox('getValue'),
-                            Telefono1: $('#txttelefono1').maskedbox('getValue'),
-                            Telefono2: $('#txttelefono2').maskedbox('getValue'),
-                            CvePagaduria: $('#txtcvepag').textbox('getValue'),
-                            DesPagaduria: $('#txtdespag').textbox('getValue'),
-                            CveCategoria: $('#txtcvecat').textbox('getValue'),
-                            DesCategoria: $('#txtdescat').textbox('getValue'),
-                            CveAdscripcion: $('#txtcveads').textbox('getValue'),
-                            DesAdscripcion: $('#txtdesads').textbox('getValue'),
-                            ImporteCredito: $('#txtimporte').numberbox('getValue'),
-                            FkPlazo: $('#cboplazos').combobox('getValue'),
-                            FkTipoPago: $('#cbotipopago').combobox('getValue'),
-                            FkTipoPuesto: $('#cbotipopuesto').combobox('getValue'),
-                            FkBanco: $('#cbobanco').combobox('getValue'),
-                            Cuenta: $('#txtcuenta').numberbox('getValue'),
+                            Domicilio:'',
+                            Telefono1: $('#txttelefono1').textbox('getValue'),
+                            Telefono2: $('#txttelefono2').textbox('getValue'),
+                            CvePagaduria:'',
+                            DesPagaduria: '',
+                            CveCategoria: '',
+                            DesCategoria: '',
+                            CveAdscripcion: '',
+                            DesAdscripcion: '',
+                            ImporteCredito: parseFloat($('#cboimporte').combobox('getValue')),
+                            FkPlazo: parseInt($('#cboplazos').combobox('getValue')),
+                            FkTipoPago: parseInt($('#cbotipopago').combobox('getValue')),
+                            FkTipoPuesto: parseInt($('#cbotipopuesto').combobox('getValue')),
+                            FkBanco: 0,
+                            Cuenta: ($('#txtcuenta').numberbox('getValue') == '') ? 0 : $('#txtcuenta').numberbox('getValue'),
                             FkZonaPago: $('#cbozonapago').combobox('getValue')
                         }
                     }
@@ -362,6 +453,7 @@ function GUARDAR_CAPTURA(btnobj) {
                         success: function (data) {
                             if (data.d[0] == "0") {
                                 $.messager.alert('Información', data.d[1], 'info');
+                                LIMPIAR_CAPTURA();
                             }
                             else { $.messager.alert('Error', data.d[1], 'error'); }
                         },

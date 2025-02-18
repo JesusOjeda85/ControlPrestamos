@@ -15,7 +15,7 @@ namespace WebApi.Entidades
         public string APPaterno { get; set; }
         public string APMaterno { get; set; }
         public string Nombres { get; set; }
-        public bool Estatus { get; set; }
-        public bool Administrador { get; set; }
+        public Int16 Estatus { get; set; }
+        public Int16 Administrador { get; set; }
     }
 }

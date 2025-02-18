@@ -2,9 +2,8 @@
 using ClsObjetos;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Dto;
-using WebApi.Entidades;
 using WebApi.Repositorio.AplicacionDescuentos;
-using WebApi.Repositorio.CargayDescarga;
+
 
 namespace WebApi.Controllers.AplicacionDescuentos
 {
@@ -12,12 +11,12 @@ namespace WebApi.Controllers.AplicacionDescuentos
     [ApiController]
     public class AplicacionController : ControllerBase
     {
-        private readonly IMapper mapper;
+        //private readonly IMapper mapper;
 
-        public AplicacionController(IMapper mapper)
-        {
-            this.mapper = mapper;
-        }
+        //public AplicacionController(IMapper mapper)
+        //{
+        //    this.mapper = mapper;
+        //}
 
         [HttpPost]
         [Route("Cargar_Descuentos")]
@@ -31,8 +30,8 @@ namespace WebApi.Controllers.AplicacionDescuentos
         [Route("Aplicar_Descuentos")]
         public IActionResult Aplicar_Descuentos(Aplicar_DescuentosDto ObjDto)
         {
-            var obj = mapper.Map<DatosCaptura>(ObjDto);
-            ObjMensaje msg = RAplicacion.Aplicar_Descuentos(obj);
+            //var obj = mapper.Map<DatosCaptura>(ObjDto);
+            ObjMensaje msg = RAplicacion.Aplicar_Descuentos(ObjDto);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
 

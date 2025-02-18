@@ -7,20 +7,6 @@ var checkedRows = [];
 var consignos = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
 var sinsignos = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
 
-//  public static string removerSignosAcentos(String texto)
-//{
-//    StringBuilder textoSinAcentos = new StringBuilder(texto.Length);
-//    int indexConAcento;
-//    foreach(char caracter in texto)
-//    {
-//        indexConAcento = consignos.IndexOf(caracter);
-//        if (indexConAcento > -1)
-//            textoSinAcentos.Append(sinsignos.Substring(indexConAcento, 1));
-//        else
-//            textoSinAcentos.Append(caracter);
-//    }
-//    return textoSinAcentos.ToString();
-//}
 
 function $_GET(param) {
     url = document.URL;
@@ -144,8 +130,8 @@ function formattedDate(date) {
 function windows(objwin, width, heigth, ajustable, titulo) {
     var $win;
     $win = $(objwin).window({
-        width: width,
-        height: heigth,
+        width: width+"px",
+        height: heigth+"px",
         border: true,
         modal: true,       
         collapsible: false,
@@ -558,20 +544,30 @@ function FOCUS(txtobjeto, dgobjeto) {
     text.textbox('clear').textbox('textbox').focus();
 }
 
-function TXTFOCUS(txtobjeto)
-{
-    var text = $(txtobjeto);
-    text.textbox('clear').textbox('textbox').focus();
+function TXTFOCUS(obj,txtobjeto)
+{ 
+    if (obj == 'textbox') {
+        var text = $(txtobjeto);
+        text.textbox('clear').textbox('textbox').focus();
+    }
+    if (obj == 'numberbox') {
+        var text = $(txtobjeto);
+        text.numberbox('clear').numberbox('textbox').focus();
+    }
 }
 
-//function Niveles(titulocat,tblant, tblsig, Valor, nivelant,paginanivel) {
-//    this.TituloCatalogo = titulocat;
-//    this.TablaAnt = tblant;
-//    this.TablaSig = tblsig;
-//    this.Valor = Valor;
-//    this.NivelAnt = nivelant;
-//    this.PaginaNivel = paginanivel;
-//}
+function TXTALINEAR(obj, txtobjeto, alieacion) {
+    if (obj == 'numberbox') { $(txtobjeto).numberbox('textbox').css('text-align', alieacion); }
+    if (obj == 'textbox') { $(txtobjeto).textbox('textbox').css('text-align', alieacion); }
+}
+
+function LIMPIAR_OBJ(obj, txtobjeto) {
+    if (obj == 'numberbox') { $(txtobjeto).numberbox('setValue', ''); }
+    if (obj == 'textbox') { $(txtobjeto).textbox('setValue', ''); }
+}
+
+
+
 
 
 function FILTRAR_GRID_INDICADORES(dgobjeto, txtvalor, cbcampos, cbocon) {
@@ -908,21 +904,6 @@ function getChecked_Array(objtre) {
     return ss;
 }
 
-
-
-//$.extend($.fn.tree.methods, {
-//    unselect: function (jq, target) {
-//        return jq.each(function () {
-//            var opts = $(this).tree('options');
-//            $(target).removeClass('tree-node-selected');
-//            if (opts.onUnselect) {
-//                opts.onUnselect.call(this, $(this).tree('getNode', target));
-//            }
-//        });
-//    }
-//});
-
-
 function FILTRAR_TREE(objtxt, objtre, cerrar) {
     var valor = $(objtxt).textbox('getValue').toUpperCase().replace('Á', 'A').replace('É', 'E').replace('Í', 'I').replace('Ó', 'O').replace('Ú', 'U');
     if (valor != "") {
@@ -945,14 +926,6 @@ function TXT_FILTRO_TREE(objtxt, objtre,cerrar) {
         }
     });
 }
-//var windowWidth = ((parseInt($(window).width())) / 2) - 120;
-
-//var windowWidth = $(window).width();
-//var windowHeight = $(window).height();
-//$('#divizquierda').css({ 'width': windowWidth, 'height': windowHeight });
-
-//var div = $('#divizquierda');
-//div.css("top", ($(window).height() - div.height()) / 2 + 'px');
 
 function DESMARCAR_FILA_GRID(dgobj)
 {

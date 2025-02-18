@@ -13,6 +13,7 @@ namespace ClsObjetos
             public string Mensaje { get; set; }
             public object Data { get; set; }
             public string Datos { get; set; }
+            public string Token { get; set; }
 
             public ObjMensaje()
             {

@@ -13,7 +13,7 @@ namespace WebApi.Controllers.Consulta
     {
         [HttpPost]
         [Route("Listar_Empleados")]
-        public IActionResult Listar_Empleados(FiltroBuscarEmpleado Obj)
+        public IActionResult Listar_Empleados(BuscarEmpleado Obj)
         {
             ObjMensaje msg = RConsulta.Listar_Empleados(Obj);
             return StatusCode(StatusCodes.Status200OK, msg);

@@ -21,12 +21,13 @@ namespace ControlDescuentos.Archivos.Numeracion
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod]
-        public static string[] Cargar_Procesos()
+        public static string[] Cargar_Procesos(DatosNumeracion Obj)
         {
-            string[] result = { "", "", "" };
+            string[] result = { "", "", "" };           
             SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
-                   
-            string respuesta = Llamar_Api.GetItem("Numeracion/Listar_Emisiones");
+
+            string jsonobj = JsonConvert.SerializeObject(Obj);
+            string respuesta =  Llamar_Api.PostItem("Numeracion/Listar_Emisiones", jsonobj);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
             result[0] = msg.Error.ToString();
             result[1] = msg.Mensaje;
@@ -38,12 +39,60 @@ namespace ControlDescuentos.Archivos.Numeracion
         [ScriptMethod]
         public static string[] APLICAR_NUMERACION(DatosNumeracion Obj)
         {
+            string[] result = { "", "", "" };            
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            Obj.fkusuario = objusuario.Idusuario;
+
+            string jsonobj = JsonConvert.SerializeObject(Obj);
+            string respuesta = Llamar_Api.PostItem("Numeracion/Aplicar_Numeracion", jsonobj); 
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] Listar_SalidasEmisiones(DatosNumeracion Obj)
+        {
+            string[] result = { "", "", "" };
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            string jsonobj = JsonConvert.SerializeObject(Obj);
+            string respuesta = Llamar_Api.PostItem("Numeracion/Listar_SalidasEmisiones", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }        
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] Cargar_Emisiones_Renumeracion(DatosNumeracion Obj)
+        {
+            string[] result = { "", "", "" };
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            string jsonobj = JsonConvert.SerializeObject(Obj);
+            string respuesta = Llamar_Api.PostItem("Numeracion/Listar_Emisiones_Renumeracion", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] APLICAR_RENUMERACION(DatosNumeracion Obj)
+        {
             string[] result = { "", "", "" };
             SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
             Obj.fkusuario = objusuario.Idusuario;
 
             string jsonobj = JsonConvert.SerializeObject(Obj);
-            string respuesta = Llamar_Api.PostItem("Numeracion/Aplicar_Numeracion", jsonobj);
+            string respuesta = Llamar_Api.PostItem("Numeracion/Aplicar_Renumeracion", jsonobj);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
             result[0] = msg.Error.ToString();
             result[1] = msg.Mensaje;

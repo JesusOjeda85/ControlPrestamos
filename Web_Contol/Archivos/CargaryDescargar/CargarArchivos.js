@@ -1,19 +1,19 @@
 ﻿var NomPerfil = "";
 var cvePerfil = 0;
 $(document).ready(function () {
-    var org = $_GET('fkorg');
-    if (org != undefined) { fkorg = org; }
-    else { fkorg = ''; }
-    var cve = $_GET('cve');
-    if (cve != undefined) { cveperfil = cve; }
-    else { cveperfil = ''; }
-    var Perfil = $_GET('perfil');
-    if (Perfil != undefined) { NomPerfil = Perfil; }
-    else { NomPerfil = ''; }
+    //var org = $_GET('fkorg');
+    //if (org != undefined) { fkorg = org; }
+    //else { fkorg = ''; }
+    //var cve = $_GET('cve');
+    //if (cve != undefined) { cveperfil = cve; }
+    //else { cveperfil = ''; }
+    //var Perfil = $_GET('perfil');
+    //if (Perfil != undefined) { NomPerfil = Perfil; }
+    //else { NomPerfil = ''; }
 
-    $('#lblperfil').text('Perfil: ' + NomPerfil);
+    //$('#lblperfil').text('Perfil: ' + NomPerfil);
 
-    $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Perfiles.aspx', 'mod=C'); });
+    //$('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Perfiles.aspx', 'mod=C'); });
 
     $('#xls').filebox({
         buttonText: 'Examinar',
@@ -55,7 +55,12 @@ $(document).ready(function () {
 
     $('#btnGuardar').bind('click', function () { GUARDAR_ARCHIVO('#btnGuardar'); });
 
-    
+    $('#chkE').linkbutton({
+        text: '<span style="font-size:18px">Ejecutivo</span>'
+    });
+    $('#chkM').linkbutton({
+        text: '<span style="font-size:18px">Magisterio</span>'
+    });
 });
 
 function IR_PAGINA(url, parametros) {
@@ -97,9 +102,8 @@ function GUARDAR_ARCHIVO(btnobj) {
 
 
             var data = {
-                Obj: {
-                    CvePerfil: cveperfil,
-                    FkOrganismo:fkorg,
+                Obj: {                    
+                    FkOrganismo: ($('#chkE').linkbutton('options').selected) ? 1 : 2,
                     Nombre: NombreArchivo, 
                     Quincena:quincena,
                     Archivo: sessionStorage.getItem('JsonData'),

@@ -4,6 +4,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+         <meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Last-Modified" content="0"/>
+<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -21,8 +25,8 @@
 
  <script type="text/javascript" src="../../jqueryesy/jquery.min.js"></script>
  <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
-    <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Usuarios.js?v0.0"></script>
+    <script src="../../Scripts/Funsiones.js?0.2"></script>
+    <script src="Usuarios.js?v0.5"></script>
 </head>
 <body>
   <div class="w-screen h-screen" align="Center">
@@ -77,28 +81,20 @@
             </div>
         </div>  
  </div>
-  <div class="easyui-dialog flex flex-col items-center" id="win" title="Permisos" closed="true" style="padding:2px; background-color:#FCFDFF;">
+  <div class="easyui-dialog flex flex-col ispace-x-4" id="win" title="Permisos" closed="true" style="padding:2px; background-color:#FCFDFF;">
       <div class="easyui-panel" style="padding:2px; width:100%;">
           <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'limpiar'" id="btnLPermisos" >Limpiar</a>
           <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save'" id="btnGpermisos" >Guardar</a>                            
       </div>        
      <div id="tt" class="easyui-tabs" style="width:100%; height:94%;overflow:hidden;padding:2px;" data-options="plain:true">
-          <div title="Perfiles" align="center" class="flex flex-col items-left" style="overflow:hidden;"> 
-               <div class="flex flex-col items-center overflow-hidden h-full" style="padding:2px;">
-                    <input class="easyui-textbox" style="width:100%" id="txtfilperfil" data-options="prompt:'Buscar Perfil'"/>
-                    <div class="text-left" style="width:100%;  height:96%; padding:2px; overflow:auto;" >
-                       <ul class="easyui-tree" id="lstperfil" style="width:100%; height:100%;" data-options="animate:true,lines:false,checkbox:true"></ul>                        
-                    </div>
-                </div>
-          </div>
          <div title="Menus" align="center" class="flex flex-col items-left" style="overflow:hidden;"> 
-              <div class="flex flex-col items-center overflow-hidden h-full" style="padding:2px;">
-                  <input class="easyui-textbox" style="width:100%" id="txtfilmenu" data-options="prompt:'Buscar Menu'"/>
-                  <div class="text-left" style="width:100%;  height:96%; padding:2px; overflow:auto;" >
-                        <ul class="easyui-tree" id="lstmenus" style="width:100%; height:100%;" data-options="animate:true,lines:false,checkbox:true,cascadeCheck:false"></ul>                        
-                  </div>
-              </div>
-          </div>
+             <div class="flex flex-col items-center overflow-hidden h-full" style="padding:2px;">
+                <input class="easyui-textbox" style="width:100%" id="txtfilmenu" data-options="prompt:'Buscar Menu'"/>
+                <div class="text-left" style="width:100%;  height:96%; padding:2px; overflow:auto;" >
+                    <ul class="easyui-tree" id="lstmenus" style="width:100%; height:100%;" data-options="animate:true,lines:false,checkbox:true,cascadeCheck:false"></ul>                        
+                </div>
+            </div>
+        </div>        
      </div>
   </div>
 <div class="modal w-screen h-screen items-center" style="display: none;" id="loading" align="center">

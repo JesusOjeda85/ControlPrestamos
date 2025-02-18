@@ -8,14 +8,22 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.5.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Ejemplo Blazor\Prestamos\Prestamos_Shared\Prestamos_Shared.csproj" />
+    <ProjectReference Include="..\ClsObjetos\ClsObjetos.csproj" />
     <ProjectReference Include="..\WebApi.Dto\WebApi.Dto.csproj" />
-    <ProjectReference Include="..\WebApi.Entidades\WebApi.Entidades.csproj" />
-    <ProjectReference Include="..\WebApi.Mapeo\WebApi.Mapeo.csproj" />
     <ProjectReference Include="..\WebApi.Repositorio\WebApi.Repositorio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>

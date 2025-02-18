@@ -10,5 +10,6 @@ namespace WebApi.Entidades
     {
         public int fkusuario { get; set; }
         public string Proceso { get; set; }
+        public string Modulo { get; set; }
     }
 }

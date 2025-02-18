@@ -3,6 +3,7 @@ using ClsObjetos;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.Script.Services;
@@ -26,8 +27,8 @@ namespace ControlDescuentos
         [ScriptMethod]
         public static string[] Iniciar_Sesion(LoginDto obj)
         {
-            string[] result = { "", "", "" };        
-            
+            string[] result = { "", "", "" };
+
             string jsondata = JsonConvert.SerializeObject(obj);
             string respuesta = Llamar_Api.PostItem("Login/Iniciar_Sesion", jsondata);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
@@ -35,11 +36,12 @@ namespace ControlDescuentos
             result[1] = msg.Mensaje;
             if (msg.Error.ToString() == "0")
             {
-                string strsesion= JsonConvert.SerializeObject(msg.Data);
+                string strsesion = JsonConvert.SerializeObject(msg.Data);
                 SesionDto sesion = JsonConvert.DeserializeObject<SesionDto>(strsesion);
                 HttpContext.Current.Session["Sesion"] = sesion;
                 HttpContext.Current.Session["Quincena"] = msg.Datos;
             }
+
             return result;
         }
     }

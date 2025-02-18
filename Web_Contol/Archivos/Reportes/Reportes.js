@@ -1,6 +1,8 @@
 ﻿var Org = "";
 var NomRep = "";
 var Reporte = "";
+var Proceso = "";
+var CargaInicial = "";
 var checkedRows = [];
 $(document).ready(function () {
     var org = $_GET('fkorg');
@@ -15,18 +17,24 @@ $(document).ready(function () {
     var reporte = $_GET('Reporte');
     if (reporte != undefined) { Reporte = reporte; }
     else { Reporte = ''; }
+    var proceso = $_GET('Proceso');
+    if (proceso != undefined) { Proceso = proceso; }
+    else { Proceso = ''; }
+    var cargainicial = $_GET('CargaInicial');
+    if (cargainicial != undefined) { CargaInicial = cargainicial; }
+    else { CargaInicial = ''; }
 
     $('#lbl').text('Perfil: ' + Perfil + " / Reporte: " + NomRep);
 
-    $('#btnBuscar').bind('click', function () { CARGAR_EMPLEADOS('#btnBuscar', ""); });
+    $('#btnBuscar').bind('click', function () { CARGAR_EMPLEADOS(""); });
 
-    $('#btnBempleado').bind('click', function () { CARGAR_EMPLEADOS('#btnBuscar', $('#txtvalor').textbox('getValue')); });
+    $('#btnBempleado').bind('click', function () { CARGAR_EMPLEADOS($('#txtvalor').textbox('getValue')); });
 
     var text = $('#txtvalor');
     text.textbox('textbox').bind('keydown', function (e) {
         if (e.keyCode == 13) {
             var valor = text.val();
-            CARGAR_EMPLEADOS('#btnBuscar', valor);
+            CARGAR_EMPLEADOS(valor);
         }
     });
 
@@ -37,6 +45,10 @@ $(document).ready(function () {
     $('#btnImpGeneral').bind('click', function () { IMPRESION_GENERAL('#btnImpGeneral'); });
 
     $('#btnImprimir').bind('click', function () { IMPRESION_GENERAL('#btnImprimir'); });
+
+    $('#btnRegresar').bind('click', function () { $('#pvista').empty(); IR_PAGINA('Listar_Perfiles.aspx', ''); });
+
+    if (CargaInicial == 'True') { IMPRESION_GENERAL('#btnImprimir'); }
 });
 
 
@@ -81,9 +93,9 @@ function IR_PAGINA(url, parametros) {
     });
 }
 
-function CARGAR_EMPLEADOS(btnobj, filtro) {
-    if ($(btnobj).linkbutton('options').disabled) { return false; }
-    else {      
+function CARGAR_EMPLEADOS(filtro) {
+    //if ($(btnobj).linkbutton('options').disabled) { return false; }
+    //else {      
         var data = {
             Obj: {
                 FkOrganismo: 1,
@@ -166,9 +178,9 @@ function CARGAR_EMPLEADOS(btnobj, filtro) {
             }
         });
 
-        $('#loading').hide(100);
-        windows_porcentaje("#win", 90, 60, false, false, false, "Empleados");       
-    }
+    $('#loading').hide(100);    
+    windows_porcentaje("#win", 90, 60, false, false, false, "Empleados");
+    //}
 }
 
 
@@ -188,10 +200,11 @@ function IMPRESION_GENERAL(btnobj) {
         parametros.FkOrganismo = Org;
         parametros.Filtros = Filtroa;
         parametros.Reporte = Reporte;
+        parametros.Proceso = Proceso;
 
         $.ajax({
             type: "POST",
-            url: 'Fun_Reportes.aspx/Generar_Archivos',
+            url: '../ArchivosRdlc/Fun_Archivos.aspx/Generar_Archivos',
             data: JSON.stringify(parametros),
             dataType: "json",
             contentType: "application/json; charset=utf-8",
@@ -202,7 +215,8 @@ function IMPRESION_GENERAL(btnobj) {
                 if (data.d[0] == "1") { $.messager.alert('Error', data.d, 'error'); }
                 else {  
                     $("#win").window('close');
-                    $('#pvista').empty().html('<embed id="evista" width="100%" height="100%" src="' + data.d[2] + '"></embed>')
+                    $('#pvista').empty();
+                    $('#pvista').empty().html('<embed id="evista" width="100%" height="100%" src="' + "../ArchivosRdlc/" + data.d[2] + '"></embed>')
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {

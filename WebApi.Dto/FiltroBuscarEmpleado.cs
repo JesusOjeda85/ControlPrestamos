@@ -8,6 +8,6 @@ namespace WebApi.Dto
 {
     public class FiltroBuscarEmpleado
     {
-        public string Busqueda { get; set; }
+        public string Condicion { get; set; }
     }
 }

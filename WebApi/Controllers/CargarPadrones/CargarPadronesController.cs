@@ -18,5 +18,13 @@ namespace WebApi.Controllers.CargarPadrones
             ObjMensaje msg = RCargarPadrones.Padron_Liquidez(Obj);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
+
+        [HttpPost]
+        [Route("Padron_Empleados")]
+        public IActionResult Padron_Empleados(DatosPadron Obj)
+        {
+            ObjMensaje msg = RCargarPadrones.Padron_Empleados(Obj);
+            return StatusCode(StatusCodes.Status200OK, msg);
+        }
     }
 }

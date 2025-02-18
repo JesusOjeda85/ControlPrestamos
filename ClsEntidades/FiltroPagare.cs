@@ -8,7 +8,10 @@ namespace ClsEntidades
 {
     public class FiltroPagare
     {
-        public int FkOrganismo { get; set; }
+        public string FkOrganismo { get; set; }
         public string Condicion { get; set; }
+        public string Modulo { get; set; } = string.Empty;
+        public int ChequesNulos { get; set; }
+        public string ImpresionCH { get; set; }
     }
 }

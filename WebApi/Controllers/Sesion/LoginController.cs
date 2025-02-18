@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-
 using ClsObjetos;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Dto;
 using WebApi.Entidades;
@@ -13,19 +11,21 @@ namespace WebApi.Controllers.Login
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly IMapper mapper;
+        //private readonly IMapper mapper;
 
-        public LoginController(IMapper mapper)
-        {
-            this.mapper = mapper;
-        }
+        //public LoginController(IMapper mapper)
+        //{
+        //    this.mapper = mapper;
+        //}
+
+       
 
         [HttpPost]
         [Route("Iniciar_Sesion")]
-        public IActionResult Iniciar_Session(LoginDto objDto)
+        public IActionResult Iniciar_Sesion(LoginDto objDto)
         {
-            var obj = mapper.Map<DatosUsuario>(objDto);
-            ObjMensaje msg = RSesion.Iniciar_Seccion(obj);
+            //var obj = mapper.Map<DatosUsuario>(objDto);
+            ObjMensaje msg = RSesion.Iniciar_Sesion(objDto);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
 
@@ -34,8 +34,8 @@ namespace WebApi.Controllers.Login
         [Route("Cambiar_Contraseña")]
         public IActionResult Cambiar_Contraseña(CambioContraseñaDTO ObjDto)
         {
-            var obj = mapper.Map<DatosUsuario>(ObjDto);
-            ObjMensaje msg = RSesion.Cambiar_Contraseña(obj);
+            //var obj = mapper.Map<DatosUsuario>(ObjDto);
+            ObjMensaje msg = RSesion.Cambiar_Contraseña(ObjDto);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
     }

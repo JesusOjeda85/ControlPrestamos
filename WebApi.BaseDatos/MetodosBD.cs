@@ -1,11 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace WebApi.BaseDatos
 {
@@ -79,14 +75,6 @@ namespace WebApi.BaseDatos
                 if (parametros != null)
                 {
                     Adaptador.SelectCommand.Parameters.AddRange(parametros.ToArray());
-
-                    //int i = 0;
-                    //foreach (SqlParameter par in parametros)
-                    //{                       
-                    //    // Acá hay que tener cuidado con el orden y la cantidad de parámetros.
-                    //    par.Value = parametros.ElementAt(i);
-                    //    i++;
-                    //}
                 }
                 try
                 {

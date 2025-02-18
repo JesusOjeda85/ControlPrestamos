@@ -104,6 +104,46 @@ namespace ControlDescuentos.Archivos.Captura
             return result;
         }
 
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] LISTAR_MOTIVOSBAJAS()
+        {
+            string[] result = { "", "", "" };
+            string respuesta = Llamar_Api.GetItem("Captura/Listar_MotivosBajas");
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] LISTAR_CAUSASMUERTE()
+        {
+            string[] result = { "", "", "" };
+            string respuesta = Llamar_Api.GetItem("Captura/Listar_CausasMuerte");
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] LISTAR_CONCEPTOSSINIESTROS()
+        {
+            string[] result = { "", "", "" };
+            string respuesta = Llamar_Api.GetItem("Captura/Listar_ConceptosSiniestros");
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod]
@@ -142,6 +182,69 @@ namespace ControlDescuentos.Archivos.Captura
             Obj.FkUsuarioCaptura = objusuario.Idusuario;
             string jsonobj = JsonConvert.SerializeObject(Obj);
             string respuesta = Llamar_Api.PostItem("Captura/Guardar_Captura", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] ELIMINAR_CAPTURA(DatosCaptura Obj)
+        {
+            string[] result = { "", "", "" };
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            Obj.FkUsuarioCaptura = objusuario.Idusuario;
+            string jsonobj = JsonConvert.SerializeObject(Obj);
+            string respuesta = Llamar_Api.PostItem("Captura/Eliminar_Captura", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            result[2] = JsonConvert.SerializeObject(msg.Data);
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] GUARDAR_CAPTURA_RETIROS(DatosCapturaRetiros Obj)
+        {
+            string[] result = { "", "", "" };
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            Obj.FkUsuarioCaptura = objusuario.Idusuario;
+
+            string jsonobj = JsonConvert.SerializeObject(Obj);
+            string respuesta = Llamar_Api.PostItem("Captura/Guardar_Captura_Retiros", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;           
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] GUARDAR_CAPTURA_SINIESTROS(DatosCapturaSiniestros Obj)
+        {
+            string[] result = { "", "", "" };
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            Obj.FkUsuarioCaptura = objusuario.Idusuario;
+
+            string jsonobj = JsonConvert.SerializeObject(Obj);
+            string respuesta = Llamar_Api.PostItem("Captura/Guardar_Captura_Siniestros", jsonobj);
+            ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
+            result[0] = msg.Error.ToString();
+            result[1] = msg.Mensaje;
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod]
+        public static string[] LISTAR_REVISION_CAPTURA(DatosNumeracion Obj)
+        {
+            string[] result = { "", "", "" };
+            SesionDto objusuario = (SesionDto)HttpContext.Current.Session["Sesion"];
+            string jsonobj = JsonConvert.SerializeObject(Obj);
+            string respuesta = Llamar_Api.PostItem("Captura/Listar_Revision_Captura", jsonobj);
             ObjMensaje msg = JsonConvert.DeserializeObject<ObjMensaje>(respuesta);
             result[0] = msg.Error.ToString();
             result[1] = msg.Mensaje;

@@ -72,12 +72,20 @@
   <ItemGroup>
     <Compile Include="ArchivoSalida.cs" />
     <Compile Include="BuscarEmpleado.cs" />
+    <Compile Include="Credencial.cs" />
     <Compile Include="DatosAplicar.cs" />
+    <Compile Include="DatosCancelaciones.cs" />
     <Compile Include="DatosCaptura.cs" />
+    <Compile Include="DatosCapturaDevoluciones.cs" />
+    <Compile Include="DatosCapturaRetiros.cs" />
+    <Compile Include="DatosCapturaSiniestros.cs" />
     <Compile Include="DatosCargar.cs" />
     <Compile Include="DatosNumeracion.cs" />
+    <Compile Include="DatosPadron.cs" />
+    <Compile Include="DatosPagosExternos.cs" />
     <Compile Include="DatosPermisos.cs" />
     <Compile Include="DatosUsuario.cs" />
+    <Compile Include="FiltroAdeudos.cs" />
     <Compile Include="FiltroEmpleado.cs" />
     <Compile Include="FiltroIdCredito.cs" />
     <Compile Include="FiltroIdOrganismo.cs" />
@@ -86,6 +94,7 @@
     <Compile Include="FiltroPagare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoginDto.cs" />
+    <Compile Include="ResultadoCredencial.cs" />
     <Compile Include="SesionDto.cs" />
   </ItemGroup>
   <ItemGroup>

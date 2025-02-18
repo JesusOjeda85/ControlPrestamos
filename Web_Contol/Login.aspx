@@ -4,8 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Expires" content="0"/>
+  <meta http-equiv="Last-Modified" content="0"/>
+  <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+
     <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>    
@@ -19,8 +24,16 @@
 
      <script type="text/javascript" src="jqueryesy/jquery.min.js"></script>
 	<script type="text/javascript" src="jqueryesy/jquery.easyui.min.js"></script>      
-    <script src="Scripts/Login.js?0.1"></script>
-
+    <script src="Scripts/Login.js?0.2"></script>
+   <script type="text/javascript">
+       function preventBack() {
+           window.history.forward();
+       }
+       setTimeout("preventBack()", 0);
+       window.onunload = function () {
+           null
+       };
+   </script>
 </head>
  <body>
         <div class="w-screen h-screen  lg:flex" style="overflow:hidden; background-color:#FFFFFF;">

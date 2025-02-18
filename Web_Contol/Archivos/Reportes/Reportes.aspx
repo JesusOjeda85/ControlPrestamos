@@ -4,6 +4,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+         <meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Last-Modified" content="0"/>
+<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>     
@@ -22,7 +26,7 @@
         <script type="text/javascript" src="../../jqueryesy/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="../../jqueryesy/plugins/datagrid-filter.js"></script>
        <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Reportes.js"></script>
+    <script src="Reportes.js?v0.0"></script>
 </head>
 <body>
     <div class="w-screen h-screen" align="Center" style="background-color:#FCFDFF;">
@@ -30,7 +34,7 @@
            <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'anterior'" id="btnRegresar">Regresar</a>
            <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'limpiar',disabled:false" id="btnLimpiar" >Limpiar</a>  
            <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-search',disabled:false" id="btnBuscar" >Buscar</a> 
-           <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-print'" id="btnImpGeneral">Vista Previa</a>
+           <%--<a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-print'" id="btnImpGeneral">Vista Previa</a>--%>
            <label id="lbl" class="text-left font-black text-lg text-blue-900"></label> 
       </div>
         <%--<embed src="archivos/Pagare.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="95%" />--%>        

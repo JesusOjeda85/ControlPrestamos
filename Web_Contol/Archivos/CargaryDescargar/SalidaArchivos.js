@@ -5,29 +5,51 @@ var JsonArchivo = "";
 
 
 $(document).ready(function () {
-    var org = $_GET('fkorg');
-    if (org != undefined) { fkorg = org; }
-    else { fkorg = ''; }
-    var cve = $_GET('cve');
-    if (cve != undefined) { cveperfil = cve; }
-    else { cveperfil = ''; }
-    var Perfil = $_GET('perfil');
-    if (Perfil != undefined) { NomPerfil = Perfil; }
-    else { NomPerfil = ''; }
-    var NomArc = $_GET('NomArc');
-    if (NomArc != undefined) { archivo = NomArc; }
-    else { archivo = ''; }
+    //var org = $_GET('fkorg');
+    //if (org != undefined) { fkorg = org; }
+    //else { fkorg = ''; }
+    //var cve = $_GET('cve');
+    //if (cve != undefined) { cveperfil = cve; }
+    //else { cveperfil = ''; }
+    //var Perfil = $_GET('perfil');
+    //if (Perfil != undefined) { NomPerfil = Perfil; }
+    //else { NomPerfil = ''; }
+    //var NomArc = $_GET('NomArc');
+    //if (NomArc != undefined) { archivo = NomArc; }
+    //else { archivo = ''; }
 
-    $('#lblperfil').text('Perfil: ' + NomPerfil);
+    //$('#lblperfil').text('Perfil: ' + NomPerfil);
 
-    $('#txtnombrearchivo').textbox('setValue', archivo);
+    
+     ($('#chkE').linkbutton('options').selected) ? archivo = "PREVISIONSOCIAL" : archivo = "PREVSOC",    
+     $('#txtnombrearchivo').textbox('setValue', archivo);
 
-    $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Perfiles.aspx', 'mod=S'); });
+   /* $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Perfiles.aspx', 'mod=S'); });*/
 
-    CARGAR_INFORMACION_SALIDA();
+   
+    $('#btnDescargar').bind('click', function () {
+        CARGAR_INFORMACION_SALIDA();
+      
+    });
 
-    $('#btnDescargar').bind('click', function () { DESCARGAR_ARCHIVO(); });
+    $('#chkE').linkbutton({
+        text: '<span style="font-size:18px">Ejecutivo</span>'
+    });
+    $('#chkM').linkbutton({
+        text: '<span style="font-size:18px">Magisterio</span>'
+    });
 
+
+
+    $('#chkE').bind('click', function () {
+        archivo = "PREVISIONSOCIAL";
+        $('#txtnombrearchivo').textbox('setValue', archivo);
+       
+    });
+    $('#chkM').bind('click', function () {
+        archivo = "PREVSOC";
+        $('#txtnombrearchivo').textbox('setValue', archivo);      
+    });
 
 });
 
@@ -57,9 +79,8 @@ function IR_PAGINA(url, parametros) {
 
 function CARGAR_INFORMACION_SALIDA() {
     var data = {
-        Obj: {
-            CvePerfil: cveperfil,
-            FkOrganismo: fkorg   
+        Obj: {           
+            FkOrganismo: ($('#chkE').linkbutton('options').selected) ? 1 : 2
         }
     }
     $.ajax({
@@ -75,8 +96,11 @@ function CARGAR_INFORMACION_SALIDA() {
         },
         success: function (data) {
             if (data.d[0] == "0") {               
-                //document.getElementById("jsonData").innerHTML = data.d[2];
-                JsonArchivo = data.d[2];
+                //document.getElementById("jsonData").innerHTML = data.d[2];              
+                //JsonArchivo = data.d[2];
+
+                var JsonDataObject = eval(data.d[2]);
+                exportWorksheet(JsonDataObject);
 
             }
             else { $.messager.alert('Error', data.d[1], 'error'); }

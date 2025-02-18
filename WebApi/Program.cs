@@ -1,16 +1,22 @@
+using WebApi.Conexion;
 
-using WebApi.Mapeo;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+//configuracion para implementar jwt
+builder.Configuration.AddJsonFile("appsettings.json");
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAutoMapper(typeof(Mapper));
+//builder.Services.AddScoped<ISesionServicio, SesionServicio>();
+builder.Services.AddSingleton(new UtileriasBD());
 
 //creacion de la politica de uso del api con el cliente
 builder.Services.AddCors(optiones => {
@@ -30,8 +36,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("nuevapolitica");
-
-app.UseAuthorization();
 
 app.MapControllers();
 

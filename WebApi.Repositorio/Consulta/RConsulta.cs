@@ -1,4 +1,5 @@
-﻿using ClsObjetos;
+﻿
+using ClsObjetos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,21 +10,28 @@ using System.Threading.Tasks;
 using WebApi.BaseDatos;
 using WebApi.Dto;
 
+
 namespace WebApi.Repositorio.Consulta
 {
     public class RConsulta
     {
-        public static ObjMensaje Listar_Empleados(FiltroBuscarEmpleado obj)
+        public static ObjMensaje Listar_Empleados(BuscarEmpleado obj)
         {
             ObjMensaje msg = new();
-
+            DataSet ds = new();
             try
             {
-              
-                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("Spt_Consulta_Listar_Empleados '" + obj.Busqueda + "'");
+                if (obj.Modulo == "P")
+                { ds = MetodosBD.EjecutarConsultaEnDataSet("Spt_Consulta_Listar_Empleados '" + obj.Busqueda + "'"); }
+                if (obj.Modulo == "R")
+                { ds = MetodosBD.EjecutarConsultaEnDataSet("Spt_Consulta_Listar_Empleados_Retiros '" + obj.Busqueda + "'"); }
+                if (obj.Modulo == "S")
+                { ds = MetodosBD.EjecutarConsultaEnDataSet("Spt_Consulta_Listar_Empleados_Siniestros '" + obj.Busqueda + "'"); }
+
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     List<Dictionary<string, object>> Tbljson = MetodosBD.convertirDatatableEnJsonString(ds.Tables[0]);
+
                     msg.Error = 0;
                     msg.Mensaje = "";
                     msg.Data = Tbljson;

@@ -708,6 +708,11 @@ fmov.icon-blank{
 	background:url('icons/costo.png') no-repeat center center;
 }
 
+.icon-costo20 {
+	background: url('icons/costo-20.png') no-repeat center center;
+}
+
+
 .icon-proyeccion{
 	background:url('icons/proyeccion.png') no-repeat center center;
 }

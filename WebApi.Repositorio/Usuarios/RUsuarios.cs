@@ -1,8 +1,7 @@
 ﻿using ClsObjetos;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using WebApi.BaseDatos;
+using WebApi.Dto;
 using WebApi.Entidades;
 
 namespace WebApi.Repositorio.Usuarios
@@ -47,7 +46,7 @@ namespace WebApi.Repositorio.Usuarios
             return msg;
         }
 
-        public static ObjMensaje Buscar_UsuarioId(DatosUsuario obj)
+        public static ObjMensaje Buscar_UsuarioId(IdUsuarioDto obj)
         {
             ObjMensaje msg = new();
             try

@@ -1,13 +1,14 @@
-﻿using ClsObjetos;
+﻿
+using ClsObjetos;
 using System.Data;
 using System.Data.SqlClient;
 using WebApi.BaseDatos;
 using WebApi.Dto;
-using WebApi.Entidades;
+
 
 namespace WebApi.Repositorio.AplicacionDescuentos
 {
-    public class RAplicacion
+	public class RAplicacion
     {
         public static ObjMensaje Cargar_Descuentos(BuscarEmpleado obj)
         {
@@ -17,15 +18,15 @@ namespace WebApi.Repositorio.AplicacionDescuentos
             {
                 List<SqlParameter> parametro = new()
                 {
-                     new SqlParameter("@Desde", SqlDbType.Int) {Value= obj.Desde },
-                      new SqlParameter("@Hasta", SqlDbType.Int) {Value= obj.Hasta },
+                     //new SqlParameter("@Desde", SqlDbType.Int) {Value= obj.Desde },
+                     // new SqlParameter("@Hasta", SqlDbType.Int) {Value= obj.Hasta },
                      new SqlParameter("@IdUsuario", SqlDbType.Int) {Value= obj.IdUsuario },
-                     new SqlParameter("@FkOrganismo", SqlDbType.Int) {Value= obj.FkOrganismo },
-                     new SqlParameter("@FkConcepto", SqlDbType.Int) {Value= obj.FkConcepto },
-                       new SqlParameter("@Busqueda", SqlDbType.VarChar,50) {Value= obj.Busqueda },
+                     //new SqlParameter("@FkOrganismo", SqlDbType.Int) {Value= obj.FkOrganismo },
+                     new SqlParameter("@FkTipoPuesto", SqlDbType.Int) {Value= obj.FkTipoPuesto },
+                     new SqlParameter("@Busqueda", SqlDbType.VarChar,50) {Value= obj.Busqueda },
                 };
 
-                DataSet ds = MetodosBD.EjecutarProcedimiento("SPT_Captura_Listar_CreditosAplicar ", parametro);
+                DataSet ds = MetodosBD.EjecutarProcedimiento("SPT_AplicacionDescuentos_Listar_Creditos ", parametro);
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     List<Dictionary<string, object>> Tbljson = MetodosBD.convertirDatatableEnJsonString(ds.Tables[0]);
@@ -43,13 +44,13 @@ namespace WebApi.Repositorio.AplicacionDescuentos
             }
             return msg;
         }
-
-        public static ObjMensaje Aplicar_Descuentos(DatosCaptura Obj)
+       
+        public static ObjMensaje Aplicar_Descuentos(Aplicar_DescuentosDto Obj)
         {
             ObjMensaje msg = new();
             try
             {
-                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_AplicacionDescuentos_Aplicar " + Obj.FkUsuarioAutoriza +",'" + Obj.Aplicados + "','"+Obj.Rechazados+"','" + Obj.Quincena + "','" + Obj.Año +"','"+Obj.Emision+"'");
+                DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_AplicacionDescuentos_Aplicar " + Obj.FkUsuarioAutoriza +",'" + Obj.Aplicados + "','"+Obj.Rechazados+"','"+Obj.Quincena+"','" + Obj.Año+"','"+Obj.TipoPuesto+"','"+Obj.Proceso+"'");
                 if (ds.Tables.Count > 0)
                 {
                     msg.Error = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());

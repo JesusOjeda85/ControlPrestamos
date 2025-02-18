@@ -34,6 +34,7 @@ namespace ClsObjetos
                 nombre = x.nombre,
                 IdPadre = x.IdPadre,
                 visible = x.visible,
+                checkbox = x.checkbox,
                 children = GetModuloTree(list, x.Id)
             }).ToList();
         }

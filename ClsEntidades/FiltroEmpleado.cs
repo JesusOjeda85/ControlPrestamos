@@ -8,6 +8,6 @@ namespace ClsEntidades
 {
     public class FiltroEmpleado
     {
-        public int Empleado { get; set; }
+        public string Condicion { get; set; }
     }
 }

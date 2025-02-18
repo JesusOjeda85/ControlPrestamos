@@ -16,8 +16,8 @@ namespace WebApi.Mapeo
             CreateMap<DatosUsuario, SesionDto>();
 
             /*Usuarios por id*/
-            CreateMap<DatosUsuario, IdUuarioDto>();
-            CreateMap<IdUuarioDto, DatosUsuario>();
+            CreateMap<DatosUsuario, IdUsuarioDto>();
+            CreateMap<IdUsuarioDto, DatosUsuario>();
 
             /*Captura*/
             CreateMap<DatosCaptura, IdOrganismoDto>();

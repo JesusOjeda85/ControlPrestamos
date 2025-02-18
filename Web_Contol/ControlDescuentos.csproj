@@ -293,22 +293,42 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx" />
-    <Content Include="Archivos\AplicarDescuentos\AplicarDescuentos.js" />
+    <Content Include="Archivos\AplicarDescuentos\Autorizacion.aspx" />
+    <Content Include="Archivos\AplicarDescuentos\Autorizacion.js" />
     <Content Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx" />
     <Content Include="Archivos\AplicarDescuentos\Listar_Perfiles.aspx" />
     <Content Include="Archivos\AplicarDescuentos\Listar_Perfiles.js" />
     <Content Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx" />
-    <Content Include="Archivos\Captura\Captura.aspx" />
-    <Content Include="Archivos\Captura\Captura.js" />
-    <Content Include="Archivos\Captura\Captura_ant.aspx" />
-    <Content Include="Archivos\Captura\Captura_ant.js" />
+    <Content Include="Archivos\ArchivosRdlc\Fun_Archivos.aspx" />
+    <Content Include="Archivos\Cancelaciones\Buscar_Empleados.aspx" />
+    <Content Include="Archivos\Cancelaciones\Prestamos\Cancelaciones_P.aspx" />
+    <Content Include="Archivos\Cancelaciones\Prestamos\Cancelaciones_P.js" />
+    <Content Include="Archivos\Cancelaciones\Fun_Cancelaciones.aspx" />
+    <Content Include="Archivos\Cancelaciones\Retiros\Cancelaciones_R.js" />
+    <Content Include="Archivos\Cancelaciones\Retiros\Cancelaciones_R.aspx" />
+    <Content Include="Archivos\Cancelaciones\Siniestros\Cancelaciones_S.aspx" />
+    <Content Include="Archivos\Cancelaciones\Siniestros\Cancelaciones_S.js" />
+    <Content Include="Archivos\Captura\Captura_Vista_Previa.js" />
+    <Content Include="Archivos\Captura\Listar_RetirosSiniestros.aspx" />
+    <Content Include="Archivos\Captura\Prestamos\Captura_Prestamos.aspx" />
+    <Content Include="Archivos\Captura\Prestamos\Captura_Prestamos.js" />
     <Content Include="Archivos\Captura\Listar_Perfiles.aspx" />
     <Content Include="Archivos\Captura\Listar_Perfiles.js" />
     <Content Include="Archivos\Captura\Fun_Captura.aspx" />
     <Content Include="Archivos\Captura\Listar_Empleados.aspx" />
+    <Content Include="Archivos\Captura\Retiros\Captura_Retiros.aspx" />
+    <Content Include="Archivos\Captura\Retiros\Captura_Retiros.js" />
+    <Content Include="Archivos\Captura\Retiros\Impresion_Revision_R.js" />
+    <Content Include="Archivos\Captura\Retiros\Impresion_Revision_R.aspx" />
+    <Content Include="Archivos\Captura\Siniestros\Captura_Siniestros.aspx" />
+    <Content Include="Archivos\Captura\Siniestros\Captura_Siniestros.js" />
+    <Content Include="Archivos\Captura\Captura_Vista_Previa.aspx" />
+    <Content Include="Archivos\Captura\Siniestros\Impresion_Revision_S.aspx" />
+    <Content Include="Archivos\Captura\Siniestros\Impresion_Revision_S.js" />
     <Content Include="Archivos\CargarPadrones\CargarLiquidez.aspx" />
     <Content Include="Archivos\CargarPadrones\CargarLiquidez.js" />
+    <Content Include="Archivos\CargarPadrones\CargarPadron.aspx" />
+    <Content Include="Archivos\CargarPadrones\CargarPadron.js" />
     <Content Include="Archivos\CargarPadrones\Fun_CargarPadrones.aspx" />
     <Content Include="Archivos\CargarPadrones\Listar_Perfiles.aspx" />
     <Content Include="Archivos\CargarPadrones\Listar_Perfiles.js" />
@@ -323,21 +343,67 @@
     <Content Include="Archivos\Consulta\Consulta.aspx" />
     <Content Include="Archivos\Consulta\Consulta.js" />
     <Content Include="Archivos\Consulta\Fun_Consulta.aspx" />
-    <Content Include="Archivos\Menu\BarraMenu.aspx" />
-    <Content Include="Archivos\Menu\BarraMenu.js" />
+    <Content Include="Archivos\Devoluciones\Buscar_Creditos.aspx" />
+    <Content Include="Archivos\Devoluciones\Captura_Devolucion.aspx" />
+    <Content Include="Archivos\Devoluciones\Captura_Devolucion.js" />
+    <Content Include="Archivos\Devoluciones\Fun_Devoluciones.aspx" />
+    <Content Include="Archivos\Devoluciones\Impresion_Devolucion.aspx" />
+    <Content Include="Archivos\Devoluciones\Impresion_Devolucion.js" />
+    <Content Include="Archivos\Devoluciones\Modificacion_Devolucion.aspx" />
+    <Content Include="Archivos\Devoluciones\Modificacion_Devolucion.js" />
+    <Content Include="Archivos\Menu Barra1\index.html" />
+    <Content Include="Archivos\Menu Barra1\profile.jpeg" />
+    <Content Include="Archivos\Menu Barra1\script.js" />
+    <Content Include="Archivos\Menu Barra1\style.css" />
+    <Content Include="Archivos\Menu Barra\index.html" />
+    <Content Include="Archivos\Menu Barra\profile.jpeg" />
+    <Content Include="Archivos\Menu Barra\script.js" />
+    <Content Include="Archivos\Menu Barra\style.css" />
+    <Content Include="Archivos\Menu\Menu_SlideBar.aspx" />
+    <Content Include="Archivos\Menu\css\style.css" />
     <Content Include="Archivos\Menu\Fun_Menus.aspx" />
-    <Content Include="Archivos\Menu\Menu.aspx" />
-    <Content Include="Archivos\Menu\Menu.js" />
-    <Content Include="Archivos\Menu\sidebar.html" />
+    <Content Include="Archivos\Menu\Menu_SlideBar.js" />
+    <Content Include="Archivos\Menu\Menu_SlideBarV1.aspx" />
+    <Content Include="Archivos\Menu\Menu_SlideBarV1.js" />
+    <Content Include="Archivos\Menu\script\script.js" />
+    <Content Include="Archivos\Menu_MultiNivel\css\style.css" />
+    <Content Include="Archivos\Menu_MultiNivel\Menu.aspx" />
+    <Content Include="Archivos\Menu_MultiNivel\script\script.js" />
+    <Content Include="Archivos\Numeracion\Descargar_Excel.aspx" />
     <Content Include="Archivos\Numeracion\Fun_Numeracion.aspx" />
+    <Content Include="Archivos\Numeracion\Prestamos\Impresion_Emision_P.aspx" />
     <Content Include="Archivos\Numeracion\Listar_Perfiles.aspx" />
     <Content Include="Archivos\Numeracion\Listar_Perfiles.js" />
-    <Content Include="Archivos\Numeracion\Numeracion.aspx" />
-    <Content Include="Archivos\Numeracion\Numeracion.js" />
+    <Content Include="Archivos\Numeracion\Prestamos\Impresion_Emision_P.js" />
+    <Content Include="Archivos\Numeracion\Prestamos\Numeracion_P.aspx" />
+    <Content Include="Archivos\Numeracion\Prestamos\Numeracion_P.js" />
+    <Content Include="Archivos\Numeracion\Prestamos\Renumeracion_Cheques_P.aspx" />
+    <Content Include="Archivos\Numeracion\Prestamos\Renumeracion_Cheques_P.js" />
+    <Content Include="Archivos\Numeracion\Retiros\Impresion_Emision_R.aspx" />
+    <Content Include="Archivos\Numeracion\Retiros\Impresion_Emision_R.js" />
+    <Content Include="Archivos\Numeracion\Retiros\Numeracion_R.aspx" />
+    <Content Include="Archivos\Numeracion\Retiros\Numeracion_R.js" />
+    <Content Include="Archivos\Numeracion\Retiros\Renumeracion_Cheques_R.aspx" />
+    <Content Include="Archivos\Numeracion\Retiros\Renumeracion_Cheques_R.js" />
+    <Content Include="Archivos\Numeracion\Siniestros\Impresion_Emision_S.aspx" />
+    <Content Include="Archivos\Numeracion\Siniestros\Impresion_Emision_S.js" />
+    <Content Include="Archivos\Numeracion\Siniestros\Numeracion_S.aspx" />
+    <Content Include="Archivos\Numeracion\Siniestros\Numeracion_S.js" />
+    <Content Include="Archivos\Numeracion\Siniestros\Renumeracion_Cheques_S.aspx" />
+    <Content Include="Archivos\Numeracion\Siniestros\Renumeracion_Cheques_S.js" />
+    <Content Include="Archivos\Numeracion\Vista_Previa.aspx" />
+    <Content Include="Archivos\Numeracion\Vista_Previa.js" />
+    <Content Include="Archivos\PagosExternos\Fun_PagosExternos.aspx" />
+    <Content Include="Archivos\PagosExternos\PagosExternos.aspx" />
+    <Content Include="Archivos\PagosExternos\PagosExternos.js" />
+    <Content Include="Archivos\Reportes\Descargar_Excel.aspx" />
     <Content Include="Archivos\Reportes\Filtro_Reportes.aspx" />
     <Content Include="Archivos\Reportes\Filtro_Reportes.js" />
     <Content Include="Archivos\Reportes\Fun_Reportes.aspx" />
     <Content Include="Archivos\Reportes\Imagenes\pagare.png" />
+    <Content Include="Archivos\Reportes\ImpresionCancelados.aspx" />
+    <Content Include="Archivos\Reportes\ImpresionCancelados.js" />
+    <Content Include="Archivos\Reportes\ImpresionEmpleados.aspx" />
     <Content Include="Archivos\Reportes\Listar_Empleados.aspx" />
     <Content Include="Archivos\Reportes\Listar_Perfiles.aspx" />
     <Content Include="Archivos\Reportes\Listar_Perfiles.js" />
@@ -382,11 +448,14 @@
     <Content Include="Archivos\Reportes\Localization\zh-CHT.xml" />
     <Content Include="Archivos\Reportes\Reportes.aspx" />
     <Content Include="Archivos\Reportes\Reportes.js" />
+    <Content Include="Archivos\Reportes\ImpresionEmpleados.js" />
     <Content Include="Archivos\Reportes\Visor_Reportes.aspx" />
     <Content Include="Archivos\Reportes\Visor_Reportes.js" />
     <Content Include="Archivos\Usuarios\Fun_Usuarios.aspx" />
     <Content Include="Archivos\Usuarios\Usuarios.aspx" />
     <Content Include="Archivos\Usuarios\Usuarios.js" />
+    <Content Include="Archivos\Devoluciones\Vista_Previa.aspx" />
+    <Content Include="Archivos\Devoluciones\Vista_Previa.js" />
     <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
     <Content Include="bin\AspNet.ScriptManager.jQuery.UI.Combined.dll" />
     <Content Include="bin\ClsDatos.dll" />
@@ -1273,6 +1342,7 @@
     <Content Include="Scripts\js-Imagenes\lightgallery.js" />
     <Content Include="Scripts\js-Imagenes\lightgallery.min.js" />
     <Content Include="Scripts\js-Imagenes\picturefill.min.js" />
+    <Content Include="Scripts\pdf.js" />
     <Content Include="Scripts\sheetjs\shim.js" />
     <Content Include="Scripts\sheetjs\xlsx.flow.js" />
     <Content Include="Scripts\sheetjs\xlsx.full.min.js" />
@@ -1401,16 +1471,15 @@
     <Content Include="jqueryEsy\themes\material-teal\images\Thumbs.db" />
     <Content Include="bin\ClsEntidades.dll.config" />
     <Content Include="bin\ControlDescuentos.dll.config" />
-    <Content Include="Archivos\Reportes\DsDatosPagare.xsc">
+    <Content Include="Archivos\ArchivosRdlc\DsDatosPagare.xsc">
       <DependentUpon>DsDatosPagare.xsd</DependentUpon>
     </Content>
-    <Content Include="Archivos\Reportes\Archivos\Pagare.pdf" />
-    <None Include="Archivos\Reportes\DsDatosPagare.xsd">
+    <None Include="Archivos\ArchivosRdlc\DsDatosPagare.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DsDatosPagare.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Archivos\Reportes\DsDatosPagare.xss">
+    <Content Include="Archivos\ArchivosRdlc\DsDatosPagare.xss">
       <DependentUpon>DsDatosPagare.xsd</DependentUpon>
     </Content>
     <Content Include="ControlDescuentosDataSet.xsc">
@@ -2464,12 +2533,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx.cs">
-      <DependentUpon>AplicarDescuentos.aspx</DependentUpon>
+    <Compile Include="Archivos\AplicarDescuentos\Autorizacion.aspx.cs">
+      <DependentUpon>Autorizacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\AplicarDescuentos\AplicarDescuentos.aspx.designer.cs">
-      <DependentUpon>AplicarDescuentos.aspx</DependentUpon>
+    <Compile Include="Archivos\AplicarDescuentos\Autorizacion.aspx.designer.cs">
+      <DependentUpon>Autorizacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\AplicarDescuentos\Fun_AplicarDescuentos.aspx.cs">
       <DependentUpon>Fun_AplicarDescuentos.aspx</DependentUpon>
@@ -2492,19 +2561,61 @@
     <Compile Include="Archivos\AplicarDescuentos\Listar_Descuentos.aspx.designer.cs">
       <DependentUpon>Listar_Descuentos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\Captura\Captura.aspx.cs">
-      <DependentUpon>Captura.aspx</DependentUpon>
+    <Compile Include="Archivos\ArchivosRdlc\Fun_Archivos.aspx.cs">
+      <DependentUpon>Fun_Archivos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\Captura\Captura.aspx.designer.cs">
-      <DependentUpon>Captura.aspx</DependentUpon>
+    <Compile Include="Archivos\ArchivosRdlc\Fun_Archivos.aspx.designer.cs">
+      <DependentUpon>Fun_Archivos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\Captura\Captura_ant.aspx.cs">
-      <DependentUpon>Captura_ant.aspx</DependentUpon>
+    <Compile Include="Archivos\Cancelaciones\Buscar_Empleados.aspx.cs">
+      <DependentUpon>Buscar_Empleados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\Captura\Captura_ant.aspx.designer.cs">
-      <DependentUpon>Captura_ant.aspx</DependentUpon>
+    <Compile Include="Archivos\Cancelaciones\Buscar_Empleados.aspx.designer.cs">
+      <DependentUpon>Buscar_Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Cancelaciones\Prestamos\Cancelaciones_P.aspx.cs">
+      <DependentUpon>Cancelaciones_P.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Cancelaciones\Prestamos\Cancelaciones_P.aspx.designer.cs">
+      <DependentUpon>Cancelaciones_P.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Cancelaciones\Fun_Cancelaciones.aspx.cs">
+      <DependentUpon>Fun_Cancelaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Cancelaciones\Fun_Cancelaciones.aspx.designer.cs">
+      <DependentUpon>Fun_Cancelaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Cancelaciones\Retiros\Cancelaciones_R.aspx.cs">
+      <DependentUpon>Cancelaciones_R.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Cancelaciones\Retiros\Cancelaciones_R.aspx.designer.cs">
+      <DependentUpon>Cancelaciones_R.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Cancelaciones\Siniestros\Cancelaciones_S.aspx.cs">
+      <DependentUpon>Cancelaciones_S.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Cancelaciones\Siniestros\Cancelaciones_S.aspx.designer.cs">
+      <DependentUpon>Cancelaciones_S.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Listar_RetirosSiniestros.aspx.cs">
+      <DependentUpon>Listar_RetirosSiniestros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Listar_RetirosSiniestros.aspx.designer.cs">
+      <DependentUpon>Listar_RetirosSiniestros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Prestamos\Captura_Prestamos.aspx.cs">
+      <DependentUpon>Captura_Prestamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Prestamos\Captura_Prestamos.aspx.designer.cs">
+      <DependentUpon>Captura_Prestamos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Captura\Listar_Perfiles.aspx.cs">
       <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
@@ -2527,12 +2638,54 @@
     <Compile Include="Archivos\Captura\Listar_Empleados.aspx.designer.cs">
       <DependentUpon>Listar_Empleados.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Archivos\Captura\Retiros\Captura_Retiros.aspx.cs">
+      <DependentUpon>Captura_Retiros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Retiros\Captura_Retiros.aspx.designer.cs">
+      <DependentUpon>Captura_Retiros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Retiros\Impresion_Revision_R.aspx.cs">
+      <DependentUpon>Impresion_Revision_R.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Retiros\Impresion_Revision_R.aspx.designer.cs">
+      <DependentUpon>Impresion_Revision_R.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Siniestros\Captura_Siniestros.aspx.cs">
+      <DependentUpon>Captura_Siniestros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Siniestros\Captura_Siniestros.aspx.designer.cs">
+      <DependentUpon>Captura_Siniestros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Captura_Vista_Previa.aspx.cs">
+      <DependentUpon>Captura_Vista_Previa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Captura_Vista_Previa.aspx.designer.cs">
+      <DependentUpon>Captura_Vista_Previa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Captura\Siniestros\Impresion_Revision_S.aspx.cs">
+      <DependentUpon>Impresion_Revision_S.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Captura\Siniestros\Impresion_Revision_S.aspx.designer.cs">
+      <DependentUpon>Impresion_Revision_S.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Archivos\CargarPadrones\CargarLiquidez.aspx.cs">
       <DependentUpon>CargarLiquidez.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Archivos\CargarPadrones\CargarLiquidez.aspx.designer.cs">
       <DependentUpon>CargarLiquidez.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\CargarPadrones\CargarPadron.aspx.cs">
+      <DependentUpon>CargarPadron.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\CargarPadrones\CargarPadron.aspx.designer.cs">
+      <DependentUpon>CargarPadron.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\CargarPadrones\Fun_CargarPadrones.aspx.cs">
       <DependentUpon>Fun_CargarPadrones.aspx</DependentUpon>
@@ -2597,12 +2750,47 @@
     <Compile Include="Archivos\Consulta\Fun_Consulta.aspx.designer.cs">
       <DependentUpon>Fun_Consulta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\Menu\BarraMenu.aspx.cs">
-      <DependentUpon>BarraMenu.aspx</DependentUpon>
+    <Compile Include="Archivos\Devoluciones\Buscar_Creditos.aspx.cs">
+      <DependentUpon>Buscar_Creditos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\Menu\BarraMenu.aspx.designer.cs">
-      <DependentUpon>BarraMenu.aspx</DependentUpon>
+    <Compile Include="Archivos\Devoluciones\Buscar_Creditos.aspx.designer.cs">
+      <DependentUpon>Buscar_Creditos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Devoluciones\Captura_Devolucion.aspx.cs">
+      <DependentUpon>Captura_Devolucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Devoluciones\Captura_Devolucion.aspx.designer.cs">
+      <DependentUpon>Captura_Devolucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Devoluciones\Fun_Devoluciones.aspx.cs">
+      <DependentUpon>Fun_Devoluciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Devoluciones\Fun_Devoluciones.aspx.designer.cs">
+      <DependentUpon>Fun_Devoluciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Devoluciones\Impresion_Devolucion.aspx.cs">
+      <DependentUpon>Impresion_Devolucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Devoluciones\Impresion_Devolucion.aspx.designer.cs">
+      <DependentUpon>Impresion_Devolucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Devoluciones\Modificacion_Devolucion.aspx.cs">
+      <DependentUpon>Modificacion_Devolucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Devoluciones\Modificacion_Devolucion.aspx.designer.cs">
+      <DependentUpon>Modificacion_Devolucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Menu\Menu_SlideBar.aspx.cs">
+      <DependentUpon>Menu_SlideBar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Menu\Menu_SlideBar.aspx.designer.cs">
+      <DependentUpon>Menu_SlideBar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Menu\Fun_Menus.aspx.cs">
       <DependentUpon>Fun_Menus.aspx</DependentUpon>
@@ -2611,12 +2799,26 @@
     <Compile Include="Archivos\Menu\Fun_Menus.aspx.designer.cs">
       <DependentUpon>Fun_Menus.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\Menu\Menu.aspx.cs">
+    <Compile Include="Archivos\Menu\Menu_SlideBarV1.aspx.cs">
+      <DependentUpon>Menu_SlideBarV1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Menu\Menu_SlideBarV1.aspx.designer.cs">
+      <DependentUpon>Menu_SlideBarV1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Menu_MultiNivel\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\Menu\Menu.aspx.designer.cs">
+    <Compile Include="Archivos\Menu_MultiNivel\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Descargar_Excel.aspx.cs">
+      <DependentUpon>Descargar_Excel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Descargar_Excel.aspx.designer.cs">
+      <DependentUpon>Descargar_Excel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Numeracion\Fun_Numeracion.aspx.cs">
       <DependentUpon>Fun_Numeracion.aspx</DependentUpon>
@@ -2625,6 +2827,13 @@
     <Compile Include="Archivos\Numeracion\Fun_Numeracion.aspx.designer.cs">
       <DependentUpon>Fun_Numeracion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Archivos\Numeracion\Prestamos\Impresion_Emision_P.aspx.cs">
+      <DependentUpon>Impresion_Emision_P.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Prestamos\Impresion_Emision_P.aspx.designer.cs">
+      <DependentUpon>Impresion_Emision_P.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Archivos\Numeracion\Listar_Perfiles.aspx.cs">
       <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2632,17 +2841,94 @@
     <Compile Include="Archivos\Numeracion\Listar_Perfiles.aspx.designer.cs">
       <DependentUpon>Listar_Perfiles.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\Numeracion\Numeracion.aspx.cs">
-      <DependentUpon>Numeracion.aspx</DependentUpon>
+    <Compile Include="Archivos\Numeracion\Prestamos\Numeracion_P.aspx.cs">
+      <DependentUpon>Numeracion_P.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\Numeracion\Numeracion.aspx.designer.cs">
-      <DependentUpon>Numeracion.aspx</DependentUpon>
+    <Compile Include="Archivos\Numeracion\Prestamos\Numeracion_P.aspx.designer.cs">
+      <DependentUpon>Numeracion_P.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\Reportes\DsDatosPagare.Designer.cs">
+    <Compile Include="Archivos\ArchivosRdlc\DsDatosPagare.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DsDatosPagare.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Prestamos\Renumeracion_Cheques_P.aspx.cs">
+      <DependentUpon>Renumeracion_Cheques_P.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Prestamos\Renumeracion_Cheques_P.aspx.designer.cs">
+      <DependentUpon>Renumeracion_Cheques_P.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Retiros\Impresion_Emision_R.aspx.cs">
+      <DependentUpon>Impresion_Emision_R.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Retiros\Impresion_Emision_R.aspx.designer.cs">
+      <DependentUpon>Impresion_Emision_R.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Retiros\Numeracion_R.aspx.cs">
+      <DependentUpon>Numeracion_R.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Retiros\Numeracion_R.aspx.designer.cs">
+      <DependentUpon>Numeracion_R.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Retiros\Renumeracion_Cheques_R.aspx.cs">
+      <DependentUpon>Renumeracion_Cheques_R.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Retiros\Renumeracion_Cheques_R.aspx.designer.cs">
+      <DependentUpon>Renumeracion_Cheques_R.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Siniestros\Impresion_Emision_S.aspx.cs">
+      <DependentUpon>Impresion_Emision_S.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Siniestros\Impresion_Emision_S.aspx.designer.cs">
+      <DependentUpon>Impresion_Emision_S.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Siniestros\Numeracion_S.aspx.cs">
+      <DependentUpon>Numeracion_S.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Siniestros\Numeracion_S.aspx.designer.cs">
+      <DependentUpon>Numeracion_S.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Siniestros\Renumeracion_Cheques_S.aspx.cs">
+      <DependentUpon>Renumeracion_Cheques_S.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Siniestros\Renumeracion_Cheques_S.aspx.designer.cs">
+      <DependentUpon>Renumeracion_Cheques_S.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Vista_Previa.aspx.cs">
+      <DependentUpon>Vista_Previa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Numeracion\Vista_Previa.aspx.designer.cs">
+      <DependentUpon>Vista_Previa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\PagosExternos\Fun_PagosExternos.aspx.cs">
+      <DependentUpon>Fun_PagosExternos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\PagosExternos\Fun_PagosExternos.aspx.designer.cs">
+      <DependentUpon>Fun_PagosExternos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\PagosExternos\PagosExternos.aspx.cs">
+      <DependentUpon>PagosExternos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\PagosExternos\PagosExternos.aspx.designer.cs">
+      <DependentUpon>PagosExternos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Descargar_Excel.aspx.cs">
+      <DependentUpon>Descargar_Excel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Reportes\Descargar_Excel.aspx.designer.cs">
+      <DependentUpon>Descargar_Excel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Reportes\Filtro_Reportes.aspx.cs">
       <DependentUpon>Filtro_Reportes.aspx</DependentUpon>
@@ -2657,6 +2943,20 @@
     </Compile>
     <Compile Include="Archivos\Reportes\Fun_Reportes.aspx.designer.cs">
       <DependentUpon>Fun_Reportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Reportes\ImpresionCancelados.aspx.cs">
+      <DependentUpon>ImpresionCancelados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Reportes\ImpresionCancelados.aspx.designer.cs">
+      <DependentUpon>ImpresionCancelados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\Reportes\ImpresionEmpleados.aspx.cs">
+      <DependentUpon>ImpresionEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Reportes\ImpresionEmpleados.aspx.designer.cs">
+      <DependentUpon>ImpresionEmpleados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\Reportes\Listar_Empleados.aspx.cs">
       <DependentUpon>Listar_Empleados.aspx</DependentUpon>
@@ -2700,6 +3000,13 @@
     <Compile Include="Archivos\Usuarios\Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Archivos\Devoluciones\Vista_Previa.aspx.cs">
+      <DependentUpon>Vista_Previa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\Devoluciones\Vista_Previa.aspx.designer.cs">
+      <DependentUpon>Vista_Previa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ControlDescuentosDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2742,9 +3049,29 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Archivos\Reportes\ChequeStd.rdlc" />
-    <EmbeddedResource Include="Archivos\Reportes\EstadoCuenta.rdlc" />
-    <EmbeddedResource Include="Archivos\Reportes\Pagare.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ChequeStd_S.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\Finiquito_S.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ListadoCancelaciones_R - Copia.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ListadoEmitidos_P.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ListadoCancelaciones.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\RevisionCaptura_S.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\RevisionCaptura_R.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ListadoEmitidos_S.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ListadoEmitidos_R.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ListadoFirmas_S.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ListadoFirmas_R.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ListadoFirmas_P.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ListadoFirmas_S_.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\Finiquito_R.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ChequeStd_R.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ChequeStd_P.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\EstadoCuenta.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\EstadoCuenta_Anterior.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ListadoFirmas_Prueba.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\ListadoFirmas_S_Nuevo.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\Pagare.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\Saldos.rdlc" />
+    <EmbeddedResource Include="Archivos\ArchivosRdlc\SubDetalleCredito.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

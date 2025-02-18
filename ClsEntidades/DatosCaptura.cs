@@ -23,6 +23,7 @@ namespace ClsEntidades
         public string ApMaterno { get; set; }
         public string Nombres { get; set; }
         public string Domicilio { get; set; }
+        public string Beneficiario { get; set; }
         public string Telefono1 { get; set; }
         public string Telefono2 { get; set; }
         public string CvePagaduria { get; set; }
@@ -31,11 +32,14 @@ namespace ClsEntidades
         public string DesCategoria { get; set; }
         public string CveAdscripcion { get; set; }
         public string DesAdscripcion { get; set; }
-        public Int64 ImporteCredito { get; set; }
+        public double ImporteCredito { get; set; }
         public int FkPlazo { get; set; }
+        public int PlazoQnas { get; set; }
         public int FkTipoPago { get; set; }
         public int FkZonaPago { get; set; }
         public int FkTipoPuesto { get; set; }
+        public int FkMotivoBaja { get; set; }
+        public int FkCausaMuerte { get; set; }        
         public int FkBanco { get; set; }
         public string Cuenta { get; set; }
         public string Aplicados { get; set; }
@@ -43,7 +47,7 @@ namespace ClsEntidades
         public int Quincena { get; set; }
         public int Año { get; set; }
         public string Emision { get; set; }
-        public string Datos { get; set; }
+        public string Datos { get; set; }        
 
     }
 }

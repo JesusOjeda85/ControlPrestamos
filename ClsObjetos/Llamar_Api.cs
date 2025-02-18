@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,25 +16,30 @@ namespace ClsObjetos
         //url publicada local 
         //public static string host = $"http://10.10.213.73/api/";
 
-        //public static string host = $"http://10.10.129.82/Api-Descuentos/pi/";
+        //public static string host = $"http://10.10.129.82/Api-Descuentos/api/";
+              
+         public static string host = $"http://localhost:5155/api/";
 
-        public static string host = $"http://localhost:5155/api/";
+        //public static string host = $"https://desarrollorh.sinaloa.gob.mx/Api-Descuentos/api/";
 
-
-      // public static string host = $"https://desarrollorh.sinaloa.gob.mx/Api-Descuentos/api/";
+       
+        //public static string host = $"http://170.247.128.138/Api-Prestamos/api/";
 
 
         public static string GetItem(string url)
         {
             // string url = $"" + Control;
             string responseBody = "";
+            
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            var request = (HttpWebRequest)WebRequest.Create(host + url);
-            ((HttpWebRequest)request).UserAgent = "rhdesarrollo";
+            
+            var request = (HttpWebRequest)WebRequest.Create(host + url);            
+            ((HttpWebRequest)request).UserAgent = "rhdesarrollo";            
             request.Method = "GET";
             request.ContentType = "application/json";
             request.Accept = "application/json";
+                        
             try
             {
                 using (WebResponse response = request.GetResponse())
@@ -105,6 +111,8 @@ namespace ClsObjetos
             request.Method = "PUT";
             request.ContentType = "application/json";
             request.Accept = "application/json";
+            
+
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
                 streamWriter.Write(json);
@@ -139,9 +147,9 @@ namespace ClsObjetos
             string responseBody = "";
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
             var request = (HttpWebRequest)WebRequest.Create(host + url);
             ((HttpWebRequest)request).UserAgent = "rhdesarrollo";
+            
             request.Method = "POST";
             request.ContentType = "application/json";
             request.Accept = "application/json";
@@ -243,5 +251,9 @@ namespace ClsObjetos
             }
             return responseBody;
         }
+
+       
+
+
     }
 }

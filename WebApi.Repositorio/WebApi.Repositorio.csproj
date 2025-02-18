@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.5" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ClsObjetos\ClsObjetos.csproj" />
     <ProjectReference Include="..\WebApi.BaseDatos\WebApi.BaseDatos.csproj" />
     <ProjectReference Include="..\WebApi.Dto\WebApi.Dto.csproj" />

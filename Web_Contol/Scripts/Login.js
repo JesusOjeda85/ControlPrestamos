@@ -55,6 +55,10 @@ function IR_PAGINA(url, parametros) {
 }
 
 function Entrar() {
+    if (document.getElementById("txtusu").value == "") { $.messager.alert('Error', 'Falta el nombre del usuario', 'error'); return 0; }
+    else
+        if (document.getElementById("txtpas").value == "") { $.messager.alert('Error', 'Falta la contraseña', 'error'); return 0; }
+    else
     var data = {
         obj: {
             Usuario: document.getElementById("txtusu").value,
@@ -76,7 +80,8 @@ function Entrar() {
                 $.messager.alert('Error', data.d[1], 'error');
             }
             else {
-                IR_PAGINA('Archivos/Menu/Menu.aspx', '');               
+                IR_PAGINA('Archivos/Menu/Menu_SlideBar.aspx', '');               
+                //IR_PAGINA('Archivos/Menu/Menu.aspx', '');               
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {

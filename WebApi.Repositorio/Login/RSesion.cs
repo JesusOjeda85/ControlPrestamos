@@ -1,16 +1,16 @@
 ﻿
 using ClsObjetos;
-using System;
 using System.Data;
 using WebApi.BaseDatos;
 using WebApi.Dto;
-using WebApi.Entidades;
+
+
 
 namespace WebApi.Repositorio.RSesion
 {
     public class RSesion
     {
-        public static ObjMensaje Iniciar_Seccion(DatosUsuario obj)
+        public static ObjMensaje Iniciar_Sesion(LoginDto obj)
         {
             SesionDto sesion = new();
             ObjMensaje ClsMensaje = new();
@@ -37,7 +37,7 @@ namespace WebApi.Repositorio.RSesion
             }
             return ClsMensaje;
         }
-        public static ObjMensaje Cambiar_Contraseña(DatosUsuario Obj)
+        public static ObjMensaje Cambiar_Contraseña(CambioContraseñaDTO Obj)
         {
             ObjMensaje msg = new ObjMensaje();
             DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_Sesion_Modificar_Sesion '" + Obj.Idusuario + "', '" + Obj.Contraseña + "', '" + Obj.ContraseñaNueva + "'");

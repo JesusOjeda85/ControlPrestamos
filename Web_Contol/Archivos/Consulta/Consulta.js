@@ -1,18 +1,59 @@
 ﻿$(document).ready(function () {
-    $('#btnBuscar').bind('click', function () { CARGAR_EMPLEADOS('#btnBuscar', ""); });
+    $('#btnBuscar').bind('click', function () { CARGAR_EMPLEADOS('#btnBuscar', "","No"); });
 
-    $('#btnBempleado').bind('click', function () { CARGAR_EMPLEADOS('#btnBuscar', $('#txtvalor').textbox('getValue')); });
+    $('#btnBempleado').bind('click', function () { CARGAR_EMPLEADOS('#btnBempleado', $('#txtvalor').textbox('getValue'), "Si"); });
+
+    $('#btnImpresion').bind('click', function () { IMPRIMIR_REPORTE('#btnImpresion'); });
+
+    $('#btnRegresar').bind('click', function () {
+        $("#ddatos").show();
+        $("#dvista").hide();
+        $('#pvista').empty();
+        $('#btnImpresion').linkbutton({ disabled: true });
+    });
 
     var text = $('#txtvalor');
     text.textbox('textbox').bind('keydown', function (e) {
         if (e.keyCode == 13) {
             var valor = text.val();
-            CARGAR_EMPLEADOS('#btnBuscar', valor);
+            CARGAR_EMPLEADOS('#btnBuscar', valor,"Si");
         }
     });
 
     $('#btnLimpiar').bind('click', function () { LIMPIAR_DATOS(); });
+
+    CARGAR_MODULOS('#cbtipomodulo');
 });
+
+function CARGAR_MODULOS(cbobjeto) {
+    var columna;
+    var Campos = [];
+    var obj;
+    
+    obj = {};
+    obj["Clave"] = "P";
+    obj["Descripcion"] = "Prestamos";
+    obj["selected"] = true;
+    Campos.push(obj);
+
+    obj = {};
+    obj["Clave"] = "S";
+    obj["Descripcion"] = "Retiros";
+    Campos.push(obj);
+
+    obj = {};
+    obj["Clave"] = "S";
+    obj["Descripcion"] = "Siniestros";
+    Campos.push(obj);
+
+    $(cbobjeto).combobox({
+        data: Campos,
+        valueField: "Clave",
+        textField: "Descripcion",
+        editable: false
+    });
+}
+
 function LIMPIAR_DATOS() {
     $('#txtempleado').textbox('setValue','');
     $('#txtrfc').textbox('setValue', '');
@@ -23,46 +64,61 @@ function LIMPIAR_DATOS() {
     $('#txtimporte').textbox('setValue', '');
     $('#txtplazo').textbox('setValue', '');
     $('#txtconcepto').textbox('setValue', '');
-    $('#cboEmision').combobox('setValue', '');
-
+    $('#cboEmision').textbox('setValue', '');
+    $('#txtfecautorizo').textbox('setValue', '');  
+    $('#txtimportePagar').textbox('setValue', '');
+    $('#txtsaldo').textbox('setValue', '');
     $('#dgdetalle').datagrid('loadData', { "total": 0, "rows": [] });   
+    $('#btnImpresion').linkbutton({disabled:true});
 }
 
-function CARGAR_EMPLEADOS(btnobj, filtro) {
+function CARGAR_EMPLEADOS(btnobj, filtro, carga) {
     if ($(btnobj).linkbutton('options').disabled) { return false; }
     else {
+        $('#dgempleados').datagrid('loadData', { "total": 0, "rows": [] });   
+        $('#txtvalor').textbox('setValue', '');
+        TXTFOCUS('textbox', '#txtvalor');
+        if (carga == "Si") {
+            $('#dgempleados').datagrid({
+                url: "Buscar_Empleados.aspx?modulo=" + $('#cbtipomodulo').combobox('getValue')+"&busqueda=" + filtro,
+                pagination: false,
+                enableFilter: false,
+                rownumbers: true,
+                singleSelect: true,
+                striped: true,
+                scroll: true,
+                pageSize: 20,
+                showPageList: false,
+                onClickRow: function () {
+                    var row = $('#dgempleados').datagrid('getSelected');
+                    $('#txtempleado').textbox('setValue', row.Empleado);
+                    $('#txtrfc').textbox('setValue', row.Rfc);
+                    $('#txtcurp').textbox('setValue', row.Curp);
+                    $('#txtNombre').textbox('setValue', row.Nombre);
+                    $('#txttipopuesto').textbox('setValue', row.TipoPuesto);
+                    $('#txtzonapago').textbox('setValue', row.ZonaPago);
+                    $('#txtimporte').textbox('setValue', row.ImporteCredito);
+                    $('#cboEmision').textbox('setValue', row.Emision);
+                    $('#txtconcepto').textbox('setValue', row.Concepto);
+                    $('#txtplazo').textbox('setValue', row.PlazoAños);
+                    $('#txtfecautorizo').textbox('setValue', row.FecAutorizado);
+                    $('#txtimportePagar').textbox('setValue', row.ImporteCreditoconIntereses);
+                    $('#txtsaldo').textbox('setValue', row.SaldoActual);
 
-        //if (filtro != "") { $('#txtvalor').textbox('setValue', filtro); }
-        //else { filtro = $('#txtvalor').textbox('getValue'); }
+                    $('#btnImpresion').linkbutton({ disabled: false });
 
-        //if (filtro == undefined) { filtro = ""; }
+                    LISTAR_DETALLE_CREDITO(row.Id);
+                    $('#win').window('close');
 
-        $('#dgempleados').datagrid({
-            url: "Buscar_Empleados.aspx?busqueda="+ filtro,
-            pagination: false,
-            enableFilter: false,
-            rownumbers: true,
-            singleSelect: true,
-            striped: true,
-            scroll: true,
-            pageSize: 20,
-            showPageList: false,
-            onClickRow: function () {
-                var row = $('#dgempleados').datagrid('getSelected');
-                $('#txtempleado').textbox('setValue', row.Empleado);
-                $('#txtrfc').textbox('setValue', row.Rfc);
-                $('#txtcurp').textbox('setValue', row.Curp);              
-                $('#txtNombre').textbox('setValue', row.Nombre);
-                $('#txttipopuesto').textbox('setValue', row.TipoPuesto);
-                $('#txtzonapago').textbox('setValue', row.ZonaPago);      
-               // $('#txtimporte').textbox('setValue', row.ImporteCredito);    
-                CARGAR_PRESTAMOS(row.Empleado);
-                $('#win').window('close');
-            }
-        });
+                   
 
+                }
+            });
+        }
         $('#loading').hide(100);
         windows_porcentaje("#win", 90, 60, false, false, false, "Empleados");
+
+        TXTFOCUS('#txtvalor');
         // windows("#win", "90%", "60%", false, "Empleados");
     }
 }
@@ -194,4 +250,42 @@ function LISTAR_DETALLE_CREDITO(idcredito) {
         },
         complete: function () { $('#loading').hide(100); }
     });
+}
+
+function IMPRIMIR_REPORTE(btnobj) {
+    if ($(btnobj).linkbutton('options').disabled) { return false; }
+    else {
+        var row = $('#dgempleados').datagrid('getSelected');
+
+        var parametros = {};
+        parametros.FkOrganismo = row.fkorganismo;
+        parametros.Filtros = row.Id;
+        parametros.Reporte = "EstadoCuenta";
+        parametros.Proceso = "Listar_Pagare@dtPagare";
+        $.ajax({
+            type: "POST",
+            url: '../ArchivosRdlc/Fun_Archivos.aspx/Generar_Archivos',
+            data: JSON.stringify(parametros),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            beforeSend: function () {
+                $('#loading').show();
+            },
+            success: function (data) {
+                if (data.d[0] == "1") { $.messager.alert('Error', data.d, 'error'); }
+                else {
+                    $("#ddatos").hide();
+                    $("#dvista").show();
+                    $('#pvista').empty().html('<embed id="evista" width="100%" height="100%" src="' + "../ArchivosRdlc/" + data.d[2] + '"></embed>')
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $('#loading').hide(100);
+                $.messager.alert('Error', jqXHR.responseText, 'error');
+            },
+            complete: function () {
+                $('#loading').hide(100);
+            }
+        });
+    }
 }

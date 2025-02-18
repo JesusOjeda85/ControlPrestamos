@@ -9,10 +9,11 @@ namespace ClsEntidades
     public class DatosAplicar
     {
         public int FkUsuarioAutoriza { get; set; }
-        public int Quincena { get; set; }
-        public int Año { get; set; }
-        public string Emision { get; set; }
+        public string Quincena { get; set; }
+        public int Año { get; set; }        
         public string Aplicados { get; set; }
         public string Rechazados { get; set; }
+        public string Proceso { get; set; }
+        public string TipoPuesto { get; set; }
     }
 }

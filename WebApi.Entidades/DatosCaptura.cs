@@ -21,6 +21,7 @@ namespace WebApi.Entidades
         public string ApPaterno { get; set; }
         public string ApMaterno { get; set; }
         public string Nombres { get; set; }
+        public string Beneficiario { get; set; }
         public string Domicilio { get; set; }
         public string Telefono1 { get; set; }
         public string Telefono2 { get; set; }
@@ -30,12 +31,13 @@ namespace WebApi.Entidades
         public string DesCategoria { get; set; }
         public string CveAdscripcion { get; set; }
         public string DesAdscripcion { get; set; }
-        public Int64 ImporteCredito { get; set; }
+        public double ImporteCredito { get; set; }
         public int FkPlazo { get; set; }
+        public int PlazoQnas { get; set; }        
         public int FkTipoPago { get; set; }
-        public int FkTipoPuesto { get; set; }
-        public int FkZonaPago { get; set; }
-        public int FkBanco { get; set; }
+        public int FkTipoPuesto { get; set; }       
+        public int FkZonaPago { get; set; }        
+        public int FkBanco {  get; set; }   
         public string Cuenta { get; set; }
         public string Aplicados { get; set; }
         public string Rechazados { get; set; }

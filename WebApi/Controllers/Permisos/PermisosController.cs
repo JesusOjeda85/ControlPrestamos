@@ -13,28 +13,28 @@ namespace WebApi.Controllers.Permisos
     [ApiController]
     public class PermisosController : ControllerBase
     {
-        private readonly IMapper mapper;
+        //private readonly IMapper mapper;
 
-        public PermisosController(IMapper mapper)
+        //public PermisosController(IMapper mapper)
+        //{
+        //    this.mapper = mapper;
+        //}
+
+        [HttpPost]
+        [Route("Listar_Perfiles_Organimos")]
+        public IActionResult Listar_Perfiles_Organimos(IdUsuarioDto objDto)
         {
-            this.mapper = mapper;
+            //var obj = mapper.Map<DatosUsuario>(objDto);
+            ObjMensaje msg = RPermisos.Listar_Perfiles_Organimos(objDto);
+            return StatusCode(StatusCodes.Status200OK, msg);
         }
 
-
-        //[HttpPost]
-        //[Route("Listar_Permisos_Asignados")]
-        //public IActionResult Listar_Permisos_Asignados(IdUuarioDto objDto)
-        //{
-        //    var obj = mapper.Map<DatosUsuario>(objDto);
-        //    ObjMensaje msg = RPermisos.Listar_Permisos_Asignados(obj);
-        //    return StatusCode(StatusCodes.Status200OK, msg);
-        //}
         [HttpPost]
         [Route("Listar_Perfiles")]
-        public IActionResult Listar_Perfiles(IdUuarioDto objDto)
+        public IActionResult Listar_Perfiles(IdUsuarioDto objDto)
         {
-            var obj = mapper.Map<DatosUsuario>(objDto);
-            ObjMensaje msg = RPermisos.Listar_Perfiles(obj);
+            //var obj = mapper.Map<DatosUsuario>(objDto);
+            ObjMensaje msg = RPermisos.Listar_Perfiles(objDto);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
 
@@ -64,10 +64,10 @@ namespace WebApi.Controllers.Permisos
 
         [HttpPost]
         [Route("Cargar_Permisos")]
-        public IActionResult Cargar_Permisos(IdUuarioDto objDto)
+        public IActionResult Cargar_Permisos(IdUsuarioDto objDto)
         {
-            var obj = mapper.Map<DatosUsuario>(objDto);
-            ObjMensaje msg = RPermisos.Cargar_Permisos(obj);
+            //var obj = mapper.Map<DatosUsuario>(objDto);
+            ObjMensaje msg = RPermisos.Cargar_Permisos(objDto);
             return StatusCode(StatusCodes.Status200OK, msg);
         }
     }

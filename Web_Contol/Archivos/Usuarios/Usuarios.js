@@ -54,10 +54,12 @@ $(document).ready(function () {
     $('#btnLimpiar').bind('click', function () { LIMPIAR('#btnLimpiar'); });
     $('#btnGuardar').bind('click', function () { GUARDAR('#btnGuardar'); });
 
-    $('#btnPermisos').bind('click', function () { CARGAR_PERMISOS('#btnPermisos'); });
+    $('#btnPermisos').bind('click', function () {
+        CARGAR_PERMISOS('#btnPermisos');
+    });
     $('#btnGpermisos').bind('click', function () { GUARDAR_PERMISOS('#btnGpermisos'); });
 
-    FILTRAR_TREE_TXT('#txtfilperfil', '#lstperfil');
+    //FILTRAR_TREE_TXT('#txtfilperfil', '#lstperfil');
     FILTRAR_TREE_TXT('#txtfilmenu', '#lstmenus');
 });
 
@@ -256,7 +258,7 @@ function GUARDAR(btnobj) {
 function LISTAR_PERFILES() {
     $.ajax({
         type: "POST",
-        url: 'Fun_Usuarios.aspx/LISTAR_PERFILES',
+        url: 'Fun_Usuarios.aspx/LISTAR_PERFILES_ORGANISMOS',
         dataType: "json",
         async: true,
         cache: false,
@@ -274,7 +276,7 @@ function LISTAR_PERFILES() {
                     }
                 }
             });
-            CARGAR_PERMISOS_ASIGNADOS('#lstperfil', 'C');
+           // CARGAR_PERMISOS_ASIGNADOS('#lstperfil', 'C');
         },
         error: function (err) {
             $('#loading').hide(100);
@@ -337,14 +339,16 @@ function CARGAR_PERMISOS_ASIGNADOS(objtree,modulo) {
                       
             var tri = $(objtree).tree('getRoots');           
             if (modulo == 'C') {
-                var tblconceptos = jQuery.parseJSON(obj[0]);
-                if (tblconceptos.length > 0) {
-                    for (var h = 0; h < tri.length; h++) {
-                        var tree = $(objtree).tree('getChildren', tri[h].target);
-                        for (var i = 0; i < tree.length; i++) {
-                            for (var j = 0; j < tblconceptos.length; j++) {
-                                if (tblconceptos[j].fkConcepto == tree[i].strclave) {
-                                    $(objtree).tree('check', tree[i].target)                                    
+                if (obj[0] != null) {
+                    var tblconceptos = jQuery.parseJSON(obj[0]);
+                    if (tblconceptos.length > 0) {
+                        for (var h = 0; h < tri.length; h++) {
+                            var tree = $(objtree).tree('getChildren', tri[h].target);
+                            for (var i = 0; i < tree.length; i++) {
+                                for (var j = 0; j < tblconceptos.length; j++) {
+                                    if (tblconceptos[j].fkConcepto == tree[i].strclave) {
+                                        $(objtree).tree('check', tree[i].target)
+                                    }
                                 }
                             }
                         }
@@ -352,31 +356,33 @@ function CARGAR_PERMISOS_ASIGNADOS(objtree,modulo) {
                 }
             }
             if (modulo == 'M') {
-                 var tblmenus = jQuery.parseJSON(obj[1]);
-                if (tblmenus.length > 0) {
-                    for (var h = 0; h < tri.length; h++) {
-                        var tree = $(objtree).tree('getChildren', tri[h].target);
-                        if (tree.length == 0) {
-                            for (var j = 0; j < tblmenus.length; j++) {
-                                if (tblmenus[j].fkMenu == tri[h].id) {
-                                    $(objtree).tree('check', tri[h].target);
-                                }
-                            }
-                        }
-                        else {
-                            for (var i = 0; i < tree.length; i++) {
+                if (obj[1] != null) {
+                    var tblmenus = jQuery.parseJSON(obj[1]);
+                    if (tblmenus.length > 0) {
+                        for (var h = 0; h < tri.length; h++) {
+                            var tree = $(objtree).tree('getChildren', tri[h].target);
+                            if (tree.length == 0) {
                                 for (var j = 0; j < tblmenus.length; j++) {
-                                    if (tblmenus[j].fkMenu == tree[i].id) {
-                                        $(objtree).tree('check', tree[i].target)                                    
-                                    }
                                     if (tblmenus[j].fkMenu == tri[h].id) {
                                         $(objtree).tree('check', tri[h].target);
                                     }
                                 }
                             }
+                            else {
+                                for (var i = 0; i < tree.length; i++) {
+                                    for (var j = 0; j < tblmenus.length; j++) {
+                                        if (tblmenus[j].fkMenu == tree[i].id) {
+                                            $(objtree).tree('check', tree[i].target)
+                                        }
+                                        if (tblmenus[j].fkMenu == tri[h].id) {
+                                            $(objtree).tree('check', tri[h].target);
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
-                }               
+                }
             }
 
         },
@@ -391,14 +397,12 @@ function CARGAR_PERMISOS_ASIGNADOS(objtree,modulo) {
 
 function CARGAR_PERMISOS(btnobj) {
     if ($(btnobj).linkbutton('options').disabled) { return false; }
-    else {
-
-        LISTAR_PERFILES();      
+    else {     
         LISTAR_MENUS();
                
         $('#loading').hide(100);
-       // windows_porcentaje("#win", 90, 90, false, false, false, "Permisos");  
-        windows("#win","90%","440px",false,"Permisos");
+        //windows_porcentaje("#win", 90, 90, false, false, false, "Permisos");  
+        windows("#win",500,600,false,"Permisos");
     }
 }
 
@@ -427,7 +431,7 @@ function GUARDAR_PERMISOS(btnobj) {
         var data = {
             objpermisos: {
                 Idusuario: idusuario,
-                fkconceptos: getchkConceptos('#lstperfil'),
+                fkconceptos: "",
                 fkmenus: getchkMenus('#lstmenus'),              
             }
         }

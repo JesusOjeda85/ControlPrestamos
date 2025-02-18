@@ -1,10 +1,7 @@
 ﻿using ClsObjetos;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Dto;
 using WebApi.Entidades;
-using WebApi.Mapeo;
 using WebApi.Repositorio.CargayDescarga;
-using AutoMapper;
 
 namespace WebApi.Controllers.CargayDescarga
 {

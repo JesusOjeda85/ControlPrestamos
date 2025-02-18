@@ -1,17 +1,17 @@
 ﻿var NomPerfil = "";
 var cvePerfil = 0;
 $(document).ready(function () {
-    var org = $_GET('fkorg');
-    if (org != undefined) { fkorg = org; }
-    else { fkorg = ''; }
-    var cve = $_GET('cve');
-    if (cve != undefined) { cveperfil = cve; }
-    else { cveperfil = ''; }
-    var Perfil = $_GET('perfil');
-    if (Perfil != undefined) { NomPerfil = Perfil; }
-    else { NomPerfil = ''; }
+    //var org = $_GET('fkorg');
+    //if (org != undefined) { fkorg = org; }
+    //else { fkorg = ''; }
+    //var cve = $_GET('cve');
+    //if (cve != undefined) { cveperfil = cve; }
+    //else { cveperfil = ''; }
+    //var Perfil = $_GET('perfil');
+    //if (Perfil != undefined) { NomPerfil = Perfil; }
+    //else { NomPerfil = ''; }
 
-    $('#lblperfil').text('Perfil: ' + NomPerfil);
+    //$('#lblperfil').text('Perfil: ' + NomPerfil);
 
     $('#btnRegresar').bind('click', function () { IR_PAGINA('Listar_Perfiles.aspx', 'mod=L'); });
 
@@ -55,7 +55,12 @@ $(document).ready(function () {
 
     $('#btnGuardar').bind('click', function () { GUARDAR_ARCHIVO('#btnGuardar'); });
 
-
+    $('#chkE').linkbutton({
+        text: '<span style="font-size:18px">Ejecutivo</span>'
+    });
+    $('#chkM').linkbutton({
+        text: '<span style="font-size:18px">Magisterio</span>'
+    });
 });
 
 function IR_PAGINA(url, parametros) {
@@ -88,6 +93,8 @@ function GUARDAR_ARCHIVO(btnobj) {
         var file = $('#xls').next().find('.textbox-value')[0];
         var nombre = $('#xls').next().find('input[type=file]')[0].files;
         if (file == null) { $.messager.alert('Error', 'Falta Seleccionar el Archivo', 'error'); return; }
+        else
+            if (($('#chkE').linkbutton('options').selected == false) && ($('#chkM').linkbutton('options').selected == false)) { $.messager.alert('Error', 'Falta Seleccionar el Organismo', 'error'); return; }           
         else {
             var fileName = file.value;
             var NombreArchivo = nombre[0].name;
@@ -96,9 +103,8 @@ function GUARDAR_ARCHIVO(btnobj) {
             var quincena = ss[0].slice(ss[0].length - 7)           
 
             var data = {
-                Obj: {
-                    CvePerfil: cveperfil,
-                    FkOrganismo: fkorg,
+                Obj: {                   
+                    FkOrganismo: ($('#chkE').linkbutton('options').selected) ? 1 : 2,
                     Nombre: NombreArchivo,
                     Quincena: quincena,
                     Archivo: sessionStorage.getItem('JsonData'),

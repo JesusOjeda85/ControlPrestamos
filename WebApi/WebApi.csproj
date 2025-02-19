@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Ejemplo Blazor\Prestamos\Prestamos_Shared\Prestamos_Shared.csproj" />
     <ProjectReference Include="..\ClsObjetos\ClsObjetos.csproj" />
     <ProjectReference Include="..\WebApi.Dto\WebApi.Dto.csproj" />
     <ProjectReference Include="..\WebApi.Repositorio\WebApi.Repositorio.csproj" />

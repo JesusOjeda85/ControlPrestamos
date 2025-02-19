@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
 using System.Text;
-using Prestamos_Shared.Objetos;
+//using Prestamos_Shared.Objetos;
 using ClsObjetos;
 
 namespace WebApi.Conexion

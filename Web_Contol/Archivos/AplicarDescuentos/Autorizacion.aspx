@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-     <meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Expires" content="0"/>
 <meta http-equiv="Last-Modified" content="0"/>
 <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate"/>
 <meta http-equiv="Pragma" content="no-cache"/>
@@ -32,7 +32,7 @@
 	    }
 </style>
     <script src="../../Scripts/Funsiones.js?v0.1"></script></head>
-     <script src="Autorizacion.js?v0.2"></script>
+     <script src="Autorizacion.js?v0.5"></script>
 <body>
     <div class="w-screen h-screen flex flex-col items-center" align="Center" style="background-color:#FCFDFF;">  
        <div class="easyui-panel mb-3" style="padding:2px; width:100%">              
@@ -44,7 +44,7 @@
              <input class="easyui-combobox" style="width:90%; text-align:left"  id="cbotipopuesto" />             
          </div> 
         <div class="w-screen h-screen">
-            <table class="easyui-datagrid " id="dgdatos" style="width:100%;height:100%;" > 
+            <table class="easyui-datagrid" id="dgdatos" style="width:100%;height:100%;" > 
                 <thead>
                 <tr>                        
                     <th data-options="field:'chk',checkbox:true"></th>   

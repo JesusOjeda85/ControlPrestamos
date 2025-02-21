@@ -161,7 +161,7 @@ function IMPRESION_PROCESOS(btnobj, reporte) {
             parametros.FkOrganismo = "";
             parametros.Filtros = filtro;
             parametros.Reporte = reporte;
-            parametros.Proceso = "Listar_Adeudos@dtDevoluciones";
+            parametros.Proceso = "Listar_Adeudos@dtPagare";
             parametros.Modulo = "P",
             parametros.ChequesNulos = 0;
             parametros.ImpresionCH = 0;

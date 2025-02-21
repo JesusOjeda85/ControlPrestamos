@@ -30,7 +30,7 @@
    <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-cellediting.js"></script>
   
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Impresion_Devolucion.js?v0.2"></script>
+    <script src="Impresion_Devolucion.js?v0.4"></script>
 </head>
 <body>
    <div class="w-screen h-screen flex flex-col " align="Center" style="background-color:#FCFDFF;">          

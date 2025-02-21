@@ -50,6 +50,7 @@ namespace WebApi.Repositorio.AplicacionDescuentos
             ObjMensaje msg = new();
             try
             {
+              
                 DataSet ds = MetodosBD.EjecutarConsultaEnDataSet("SPT_AplicacionDescuentos_Aplicar " + Obj.FkUsuarioAutoriza +",'" + Obj.Aplicados + "','"+Obj.Rechazados+"','"+Obj.Quincena+"','" + Obj.Año+"','"+Obj.TipoPuesto+"','"+Obj.Proceso+"'");
                 if (ds.Tables.Count > 0)
                 {

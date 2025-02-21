@@ -1,5 +1,4 @@
-﻿var checkedRows = [];
-var fkpue = 0;
+﻿var fkpue = 0;
 var clavepuesto = "";
 $(document).ready(function () {
  
@@ -43,23 +42,6 @@ function obtenerAno() {
     var d = new Date();
     var n = d.getFullYear();
     return n;
-}
-
-function onCheck(index, row) {
-    for (var i = 0; i < checkedRows.length; i++) {
-        if (checkedRows[i].Id == row.Id) {
-            return
-        }
-    }
-    checkedRows.push(row);
-}
-function onUncheck(index, row) {
-    for (var i = 0; i < checkedRows.length; i++) {
-        if (checkedRows[i].Id == row.Id) {
-            checkedRows.splice(i, 1);
-            return;
-        }
-    }
 }
 
 function LISTAR_TIPOPUESTO() {   
@@ -132,16 +114,7 @@ function CARGAR_PRESTAMOS(filtro,tipopuesto) {
                     striped: true,
                     scroll: true,
                     pageSize: 20,
-                    showPageList: false,
-                    onCheck: onCheck,
-                    onUncheck: onUncheck,
-                    onCheckAll: function () {
-                        var allRows = $(this).datagrid('getRows');
-                        checkedRows = allRows;
-                    },
-                    onUncheckAll: function () {
-                        checkedRows = [];
-                    },                                     
+                    showPageList: false,                                   
                     onBeforeEdit: function (index, row) {
                         var dg = $(this);
                         dg.datagrid('checkRow', index);
@@ -202,6 +175,7 @@ function LIMPIAR_DESCUENTOS() {
 }
 
 function APLICAR_DESCUENTOS() {
+    var checkedRows = $('#dgdatos').datagrid('getSelections');
     if (checkedRows.length > 0) {       
         windows_porcentaje("#WAplicacion",25, 35, false, false, false, "Autorización de Prestamos");
        // windows("WAplicacion", '300px', '400px', false, 'Autorización de Prestamos');
@@ -211,7 +185,7 @@ function APLICAR_DESCUENTOS() {
         //TXTFOCUS('#txtemision');
         //$('#txtemision').textbox('setValue', "P" + localStorage.getItem('año') + clavepuesto);
     }
-    else { $.messager.alert('Error', 'Falta seleccionar los empleados', 'error'); return 0; }
+    else { $.messager.alert('Error', 'Debe seleccionar algún registro', 'error'); return 0; }
 }
 
 function AUTORIZAR_DESCUENTOS(objbtn) {
@@ -225,22 +199,23 @@ function AUTORIZAR_DESCUENTOS(objbtn) {
             //else {     
                 if ($('#dtfechaaplicacion').datebox('getValue') == '') { $.messager.alert('Error', 'Falta seleccionar la fecha de aplicación', 'error'); return 0; }
                 else 
-                        var Aplicados = [], Rechazados = [];                       
-                        var dg = $('#dgdatos');
+                        var Aplicados = [], Rechazados = [];  
+                        
+                        var dgSeleccion = $('#dgdatos').datagrid('getSelections');
+                        for (var i = 0; i < dgSeleccion.length; i++) {
+                            Aplicados += dgSeleccion[i].Id + ",";
+                        }
 
-                for (var s = 0; s < checkedRows.length; s++) {
-                    Aplicados += checkedRows[s].Id + ","; 
-                }
-                var encontrado = false;
-                var rows = dg.datagrid('getRows');                        
-                for (var r = 0; r < rows.length; r++) {
-                   for (var s = 0; s < checkedRows.length; s++) {
-                       if (rows[r].Id == checkedRows[s].Id) { encontrado = true; break; } else { encontrado = false; }                   
-                    } 
-                    if (encontrado == false) {
-                        Rechazados += rows[r].Id + ",";                       
-                    }
-                }
+                        var dgTodo = $('#dgdatos').datagrid('getRows');
+                        var noExiste;
+                        for (var i = 0; i < dgTodo.length; i++) {
+                            noExiste = true;
+                            for (var s = 0; s < dgSeleccion.length; s++) {
+                                if (dgSeleccion[s].Id == dgTodo[i].Id) { noExiste = false; break; }
+                            }
+                            if (noExiste) { Rechazados += dgTodo[i].Id + ","; }
+                        }
+
                         if (Aplicados.length > 0) { Aplicados = Aplicados.substring(0, Aplicados.length - 1); } else { Aplicados = 0; }
                         if (Rechazados.length > 0) { Rechazados = Rechazados.substring(0, Rechazados.length - 1); } else { Rechazados = 0; }
 

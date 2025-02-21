@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿//using AutoMapper;
 using ClsObjetos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;

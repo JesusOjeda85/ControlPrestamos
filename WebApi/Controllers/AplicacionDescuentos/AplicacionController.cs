@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿//using AutoMapper;
 using ClsObjetos;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Dto;

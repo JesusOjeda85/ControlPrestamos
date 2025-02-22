@@ -30,7 +30,7 @@
    <script type="text/javascript" src="../../jqueryEsy/plugins/datagrid-cellediting.js"></script>
   
     <script src="../../Scripts/Funsiones.js"></script>
-    <script src="Modificacion_Devolucion.js?v0.3"></script>
+    <script src="Modificacion_Devolucion.js?v0.4"></script>
 </head>
 <body>
    <div class="w-screen h-screen flex flex-col " align="Center" style="background-color:#FCFDFF;">          
@@ -50,7 +50,7 @@
                 <th data-options="field:'Rfc',width:130,align:'center',halign:'center',hidden:false">Rfc</th> 
                 <th data-options="field:'Nombre',width:300,align:'left',halign:'center',hidden:false">Nombre</th>           
                 <th data-options="field:'Importe',width:100,align:'center',halign:'center',hidden:false">Importe</th>
-                <th data-options="field:'ImporteLetra',width:300,align:'left',halign:'center',hidden:false">Importe Letra</th>                
+                <th data-options="field:'ImporteCreditoLetra',width:300,align:'left',halign:'center',hidden:false">Importe Letra</th>                
                 <th data-options="field:'ChequeRecibo',width:110,align:'center',halign:'center',hidden:false">Cheque Actual</th>
                 <th data-options="field:'ChequeInicial',width:120,align:'right',halign:'center',hidden:false,editor:{type:'numberbox',options:{precision:0}}">Cheque Modificar</th>
             </tr>
